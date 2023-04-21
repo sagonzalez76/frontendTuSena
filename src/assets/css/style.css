@@ -1,0 +1,209 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 180%;
+  color: #666;
+  text-align: center;
+}
+nav{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 60px;
+  box-sizing: border-box;
+  transition: .5s;
+  z-index: 5;
+  opacity: 1;
+}
+nav.black{
+  background: rgba(0,0,0,.8);
+  height: 80px;
+  padding: 10px 50px;
+}
+nav .logo{
+  float: left;
+}
+nav .logo img{
+  height: 70px;
+  transition: .5s;
+}
+nav.black .logo img{
+  height: 60px;
+}
+nav ul{
+  float: right;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li{
+  list-style: none;
+  margin-top: 25px;
+  line-height: none;
+  font-size: 18px;
+  color: rgb(17, 16, 16);
+  padding: 5px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 1s;
+  text-shadow: 0 0 10px #000;
+}
+/* nav ul li a{
+  line-height: none;
+  font-size: 18px;
+  color: white;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 1s;
+  text-shadow: 0 0 10px #000;
+} */
+
+/* nav.black ul li a{
+  color: #fff;
+  line-height: 20px;
+} */
+nav.black ul li{
+  color: #fff;
+  line-height: 20px;
+}
+/* nav ul li a.active,
+nav ul li a:hover{
+  color: orange;
+} */
+nav ul li.active,
+nav ul li:hover{
+  color: orange;
+}
+
+.parallax1 {
+  /* background: url("https://www.sena.edu.co/es-co/formacion/PublishingImages/Paginas/tecnologia-innovacion/sennva_01062020.jpg"); */ 
+ 
+  min-height: 100%;
+
+     
+}
+
+.parallax1{
+  position: relative;
+  opacity: .75;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.heading {
+  position: absolute;
+  /* color: #08ac04; */
+  color: #0b0b0b;
+  font-size: 550%;
+  top: 38%;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-shadow: 0 0 10px #000;
+}
+.heading2 {
+  position: absolute;
+  color: rgb(3, 3, 3);
+  font-size: 150%;
+  top: 50%;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-shadow: 0 0 10px #000;
+}
+.heading-sm {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  color: #fff;
+  font-size: 250%;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-shadow: 0 0 10px #000;
+}
+.two-col{
+  width: 90%;
+  padding: 0 4%;
+  text-align: center;
+}
+section {
+  overflow: auto;
+  padding: 50px 80px;
+}
+.dark{
+  overflow: auto;
+  padding: 50px 80px;
+  background-color: #3e9529;
+  color: #f2f2f2;
+}
+@media (max-width: 900px){
+  nav ul li{
+    font-size: 12px;
+  }
+  .heading{
+    font-size: 250%;
+  }
+}
+@media (max-width: 600px){
+  .heading{
+    font-size: 250%;
+  }
+  .heading-sm{
+    font-size: 180%
+  }
+  .two-col {
+    width: 90%;
+    padding: 0;
+    text-align: center;
+  }
+  nav ul li{
+    font-size: 8px;
+  }
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+/* style modal */
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #23b84b;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #23b84b), rgb(255, 255, 255);
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(37, 166, 67), rgb(37, 166, 67))
+  }
