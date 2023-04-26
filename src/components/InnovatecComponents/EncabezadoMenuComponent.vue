@@ -26,12 +26,15 @@
 
 
                         <li class="nav-item dropdown mx-2">
-                            <router-link to="/" class="nav-link dropdown text-dark" href="#" role="button"
+                            <!-- <router-link to="/quienes_somos" class="nav-link dropdown text-dark" href="#" role="button"
                                 data-bs-auto-close="outside" data-hover="dropdown" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Quienes Somos
+                            </router-link> -->
+                            <router-link to="/quienes_somos" class="nav-link dropdown text-dark" href="#" role="button">
+                                Quienes Somos
                             </router-link>
-                            <ul class="dropdown-menu fade-in border-1 border-dark rounded-bottom-2 rounded-top-0">
+                            <!-- <ul class="dropdown-menu fade-in border-1 border-dark rounded-bottom-2 rounded-top-0">
                                 <li><router-link to="/quienes_somos" class="dropdown-item" href="#">Misión</router-link>
                                 </li>
                                 <li><router-link to="/quienes_somos" class="dropdown-item" href="#">Visión</router-link>
@@ -64,7 +67,7 @@
                                     </ul>
 
                                 </li>
-                            </ul>
+                            </ul> -->
                         </li>
 
 

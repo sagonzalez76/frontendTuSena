@@ -1,6 +1,3 @@
-
-
-
 <template>
     <header>
         <!-- Jumbotron -->
@@ -30,7 +27,7 @@
                                 <p class="d-none d-md-block mb-0">Favoritos</p>
                             </router-link>
                             <!-- <a href="">My cart</p> </a> -->
-
+                            <!-- <h4>{{ productos }}</h4> -->
 
 
                         </div>
@@ -42,12 +39,12 @@
 
 
 
-                        <form class="d-flex" role="search">
-                            <input v-model="titulo" class="form-control me-2" type="search" placeholder=""
-                                aria-label="Search">
-                            <button v-on:click="buscarProducto" class="btn btn-outline-success" type="button"><i
+                        <div class="d-flex" role="">
+                            <input v-model="titulo" @keydown.enter="buscarProductoName(titulo)" class="form-control me-2" type=""
+                                placeholder="Busca un producto" aria-label="Search">
+                            <button v-on:click="buscarProductoName(titulo)" class="btn btn-outline-success" type="button"><i
                                     class="fas fa-search"></i></button>
-                        </form>
+                        </div>
 
 
 
@@ -70,6 +67,8 @@
                         <a href="" class="text-white-50">Productos</a>
                         <span class="text-white-50 mx-2"> > </span>
                         <a href="" class="text-white"><u>Producto 1</u></a>
+
+
                     </h6>
                 </nav>
                 <!-- Breadcrumb -->
@@ -82,75 +81,58 @@
 
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
+
     name: 'HeaderComponent',
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     data() {
         return {
-            // // PASO 1. Crear variable para guardar los datos de la API
-            productos: [],
-            titulo: ""
+      
         }
     },
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+    computed: {  
+        
+      
+        ...mapState({
 
-    // PASO 2. crear el metodo para estraer los datos de la API
-    async created() {
-        this.producto();
+            productos: 'productos',
+        }),
+
+     
+
     },
 
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    async mounted() {
+        await this.buscarProductos();
+    },
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     methods: {
-        async producto() {
 
-            // hacer la peticion GET a la ruta de la API 
-            await this.axios.get('http://localhost:3000/producto')
-                // devuelve la promesa con un resultado (response)
-                .then(response => {
-                    // guardar en la variable usuarios la respuesta obtenida
-                    this.productos = response.data.new_producto;
+        ...mapActions({
+            buscarProductos: 'buscarProductos',
+            buscarProductoName: 'buscarProductoName',
 
-                    console.log(response.data.new_producto);
+        }),
 
-                    // si se quiere ver el resultado en consola
-                    // console.log(response.data.new_producto[0].productos_titulo) 
+        // async buscarProducto() {
+        //    await this.$store.dispatch('searchProduct', this.titulo);
 
-
-                }) //Mostrar por consola el error
-                .catch((e) => {
-                    console.log(e)
-                });
-
-        },
-
-
-
-        async buscarProducto() {
-            const params = {
-                titulo: this.titulo
-            }
-
-            await this.axios.get('http://localhost:3000/buscar', { params })
-                // devuelve la promesa con un resultado (response)
-                .then(response => {
-                    // guardar en la variable usuarios la respuesta obtenida
-                    this.productos = response.data.new_producto;
-
-                    console.log(response.data.productos);
-
-                    // si se quiere ver el resultado en consola
-                    // console.log(response.data.new_producto[0].productos_titulo) 
-
-
-                }) //Mostrar por consola el error
-                .catch((e) => {
-                    console.log(e)
-                });
-
-
-
-        }
+        // }
 
     }
 

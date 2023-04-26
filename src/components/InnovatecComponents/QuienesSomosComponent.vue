@@ -72,45 +72,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-          <div class="card">
-            <img src="@/assets/img/about.jpg" class="card-img-top" alt="..." />
-            <div class="card-icon">
-              <i class="bi bi-calendar-check-fill"></i>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title mb-3"><a>PLANES</a></h5>
-
-
-              <div class="row">
-
-                <div class="col d-flex justify-content-center">
-                  <li class="text-center">Plan Estratégico</li>
-                </div>
-                <div class="col d-flex justify-content-center"><a
-                    href="@/assets/files/PlanEstratégico-INNOVATECCTPI.pdf"><img src="@/assets/logos/pdf.png" alt=""
-                      width="40"></a></div>
-              </div>
-
-              <div class="row mt-3">
-
-                <div class="col d-flex justify-content-center">
-                  <li class="text-center">Plan Operativo</li>
-                </div>
-                <div class="col d-flex justify-content-center"><a
-                    href="../../assets/files/PlanEstratégico-INNOVATECCTPI.pdf" alt="" width="40"><img
-                      src="@/assets/logos/pdf.png" alt="" width="40"></a></div>
-              </div>
-
-
-
-
-            </div>
-          </div>
-        </div>
-
-
-
+       
 
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
@@ -209,6 +171,44 @@
 
 
               </ul>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <img src="@/assets/img/about.jpg" class="card-img-top" alt="..." />
+            <div class="card-icon">
+              <i class="bi bi-calendar-check-fill"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-3"><a>PLANES</a></h5>
+
+
+              <div class="row">
+
+                <div class="col d-flex justify-content-center">
+                  <li class="text-center">Plan Estratégico</li>
+                </div>
+                <div class="col d-flex justify-content-center"><a
+                    href="@/assets/files/PlanEstratégico-INNOVATECCTPI.pdf"><img src="@/assets/logos/pdf.png" alt=""
+                      width="40"></a></div>
+              </div>
+
+              <div class="row mt-3">
+
+                <div class="col d-flex justify-content-center">
+                  <li class="text-center">Plan Operativo</li>
+                </div>
+                <div class="col d-flex justify-content-center"><a
+                    href="../../assets/files/PlanEstratégico-INNOVATECCTPI.pdf" alt="" width="40"><img
+                      src="@/assets/logos/pdf.png" alt="" width="40"></a></div>
+              </div>
+
+
+
 
             </div>
           </div>

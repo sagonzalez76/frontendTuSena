@@ -1,5 +1,5 @@
 <template>
-                      <div class="row justify-content-center mb-3">
+                      <div class="row justify-content-center mb-3" v-for="(producto, index) in productos" :key="index">
                         <div class="col-md-12">
                             <div class="card shadow-0 border border-dark rounded-3" style="--bs-border-opacity: .5;">
                                 <div class="card-body">
@@ -7,7 +7,7 @@
                                         <div class="col-xl-3 col-md-4 d-flex justify-content-center">
                                             <div
                                                 class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0 d-flex justify-content-center">
-                                                <img src="https://placehold.co/100x100" class="w-100 " />
+                                                <img src="https://picsum.photos/150/100" class="w-100 " />
                                                 <a href="#!">
                                                     <div class="hover-overlay">
                                                         <div class="mask"
@@ -18,7 +18,7 @@
                                         </div>
 
                                         <div class="col-xl-6 col-md-5 col-sm-7 ">
-                                            <h5>Entorno con el Ambiente</h5>
+                                            <h5>{{ producto.productos_titulo }}</h5>
                                             <div class="d-flex flex-row">
                                                 <div class="text-warning mb-1 me-2">
                                                     <i class="fa fa-star"></i>
@@ -30,7 +30,7 @@
                                                         3.7
                                                     </span>
                                                 </div>
-                                                <span class="text-muted">154 vistas</span>
+                                                <span class="text-muted">{{producto.producto_id}} vistas</span>
                                             </div>
 
                                             <p class="text mb-4 mb-md-0">
@@ -61,10 +61,21 @@
                     </div>
 </template>
 
-<script>
-export default {
+<script>  
+import { mapState, mapActions } from 'vuex';
 
-}
+
+  
+export default {
+    computed: {
+        ...mapState({
+            productos: 'productos',
+        }),
+    },
+
+} 
+
+
 </script>
 
 <style>

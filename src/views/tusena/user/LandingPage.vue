@@ -7,12 +7,6 @@
                 <div class="col-lg-9">
                     <FilterComponent></FilterComponent>
                     <ProductComponent></ProductComponent>
-                    <ProductComponent></ProductComponent>
-                    <ProductComponent></ProductComponent>
-                    <ProductComponent></ProductComponent>
-
-             
-
                     <hr />
                 </div>
                 <PaginationComponent></PaginationComponent>

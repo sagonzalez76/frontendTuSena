@@ -53,7 +53,8 @@
 
             <ul class="nav nav-tabs">
               <li class="nav-item me-2">
-                <router-link class="nav-link active" aria-current="page" to="/userprofile/1" id="activo">Usuario</router-link>
+                <router-link class="nav-link active" aria-current="page" to="/userprofile/1"
+                  id="activo">Usuario</router-link>
               </li>
               <li class="nav-item">
                 <router-link class="nav-link" aria-current="page" to="/userfavorite/1">Favoritos</router-link>
@@ -113,9 +114,18 @@
                   <div class="form-group">
                     <div class="col-xs-12">
                       <br>
-                      <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>
-                        Guardar</button>
-                      <button class="btn btn" type="reset"><i class="glyphicon glyphicon-repeat"></i> Borrar
+                      <button class="btn btn-success p-0" type="submit">
+
+                        <router-link to="/admin/dashboard" class="btn btn-success p-2 m-0">
+
+                          <i class="bi bi-check-lg"></i>
+                          Guardar
+
+                        </router-link>
+
+
+                      </button>
+                      <button class="btn btn-danger ms-4" type="reset"><i class="glyphicon glyphicon-repeat"></i> Borrar
                         Todo</button>
                     </div>
                   </div>
@@ -146,12 +156,11 @@ export default {
 </script>
 
 <style>
-#activo{
+#activo {
   color: rgb(47, 157, 0);
 }
 
-.nav-link{
+.nav-link {
   color: black;
 }
-
 </style>

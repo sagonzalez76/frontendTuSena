@@ -9,7 +9,7 @@
         <div class="row mb-5 mt-4 pb-5 mx-0 border border-1">
 
 
-            <h4 class="text-center py-4 fw-bold bg-success">DINAMIZADOR SENNOVA</h4>
+            <h4 class="text-center py-4 fw-bold bg-roles">DINAMIZADOR SENNOVA</h4>
 
             <div class="col-lg mx-0 bg-dark d-flex align-items-center">
                 <div class="row">
@@ -93,7 +93,7 @@
         <div class="row my-5  mx-0 border border-1">
 
 
-            <h4 class="text-center py-4 fw-bold bg-success">DINAMIZADORA DEL CONOCIMIENTO</h4>
+            <h4 class="text-center py-4 fw-bold bg-roles">DINAMIZADORA DEL CONOCIMIENTO</h4>
 
             <div class="col-lg mx-0 bg-dark d-flex align-items-center">
                 <div class="row">
@@ -184,7 +184,7 @@
         <div class="row my-5  mx-0 border border-2">
 
 
-            <h4 class="text-center py-4 fw-bold bg-success">INSTRUCTOR SENNOVA
+            <h4 class="text-center py-4 fw-bold bg-roles">INSTRUCTOR SENNOVA
 
 </h4>
 
@@ -273,7 +273,17 @@
 
 <script></script>
 
-<style></style>
+<style scoped>
+.bg-roles{
+
+
+    background-color: #39ca3e;
+}
+
+
+
+
+</style>
 
 
 
