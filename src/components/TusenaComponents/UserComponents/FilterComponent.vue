@@ -24,7 +24,7 @@
 import { mapState, mapActions } from 'vuex';
 
 
-export default {
+export default{
 
     name: 'FilterComponent',
     computed: {

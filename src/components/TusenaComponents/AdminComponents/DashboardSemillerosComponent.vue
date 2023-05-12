@@ -75,11 +75,9 @@
 
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h2 class="">Panel de Administracion</h2>
-
-      <button type="button" class="custom-btn btn-register my-2 mx-2 px-auto" data-bs-toggle="modal"
-        data-bs-target="#registrarFuncionarioModal"> <i class="bi bi-plus-lg"></i> Agregar
-        Funcionario</button>
+      <h2 class="">Panel de Administracion</h2> <button type="button" class="custom-btn btn-register my-2"
+        data-bs-toggle="modal" data-bs-target="#registrarSemilleroModal"> <i class="bi bi-plus-lg"></i> Agregar
+        Semillero</button>
 
 
       <div class="btn-toolbar mb-2 mb-md-0">
@@ -96,47 +94,32 @@
 
     <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
 
-    <h3>Funcionarios</h3>
+    <h3>Semilleros</h3>
     <div class="table-responsive">
       <table class="table table-striped table-hover table-sm">
         <thead class="table-success text-start">
           <tr class="">
-            <th scope="col">#</th>
-            <th scope="col">Identificacion</th>
-            <!-- <th scope="col">Autor(es)</th> -->
-            <th scope="col">Nombres</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">Correo Electronico</th>
-
-            <th scope="col">Contrase&ntilde;a</th>
-            <th scope="col">Telefono</th>
-
-            <th scope="col">Administrador</th>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre del Semillero</th>
             <th scope="col">Acciones</th>
+
 
           </tr>
         </thead>
         <tbody class="table-group-divider text-start">
-          <tr v-for="(funcionario, index) in funcionarios" :key="index" class="align-middle">
+          <tr v-for="(semillero, index) in semilleros" :key="index" class="align-middle">
 
 
-            <td>{{ funcionario.funcionario_id }}</td>
-            <td>{{ funcionario.funcionario_iden }}</td>
-            <td>{{ funcionario.funcionario_nombre }}</td>
-            <td>{{ funcionario.funcionario_apellido }}</td>
-            <td>{{ funcionario.funcionario_correo }}</td>
-            <td>{{ funcionario.funcionario_contraseña }}</td>
-            <td>{{ funcionario.funcionario_telefono }}</td>
-            <td>{{ funcionario.funcionario_administrador }}</td>
+            <td>{{ semillero.id }}</td>
+            <td>{{ semillero.semillero_nombre }}</td>
+
             <td class="d-flex text-start">
               <div class="row text-start">
                 <div class="col text-start">
-                  <button class="btn btn-warning  me-2" data-bs-toggle="modal"
-                    data-bs-target="#actualizarFuncionarioModal" @:click="buscarFuncionario(funcionario.funcionario_id)">
-                    <i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarFuncionarioModal"
-                    @:click="buscarFuncionario(funcionario.funcionario_id)"> <i class="bi bi-trash3-fill"></i></button>
-
+                  <button class="btn btn-warning  me-2" data-bs-toggle="modal" data-bs-target="#actualizarSemilleroModal"
+                    @:click="buscarSemillero(semillero.id)"> <i class="bi bi-pencil-square"></i></button>
+                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarSemilleroModal"  @:click="buscarSemillero(semillero.id)"> <i
+                      class="bi bi-trash3-fill"></i></button>
 
 
 
@@ -156,7 +139,7 @@
 
 
 
-  <div class="modal fade" id="registrarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="registrarSemilleroModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-dark">
@@ -172,61 +155,17 @@
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Registra un Funcionario</h3>
+                    <h3>Registra un Semillero</h3>
                     <p>Llena los campos que veras a continuacion:</p>
 
-                    <form class="" method="POST" v-on:submit.prevent="registrarFuncionario">
+                    <form class="" method="POST" v-on:submit.prevent="registrarSemillero">
 
                       <div class="col-md-12">
-                        <input v-model="identificacion" class="form-control text-dark" type="number" name="name"
-                          placeholder="Numero de Identificacion" required>
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
-                      </div>
-                      <div class="col-md-12">
-                        <input v-model="nombres" class="form-control text-dark" type="text" name="name"
+                        <input v-model="nombre" class="form-control text-dark" type="text" name="name"
                           placeholder="Nombres" required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
-
-                      <div class="col-md-12">
-                        <input v-model="apellidos" class="form-control text-dark" type="text" name="apellido"
-                          placeholder="Apellidos" required>
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
-                      </div>
-
-
-                      <div class="col-md-12">
-                        <input v-model="correo" class="form-control" type="email" name="email"
-                          placeholder="Correo Electronico" required>
-                        <!-- <div class="valid-feedback">Email field is valid!</div>
-                        <div class="invalid-feedback">Email field cannot be blank!</div> -->
-                      </div>
-
-
-                      <div class="col-md-12">
-                        <input v-model="contrasena" class="form-control" type="password" name="password"
-                          placeholder="Contraseña" required>
-                        <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
-                        <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
-                      </div>
-
-
-                      <div class="col-md-12">
-                        <input v-model="telefono" class="form-control" type="text" name="phone"
-                          placeholder="Celular/Telefono" required>
-                        <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
-                        <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
-                      </div>
-
-                      <div class="form-check mt-2">
-                        <input class="form-check-input" type="checkbox" value='' id="invalidCheck">
-                        <label class="form-check-label">El usuario sera Administrador?</label>
-                        <!-- <div class="invalid-feedback">Tenga en cuenta que el administrador podra ver, modificar o eliminar los datos contenidos en la base de datos de la aplicacion</div> -->
-                      </div>
-
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">
                         <!-- <button id="submit" type="submit" class="btn btn-primary">Register</button> -->
@@ -255,17 +194,18 @@
               </div>
             </div>
           </div>
+
         </div>
+
       </div>
     </div>
   </div>
 
 
 
-  <!-- MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR  -->
 
 
-  <div class="modal fade" id="actualizarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="actualizarSemilleroModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-dark">
@@ -281,60 +221,17 @@
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Actualiza un Funcionario</h3>
+                    <h3>Actualiza un Semillero</h3>
                     <p>Llena los campos que veras a continuacion:</p>
 
-                    <form class="" method="POST" v-on:submit.prevent="actualizarFuncionario(funcionario.funcionario_id)">
+                    <form class="" method="POST" v-on:submit.prevent="actualizarSemillero(semillero.id)">
 
-                      <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_iden" class="form-control text-dark" type="number"
-                          required>
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
-                      </div>
-                      <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_nombre" class="form-control text-dark" type="text"
-                          name="name" required>
+                      <div class="col-md-12 ">
+                        <input v-model="semillero.semillero_nombre" class="form-control text-dark" type="text" required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
-                      <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_apellido" class="form-control text-dark" type="text"
-                          name="apellido" placeholder="Apellidos" required>
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
-                      </div>
-
-
-                      <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_correo" class="form-control" type="email" name="email"
-                          placeholder="Correo Electronico" required>
-                        <!-- <div class="valid-feedback">Email field is valid!</div>
-                        <div class="invalid-feedback">Email field cannot be blank!</div> -->
-                      </div>
-
-
-                      <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_contraseña" class="form-control" type="password"
-                          name="password" placeholder="Contraseña" required>
-                        <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
-                        <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
-                      </div>
-
-
-                      <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_telefono" class="form-control" type="text" name="phone"
-                          placeholder="Celular/Telefono" required>
-                        <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
-                        <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
-                      </div>
-
-                      <div class="form-check mt-2">
-                        <input class="form-check-input" type="checkbox" value='' id="invalidCheck">
-                        <label class="form-check-label">El usuario sera Administrador?</label>
-                        <!-- <div class="invalid-feedback">Tenga en cuenta que el administrador podra ver, modificar o eliminar los datos contenidos en la base de datos de la aplicacion</div> -->
-                      </div>
 
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">
@@ -376,7 +273,8 @@
 
 
 
-  <div class="modal fade" id="eliminarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  
+  <div class="modal fade" id="eliminarSemilleroModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-dark">
@@ -392,10 +290,10 @@
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Seguro deseas eliminar el usuario con identificacion: {{ funcionario.funcionario_iden }}?</h3>
+                    <h3>Seguro deseas eliminar el semillero: {{ semillero.semillero_nombre }}?</h3>
 
 
-                    <form class="" method="POST" v-on:submit.prevent="eliminarFuncionario(funcionario.funcionario_id)">
+                    <form class="" method="POST" v-on:submit.prevent="eliminarSemillero(semillero.id)">
 
 
 
@@ -443,79 +341,42 @@ export default {
 
   data() {
     return {
-      funcionario: [],
-      funcionarios: [],
+      semilleros: [],
+      semillero: [],
       id: null,
-      identificacion: '',
-      nombres: "",
-      apellidos: "",
-      correo: "",
-      contrasena: "",
-      telefono: null,
-      admin: true
+      nombre: ""
     }
   },
 
 
   async mounted() {
-    await this.buscarFuncionarios();
+    await this.buscarSemilleros();
 
   },
 
 
+
   methods: {
-
-    async buscarFuncionarios() {
-
-      await this.axios.get('http://localhost:3000/funcionario')
-        .then(response => {
-          this.funcionarios = response.data.new_funcionario
-          // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
-          // console.log(this.state.productos);
-        }) //Mostrar por consola el error
-        .catch((e) => {
-          console.log(e)
-        });
-
-
-    },
-
-    async registrarFuncionario() {
+    async registrarSemillero() {
 
       let json = {
-
-        "funcionario_iden": this.identificacion,
-        "funcionario_nombre": this.nombres,
-        "funcionario_apellido": this.apellidos,
-        "funcionario_correo": this.correo,
-        "funcionario_contraseña": this.contrasena,
-        "funcionario_telefono": this.telefono,
-        "funcionario_administrador": this.admin,
-
+        "semillero_nombre": this.nombre,
       };
-      await this.axios.post('http://localhost:3000/funcionario', json)
+
+      await this.axios.post('http://localhost:3000/semilleros', json)
         .then(data => {
-          console.log(data);
-
-          this.buscarFuncionarios();
-
+          alert('Semillero creado')
+          this.buscarSemilleros();
         })
     },
 
 
-    async buscarFuncionario(funcionario_id) {
-      // console.log(funcionario_id);
-
-      await this.axios.get('http://localhost:3000/funcionario/' + funcionario_id)
+    async buscarSemilleros() {
+      await this.axios.get('http://localhost:3000/semilleros')
         .then(response => {
-          this.funcionario = response.data.new_funcionario;
-
-          console.log(this.funcionario);
-          // console.log(response.data.new_funcionario[0].funcionario_id);
+          this.semilleros = response.data.new_semillero
           // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
+          // console.log(this.semilleros);
           // console.log(this.state.productos);
         }) //Mostrar por consola el error
         .catch((e) => {
@@ -524,43 +385,49 @@ export default {
     },
 
 
-    async actualizarFuncionario(funcionario_id) {
 
+    async buscarSemillero(id) {
+      // console.log(funcionario_id);
+      await this.axios.get('http://localhost:3000/semilleros/' + id)
+        .then(response => {
+
+
+          // console.log(response);
+
+          this.semillero = response.data.new_semillero;
+
+          // console.log(this.semillero);
+
+        }) //Mostrar por consola el error
+        .catch((e) => {
+          console.log(e)
+        });
+    },
+
+    async actualizarSemillero(id) {
+      // console.log(id);
       let json = {
-
-        "funcionario_iden": this.funcionario.funcionario_iden,
-        "funcionario_nombre": this.funcionario.funcionario_nombre,
-        "funcionario_apellido": this.funcionario.funcionario_apellido,
-        "funcionario_correo": this.funcionario.funcionario_correo,
-        "funcionario_contraseña": this.funcionario.funcionario_contraseña,
-        "funcionario_telefono": this.funcionario.funcionario_telefono,
-        "funcionario_administrador": this.funcionario.funcionario_administrador,
-
+        "semillero_nombre": this.semillero.semillero_nombre,
       };
 
-      console.log(funcionario_id);
-      await this.axios.patch('http://localhost:3000/funcionario/' + funcionario_id, json)
+      await this.axios.patch('http://localhost:3000/semilleros/' + id, json)
         .then(response => {
           alert(response.data.message);
-          // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
+          console.log(this.semilleros);
           // console.log(this.state.productos);
         }) //Mostrar por consola el error
         .catch((e) => {
           console.log(e)
         });
+      this.buscarSemilleros();
 
-      this.buscarFuncionarios();
     },
 
-
-
-
-    async eliminarFuncionario(funcionario_id) {
-
-      console.log(funcionario_id);
-      await this.axios.delete('http://localhost:3000/funcionario/' + funcionario_id)
+    async eliminarSemillero(id) {
+      // console.log(id);
+   
+      await this.axios.delete('http://localhost:3000/semilleros/' + id)
         .then(response => {
           console.log(response.data.message);
           alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);
@@ -573,18 +440,10 @@ export default {
           console.log(e)
         });
 
-      this.buscarFuncionarios();
+      this.buscarSemilleros();
     },
 
-
-
-
-
-
-
   },
-
-
 
 
 
@@ -618,6 +477,13 @@ export default {
   z-index: 1;
 
 }
+
+
+
+
+
+
+
 
 
 

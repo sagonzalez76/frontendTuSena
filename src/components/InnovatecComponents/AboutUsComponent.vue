@@ -12,8 +12,8 @@
 
                 <div class="row p-4 pb-2">
                     <h4 class="fw-bold p-0">DESCRIPCIÓN</h4>
-
                 </div>
+
                 <div class="row px-4 pb-3"> Los grupos de investigación del SENA se enmarcan en la investigación
                     aplicada, lo que
                     significa que los
@@ -107,8 +107,24 @@
         <section>
             <div class="block py-5">
 
-                <h3 class="pb-4">LÍNEAS DE INVESTIGACIÓN</h3>
-                <h5>Las actividades realizadas por el grupo INNOVATEC CTPI se enmarcan en 3 líneas de investigación:</h5>
+
+
+                <div id="parallax-world-of-ugg">
+
+                    <section>
+                        <div class="parallax-two">
+                            <h2>Lineas de Investigacion</h2>
+                        </div>
+                    </section>
+
+                </div>
+
+
+
+
+
+                <h5 class="mt-3">Las actividades realizadas por el grupo INNOVATEC CTPI se enmarcan en 3 líneas de
+                    investigación:</h5>
 
 
                 <div class="accordion accordion-flush border my-4" id="accordionFlushExample">
@@ -488,14 +504,14 @@
 
 <script>
 export default {
-     
+
 }
 </script>
 
 <style scoped>
 .accordion-body {
 
-    background-color: rgb(228, 223, 202);
+    background-color: rgba(180, 224, 180, 0.778);
 }
 
 
@@ -509,7 +525,7 @@ export default {
 
 .bg-accordion {
 
-    background-color: rgb(217, 217, 217);
+    background-color: rgb(206, 206, 206);
 }
 
 
@@ -533,4 +549,89 @@ th:hover {
     background-color: #82DEF0;
 }
 
+
+
+
+
+
+
+#parallax-world-of-ugg h2 {
+    font-family: 'Work Sans';
+    font-size: 70px;
+    letter-spacing: 10px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    text-transform: uppercase;
+    z-index: 10;
+    opacity: 1;
+}
+
+
+
+
+#parallax-world-of-ugg .parallax-two {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    overflow: hidden;
+    position:static;
+    width: 100%;
+    background-image: url(https://vozdelosandes.com/wp-content/uploads/2019/09/investigacion-sena.jpeg);
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Extras */
+/**************************/
+
+
+@media screen and (max-width: 1920px) {
+    #parallax-world-of-ugg .title {
+        padding: 110px;
+
+    }
+
+
+    @media screen and (max-width: 1700px) and (min-width: 768px) {
+
+        #parallax-world-of-ugg .title {
+            background: rgb(255, 255, 255);
+            padding: 50px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+
+
+    #parallax-world-of-ugg .block {
+        padding: 40px;
+        width: 620px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #parallax-world-of-ugg .block {
+        padding: 30px;
+        width: 420px;
+    }
+
+    #parallax-world-of-ugg h2 {
+        font-size: 30px;
+    }
+
+    #parallax-world-of-ugg .block {
+        padding: 30px;
+    }
+
+    #parallax-world-of-ugg .parallax-one,
+    #parallax-world-of-ugg .parallax-two,
+    #parallax-world-of-ugg .parallax-three {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
 </style>

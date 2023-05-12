@@ -11,16 +11,16 @@
                         aria-label="Slide 3"> </button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="4000">
+                    <div class="carousel-item active" data-bs-interval="40000">
                         <router-link to="/noticias" class="dropdown-item" href="#"><img src="@/assets/img/banner.svg"
                                 class="d-block w-100" alt="..."></router-link>
                     </div>
-                    <div class="carousel-item" data-bs-interval="4000">
+                    <div class="carousel-item" data-bs-interval="40000">
                         <router-link to="/noticias" class="dropdown-item" href="#"><img src="@/assets/img/banner.svg"
                                 class="d-block w-100" alt="..."></router-link>
 
                     </div>
-                    <div class="carousel-item" data-bs-interval="4000">
+                    <div class="carousel-item" data-bs-interval="40000">
                         <router-link to="/noticias" class="dropdown-item" href="#"><img src="@/assets/img/banner.svg"
                                 class="d-block w-100" alt="..."></router-link>
 

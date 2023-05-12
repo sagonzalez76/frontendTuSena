@@ -5,7 +5,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
           <div center class="card">
-            <img src="@/assets/img/about.jpg" class="card-img-top" alt="..." />
+            <img src="@/assets/logos/mision.png" class="card-img-top" alt="..." />
             <div class="card-icon">
               <i class="bi bi-building-check"></i>
             </div>
@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
           <div class="card">
-            <img src="@/assets/img/about.jpg" class="card-img-top" alt="..." />
+            <img src="@/assets/logos/vision.png" class="card-img-top" alt="..." />
             <div class="card-icon">
               <i class="bi bi-eye"></i>
             </div>
@@ -55,7 +55,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
           <div class="card">
-            <img src="@/assets/img/about.jpg" class="card-img-top" alt="..." />
+            <img src="@/assets/logos/principios.png" class="card-img-top" alt="..." />
             <div class="card-icon">
               <i class="bi bi-award"></i>
             </div>

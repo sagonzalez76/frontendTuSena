@@ -8,7 +8,7 @@ import DashboardComponent from '@/components/TusenaComponents/AdminComponents/Da
 
 
 export default {
-    name: 'Dashboard',
+    name: 'DashboardAdmin',
     components: {
         DashboardComponent
 

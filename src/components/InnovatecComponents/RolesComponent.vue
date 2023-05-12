@@ -9,9 +9,9 @@
         <div class="row mb-5 mt-4 pb-5 mx-0 border border-1">
 
 
-            <h4 class="text-center py-4 fw-bold bg-roles">DINAMIZADOR SENNOVA</h4>
+            <h4 class="text-center py-4 fw-bold bg-roles text-light">DINAMIZADOR SENNOVA</h4>
 
-            <div class="col-lg mx-0 bg-dark d-flex align-items-center">
+            <div class="col-lg mx-0 bg-fotos d-flex align-items-center">
                 <div class="row">
                     <img src="@/assets/fotos/DanielCampo.jpg" class="img-fluid rounded rounded-circle mx-auto w-50 my-2 "
                         alt="...">
@@ -27,7 +27,7 @@
             <div class="col ms-4">
 
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-journal-check"></i> FORMACIÓN ACADÉMICA</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/birrete.png" alt="birrete" width="30px"> FORMACIÓN ACADÉMICA</h5>
                     <ul>
                         <li>Economia</li>
                         <li>Maestria en Agronegocios</li>
@@ -36,7 +36,7 @@
 
 
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-heart-arrow"></i> PROPÓSITO DEL ROL</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/proposito.png" alt="proposito" width="30px"> PROPÓSITO DEL ROL</h5>
                     <ul>
                         <li>Prestar servicios profesionales para la gestión de los procesos de planeación, ejecución y
                             evaluación de las diferentes estrategias de investigación aplicada, desarrollo tecnológico e
@@ -47,7 +47,7 @@
 
 
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"> <i class="bi bi-clipboard2-check"></i> RESPONSABILIDADES DEL ROL</h5>
+                    <h5 class="fw-bold py-2"> <img src="@/assets/logos/responsabilidad.png" alt="proposito" width="30px"> RESPONSABILIDADES DEL ROL</h5>
 
                     <ul>
                         <li>Articular la gestión de procesos de orden administrativo del Ecosistema SENNOVA de acuerdo con
@@ -65,14 +65,14 @@
                     </ul>
                 </div>
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-envelope"></i> CORREO ELECTRÓNICO</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/correo.png" alt="proposito" width="30px"> CORREO ELECTRÓNICO</h5>
 
                     <ul>
                         <li>dscampoz@sena.edu.co</li>
                     </ul>
                 </div>
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-search"></i> CVLAC</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/cvlac.png" alt="proposito" width="30px"> CVLAC</h5>
                     <ul>
                         <li>
                             <a class="text-break"
@@ -93,9 +93,9 @@
         <div class="row my-5  mx-0 border border-1">
 
 
-            <h4 class="text-center py-4 fw-bold bg-roles">DINAMIZADORA DEL CONOCIMIENTO</h4>
+            <h4 class="text-center text-light py-4 fw-bold bg-roles">DINAMIZADORA DEL CONOCIMIENTO</h4>
 
-            <div class="col-lg mx-0 bg-dark d-flex align-items-center">
+            <div class="col-lg mx-0 bg-fotos d-flex align-items-center">
                 <div class="row">
                     <img src="@/assets/fotos/CristinaSatizábaltrim.jpg"
                         class="img-fluid rounded rounded-circle mx-auto w-50 my-2 " alt="Isabel Cristina Satizábal Echavarría">
@@ -111,7 +111,7 @@
             <div class="col ms-4">
 
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-journal-check"></i> FORMACIÓN ACADÉMICA</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/birrete.png" alt="birrete" width="30px"> FORMACIÓN ACADÉMICA</h5>
                     <ul>
                         <li>Ingeniería Electrónica y Telecomunicaciones
                         </li>
@@ -122,7 +122,7 @@
 
 
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-heart-arrow"></i> PROPÓSITO DEL ROL</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/proposito.png" alt="proposito" width="30px"> PROPÓSITO DEL ROL</h5>
                     <ul>
                         <li>Prestar servicios profesionales en el ecosistema SENNOVA para apoyar desde el Centro de
                             Teleinformática y Producción Industrial, las actividades relacionadas con la gestión y
@@ -134,7 +134,7 @@
 
 
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"> <i class="bi bi-clipboard2-check"></i> RESPONSABILIDADES DEL ROL</h5>
+                    <h5 class="fw-bold py-2"> <img src="@/assets/logos/responsabilidad.png" alt="proposito" width="30px"> RESPONSABILIDADES DEL ROL</h5>
 
                     <ul>
                         <li>Apoyar la realización de actividades que contribuyan a desarrollar las competencias en I+D+i de
@@ -157,14 +157,14 @@
                     </ul>
                 </div>
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-envelope"></i> CORREO ELECTRÓNICO</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/correo.png" alt="proposito" width="30px"> CORREO ELECTRÓNICO</h5>
 
                     <ul>
                         <li>icsatizabal@sena.edu.co</li>
                     </ul>
                 </div>
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-search"></i> CVLAC</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/cvlac.png" alt="proposito" width="30px"> CVLAC</h5>
                     <ul>
                         <li>
                             <a class="text-break"
@@ -184,11 +184,11 @@
         <div class="row my-5  mx-0 border border-2">
 
 
-            <h4 class="text-center py-4 fw-bold bg-roles">INSTRUCTOR SENNOVA
+            <h4 class="text-center py-4 fw-bold bg-roles text-light">INSTRUCTOR SENNOVA
 
 </h4>
 
-            <div class="col-lg mx-0 bg-dark d-flex align-items-center">
+            <div class="col-lg mx-0 bg-fotos d-flex align-items-center">
                 <div class="row">
                     <img src="@/assets/fotos/WilsonOrtiztrim.jpg"
                         class="img-fluid rounded rounded-circle mx-auto w-50 my-2 " alt="Wilson Yecit Ortiz Sanchez">
@@ -204,7 +204,7 @@
             <div class="col ms-4">
 
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-journal-check"></i> FORMACIÓN ACADÉMICA</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/birrete.png" alt="birrete" width="30px"> FORMACIÓN ACADÉMICA</h5>
                     <ul>
                         <li>Ingeniería Electrónica y Telecomunicaciones
                         </li>
@@ -216,7 +216,7 @@
 
 
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-heart-arrow"></i> PROPÓSITO DEL ROL</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/proposito.png" alt="proposito" width="30px"> PROPÓSITO DEL ROL</h5>
                     <ul>
                         <li>Impartir formación profesional integral, realizando actividades de investigación aplicada, de conformidad con los niveles de formación y modalidades de atención en el área del Sistema de Investigación, Desarrollo Tecnológico e Innovación del SENA - SENNOVA, para generar habilidades y destrezas en los aprendices, cultura de innovación, la generación de nuevas tecnologías para la formación y para los diferentes sectores productivos, así como la apropiación y gestión del conocimiento y tecnologías generadas, contribuyendo al desarrollo sostenible del país, de conformidad con las políticas institucionales del programa SENNOVA y la normatividad vigente</li>
 
@@ -225,7 +225,7 @@
 
 
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"> <i class="bi bi-clipboard2-check"></i> RESPONSABILIDADES DEL ROL</h5>
+                    <h5 class="fw-bold py-2"> <img src="@/assets/logos/responsabilidad.png" alt="proposito" width="30px"> RESPONSABILIDADES DEL ROL</h5>
 
                     <ul>
                         <li class="texto-inv">Planear procesos formativos, en la modalidad presencial, virtual o a distancia, de acuerdo con el programa de formación, el perfil de los aprendices y los lineamientos institucionales</li>
@@ -243,7 +243,7 @@
                     </ul>
                 </div>
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-envelope"></i> CORREO ELECTRÓNICO</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/correo.png" alt="proposito" width="30px"> CORREO ELECTRÓNICO</h5>
 
                     <ul>
                         <li>wortiz@sena.edu.co@sena.edu.co
@@ -251,7 +251,7 @@
                     </ul>
                 </div>
                 <div class="row py-2">
-                    <h5 class="fw-bold py-2"><i class="bi bi-search"></i> CVLAC</h5>
+                    <h5 class="fw-bold py-2"><img src="@/assets/logos/cvlac.png" alt="proposito" width="30px"> CVLAC</h5>
                     <ul>
                         <li>
                             <a class="text-break"
@@ -280,7 +280,11 @@
     background-color: #39ca3e;
 }
 
+.bg-fotos{
 
+background-color: #00324D;
+
+}
 
 
 </style>

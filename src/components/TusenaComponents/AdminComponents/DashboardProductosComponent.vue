@@ -75,11 +75,9 @@
 
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h2 class="">Panel de Administracion</h2>
-
-      <button type="button" class="custom-btn btn-register my-2 mx-2 px-auto" data-bs-toggle="modal"
-        data-bs-target="#registrarFuncionarioModal"> <i class="bi bi-plus-lg"></i> Agregar
-        Funcionario</button>
+      <h2 class="">Panel de Administracion</h2> <button type="button" class="custom-btn btn-register my-2"
+        data-bs-toggle="modal" data-bs-target="#registrarProductoModal"> <i class="bi bi-plus-lg"></i> Agregar
+        Producto</button>
 
 
       <div class="btn-toolbar mb-2 mb-md-0">
@@ -96,47 +94,59 @@
 
     <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
 
-    <h3>Funcionarios</h3>
+    <h3>Productos</h3>
     <div class="table-responsive">
-      <table class="table table-striped table-hover table-sm">
+      <table class="table table-striped table-hover table-sm ">
         <thead class="table-success text-start">
-          <tr class="">
-            <th scope="col">#</th>
-            <th scope="col">Identificacion</th>
+          <tr class="me-4">
+            <th scope="col ">#</th>
+            <th scope="col">Titulo</th>
             <!-- <th scope="col">Autor(es)</th> -->
-            <th scope="col">Nombres</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">Correo Electronico</th>
+            <th scope="col">Autor</th>
+            <th scope="col">A&ntilde;o</th>
+            <th scope="col">Linea Programatica</th>
+            <th scope="col">Detalle</th>
 
-            <th scope="col">Contrase&ntilde;a</th>
-            <th scope="col">Telefono</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Subtipo</th>
+            <th scope="col">URL</th>
 
-            <th scope="col">Administrador</th>
+            <th scope="col">Idioma</th>
+            <th scope="col">Imagen</th>
             <th scope="col">Acciones</th>
 
           </tr>
         </thead>
         <tbody class="table-group-divider text-start">
-          <tr v-for="(funcionario, index) in funcionarios" :key="index" class="align-middle">
+          <tr v-for="(producto, index) in productos" :key="index" class="align-middle">
 
 
-            <td>{{ funcionario.funcionario_id }}</td>
-            <td>{{ funcionario.funcionario_iden }}</td>
-            <td>{{ funcionario.funcionario_nombre }}</td>
-            <td>{{ funcionario.funcionario_apellido }}</td>
-            <td>{{ funcionario.funcionario_correo }}</td>
-            <td>{{ funcionario.funcionario_contraseña }}</td>
-            <td>{{ funcionario.funcionario_telefono }}</td>
-            <td>{{ funcionario.funcionario_administrador }}</td>
+            <td>{{ producto.producto_id }}</td>
+            <td>{{ producto.productos_titulo }}</td>
+            <td>{{ producto.productos_autor }}</td>
+
+            <td>{{ producto.productos_ano }}</td>
+            <td>{{ producto.productos_linea }}</td>
+            <td>{{ producto.productos_detalle }}</td>
+            <td>{{ producto.productos_tipo }}</td>
+            <td>{{ producto.productos_subtipo }}</td>
+            <td>{{ producto.productos_url }}</td>
+            <td>{{ producto.productos_idioma }}</td>
+            <td>{{ producto.productos_imagen }}</td>
+
+
+
+
+
+
             <td class="d-flex text-start">
               <div class="row text-start">
                 <div class="col text-start">
-                  <button class="btn btn-warning  me-2" data-bs-toggle="modal"
-                    data-bs-target="#actualizarFuncionarioModal" @:click="buscarFuncionario(funcionario.funcionario_id)">
+                  <button class="btn btn-warning  me-2" data-bs-toggle="modal" data-bs-target="#actualizarProductoModal"
+                    @:click="buscarProducto(producto.producto_id)">
                     <i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarFuncionarioModal"
-                    @:click="buscarFuncionario(funcionario.funcionario_id)"> <i class="bi bi-trash3-fill"></i></button>
-
+                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarProductoModal"
+                    @:click="buscarProducto(producto.producto_id)"> <i class="bi bi-trash3-fill"></i></button>
 
 
 
@@ -155,8 +165,7 @@
   </main>
 
 
-
-  <div class="modal fade" id="registrarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="registrarProductoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-dark">
@@ -172,59 +181,121 @@
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Registra un Funcionario</h3>
+                    <h3>Agrega un Producto</h3>
                     <p>Llena los campos que veras a continuacion:</p>
 
-                    <form class="" method="POST" v-on:submit.prevent="registrarFuncionario">
+                    <form class="" method="POST" v-on:submit.prevent="registrarProducto">
 
                       <div class="col-md-12">
-                        <input v-model="identificacion" class="form-control text-dark" type="number" name="name"
-                          placeholder="Numero de Identificacion" required>
+                        <input class="form-control text-dark" type="text" required placeholder="Titulo" v-model="titulo">
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
                       <div class="col-md-12">
-                        <input v-model="nombres" class="form-control text-dark" type="text" name="name"
-                          placeholder="Nombres" required>
+                        <input class="form-control text-dark" type="text" name="name" placeholder="Autor" v-model="autor"
+                          required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
                       <div class="col-md-12">
-                        <input v-model="apellidos" class="form-control text-dark" type="text" name="apellido"
-                          placeholder="Apellidos" required>
+                        <input class="form-control text-dark" type="date" name="apellido" placeholder="Año" v-model="ano"
+                          required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
 
                       <div class="col-md-12">
-                        <input v-model="correo" class="form-control" type="email" name="email"
-                          placeholder="Correo Electronico" required>
+                        <input class="form-control text-dark" type="text" name="" placeholder="Linea Programatica"
+                          v-model="linea" required>
                         <!-- <div class="valid-feedback">Email field is valid!</div>
                         <div class="invalid-feedback">Email field cannot be blank!</div> -->
                       </div>
 
 
                       <div class="col-md-12">
-                        <input v-model="contrasena" class="form-control" type="password" name="password"
-                          placeholder="Contraseña" required>
+                        <input class="form-control text-dark" type="text" name="" placeholder="Detalle" v-model="detalle"
+                          required>
                         <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
+                      </div>
+
+
+                      <!-- <div class="col-md-12">
+                        <input class="form-control text-dark" type="text" name="" placeholder="Tipo" v-model="tipo"
+                          required>
+                      </div> -->
+
+                      <div class="col-md-12 text-dark">
+                        <select name="subtipo" class="text-dark" v-model="tipo">
+                          <option value="value1" selected disabled>Elija un Tipo de Producto</option>
+                          <option value="Actividades como Evaluador">Actividades como Evaluador</option>
+                          <option value="Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia">
+                            Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia</option>
+                          <option value="Desarrollo Tecnologico e Innovacion">Desarrollo Tecnológico e Innovación</option>
+                          <option value="Formación de Recurso Humano para la CTEI">Formación de Recurso Humano para la
+                            CTEI</option>
+                          <option value="Generación de Nuevo Conocimiento">Generación de Nuevo Conocimiento</option>
+
+                        </select>
+                      </div>
+
+
+
+                      <!-- <div class="col-md-12">
+                        <input class="form-control text-dark" type="text" name="" placeholder="Subtipo" v-model="subtipo"
+                          required>
+                      </div> -->
+
+                      <div class="col-md-12 text-dark">
+
+                        <select name="subtipo" class="text-dark" v-model="subtipo">
+                          <option value="value1" disabled>Elija un Subtipo de Producto</option>
+                          <option value="Artículos de Investigación A1, A2, B y C">Artículos de Investigación A1, A2, B y
+                            C</option>
+                          <option value="Consultorías Científico-Tecnológicas">Consultorías Científico-Tecnológicas
+                          </option>
+                          <option value="Direcciones de Trabajo de Pregrado">Direcciones de Trabajo de Pregrado</option>
+                          <option value="Divulgación Pública de la CTeI">Divulgación Pública de la CTeI</option>
+                          <option value="Estrategias Pedagógicas para el
+                            Fomento a la CTI">Estrategias Pedagógicas para el
+                            Fomento a la CTI</option>
+                          <option value="Eventos Científicos con Componente de Apropiación">Eventos Científicos con
+                            Componente de Apropiación</option>
+                          <option value="Informes Finales de Investigación">Informes Finales de Investigación</option>
+                          <option value="Informes Técnicos">Informes Técnicos</option>
+                          <option value="Normas Técnicas">Normas Técnicas</option>
+                          <option value="Otro Programa Académico">Otro Programa Académico</option>
+                          <option value="Participación en Comités de Evaluación">Participación en Comités de Evaluación
+                          </option>
+                          <option value="Plantas Piloto">Plantas Piloto</option>
+                          <option
+                            value="Procesos de Apropiación Social del Conocimiento para el Fortalecimiento o Solución de Asuntos de Interés Social">
+                            Procesos de Apropiación Social del Conocimiento para el Fortalecimiento o Solución de Asuntos
+                            de Interés Social</option>
+                          <option value="Prototipos Industriales">Prototipos Industriales</option>
+                          <option value="Proyectos de Investigacion y Desarrollo">Proyectos de Investigacion y Desarrollo
+                          </option>
+                          <option value="Proyectos de Investigación, Desarrollo e Innovación (ID+I)">Proyectos de
+                            Investigación, Desarrollo e Innovación (ID+I)</option>
+
+                        </select>
+
                       </div>
 
 
                       <div class="col-md-12">
-                        <input v-model="telefono" class="form-control" type="text" name="phone"
-                          placeholder="Celular/Telefono" required>
-                        <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
-                        <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
+                        <input class="form-control text-dark" type="text" name="" placeholder="URL/Documentacion"
+                          v-model="url" required>
                       </div>
-
-                      <div class="form-check mt-2">
-                        <input class="form-check-input" type="checkbox" value='' id="invalidCheck">
-                        <label class="form-check-label">El usuario sera Administrador?</label>
-                        <!-- <div class="invalid-feedback">Tenga en cuenta que el administrador podra ver, modificar o eliminar los datos contenidos en la base de datos de la aplicacion</div> -->
+                      <div class="col-md-12">
+                        <input class="form-control text-dark" type="text" name="" placeholder="Idioma" v-model="idioma"
+                          required>
+                      </div>
+                      <div class="col-md-12">
+                        <input class="form-control text-dark" type="text" name="" placeholder="Imagen" v-model="imagen"
+                          required>
                       </div>
 
 
@@ -265,7 +336,7 @@
   <!-- MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR  -->
 
 
-  <div class="modal fade" id="actualizarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="actualizarProductoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-dark">
@@ -284,50 +355,51 @@
                     <h3>Actualiza un Funcionario</h3>
                     <p>Llena los campos que veras a continuacion:</p>
 
-                    <form class="" method="POST" v-on:submit.prevent="actualizarFuncionario(funcionario.funcionario_id)">
+                    <form class="" method="POST" v-on:submit.prevent="actualizarProducto(producto.producto_id)">
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_iden" class="form-control text-dark" type="number"
+                        <input class="form-control text-dark" type="text" required v-model="producto.productos_titulo">
+                        <!-- <div class="valid-feedback">Username field is valid!</div>
+                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
+                      </div>
+                      <div class="col-md-12">
+                        <input class="form-control text-dark" type="text" name="name" v-model="producto.productos_autor"
                           required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
-                      <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_nombre" class="form-control text-dark" type="text"
-                          name="name" required>
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
-                      </div>
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_apellido" class="form-control text-dark" type="text"
-                          name="apellido" placeholder="Apellidos" required>
+                        <input class="form-control text-dark" type="text" name="apellido"
+                          v-model="producto.productos_linea" required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_correo" class="form-control" type="email" name="email"
-                          placeholder="Correo Electronico" required>
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_detalle"
+                          required>
                         <!-- <div class="valid-feedback">Email field is valid!</div>
                         <div class="invalid-feedback">Email field cannot be blank!</div> -->
                       </div>
 
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_contraseña" class="form-control" type="password"
-                          name="password" placeholder="Contraseña" required>
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_tipo"
+                          required>
                         <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
                       </div>
 
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_telefono" class="form-control" type="text" name="phone"
-                          placeholder="Celular/Telefono" required>
-                        <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
-                        <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_subtipo"
+                          required>
+                      </div>
+                      <div class="col-md-12">
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_idioma"
+                          required>
                       </div>
 
                       <div class="form-check mt-2">
@@ -376,7 +448,7 @@
 
 
 
-  <div class="modal fade" id="eliminarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="eliminarProductoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-dark">
@@ -392,10 +464,10 @@
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Seguro deseas eliminar el usuario con identificacion: {{ funcionario.funcionario_iden }}?</h3>
+                    <h3>Seguro deseas eliminar el producto: {{ producto.productos_titulo }}?</h3>
 
 
-                    <form class="" method="POST" v-on:submit.prevent="eliminarFuncionario(funcionario.funcionario_id)">
+                    <form class="" method="POST" v-on:submit.prevent="eliminarProducto(producto.producto_id)">
 
 
 
@@ -439,37 +511,44 @@
 
 export default {
 
-  name: "DashboardFuncionarioComponent",
+  name: "DashboardProductosComponent",
 
   data() {
     return {
-      funcionario: [],
-      funcionarios: [],
+      producto: [],
+      productos: [],
+
       id: null,
-      identificacion: '',
-      nombres: "",
-      apellidos: "",
-      correo: "",
-      contrasena: "",
-      telefono: null,
-      admin: true
+      titulo: '',
+      autor: "",
+      ano: "",
+      linea: "",
+      detalle: "",
+      tipo: "",
+      subtipo: "Elija un Subtipo de Producto",
+      url: "",
+      idioma: "",
+      imagen: "",
+
+
     }
   },
 
 
   async mounted() {
-    await this.buscarFuncionarios();
+    await this.buscarProductos();
 
   },
 
 
   methods: {
 
-    async buscarFuncionarios() {
+    async buscarProductos() {
 
-      await this.axios.get('http://localhost:3000/funcionario')
+      await this.axios.get('http://localhost:3000/producto')
         .then(response => {
-          this.funcionarios = response.data.new_funcionario
+          console.log(response);
+          this.productos = response.data.new_producto
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -478,41 +557,53 @@ export default {
         .catch((e) => {
           console.log(e)
         });
-
-
     },
 
-    async registrarFuncionario() {
+    async registrarProducto() {
 
       let json = {
 
-        "funcionario_iden": this.identificacion,
-        "funcionario_nombre": this.nombres,
-        "funcionario_apellido": this.apellidos,
-        "funcionario_correo": this.correo,
-        "funcionario_contraseña": this.contrasena,
-        "funcionario_telefono": this.telefono,
-        "funcionario_administrador": this.admin,
+        // "funcionario_iden": this.identificacion,
+        // "funcionario_nombre": this.nombres,
+        // "funcionario_apellido": this.apellidos,
+        // "funcionario_correo": this.correo,
+        // "funcionario_contraseña": this.contrasena,
+        // "funcionario_telefono": this.telefono,
+        // "funcionario_administrador": this.admin,
+
+
+
+        "productos_titulo": this.titulo,
+        "productos_ano": this.ano,
+        "productos_url": this.url,
+        "productos_detalle": this.detalle,
+        "productos_autor": this.autor,
+        "productos_tipo": this.tipo,
+        "productos_subtipo": this.subtipo,
+        "productos_idioma": this.idioma,
+        "productos_linea": this.linea,
+        "producto_imagen": this.imagen,
 
       };
-      await this.axios.post('http://localhost:3000/funcionario', json)
+      await this.axios.post('http://localhost:3000/producto', json)
         .then(data => {
           console.log(data);
+          alert(data.data.message)
+          this.buscarProductos();
 
-          this.buscarFuncionarios();
 
         })
     },
 
 
-    async buscarFuncionario(funcionario_id) {
-      // console.log(funcionario_id);
+    async buscarProducto(producto_id) {
+      console.log(producto_id);
 
-      await this.axios.get('http://localhost:3000/funcionario/' + funcionario_id)
+      await this.axios.get('http://localhost:3000/producto/' + producto_id)
         .then(response => {
-          this.funcionario = response.data.new_funcionario;
+          this.producto = response.data.new_producto;
 
-          console.log(this.funcionario);
+          console.log(this.producto);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -524,22 +615,38 @@ export default {
     },
 
 
-    async actualizarFuncionario(funcionario_id) {
+    async actualizarProducto(producto_id) {
 
       let json = {
 
-        "funcionario_iden": this.funcionario.funcionario_iden,
-        "funcionario_nombre": this.funcionario.funcionario_nombre,
-        "funcionario_apellido": this.funcionario.funcionario_apellido,
-        "funcionario_correo": this.funcionario.funcionario_correo,
-        "funcionario_contraseña": this.funcionario.funcionario_contraseña,
-        "funcionario_telefono": this.funcionario.funcionario_telefono,
-        "funcionario_administrador": this.funcionario.funcionario_administrador,
+        "productos_titulo": this.producto.productos_titulo,
+        "productos_ano": this.producto.productos_ano,
+        "productos_url": this.producto.productos_url,
+        "productos_detalle": this.producto.productos_detalle,
+        // "productos_autor": this.producto.productos_autor,
+        "productos_tipo": this.producto.productos_tipo,
+        "productos_subtipo": this.producto.productos_subtipo,
+        "productos_idioma": this.producto.productos_idioma,
+        "productos_linea": this.producto.productos_linea,
+        "producto_imagen": this.producto.productos_imagen,
+
+
+        // PRODUCTO.productos_titulo = productos_titulo
+        // PRODUCTO.productos_ano = productos_ano
+        // PRODUCTO.productos_url = productos_url
+        // PRODUCTO.productos_detalle = productos_detalle
+        // PRODUCTO.productos_tipo = productos_tipo
+        // PRODUCTO.productos_subtipo = productos_subtipo
+        // PRODUCTO.productos_idioma = productos_idioma
+        // PRODUCTO.productos_linea = productos_linea
+        // PRODUCTO.producto_imagen = producto_imagen
 
       };
+      console.log(json);
 
-      console.log(funcionario_id);
-      await this.axios.patch('http://localhost:3000/funcionario/' + funcionario_id, json)
+      console.log(producto_id);
+      console.log(this.producto);
+      await this.axios.patch('http://localhost:3000/producto/' + producto_id, json)
         .then(response => {
           alert(response.data.message);
           // console.log(response.data.new_funcionario[0].funcionario_id);
@@ -551,16 +658,16 @@ export default {
           console.log(e)
         });
 
-      this.buscarFuncionarios();
+      this.buscarProductos();
     },
 
 
 
 
-    async eliminarFuncionario(funcionario_id) {
+    async eliminarProducto(producto_id) {
 
-      console.log(funcionario_id);
-      await this.axios.delete('http://localhost:3000/funcionario/' + funcionario_id)
+      console.log(producto_id);
+      await this.axios.delete('http://localhost:3000/producto/' + producto_id)
         .then(response => {
           console.log(response.data.message);
           alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);
@@ -573,7 +680,7 @@ export default {
           console.log(e)
         });
 
-      this.buscarFuncionarios();
+      this.buscarProductos();
     },
 
 
@@ -583,10 +690,6 @@ export default {
 
 
   },
-
-
-
-
 
 
 }
@@ -618,6 +721,13 @@ export default {
   z-index: 1;
 
 }
+
+
+
+
+
+
+
 
 
 
@@ -960,6 +1070,8 @@ body {
 .form-content input[type=email],
 .form-content input[type=phone],
 .form-content input[type=number],
+.form-content input[type=date],
+
 .form-content select {
   width: 100%;
   padding: 9px 20px;

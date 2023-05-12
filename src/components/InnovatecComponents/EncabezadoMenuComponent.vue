@@ -133,17 +133,17 @@
                                 Semilleros
                             </router-link>
                             <ul class="dropdown-menu fade-in border-1 border-dark rounded-bottom-2 rounded-top-0">
-                                <li><router-link to="/semilleros" class="dropdown-item" href="#">
+                                <li><router-link to="/semilleros/ereeca" class="dropdown-item" href="#">
                                         EREECA</router-link></li>
-                                <li><router-link to="/investigadores" class="dropdown-item" href="#">
+                                <li><router-link to="/semilleros/cread+" class="dropdown-item" href="#">
                                         CREAD+</router-link></li>
-                                <li><router-link to="/investigadores" class="dropdown-item" href="#">
+                                <li><router-link to="/semilleros/siitis" class="dropdown-item" href="#">
                                         SIITIS</router-link></li>
-                                <li><router-link to="/investigadores" class="dropdown-item" href="#">
+                                <li><router-link to="/semilleros/senautronic" class="dropdown-item" href="#">
                                         SENAUTRONIC</router-link></li>
-                                <li><router-link to="/investigadores" class="dropdown-item" href="#">
+                                <li><router-link to="/semilleros/innovatelcos" class="dropdown-item" href="#">
                                         INNOVATELCOS</router-link></li>
-                                <li><router-link to="/investigadores" class="dropdown-item" href="#myCarousel6">
+                                <li><router-link to="/semilleros/sinafred" class="dropdown-item" href="#myCarousel6">
                                         SINAFRED</router-link>
                                 </li>
 
@@ -159,17 +159,7 @@
 
 
 
-                        <li class="nav-item dropdown mx-2">
-                            <router-link to="" class="nav-link dropdown text-dark" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Equipo Sennova
-                            </router-link>
-                            <ul class="dropdown-menu fade-in border-1 border-dark rounded-bottom-2 rounded-top-0">
-                                <li><router-link to="/equipo_sennova" class="dropdown-item" href="#">Ver Equipo
-                                        Sennova</router-link></li>
-
-                            </ul>
-                        </li>
+                  
 
 
 
@@ -178,18 +168,27 @@
                         </div>
 
 
-
                         <li class="nav-item dropdown mx-2">
-                            <router-link to="" class="nav-link dropdown text-dark" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <router-link to="/proyectos" class="nav-link dropdown text-dark" href="#" role="button"
+                                aria-expanded="false">
                                 Proyectos
                             </router-link>
-                            <ul class="dropdown-menu fade-in border-1 border-dark rounded-bottom-2 rounded-top-0">
-                                <li><router-link to="/proyectos" class="dropdown-item" href="#">Ver Proyectos</router-link>
-                                </li>
 
-                            </ul>
                         </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                         <div class="divider d-none d-lg-block">
                             <div class="vr"></div>
@@ -198,15 +197,11 @@
 
 
                         <li class="nav-item dropdown mx-2">
-                            <router-link to="" class="nav-link dropdown text-dark" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Productos
+                            <router-link to="/productos" class="nav-link dropdown text-dark" href="#" role="button"
+                                aria-expanded="false">
+                                    Productos
                             </router-link>
-                            <ul class="dropdown-menu fade-in border-1 border-dark rounded-bottom-2 rounded-top-0">
-                                <li><router-link to="/productos" class="dropdown-item" href="#">Ver Productos</router-link>
-                                </li>
 
-                            </ul>
                         </li>
 
 

@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/innovatec/HomeView.vue';
 import PageNotFoundView from '../views/PageNotFoundView.vue';
+import DashboardAdmin from '../views/tusena/admin/DashboardAdmin.vue'
 
+import SemillerosView from "../views/innovatec/SemillerosView.vue"
 
 
 const routes = [
@@ -50,6 +52,51 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/innovatec/SemillerosView.vue')
   },
+
+
+  {
+    path: '/semilleros',
+    name: 'semilleros',
+    component: SemillerosView,
+    children: [
+
+      {
+        path: 'cread+',
+        component:() => import('../components/InnovatecComponents/SemillerosCread+Component.vue')
+      },
+
+      {
+        path: 'ereeca',
+        component:() => import('../components/InnovatecComponents/SemillerosEreecaComponent.vue')
+      },
+      {
+        path: 'siitis',
+        component:() => import('../components/InnovatecComponents/SemillerosSiitisComponent.vue')
+      },
+      {
+        path: 'senautronic',
+        component:() => import('../components/InnovatecComponents/SemillerosSenautronicComponent.vue')
+      },
+      {
+        path: 'innovatelcos',
+        component:() => import('../components/InnovatecComponents/SemillerosInnovatelcosComponent.vue')
+      },   {
+        path: 'sinafred',
+        component:() => import('../components/InnovatecComponents/SemillerosSinafredComponent.vue')
+      },
+      
+      
+
+    ]
+  },
+
+
+
+
+
+
+
+
   {
     path: '/productos',
     name: 'productos',
@@ -141,7 +188,43 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/tusena/admin/DashboardAdmin.vue')
   },
 
-  
+
+  {
+    path: '/admin/dashboard/',
+    name: 'admin/dashboard/',
+    component: DashboardAdmin,
+    children: [
+
+      {
+        path: 'funcionarios',
+        component:() => import('../components/TusenaComponents/AdminComponents/DashboardFuncionarioComponent.vue')
+      },
+      {
+        path: 'semilleros',
+        component:() => import('../components/TusenaComponents/AdminComponents/DashboardSemillerosComponent.vue')
+      },
+      {
+        path: 'productos',
+        component:() => import('../components/TusenaComponents/AdminComponents/DashboardProductosComponent.vue')
+      },
+      {
+        path: 'proyectos',
+        component:() => import('../components/TusenaComponents/AdminComponents/DashboardProyectosComponent.vue')
+      },
+      {
+        path: 'programas',
+        component:() => import('../components/TusenaComponents/AdminComponents/DashboardProgramasComponent.vue')
+      }
+      
+
+    ]
+  }
+
+
+
+
+
+
 ]
 
 const router = createRouter({

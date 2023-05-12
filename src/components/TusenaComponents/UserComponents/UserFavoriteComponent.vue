@@ -70,11 +70,7 @@
                 <div class="col mt-3">
 
                   <ProductComponent></ProductComponent>
-                  <ProductComponent></ProductComponent>
-                  <ProductComponent></ProductComponent>
-                  <ProductComponent></ProductComponent>
-                  <ProductComponent></ProductComponent>
-                  <ProductComponent></ProductComponent>
+          
 
                 </div>
 

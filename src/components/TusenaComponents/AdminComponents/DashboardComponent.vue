@@ -91,44 +91,44 @@
           <div class="position-sticky pt-3 sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <router-link to="/admin/dashboard/funcionarios" class="nav-link" aria-pressed="true" aria-current="page" href="#">
 
                   <!-- <span data-feather="home" class="align-text-bottom"> </span> -->
 
                   <i class="bi bi-person"></i> Funcionarios
 
-                </a>
+                </router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <router-link to="/admin/dashboard/semilleros" class="nav-link" aria-pressed="true" href="#">
                   <i class="bi bi-flower2"></i> Semilleros
 
 
 
                   <!-- <span data-feather="file" class="align-text-bottom"></span> -->
 
-                </a>
+                </router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <router-link to="/admin/dashboard/productos" class="nav-link"  aria-pressed="true" href="#">
                   <!-- <span data-feather="shopping-cart" class="align-text-bottom"></span> -->
 
                   <i class="bi bi-file-bar-graph"></i> Productos
 
 
-                </a>
+                </router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <router-link to="/admin/dashboard/proyectos" class="nav-link"  aria-pressed="true" href="#">
                   <!-- <span data-feather="users" class="align-text-bottom"></span> -->
                   <i class="bi bi-folder-check"></i> Proyectos
-                </a>
+                </router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <router-link to="/admin/dashboard/programas" class="nav-link"  aria-pressed="true" href="#">
                   <!-- <span data-feather="bar-chart-2" class="align-text-bottom"></span> -->
                   <i class="bi bi-inboxes-fill"></i> Programas
-                </a>
+                </router-link>
               </li>
             </ul>
 
@@ -167,7 +167,7 @@
           </div>
         </nav>
 
-        <DashboardFuncionarioComponent></DashboardFuncionarioComponent>
+       <router-view></router-view>
       </div>
     </div>
 
@@ -189,34 +189,6 @@ export default {
     DashboardFuncionarioComponent
   },
 
-  data() {
-    return {
-      productos: []
-    }
-  },
-
-  async mounted() {
-    await this.buscarProductos();
-  },
-
-  computed: {
-
-    async buscarProductos() {
-      await this.axios.get('http://localhost:3000/funcionario')
-        .then(response => {
-          this.funcionarios = response.data.new_funcionario
-          // console.log(response.data.new_producto);
-          console.log(this.funcionarios);
-          // console.log(this.state.productos);
-        }) //Mostrar por consola el error
-        .catch((e) => {
-          console.log(e)
-        });
-    },
-
-
-  }
-
 
 }
 </script>
@@ -225,6 +197,14 @@ export default {
 
 
 <style scoped>
+
+.nav-link:active{
+background-color: aqua;
+
+}
+
+
+
 body {
   font-size: .875rem;
 }

@@ -116,7 +116,7 @@
                       <br>
                       <button class="btn btn-success p-0" type="submit">
 
-                        <router-link to="/admin/dashboard" class="btn btn-success p-2 m-0">
+                        <router-link to="/admin/dashboard/funcionarios" class="btn btn-success p-2 m-0">
 
                           <i class="bi bi-check-lg"></i>
                           Guardar

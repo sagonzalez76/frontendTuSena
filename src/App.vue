@@ -16,7 +16,7 @@
 
   <router-view />
 
-
+<!-- 
   <button class="back-to-top">
 
     <a href="#">  <svg
@@ -34,7 +34,7 @@
 
 
 
-</button>
+</button> -->
 
 </template>
 

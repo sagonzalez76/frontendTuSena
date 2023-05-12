@@ -10,6 +10,8 @@
             <img src="@/assets/logos/logoInnovatectrim.jpg" alt="" width="" class="logo-3 me-3 my-2 align-middle">
         </div>
     </header>
+
+    
 </template>
 
 

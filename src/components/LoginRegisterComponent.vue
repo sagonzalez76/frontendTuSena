@@ -54,7 +54,7 @@
 
                                                 <div class="col-12 d-flex justify-content-center"> <button type="button"
                                                         data-bs-dismiss="modal"
-                                                        class="custom-btn btn-iniciar btn-block mt-4 mb-0 px-2"><router-link
+                                                        class="custom-btn btn-iniciar btn-block mt-4 mb-0 px-2 w-100"><router-link
                                                             to="/productosmain"
                                                             class="text-decoration-none text-dark">Iniciar
                                                             Sesion</router-link></button></div>
@@ -272,7 +272,7 @@
 
                         <div class="row ">
                             <div class="col d-flex justify-content-center"> <button type="submit"
-                                    class="custom-btn btn-iniciar btn-block mb-3 mt-0 px-2">Registrarme</button></div>
+                                    class="custom-btn btn-iniciar btn-block mb-3 mt-0 px-2 w-100">Registrarme</button></div>
                         </div>
 
                         <!-- Submit button -->

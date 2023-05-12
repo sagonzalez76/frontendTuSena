@@ -75,11 +75,9 @@
 
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h2 class="">Panel de Administracion</h2>
-
-      <button type="button" class="custom-btn btn-register my-2 mx-2 px-auto" data-bs-toggle="modal"
-        data-bs-target="#registrarFuncionarioModal"> <i class="bi bi-plus-lg"></i> Agregar
-        Funcionario</button>
+      <h2 class="">Panel de Administracion</h2> <button type="button" class="custom-btn btn-register my-2"
+        data-bs-toggle="modal" data-bs-target="#registrarproductomodal"> <i class="bi bi-plus-lg"></i> Agregar
+        Programas</button>
 
 
       <div class="btn-toolbar mb-2 mb-md-0">
@@ -96,12 +94,12 @@
 
     <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
 
-    <h3>Funcionarios</h3>
+    <h3>Semilleros</h3>
     <div class="table-responsive">
       <table class="table table-striped table-hover table-sm">
         <thead class="table-success text-start">
           <tr class="">
-            <th scope="col">#</th>
+            <th scope="col">#</th>  
             <th scope="col">Identificacion</th>
             <!-- <th scope="col">Autor(es)</th> -->
             <th scope="col">Nombres</th>
@@ -130,14 +128,11 @@
             <td>{{ funcionario.funcionario_administrador }}</td>
             <td class="d-flex text-start">
               <div class="row text-start">
-                <div class="col text-start">
-                  <button class="btn btn-warning  me-2" data-bs-toggle="modal"
-                    data-bs-target="#actualizarFuncionarioModal" @:click="buscarFuncionario(funcionario.funcionario_id)">
-                    <i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarFuncionarioModal"
-                    @:click="buscarFuncionario(funcionario.funcionario_id)"> <i class="bi bi-trash3-fill"></i></button>
+                <div class="col text-start"> 
+                  <button class="btn btn-warning  me-2"> <i class="bi bi-pencil-square"></i></button>
+                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#actualizarproductomodal"> <i class="bi bi-trash3-fill"></i></button>
 
-
+                 
 
 
                 </div>
@@ -156,7 +151,7 @@
 
 
 
-  <div class="modal fade" id="registrarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="registrarproductomodal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-dark">
@@ -221,6 +216,43 @@
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
                       </div>
 
+                      <!-- <div class="col-md-12">
+                          <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                          <div class="valid-feedback">Email field is valid!</div>
+                          <div class="invalid-feedback">Email field cannot be blank!</div>
+                        </div> -->
+
+
+
+                      <!-- <div class="col-md-12">
+                        <select class="form-select mt-3" required>
+                          <option selected disabled value="">Position</option>
+                          <option value="jweb">Junior Web Developer</option>
+                          <option value="sweb">Senior Web Developer</option>
+                          <option value="pmanager">Project Manager</option>
+                        </select>
+                        <div class="valid-feedback">You selected a position!</div>
+                        <div class="invalid-feedback">Please select a position!</div>
+                      </div> -->
+
+
+
+
+                      <!-- <div class="col-md-12 mt-3">
+                        <label class="mb-3 mr-1" for="gender">Gender: </label>
+
+                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
+                        <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+
+                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
+                        <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+
+                        <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
+                        <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
+                        <div class="valid-feedback mv-up">You selected a gender!</div>
+                        <div class="invalid-feedback mv-up">Please select a gender!</div>
+                      </div> -->
+
                       <div class="form-check mt-2">
                         <input class="form-check-input" type="checkbox" value='' id="invalidCheck">
                         <label class="form-check-label">El usuario sera Administrador?</label>
@@ -255,17 +287,18 @@
               </div>
             </div>
           </div>
+
         </div>
+
       </div>
     </div>
   </div>
 
 
 
-  <!-- MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR MODAL ACTUALIZAR  -->
 
 
-  <div class="modal fade" id="actualizarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="actualizarproductomodal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-dark">
@@ -281,34 +314,34 @@
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Actualiza un Funcionario</h3>
+                    <h3>Registra un Funcionario</h3>
                     <p>Llena los campos que veras a continuacion:</p>
 
-                    <form class="" method="POST" v-on:submit.prevent="actualizarFuncionario(funcionario.funcionario_id)">
+                    <form class="" method="POST" v-on:submit.prevent="registrarFuncionario">
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_iden" class="form-control text-dark" type="number"
-                          required>
+                        <input v-model="identificacion" class="form-control text-dark" type="number" name="name"
+                          placeholder="Numero de Identificacion" required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_nombre" class="form-control text-dark" type="text"
-                          name="name" required>
+                        <input v-model="nombres" class="form-control text-dark" type="text" name="name"
+                          placeholder="Nombres" required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_apellido" class="form-control text-dark" type="text"
-                          name="apellido" placeholder="Apellidos" required>
+                        <input v-model="apellidos" class="form-control text-dark" type="text" name="apellido"
+                          placeholder="Apellidos" required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_correo" class="form-control" type="email" name="email"
+                        <input v-model="correo" class="form-control" type="email" name="email"
                           placeholder="Correo Electronico" required>
                         <!-- <div class="valid-feedback">Email field is valid!</div>
                         <div class="invalid-feedback">Email field cannot be blank!</div> -->
@@ -316,19 +349,56 @@
 
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_contraseña" class="form-control" type="password"
-                          name="password" placeholder="Contraseña" required>
+                        <input v-model="contrasena" class="form-control" type="password" name="password"
+                          placeholder="Contraseña" required>
                         <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
                       </div>
 
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_telefono" class="form-control" type="text" name="phone"
+                        <input v-model="telefono" class="form-control" type="text" name="phone"
                           placeholder="Celular/Telefono" required>
                         <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
                       </div>
+
+                      <!-- <div class="col-md-12">
+                          <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                          <div class="valid-feedback">Email field is valid!</div>
+                          <div class="invalid-feedback">Email field cannot be blank!</div>
+                        </div> -->
+
+
+
+                      <!-- <div class="col-md-12">
+                        <select class="form-select mt-3" required>
+                          <option selected disabled value="">Position</option>
+                          <option value="jweb">Junior Web Developer</option>
+                          <option value="sweb">Senior Web Developer</option>
+                          <option value="pmanager">Project Manager</option>
+                        </select>
+                        <div class="valid-feedback">You selected a position!</div>
+                        <div class="invalid-feedback">Please select a position!</div>
+                      </div> -->
+
+
+
+
+                      <!-- <div class="col-md-12 mt-3">
+                        <label class="mb-3 mr-1" for="gender">Gender: </label>
+
+                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
+                        <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+
+                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
+                        <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+
+                        <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
+                        <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
+                        <div class="valid-feedback mv-up">You selected a gender!</div>
+                        <div class="invalid-feedback mv-up">Please select a gender!</div>
+                      </div> -->
 
                       <div class="form-check mt-2">
                         <input class="form-check-input" type="checkbox" value='' id="invalidCheck">
@@ -347,7 +417,7 @@
                             <span></span>
                             <span></span>
                             <span></span>
-                            Actualizar
+                            Registrar
                           </a>
 
                         </button>
@@ -364,69 +434,9 @@
               </div>
             </div>
           </div>
+
         </div>
-      </div>
-    </div>
-  </div>
 
-
-
-
-
-
-
-
-  <div class="modal fade" id="eliminarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-    data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
-    <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
-        <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div> -->
-        <!-- <div class="modal-header p-0 m-0 border border-0">
-                    <img src="https://placeimg.com/600/200/animals" class="img-fluid  mx-auto d-block" alt="...">
-                </div> -->
-        <div class="modal-body py-0 mt-0 col-12 px-2">
-          <div class="form-body p-0">
-            <div class="row">
-              <div class="form-holder p-0">
-                <div class="form-content p-0 m-0">
-                  <div class="form-items">
-                    <h3>Seguro deseas eliminar el usuario con identificacion: {{ funcionario.funcionario_iden }}?</h3>
-
-
-                    <form class="" method="POST" v-on:submit.prevent="eliminarFuncionario(funcionario.funcionario_id)">
-
-
-
-                      <div class="form-button mt-5 align-items-center d-flex justify-content-between">
-                        <!-- <button id="submit" type="submit" class="btn btn-primary">Register</button> -->
-                        <button type="submit" class="bg-dark p-0 m-0 border border-0" data-bs-dismiss="modal"
-                          aria-label="Close">
-
-                          <a class="border border-light mt-0">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Eliminar
-                          </a>
-
-                        </button>
-
-
-                        <button type="button" class="btn btn-cerrar border border-danger" data-bs-dismiss="modal"
-                          aria-label="Close">Cancelar</button>
-
-                      </div>
-
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -443,10 +453,8 @@ export default {
 
   data() {
     return {
-      funcionario: [],
       funcionarios: [],
-      id: null,
-      identificacion: '',
+      identificacion: null,
       nombres: "",
       apellidos: "",
       correo: "",
@@ -456,36 +464,9 @@ export default {
     }
   },
 
-
-  async mounted() {
-    await this.buscarFuncionarios();
-
-  },
-
-
   methods: {
-
-    async buscarFuncionarios() {
-
-      await this.axios.get('http://localhost:3000/funcionario')
-        .then(response => {
-          this.funcionarios = response.data.new_funcionario
-          // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
-          // console.log(this.state.productos);
-        }) //Mostrar por consola el error
-        .catch((e) => {
-          console.log(e)
-        });
-
-
-    },
-
     async registrarFuncionario() {
-
       let json = {
-
         "funcionario_iden": this.identificacion,
         "funcionario_nombre": this.nombres,
         "funcionario_apellido": this.apellidos,
@@ -497,96 +478,34 @@ export default {
       };
       await this.axios.post('http://localhost:3000/funcionario', json)
         .then(data => {
-          console.log(data);
-
           this.buscarFuncionarios();
-
         })
-    },
-
-
-    async buscarFuncionario(funcionario_id) {
-      // console.log(funcionario_id);
-
-      await this.axios.get('http://localhost:3000/funcionario/' + funcionario_id)
-        .then(response => {
-          this.funcionario = response.data.new_funcionario;
-
-          console.log(this.funcionario);
-          // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
-          // console.log(this.state.productos);
-        }) //Mostrar por consola el error
-        .catch((e) => {
-          console.log(e)
-        });
-    },
-
-
-    async actualizarFuncionario(funcionario_id) {
-
-      let json = {
-
-        "funcionario_iden": this.funcionario.funcionario_iden,
-        "funcionario_nombre": this.funcionario.funcionario_nombre,
-        "funcionario_apellido": this.funcionario.funcionario_apellido,
-        "funcionario_correo": this.funcionario.funcionario_correo,
-        "funcionario_contraseña": this.funcionario.funcionario_contraseña,
-        "funcionario_telefono": this.funcionario.funcionario_telefono,
-        "funcionario_administrador": this.funcionario.funcionario_administrador,
-
-      };
-
-      console.log(funcionario_id);
-      await this.axios.patch('http://localhost:3000/funcionario/' + funcionario_id, json)
-        .then(response => {
-          alert(response.data.message);
-          // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
-          // console.log(this.state.productos);
-        }) //Mostrar por consola el error
-        .catch((e) => {
-          console.log(e)
-        });
-
-      this.buscarFuncionarios();
-    },
-
-
-
-
-    async eliminarFuncionario(funcionario_id) {
-
-      console.log(funcionario_id);
-      await this.axios.delete('http://localhost:3000/funcionario/' + funcionario_id)
-        .then(response => {
-          console.log(response.data.message);
-          alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
-          // console.log(this.state.productos);
-        }) //Mostrar por consola el error
-        .catch((e) => {
-          console.log(e)
-        });
-
-      this.buscarFuncionarios();
-    },
-
-
-
-
-
-
+    }
 
   },
 
+  async mounted() {
+    await this.buscarFuncionarios();
+
+  },
+
+  computed: {
+
+    async buscarFuncionarios() {
+      await this.axios.get('http://localhost:3000/funcionario')
+        .then(response => {
+          this.funcionarios = response.data.new_funcionario
+          // console.log(response.data.new_producto);
+          console.log(this.funcionarios);
+          // console.log(this.state.productos);
+        }) //Mostrar por consola el error
+        .catch((e) => {
+          console.log(e)
+        });
+    },
 
 
-
+  }
 
 
 }
@@ -618,6 +537,13 @@ export default {
   z-index: 1;
 
 }
+
+
+
+
+
+
+
 
 
 
