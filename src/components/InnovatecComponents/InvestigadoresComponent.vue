@@ -290,8 +290,8 @@ const semilleros = [
                 semillero: 'CREAD+',
                 email: 'rbenavidesb@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001513764',
-                pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
-            },
+                pic: 'https://i.imgur.com/Fkt0lPG.jpg'           
+             },
             {
                 id: 4,
                 name: 'Zulema Yidney',

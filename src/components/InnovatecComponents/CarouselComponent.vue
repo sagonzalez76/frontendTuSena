@@ -12,16 +12,16 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="40000">
-                        <router-link to="/noticias" class="dropdown-item" href="#"><img src="@/assets/img/banner.svg"
+                        <router-link to="/noticias" class="dropdown-item d-flex justify-content-center" href="#"><img src="@/assets/img/banner.svg"
                                 class="d-block w-100" alt="..."></router-link>
                     </div>
                     <div class="carousel-item" data-bs-interval="40000">
-                        <router-link to="/noticias" class="dropdown-item" href="#"><img src="@/assets/img/banner.svg"
-                                class="d-block w-100" alt="..."></router-link>
+                        <router-link to="/noticias" class="dropdown-item d-flex justify-content-center" href="#"><img src="@/assets/img/banner2.jpeg"
+                                class="d-block" alt="..."></router-link>
 
                     </div>
                     <div class="carousel-item" data-bs-interval="40000">
-                        <router-link to="/noticias" class="dropdown-item" href="#"><img src="@/assets/img/banner.svg"
+                        <router-link to="/noticias" class="dropdown-item d-flex justify-content-center" href="#"><img src="@/assets/img/banner3.png"
                                 class="d-block w-100" alt="..."></router-link>
 
                     </div>
@@ -51,10 +51,12 @@ export default {
 
 <style scoped>
 img {
-    max-height: 20vh;
+    max-height: 35vh;
+    max-width: 60vw;
+
 }
 
 .carrusel{
-    background-color: #39ca3e;
+    background-color: #39A900;
 }
 </style>

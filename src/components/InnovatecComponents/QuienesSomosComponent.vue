@@ -55,7 +55,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
           <div class="card">
-            <img src="@/assets/logos/principios.png" class="card-img-top" alt="..." />
+            <img src="@/assets/logos/mision.png" class="card-img-top" alt="principios" />
             <div class="card-icon">
               <i class="bi bi-award"></i>
             </div>
@@ -72,7 +72,7 @@
           </div>
         </div>
 
-       
+
 
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
@@ -228,6 +228,11 @@ export default {
 </script>
 
 <style scoped>
+img {
+  height: 35vh;
+
+}
+
 /*--------------------------------------------------------------
 # About Boxes
 --------------------------------------------------------------*/
@@ -319,4 +324,5 @@ export default {
   .about-boxes {
     background-attachment: scroll;
   }
-}</style>
+}
+</style>

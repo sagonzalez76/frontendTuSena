@@ -9,37 +9,28 @@
                 <tbody>
                     <tr class="hover-header">
                         <th class="">Nombre del Semillero</th>
-                        <td>SIITIS: Semillero de Investigación de Innovación Tecnológica de la Industria y Sostenibilidad
+                        <td>CREAD+:Semillero de Investigación de Creativas y ADSI
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Fecha de Creación</th>
-                        <td>20/03/2015
-
-
-
-
+                        <td>20/04/2020
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Líder del Semillero</th>
-                        <td>Ana Isabel Bravo Ospina
-
-
-
-
+                        <td>Rider Geovanny Benavides Bárcenas
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Correo de Contacto</th>
-                        <td>aibravoo@sena.edu.co
-
+                        <td>rbenavidesb@sena.edu.co
 
                         </td>
 
@@ -78,19 +69,21 @@
         <div class="container">
 
             <div class="container">
+
                 <div class="bg-subtitulo">
                     <div class="align-items-center">
                         <h6 class="text-center pb-3 align-middle ">MISIÓN</h6>
                     </div>
-                </div>                <p>El Semillero de investigación SIITIS trabaja de forma cooperativa y permanente, con instructores y
+                </div>
+
+
+
+
+                <p>El Semillero de investigación CREAD+ trabaja de forma cooperativa y permanente, con instructores y
                     personal experto en proyectos de I+D+i, para impulsar la investigación formativa de los y las
                     aprendices, de tal forma que se pueda facilitar la interacción entre lo académico y lo práctico, a
-                    través de la investigación interdisciplinaria focalizada en las tecnologías relacionadas con el
-                    desarrollo tecnológico y la sostenibilidad.
-
-
-
-                </p>
+                    través de la investigación interdisciplinaria focalizada en las tecnologías blandas relacionadas con el
+                    software, las industrias creativas y los servicios.</p>
             </div>
 
             <br>
@@ -101,15 +94,11 @@
                     <div class="align-items-center">
                         <h6 class="text-center pb-3 align-middle ">VISIÓN</h6>
                     </div>
-                </div>                <p>Para el año 2025, el semillero de investigación SIITIS será un equipo de trabajo fortalecido, a partir de
-                    la adquisición de competencias relacionadas con el proceso de I+D+I, orientadas a procesos de
-                    investigación aplicada a la innovación y la sostenibilidad de la industria, basado en el trabajo
-                    interdisciplinario de áreas como ambiental, construcción, mecánica, actividad física y transformación,
-                    del Centro de formación, teniendo siempre como eje los objetivos de desarrollo sostenible (ODS).
-
-
-
-
+                </div>
+                <p>Para el año 2025, el semillero de investigación CREAD+ se habrá fortalecido, a partir de la adquisición
+                    de competencias relacionadas con el proceso de I+D+I, para liderar procesos de investigación aplicada en
+                    las áreas medulares del Centro de Formación, a través de las tecnologías blandas relacionadas con el
+                    software, las industrias creativas y los servicios.
 
                 </p>
 
@@ -119,28 +108,25 @@
             <br>
 
 
-            <div class="">
+            <div class="container">
 
                 <div class="bg-subtitulo">
                     <div class="align-items-center">
                         <h6 class="text-center pb-3 align-middle ">OBJETIVOS</h6>
                     </div>
                 </div>
+
+
                 <p>
                 <ul>
 
                     <li>Objetivo General:
 
                         <p>
-                            Desarrollar competencias en investigación, en los instructores y aprendices de las áreas de
-                            mecánica, ambiental, construcción y transformación, como fuente principal del proceso de
-                            formación para el trabajo, forjando un carácter crítico, reflexivo y constructivo para la
-                            aprehensión de la educación científica en actividades investigativas, que promuevan el uso del
-                            método científico y las metodologías de investigación.
-
-
-
-
+                            Desarrollar competencias en investigación en los instructores y aprendices, como fuente
+                            principal del proceso de formación para el trabajo, forjando un carácter crítico, reflexivo y
+                            constructivo para la aprehensión de la educación científica, en actividades investigativas que
+                            promuevan el uso del método científico y las metodologías de investigación.
                         </p>
 
                     </li>
@@ -151,28 +137,15 @@
                         <ul>
 
 
-                            <li>Fomentar una cultura de investigación e innovación en los aprendices asociados al semillero
-                                SIITIS.
-
-
-                            </li>
                             <li>Apoyar la formación de los aprendices en cultura científica, para el desarrollo de
                                 competencias relacionadas con el proceso de investigación, innovación y desarrollo
                                 tecnológico.
-
-
                             </li>
                             <li>Fortalecer los procesos de transferencia de conocimientos de los resultados de los proyectos
                                 de investigación entre los aprendices del semillero de investigación.
-
-
                             </li>
-
-
-                            <li>Promover la participación de los aprendices en proyectos de investigación y desarrollo tecnológico, para el desarrollo de sus competencias.
-
-
-
+                            <li>Promover la participación de los aprendices en proyectos de investigación y desarrollo
+                                tecnológico para el desarrollo de sus competencias.
                             </li>
 
                         </ul>
@@ -190,452 +163,457 @@
 
             </div>
             <br>
-            <div class="bg-subtitulo">
+
+            <div class="container">
+
+                <div class="bg-subtitulo">
                     <div class="align-items-center">
                         <h6 class="text-center pb-3 align-middle ">PLANES</h6>
                     </div>
                 </div>
 
-            <div class="container table-responsive pt-4 px-2 mb-5">
-                <table class="table table-bordered table-hover">
+                <div class="container table-responsive pt-4 px-2 mb-5">
+                    <table class="table table-bordered table-hover">
 
-                    <tbody>
-                        <tr class="hover-header">
-                            <th class="">Plan Estratégico
+                        <tbody>
+                            <tr class="hover-header">
+                                <th class="">Plan Estratégico
 
-                            </th>
-                            <td>CREAD+:Semillero de Investigación de Creativas y ADSI
+                                </th>
+                                <td>CREAD+:Semillero de Investigación de Creativas y ADSI
 
-                            </td>
+                                </td>
 
-                        </tr>
-                        <tr>
-                            <th>Plan Operativo
+                            </tr>
+                            <tr>
+                                <th>Plan Operativo
 
-                            </th>
-                            <td>20/04/2020
+                                </th>
+                                <td>20/04/2020
 
-                            </td>
+                                </td>
 
-                        </tr>
-
-
+                            </tr>
 
 
-                    </tbody>
-                </table>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
             </div>
 
-
-
-        </div>
-
-
-
-
-
-
-        <h2 class="text-center text-dark">Instructores</h2>
-
-        <div class="bg-carrusel mt-0 px-3 mb-5 pt-0 d-flex justify-content-center d-inline align-middle"
-            v-for="semillero in semilleros" :key="semillero">
-
-
-
-            <div class="bg-carrusel ">
+            <div class="container">
+                <div class="bg-subtitulo">
+                    <div class="align-items-center">
+                        <h6 class="text-center pb-3 align-middle ">INSTRUCTORES</h6>
+                    </div>
+                </div>
 
 
 
 
 
 
-                <div class="container marketing d-inline ">
 
 
-                    <div class="row d-flex justify-content-evenly align-middle">
+
+                <div class="bg-carrusel mt-0 px-3 mb-5 pt-0 d-flex justify-content-center d-inline align-middle"
+                    v-for="semillero in semilleros" :key="semillero">
 
 
-                        <div class="col-lg-4" v-for="investigador in semillero.investigadores" :key="investigador">
-                            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                                src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
-                                role="svg" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice"
-                                focusable="false"> <!-- TODO -->
 
-                            <!-- <img :src="!null ? img : "@/assets/img/investigador.jpg"" class="bd-placeholder-img rounded-circle"> -->
-                            <!-- src="@/assets/img/investigador.jpg" role="svg" aria-label="Placeholder: 140x140" -->
+                    <div class="bg-carrusel ">
 
 
 
 
-                            <title>Investigador</title>
-                            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
-                                dy=".3em"></text>
 
 
-                            <h2 class="fw-normal text-dark"> {{ investigador.name }} {{ investigador.lastname }}</h2>
-                            <!-- <p> <i class="bi bi-star-fill"></i> Lider INNOVATEC CTPI</p> -->
+                        <div class="container marketing d-inline ">
+
+
+                            <div class="row d-flex justify-content-evenly align-middle">
+
+
+                                <div class="col-lg-4" v-for="investigador in semillero.investigadores" :key="investigador">
+                                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                                        :src=investigador.pic role="svg" aria-label="Placeholder: 140x140"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false"> <!-- TODO -->
+
+                                    <!-- <img :src="!null ? img : "@/assets/img/investigador.jpg"" class="bd-placeholder-img rounded-circle"> -->
+                                    <!-- src="@/assets/img/investigador.jpg" role="svg" aria-label="Placeholder: 140x140" -->
 
 
 
 
-                            <button type="button" class="custom-btn btn-14" data-bs-toggle="modal"
-                                :data-bs-target="`#${investigador.id}`">Ver mas...</button>
+                                    <title>Investigador</title>
+                                    <rect width="100%" height="100%" fill="#777"/>  <text x="50%" y="50%" fill="#777"
+                                        dy=".3em"></text>
 
 
-                            <!-- MODAL INVESTIGADOR -->
+                                    <h2 class="fw-normal text-dark"> {{ investigador.name }} {{ investigador.lastname }}
+                                    </h2>
+                                    <!-- <p> <i class="bi bi-star-fill"></i> Lider INNOVATEC CTPI</p> -->
 
-                            <!-- MODAL INVESTIGADOR -->
 
-                            <div class="modal fade" :id="`${investigador.id}`" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content p-0 m-0">
-                                        <!-- <div class="modal-header m-0 pt-1 pe-1 border border-0">
+
+
+                                    <button type="button" class="custom-btn btn-14" data-bs-toggle="modal"
+                                        :data-bs-target="`#${investigador.id}`">Ver mas...</button>
+
+
+                                    <!-- MODAL INVESTIGADOR -->
+
+                                    <!-- MODAL INVESTIGADOR -->
+
+                                    <div class="modal fade" :id="`${investigador.id}`" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content p-0 m-0">
+                                                <!-- <div class="modal-header m-0 pt-1 pe-1 border border-0">
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div> -->
-                                        <div class="modal-body m-0 p-0 border border-0">
+                                                <div class="modal-body m-0 p-0 border border-0">
 
-                                            <section class="p-0 border border-0">
-                                                <div class="">
-                                                    <div class="row">
-                                                        <!--Profile Card-->
-                                                        <div class="col-md-4 m-0 w-100">
-                                                            <div class="card profile-card-4 border border-0">
-                                                                <div class="card-img-block">
-                                                                    <div class="info-box">{{ investigador.name }} es
-                                                                        Instructor e investigador #OrgulloSena, que con su
-                                                                        saber contribuye al Conocimiento y Emprendimiento
-                                                                        para todos los colombianos</div>
-                                                                    <img class="img-fluid"
-                                                                        src="https://th.bing.com/th/id/R.e08d687a618f1816305e84096321cbb2?rik=0EWR%2fmoT%2b2YFKg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-PUHQOiv_sik%2fUcCbuOBcOXI%2fAAAAAAAAEwc%2fKHskdyomUWI%2fs1600%2fDescargar%2bPack%2bBellos%2bFondos%2bde%2bpaisajes%2bHD%2b(172).jpg&ehk=VdyLgBLEvb7UK35XMzphlyK4nFExW4O9BEghRwVDVEE%3d&risl=&pid=ImgRaw&r=0"
-                                                                        alt="imagensemillero">
-                                                                </div>
-                                                                <div class="card-body pt-5 pb-0">
-                                                                    <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
-                                                                        alt="profile-image" class="profile" />
-                                                                    <h5 class="card-title text-center">{{ investigador.name
-                                                                    }} {{ investigador.lastname }}</h5>
+                                                    <section class="p-0 border border-0">
+                                                        <div class="">
+                                                            <div class="row">
+                                                                <!--Profile Card-->
+                                                                <div class="col-md-4 m-0 w-100">
+                                                                    <div class="card profile-card-4 border border-0">
+                                                                        <div class="card-img-block">
+                                                                            <div class="info-box">{{ investigador.name }} es
+                                                                                Instructor e investigador #OrgulloSena, que
+                                                                                con su
+                                                                                saber contribuye al Conocimiento y
+                                                                                Emprendimiento
+                                                                                para todos los colombianos</div>
+                                                                            <img class="img-fluid"
+                                                                                src="https://th.bing.com/th/id/R.e08d687a618f1816305e84096321cbb2?rik=0EWR%2fmoT%2b2YFKg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-PUHQOiv_sik%2fUcCbuOBcOXI%2fAAAAAAAAEwc%2fKHskdyomUWI%2fs1600%2fDescargar%2bPack%2bBellos%2bFondos%2bde%2bpaisajes%2bHD%2b(172).jpg&ehk=VdyLgBLEvb7UK35XMzphlyK4nFExW4O9BEghRwVDVEE%3d&risl=&pid=ImgRaw&r=0"
+                                                                                alt="imagensemillero">
+                                                                        </div>
+                                                                        <div class="card-body pt-5 pb-0">
+                                                                            <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                                alt="profile-image" class="profile" />
+                                                                            <h5 class="card-title text-center">{{
+                                                                                investigador.name
+                                                                            }} {{ investigador.lastname }}</h5>
 
-                                                                    <hr class="mt-1 mb-1" />
-                                                                    <h4>Formacion</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            investigador.formacion.pregrado }}</li>
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            investigador.formacion.postgrado }}</li>
-                                                                    </ul>
+                                                                            <hr class="mt-1 mb-1" />
+                                                                            <h4>Formacion</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        investigador.formacion.pregrado }}</li>
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        investigador.formacion.postgrado }}</li>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
-                                                                    <h4>Linea de Investigacion</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            investigador.linea }}</li>
-                                                                    </ul>
+                                                                            <h4>Linea de Investigacion</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        investigador.linea }}</li>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
 
-                                                                    <h4>Semillero de Investigacion</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            semillero.name }}</li>
+                                                                            <h4>Semillero de Investigacion</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        semillero.name }}</li>
 
-                                                                    </ul>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
-                                                                    <h4>Correo Electronico</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">
-                                                                            {{ investigador.email }}</li>
+                                                                            <h4>Correo Electronico</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{ investigador.email }}</li>
 
-                                                                    </ul>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
-                                                                    <h4>CVLAC</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">
-                                                                            <a :href="`${investigador.cvlac}`"
-                                                                                target="_blank" rel="noopener noreferrer">{{
-                                                                                    investigador.name }} {{
+                                                                            <h4>CVLAC</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    <a :href="`${investigador.cvlac}`"
+                                                                                        target="_blank"
+                                                                                        rel="noopener noreferrer">{{
+                                                                                            investigador.name }} {{
         investigador.lastname }} CVLAC</a>
 
 
-                                                                        </li>
+                                                                                </li>
 
-                                                                    </ul>
-
-
-                                                                    <!-- <p class="card-text text-center"></p> -->
+                                                                            </ul>
 
 
-                                                                    <!-- <div class="icon-block text-center"><a href="#"><i
+                                                                            <!-- <p class="card-text text-center"></p> -->
+
+
+                                                                            <!-- <div class="icon-block text-center"><a href="#"><i
                                                                                 class="fa fa-facebook"></i></a><a href="#">
                                                                             <i class="fa fa-twitter"></i></a><a href="#"> <i
                                                                                 class="fa fa-google-plus"></i></a></div> -->
-                                                                </div>
-                                                            </div>
-                                                            <!--                                                             
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--                                                             
                                                             <p class="mt-3 w-100 float-left text-center"><strong>Info block
                                                                     with hover</strong></p> -->
+                                                                </div>
+
+
+
+                                                            </div>
                                                         </div>
-
-
-
-                                                    </div>
+                                                    </section>
                                                 </div>
-                                            </section>
-                                        </div>
-                                        <div class="modal-footer border border-0 pt-1">
+                                                <div class="modal-footer border border-0 pt-1">
 
-                                            <button type="button" class="custom-btn btn-15"
-                                                data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="custom-btn btn-15"
+                                                        data-bs-dismiss="modal">Cerrar</button>
 
 
 
-                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!--FIN  MODAL INVESTIGADOR #1 -->
-                        </div><!-- /.col-lg-4 -->
+                                    <!--FIN  MODAL INVESTIGADOR #1 -->
+                                </div><!-- /.col-lg-4 -->
 
-                    </div><!-- /.row -->
+                            </div><!-- /.row -->
 
-                </div><!-- /.container -->
+                        </div><!-- /.container -->
+                    </div>
+                </div>
+
             </div>
+
+            <div class="container">
+
+
+
+
+
+
+
+
+
+
+                <div class="bg-subtitulo">
+                    <div class="align-items-center">
+                        <h6 class="text-center pb-3 align-middle ">PROYECTOS</h6>
+                    </div>
+                </div>
+
+                <table class="table table-bordered align-middle">
+                    <thead class="bg-subtitulo">
+                        <tr class="text-white text-center">
+                            <td>
+                                Ano
+                            </td>
+                            <td>
+                                Codigo
+                            </td>
+                            <td>
+                                Titulo del Proyecto
+                            </td>
+                            <td>
+                                Linea Programatica SENNOVA </td>
+                            <td>
+                                Responsables </td>
+                        </tr>
+                    </thead>
+
+                    <tbody class="bg-tbody">
+                        <tr>
+                            <td>
+                                2020 </td>
+                            <td>SGPS-6041 </td>
+                            <td>
+                                Implementación de un Sistema "U-Learning" Basado en Metodologías de
+                                Aprendizaje en
+                                Lecto-Escritura para Niños en Inclusión, Utilizando Tecnologías Multimedia E-learning
+                            </td>
+                            <td>
+                                82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y
+                                Centros
+                                del SENA
+                            </td>
+                            <td>
+                                <ul>
+
+                                    <li>Zulema Yidney León Escobar</li>
+                                    <li>Zulema Yidney León Escobar</li>
+                                    <li>Zulema Yidney León Escobar</li>
+                                    <li>Zulema Yidney León Escobar</li>
+
+
+
+                                </ul>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+
+
+
+                <table width="100%" border="1">
+                    <thead class="bg-thead">
+
+                    </thead>
+                    <tbody class="bg-tbody">
+
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2020</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-6038</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Diseño de un Aplicativo Web, Móvil Turístico y Realidad Aumentada que
+                                    Salvaguarde
+                                    las Rutas Patrimoniales, Culturales y Comerciales de la Ciudad de Popayán</p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Pedro Javier Lozada Villota </p>
+                                <p class="texto-inv2">Rider Geovanny Benavides Bárcenas </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2020</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-6041</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Implementación de un Sistema "U-Learning" Basado en Metodologías de
+                                    Aprendizaje en
+                                    Lecto-Escritura para Niños en Inclusión, Utilizando Tecnologías Multimedia E-learning
+                                </p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2"> Zulema Yidney León Escobar </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2020</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-6054</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Desarrollo de una App de Reciclaje, Orientada a la Educación Ambiental
+                                    y Apoyo
+                                    a
+                                    los Recicladores de la Ciudad de Popayán Reutilizapp</p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Rider Geovanny Benavides Bárcenas </p>
+                                <p class="texto-inv2">Pedro Javier Lozada Villota </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2021</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-8507</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Desarrollo de un Prototipo para la Medición y Alerta Temprana de
+                                    Parámetros
+                                    Fisicoquímicos del Agua por Telemetría para Acueductos Rurales</p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Henry Eduardo Bastidas Paruma</p>
+                                <p class="texto-inv2">Zulema Yidney León Escobar </p>
+                                <p class="texto-inv2">Edwin Velasco </p>
+                                <p class="texto-inv2">Victoria Eugenia Pizo</p>
+                                <p class="texto-inv2">Peter Pinchao Solis</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2022</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-9706</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Desarrollo de un Portal Multimedia como Estrategia de Marketing
+                                    Digital que
+                                    Permita Potencializar a los Emprendedores del Programa Ser del Departamento del Cauca
+                                </p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">66-Investigación Aplicada, Grupos y Semilleros de Investigación</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Daniel Fernando Lázaro Melendez</p>
+                                <p class="texto-inv2">Yimi Hilario Pinzón Ortega</p>
+                                <p class="texto-inv2">Jesús Alejandro Yepes Cadenas</p>
+                                <p class="texto-inv2">Vladimir Fabián Rivera Gómez</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
         </div>
 
 
 
-        <h2 class="text-center">PROYECTOS </h2>
 
-
-
-        <table width="100%" border="1" style="margin:auto" class="">	
-						<tr class="text-center text-white">
-                          				<td width="30" height="20" bgcolor="#00324D">
-                              					<p class="textocentrado"><b>AÑO</b></p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#00324D">
-                              					<p class="textocentrado"><b>CÓDIGO</b></p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#00324D">
-                              					<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#00324D">
-                              					<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#00324D">
-                              					<p class="textocentrado"><b>RESPONSABLES</b></p>
-                          				</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2015</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SIN CÓDIGO</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Fortalecimiento del Laboratorio de Análisis Ambientales del Centro de Teleinformática y Producción Industrial</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">68 - Fortalecimiento de Servicios Tecnológicos para las Empresas</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Victoria Eugenia Pizo Perafán</p>
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2017</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SIGP-625</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Modernización de los Ambientes de Formación del Área de Construcción del Centro de Teleinformática y Producción Industrial del SENA Regional Cauca.</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">23 - Actualización y Modernización Tecnológica de los Centros de Formación</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Eduardo Antonio Benavides Rosero</p>
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2017</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SIGP-308</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Prospección y Viabilidad del Uso de Residuos Industriales (Cenizas y Lodos) para la Evaluación y Potencial Reutilización en la Generación de Nuevos Materiales Cerámicos para Uso Industrial en el Departamento del Cauca</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y Centros del SENA</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Victoria Eugenia Pizo Perafán</p>
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2017</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SIGP-786</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Fortalecimiento y Actualización del Laboratorio de Análisis Ambientales del Centro de Teleinformatica y Producción Industrial Regional Cauca</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">68 - Fortalecimiento de Servicios Tecnológicos para las Empresas </p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-								<p class="texto-inv2">Victoria Eugenia Pizo Perafán</p>
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2019</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SGPS-4103</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Fortalecimiento de la Capacidad Analítica y Acreditación del Laboratorio en Análisis Ambientales del CTPI para la Prestación de Servicios Tecnológicos a las Empresas del Sector Productivo del Departamento del Cauca</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">68 - Fortalecimiento de Servicios Tecnológicos para las Empresas</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-								<p class="texto-inv2">Victoria Eugenia Pizo Perafán</p>
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2020</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SGPS-6043</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Diseñar e Implementar un Sistema de Gestión Bajo la Norma NTC-ISO/IEC 17025, en el Laboratorio de Análisis Ambientales</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">68 - Fortalecimiento de Servicios Tecnológicos para las Empresas</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-								<p class="texto-inv2">Ana Cristina Narváez</p>
-								<p class="texto-inv2">Juan David Arcos Rojas</p>
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2021</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2"> SGPS-8702</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Caracterización Técnico - Ambiental del Reciclaje de Residuos de Concreto Hidráulico y Material Cerámico Provenientes de la Construcción y Demolición, en el Marco de la Economía Circular, la Eficiencia Energética y los ODS (Caso de Estudio CTPI)</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">66-Investigación Aplicada, Grupos y Semilleros de Investigación</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-								<p class="texto-inv2">Ana Isabel Bravo Ospina</p>
-								<p class="texto-inv2">Viviana Paola Cerón Rosero</p>
-								<p class="texto-inv2">Rodrigo Alberto Montaño Fuentes</p>
-								<p class="texto-inv2">Jonathan Orlando Rivera Cuaspud</p>
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2021</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SGPS-8169</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Fortalecimiento de los Servicios Tecnológicos del Laboratorio de Análisis Ambientales del CTPI, Optimizando el Sistema de Gestión en 2021</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">68 - Fortalecimiento de Servicios Tecnológicos para las Empresas</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-								<p class="texto-inv2">Ana Cristina Narváez</p>
-								<p class="texto-inv2">Juan David Arcos Rojas</p>
-								<p class="texto-inv2">Diana Carolina Vidal Barco</p>	
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2022</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SGPS-9576</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Desarrollo de un Plan Metodológico de un Sistema Piloto de Unidad de Vivienda Enfocado en el Acceso a Agua Potable, Autonomía Energética Respeto al Interés Cultural en Zonas Dispersas y No Interconectadas del Litoral Pacífico Colombiano (Región Cauca)</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">66-Investigación Aplicada, Grupos y Semilleros de Investigación</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-								<p class="texto-inv2">Victoria Eugenia Pizo Perafán </p>
-								<p class="texto-inv2">Rodrigo Alberto Montaño Fuentes</p>
-								<p class="texto-inv2">Henry Eduardo Bastidas Paruma</p>
-								<p class="texto-inv2">Julián Paz Alarcon</p>	
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2022</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SGPS-9456</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Desarrollo de un Prototipo a Manera de Stand con Prefabricados Tipo Lego Elaborados con RCD Provenientes de la Construcción</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y Centros del SENA</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-								<p class="texto-inv2">Ana Isabel Bravo Ospina </p>
-								<p class="texto-inv2">Viviana Paola Cerón Rosero</p>
-								<p class="texto-inv2">Rodrigo Alberto Montaño Fuentes</p>
-								<p class="texto-inv2">Jonathan Orlando Rivera Cuaspud</p>	
-							</td>
-						</tr>
-						<tr>
-                          				<td width="30" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">2022</p>
-                          				</td>
-							<td width="40" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">SGPS-9150</p>
-                          				</td>
-							<td width="220" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">Fortalecimiento en la Vigencia 2022 de la Oferta de Servicios Tecnológicos del Laboratorio de Análisis Ambientales del CTPI, con la Implementación y Aseguramiento del Sistema de Gestión, Cumpliendo con los Requisitos de NTC-ISO/IEC 17025:2017, Legales y Reglamentarios</p>
-                          				</td>
-							<td width="150" height="20" bgcolor="#D8D6B2">
-                              					<p class="texto-inv2">68 - Fortalecimiento de Servicios Tecnológicos para las Empresas</p>
-                          				</td>
-                          				<td width="130" height="20" bgcolor="#D8D6B2">
-								<p class="texto-inv2">Ana Cristina Narváez </p>
-								<p class="texto-inv2">Juan David Arcos Rojas</p>
-								<p class="texto-inv2">Ivan David Escobar Hernández</p>
-							</td>
-						</tr>	
-					</table>
 
 
 
@@ -645,97 +623,43 @@
 </template>
 
 
-<script>
-
-
-
-const semilleros = [
-   
-    {
-        name: 'SIITIS',
-        img: {
-            img1: 'https://placeimg.com/1998/500/arch',
-            img2: 'https://placeimg.com/1998/500/animals',
-            img3: 'https://placeimg.com/1998/500/nature',
-        },
-
-        investigadores: [{
-            id: 8,
-            name: 'Victoria Eugenia ',
-            lastname: 'Pizo Perafán',
-            formacion: {
-                pregrado: 'Quimica',
-                postgrado: 'Magister de Recursos Hídrico y Continentales '
-            },
-            linea: 'Innovación Tecnológica y Sostenibilidad para la Industria',
-            semillero: 'SIITIS',
-            email: 'vpizo@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
-            pic: '@/assets/img/investigador.jpg'
-        },
-        {
-            id: 9,
-            name: 'Jonathan Orlando',
-            lastname: 'Rivera Suescun',
-            formacion: {
-                pregrado: 'Ingeniero Civil',
-                postgrado: ''
-            },
-            linea: 'Innovación Tecnológica y Sostenibilidad para la Industria',
-            semillero: 'SIITIS',
-            email: 'jorivera@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001844629',
-            pic: '@/assets/img/investigador.jpg'
-        },
-        {
-            id: 10,
-            name: 'Ana Isabel',
-            lastname: 'Bravo Ospina',
-            formacion: {
-                pregrado: 'Ingeniera Ambiental',
-                postgrado: 'Especialización Gerencia de la Salud Ocupacional'
-            },
-            linea: 'Innovación Tecnológica y Sostenibilidad para la Industria',
-            semillero: 'SIITIS',
-            email: 'aibravoo@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001844627',
-            pic: '@/assets/img/investigador.jpg'
-        }
-            ,]
-    }
-  
-]
-
-
-
-export default {
-
-    data() {
-        return {
-            semilleros
-        }
-    },
-
-}
-
-
-</script>
-
 
 
 
 <style scoped>
+.bg-tbody {
+
+    background-color: #82def046;
+
+}
+
+h6 {
+    color: white;
+
+}
+
 
 .bg-subtitulo {
 
-background-color: #39A900;
-color: white;
+    background-color: #00324D;
+
 
 }
-th {
-    background-color: #00324D;
-    color: white
+
+
+
+
+th,
+th:after,
+th:hover {
+    background-color: #38a900;
+    color: #f2f2f2;
+
 }
+
+
+
+
 
 .bg-carrusel {
     background-color: #e7e7e7;
@@ -770,7 +694,7 @@ button {
 
 /* 14 */
 .btn-14 {
-    background: rgb(105, 199, 116);
+    background: #38a900;
     border: none;
     z-index: 1;
 
@@ -786,7 +710,7 @@ button {
     z-index: -1;
     border-radius: 5px;
     background-color: #000000;
-    background-image: linear-gradient(315deg, #000000 0%, #000000 74%);
+    background-image: linear-gradient(315deg, #00324D 0%, #00324D 74%);
     box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5) 7px 7px 20px 0px rgba(0, 0, 0, .1),
         4px 4px 5px 0px rgba(0, 0, 0, .1);
     transition: all 0.4s ease;
@@ -1088,4 +1012,78 @@ h4 {
 </style>
 
 
+<script>
 
+
+
+const semilleros = [
+   
+    {
+        name: 'SIITIS',
+        img: {
+            img1: 'https://placeimg.com/1998/500/arch',
+            img2: 'https://placeimg.com/1998/500/animals',
+            img3: 'https://placeimg.com/1998/500/nature',
+        },
+
+        investigadores: [{
+            id: 8,
+            name: 'Victoria Eugenia ',
+            lastname: 'Pizo Perafán',
+            formacion: {
+                pregrado: 'Quimica',
+                postgrado: 'Magister de Recursos Hídrico y Continentales '
+            },
+            linea: 'Innovación Tecnológica y Sostenibilidad para la Industria',
+            semillero: 'SIITIS',
+            email: 'vpizo@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
+            pic: '@/assets/img/investigador.jpg'
+        },
+        {
+            id: 9,
+            name: 'Jonathan Orlando',
+            lastname: 'Rivera Suescun',
+            formacion: {
+                pregrado: 'Ingeniero Civil',
+                postgrado: ''
+            },
+            linea: 'Innovación Tecnológica y Sostenibilidad para la Industria',
+            semillero: 'SIITIS',
+            email: 'jorivera@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001844629',
+            pic: '@/assets/img/investigador.jpg'
+        },
+        {
+            id: 10,
+            name: 'Ana Isabel',
+            lastname: 'Bravo Ospina',
+            formacion: {
+                pregrado: 'Ingeniera Ambiental',
+                postgrado: 'Especialización Gerencia de la Salud Ocupacional'
+            },
+            linea: 'Innovación Tecnológica y Sostenibilidad para la Industria',
+            semillero: 'SIITIS',
+            email: 'aibravoo@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001844627',
+            pic: '@/assets/img/investigador.jpg'
+        }
+            ,]
+    }
+  
+]
+
+
+
+export default {
+
+    data() {
+        return {
+            semilleros
+        }
+    },
+
+}
+
+
+</script>

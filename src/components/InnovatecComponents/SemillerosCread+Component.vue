@@ -206,7 +206,12 @@
 
             </div>
 
-        </div>
+            <div class="container">
+                <div class="bg-subtitulo">
+                    <div class="align-items-center">
+                        <h6 class="text-center pb-3 align-middle ">INSTRUCTORES</h6>
+                    </div>
+                </div>
 
 
 
@@ -216,361 +221,399 @@
 
 
 
-        <h2 class="text-center text-dark">Instructores</h2>
-
-        <div class="bg-carrusel mt-0 px-3 mb-5 pt-0 d-flex justify-content-center d-inline align-middle"
-            v-for="semillero in semilleros" :key="semillero">
+                <div class="bg-carrusel mt-0 px-3 mb-5 pt-0 d-flex justify-content-center d-inline align-middle"
+                    v-for="semillero in semilleros" :key="semillero">
 
 
 
-            <div class="bg-carrusel ">
+                    <div class="bg-carrusel ">
 
 
 
 
 
 
-                <div class="container marketing d-inline ">
+                        <div class="container marketing d-inline ">
 
 
-                    <div class="row d-flex justify-content-evenly align-middle">
+                            <div class="row d-flex justify-content-evenly align-middle">
 
 
-                        <div class="col-lg-4" v-for="investigador in semillero.investigadores" :key="investigador">
-                            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                                src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
-                                role="svg" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice"
-                                focusable="false"> <!-- TODO -->
+                                <div class="col-lg-4" v-for="investigador in semillero.investigadores" :key="investigador">
+                                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                                        :src=investigador.pic role="svg" aria-label="Placeholder: 140x140"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false"> <!-- TODO -->
 
-                            <!-- <img :src="!null ? img : "@/assets/img/investigador.jpg"" class="bd-placeholder-img rounded-circle"> -->
-                            <!-- src="@/assets/img/investigador.jpg" role="svg" aria-label="Placeholder: 140x140" -->
-
-
-
-
-                            <title>Investigador</title>
-                            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
-                                dy=".3em"></text>
-
-
-                            <h2 class="fw-normal text-dark"> {{ investigador.name }} {{ investigador.lastname }}</h2>
-                            <!-- <p> <i class="bi bi-star-fill"></i> Lider INNOVATEC CTPI</p> -->
+                                    <!-- <img :src="!null ? img : "@/assets/img/investigador.jpg"" class="bd-placeholder-img rounded-circle"> -->
+                                    <!-- src="@/assets/img/investigador.jpg" role="svg" aria-label="Placeholder: 140x140" -->
 
 
 
 
-                            <button type="button" class="custom-btn btn-14" data-bs-toggle="modal"
-                                :data-bs-target="`#${investigador.id}`">Ver mas...</button>
+                                    <title>Investigador</title>
+                                    <rect width="100%" height="100%" fill="#777"/>  <text x="50%" y="50%" fill="#777"
+                                        dy=".3em"></text>
 
 
-                            <!-- MODAL INVESTIGADOR -->
+                                    <h2 class="fw-normal text-dark"> {{ investigador.name }} {{ investigador.lastname }}
+                                    </h2>
+                                    <!-- <p> <i class="bi bi-star-fill"></i> Lider INNOVATEC CTPI</p> -->
 
-                            <!-- MODAL INVESTIGADOR -->
 
-                            <div class="modal fade" :id="`${investigador.id}`" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content p-0 m-0">
-                                        <!-- <div class="modal-header m-0 pt-1 pe-1 border border-0">
+
+
+                                    <button type="button" class="custom-btn btn-14" data-bs-toggle="modal"
+                                        :data-bs-target="`#${investigador.id}`">Ver mas...</button>
+
+
+                                    <!-- MODAL INVESTIGADOR -->
+
+                                    <!-- MODAL INVESTIGADOR -->
+
+                                    <div class="modal fade" :id="`${investigador.id}`" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content p-0 m-0">
+                                                <!-- <div class="modal-header m-0 pt-1 pe-1 border border-0">
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div> -->
-                                        <div class="modal-body m-0 p-0 border border-0">
+                                                <div class="modal-body m-0 p-0 border border-0">
 
-                                            <section class="p-0 border border-0">
-                                                <div class="">
-                                                    <div class="row">
-                                                        <!--Profile Card-->
-                                                        <div class="col-md-4 m-0 w-100">
-                                                            <div class="card profile-card-4 border border-0">
-                                                                <div class="card-img-block">
-                                                                    <div class="info-box">{{ investigador.name }} es
-                                                                        Instructor e investigador #OrgulloSena, que con su
-                                                                        saber contribuye al Conocimiento y Emprendimiento
-                                                                        para todos los colombianos</div>
-                                                                    <img class="img-fluid"
-                                                                        src="https://th.bing.com/th/id/R.e08d687a618f1816305e84096321cbb2?rik=0EWR%2fmoT%2b2YFKg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-PUHQOiv_sik%2fUcCbuOBcOXI%2fAAAAAAAAEwc%2fKHskdyomUWI%2fs1600%2fDescargar%2bPack%2bBellos%2bFondos%2bde%2bpaisajes%2bHD%2b(172).jpg&ehk=VdyLgBLEvb7UK35XMzphlyK4nFExW4O9BEghRwVDVEE%3d&risl=&pid=ImgRaw&r=0"
-                                                                        alt="imagensemillero">
-                                                                </div>
-                                                                <div class="card-body pt-5 pb-0">
-                                                                    <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
-                                                                        alt="profile-image" class="profile" />
-                                                                    <h5 class="card-title text-center">{{ investigador.name
-                                                                    }} {{ investigador.lastname }}</h5>
+                                                    <section class="p-0 border border-0">
+                                                        <div class="">
+                                                            <div class="row">
+                                                                <!--Profile Card-->
+                                                                <div class="col-md-4 m-0 w-100">
+                                                                    <div class="card profile-card-4 border border-0">
+                                                                        <div class="card-img-block">
+                                                                            <div class="info-box">{{ investigador.name }} es
+                                                                                Instructor e investigador #OrgulloSena, que
+                                                                                con su
+                                                                                saber contribuye al Conocimiento y
+                                                                                Emprendimiento
+                                                                                para todos los colombianos</div>
+                                                                            <img class="img-fluid"
+                                                                                src="https://th.bing.com/th/id/R.e08d687a618f1816305e84096321cbb2?rik=0EWR%2fmoT%2b2YFKg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-PUHQOiv_sik%2fUcCbuOBcOXI%2fAAAAAAAAEwc%2fKHskdyomUWI%2fs1600%2fDescargar%2bPack%2bBellos%2bFondos%2bde%2bpaisajes%2bHD%2b(172).jpg&ehk=VdyLgBLEvb7UK35XMzphlyK4nFExW4O9BEghRwVDVEE%3d&risl=&pid=ImgRaw&r=0"
+                                                                                alt="imagensemillero">
+                                                                        </div>
+                                                                        <div class="card-body pt-5 pb-0">
+                                                                            <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                                alt="profile-image" class="profile" />
+                                                                            <h5 class="card-title text-center">{{
+                                                                                investigador.name
+                                                                            }} {{ investigador.lastname }}</h5>
 
-                                                                    <hr class="mt-1 mb-1" />
-                                                                    <h4>Formacion</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            investigador.formacion.pregrado }}</li>
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            investigador.formacion.postgrado }}</li>
-                                                                    </ul>
+                                                                            <hr class="mt-1 mb-1" />
+                                                                            <h4>Formacion</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        investigador.formacion.pregrado }}</li>
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        investigador.formacion.postgrado }}</li>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
-                                                                    <h4>Linea de Investigacion</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            investigador.linea }}</li>
-                                                                    </ul>
+                                                                            <h4>Linea de Investigacion</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        investigador.linea }}</li>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
 
-                                                                    <h4>Semillero de Investigacion</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            semillero.name }}</li>
+                                                                            <h4>Semillero de Investigacion</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        semillero.name }}</li>
 
-                                                                    </ul>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
-                                                                    <h4>Correo Electronico</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">
-                                                                            {{ investigador.email }}</li>
+                                                                            <h4>Correo Electronico</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{ investigador.email }}</li>
 
-                                                                    </ul>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
-                                                                    <h4>CVLAC</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">
-                                                                            <a :href="`${investigador.cvlac}`"
-                                                                                target="_blank" rel="noopener noreferrer">{{
-                                                                                    investigador.name }} {{
+                                                                            <h4>CVLAC</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    <a :href="`${investigador.cvlac}`"
+                                                                                        target="_blank"
+                                                                                        rel="noopener noreferrer">{{
+                                                                                            investigador.name }} {{
         investigador.lastname }} CVLAC</a>
 
 
-                                                                        </li>
+                                                                                </li>
 
-                                                                    </ul>
-
-
-                                                                    <!-- <p class="card-text text-center"></p> -->
+                                                                            </ul>
 
 
-                                                                    <!-- <div class="icon-block text-center"><a href="#"><i
+                                                                            <!-- <p class="card-text text-center"></p> -->
+
+
+                                                                            <!-- <div class="icon-block text-center"><a href="#"><i
                                                                                 class="fa fa-facebook"></i></a><a href="#">
                                                                             <i class="fa fa-twitter"></i></a><a href="#"> <i
                                                                                 class="fa fa-google-plus"></i></a></div> -->
-                                                                </div>
-                                                            </div>
-                                                            <!--                                                             
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--                                                             
                                                             <p class="mt-3 w-100 float-left text-center"><strong>Info block
                                                                     with hover</strong></p> -->
+                                                                </div>
+
+
+
+                                                            </div>
                                                         </div>
-
-
-
-                                                    </div>
+                                                    </section>
                                                 </div>
-                                            </section>
-                                        </div>
-                                        <div class="modal-footer border border-0 pt-1">
+                                                <div class="modal-footer border border-0 pt-1">
 
-                                            <button type="button" class="custom-btn btn-15"
-                                                data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="custom-btn btn-15"
+                                                        data-bs-dismiss="modal">Cerrar</button>
 
 
 
-                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!--FIN  MODAL INVESTIGADOR #1 -->
-                        </div><!-- /.col-lg-4 -->
+                                    <!--FIN  MODAL INVESTIGADOR #1 -->
+                                </div><!-- /.col-lg-4 -->
 
-                    </div><!-- /.row -->
+                            </div><!-- /.row -->
 
-                </div><!-- /.container -->
+                        </div><!-- /.container -->
+                    </div>
+                </div>
+
             </div>
+
+            <div class="container">
+
+
+
+
+
+
+
+
+
+
+                <div class="bg-subtitulo">
+                    <div class="align-items-center">
+                        <h6 class="text-center pb-3 align-middle ">PROYECTOS</h6>
+                    </div>
+                </div>
+
+                <table class="table table-bordered align-middle">
+                    <thead class="bg-subtitulo">
+                        <tr class="text-white text-center">
+                            <td>
+                                Ano
+                            </td>
+                            <td>
+                                Codigo
+                            </td>
+                            <td>
+                                Titulo del Proyecto
+                            </td>
+                            <td>
+                                Linea Programatica SENNOVA </td>
+                            <td>
+                                Responsables </td>
+                        </tr>
+                    </thead>
+
+                    <tbody class="bg-tbody">
+                        <tr>
+                            <td>
+                                2020 </td>
+                            <td>SGPS-6041 </td>
+                            <td>
+                                Implementación de un Sistema "U-Learning" Basado en Metodologías de
+                                Aprendizaje en
+                                Lecto-Escritura para Niños en Inclusión, Utilizando Tecnologías Multimedia E-learning
+                            </td>
+                            <td>
+                                82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y
+                                Centros
+                                del SENA
+                            </td>
+                            <td>
+                                <ul>
+
+                                    <li>Zulema Yidney León Escobar</li>
+                                    <li>Zulema Yidney León Escobar</li>
+                                    <li>Zulema Yidney León Escobar</li>
+                                    <li>Zulema Yidney León Escobar</li>
+
+
+
+                                </ul>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+
+
+
+                <table width="100%" border="1">
+                    <thead class="bg-thead">
+
+                    </thead>
+                    <tbody class="bg-tbody">
+
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2020</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-6038</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Diseño de un Aplicativo Web, Móvil Turístico y Realidad Aumentada que
+                                    Salvaguarde
+                                    las Rutas Patrimoniales, Culturales y Comerciales de la Ciudad de Popayán</p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Pedro Javier Lozada Villota </p>
+                                <p class="texto-inv2">Rider Geovanny Benavides Bárcenas </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2020</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-6041</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Implementación de un Sistema "U-Learning" Basado en Metodologías de
+                                    Aprendizaje en
+                                    Lecto-Escritura para Niños en Inclusión, Utilizando Tecnologías Multimedia E-learning
+                                </p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2"> Zulema Yidney León Escobar </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2020</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-6054</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Desarrollo de una App de Reciclaje, Orientada a la Educación Ambiental
+                                    y Apoyo
+                                    a
+                                    los Recicladores de la Ciudad de Popayán Reutilizapp</p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Rider Geovanny Benavides Bárcenas </p>
+                                <p class="texto-inv2">Pedro Javier Lozada Villota </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2021</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-8507</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Desarrollo de un Prototipo para la Medición y Alerta Temprana de
+                                    Parámetros
+                                    Fisicoquímicos del Agua por Telemetría para Acueductos Rurales</p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Henry Eduardo Bastidas Paruma</p>
+                                <p class="texto-inv2">Zulema Yidney León Escobar </p>
+                                <p class="texto-inv2">Edwin Velasco </p>
+                                <p class="texto-inv2">Victoria Eugenia Pizo</p>
+                                <p class="texto-inv2">Peter Pinchao Solis</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2022</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-9706</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Desarrollo de un Portal Multimedia como Estrategia de Marketing
+                                    Digital que
+                                    Permita Potencializar a los Emprendedores del Programa Ser del Departamento del Cauca
+                                </p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">66-Investigación Aplicada, Grupos y Semilleros de Investigación</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Daniel Fernando Lázaro Melendez</p>
+                                <p class="texto-inv2">Yimi Hilario Pinzón Ortega</p>
+                                <p class="texto-inv2">Jesús Alejandro Yepes Cadenas</p>
+                                <p class="texto-inv2">Vladimir Fabián Rivera Gómez</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
         </div>
 
 
 
-        <h2 class="text-center">PROYECTOS</h2>
 
-
-        <table class="table table-bordered align-middle">
-            <thead class="bg-subtitulo">
-                <tr class="text-white text-center">
-                    <td>
-                        Ano
-                    </td>
-                    <td>
-                        Codigo
-                    </td>
-                    <td>
-                        Titulo del Proyecto
-                    </td>
-                    <td>
-                        Linea Programatica SENNOVA </td>
-                    <td>
-                        Responsables </td>
-                </tr>
-            </thead>
-
-            <tbody class="bg-tbody">
-                <tr>
-                    <td>
-                        2020 </td>
-                    <td>SGPS-6041 </td>
-                    <td>
-                        Implementación de un Sistema "U-Learning" Basado en Metodologías de
-                        Aprendizaje en
-                        Lecto-Escritura para Niños en Inclusión, Utilizando Tecnologías Multimedia E-learning
-                    </td>
-                    <td>
-                        82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y
-                        Centros
-                        del SENA
-                    </td>
-                    <td>
-                        <ul>
-
-                            <li>Zulema Yidney León Escobar</li>
-                            <li>Zulema Yidney León Escobar</li>
-                            <li>Zulema Yidney León Escobar</li>
-                            <li>Zulema Yidney León Escobar</li>
-                           
-
-
-                        </ul>
-
-                    </td>
-
-                </tr>
-
-            </tbody>
-        </table>
-
-
-
-
-
-        <table width="100%" border="1">
-            <thead class="bg-thead">
-
-            </thead>
-            <tbody class="bg-tbody">
-
-                <tr>
-                    <td width="30" height="20">
-                        <p class="texto-inv2">2020</p>
-                    </td>
-                    <td width="40" height="20">
-                        <p class="texto-inv2">SGPS-6038</p>
-                    </td>
-                    <td width="220" height="20">
-                        <p class="texto-inv2">Diseño de un Aplicativo Web, Móvil Turístico y Realidad Aumentada que
-                            Salvaguarde
-                            las Rutas Patrimoniales, Culturales y Comerciales de la Ciudad de Popayán</p>
-                    </td>
-                    <td width="150" height="20">
-                        <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y
-                            Centros
-                            del SENA</p>
-                    </td>
-                    <td width="130" height="20">
-                        <p class="texto-inv2">Pedro Javier Lozada Villota </p>
-                        <p class="texto-inv2">Rider Geovanny Benavides Bárcenas </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="30" height="20">
-                        <p class="texto-inv2">2020</p>
-                    </td>
-                    <td width="40" height="20">
-                        <p class="texto-inv2">SGPS-6041</p>
-                    </td>
-                    <td width="220" height="20">
-                        <p class="texto-inv2">Implementación de un Sistema "U-Learning" Basado en Metodologías de
-                            Aprendizaje en
-                            Lecto-Escritura para Niños en Inclusión, Utilizando Tecnologías Multimedia E-learning</p>
-                    </td>
-                    <td width="150" height="20">
-                        <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y
-                            Centros
-                            del SENA</p>
-                    </td>
-                    <td width="130" height="20">
-                        <p class="texto-inv2"> Zulema Yidney León Escobar </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="30" height="20">
-                        <p class="texto-inv2">2020</p>
-                    </td>
-                    <td width="40" height="20">
-                        <p class="texto-inv2">SGPS-6054</p>
-                    </td>
-                    <td width="220" height="20">
-                        <p class="texto-inv2">Desarrollo de una App de Reciclaje, Orientada a la Educación Ambiental y Apoyo
-                            a
-                            los Recicladores de la Ciudad de Popayán Reutilizapp</p>
-                    </td>
-                    <td width="150" height="20">
-                        <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y
-                            Centros
-                            del SENA</p>
-                    </td>
-                    <td width="130" height="20">
-                        <p class="texto-inv2">Rider Geovanny Benavides Bárcenas </p>
-                        <p class="texto-inv2">Pedro Javier Lozada Villota </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="30" height="20">
-                        <p class="texto-inv2">2021</p>
-                    </td>
-                    <td width="40" height="20">
-                        <p class="texto-inv2">SGPS-8507</p>
-                    </td>
-                    <td width="220" height="20">
-                        <p class="texto-inv2">Desarrollo de un Prototipo para la Medición y Alerta Temprana de Parámetros
-                            Fisicoquímicos del Agua por Telemetría para Acueductos Rurales</p>
-                    </td>
-                    <td width="150" height="20">
-                        <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y
-                            Centros
-                            del SENA</p>
-                    </td>
-                    <td width="130" height="20">
-                        <p class="texto-inv2">Henry Eduardo Bastidas Paruma</p>
-                        <p class="texto-inv2">Zulema Yidney León Escobar </p>
-                        <p class="texto-inv2">Edwin Velasco </p>
-                        <p class="texto-inv2">Victoria Eugenia Pizo</p>
-                        <p class="texto-inv2">Peter Pinchao Solis</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="30" height="20">
-                        <p class="texto-inv2">2022</p>
-                    </td>
-                    <td width="40" height="20">
-                        <p class="texto-inv2">SGPS-9706</p>
-                    </td>
-                    <td width="220" height="20">
-                        <p class="texto-inv2">Desarrollo de un Portal Multimedia como Estrategia de Marketing Digital que
-                            Permita Potencializar a los Emprendedores del Programa Ser del Departamento del Cauca</p>
-                    </td>
-                    <td width="150" height="20">
-                        <p class="texto-inv2">66-Investigación Aplicada, Grupos y Semilleros de Investigación</p>
-                    </td>
-                    <td width="130" height="20">
-                        <p class="texto-inv2">Daniel Fernando Lázaro Melendez</p>
-                        <p class="texto-inv2">Yimi Hilario Pinzón Ortega</p>
-                        <p class="texto-inv2">Jesús Alejandro Yepes Cadenas</p>
-                        <p class="texto-inv2">Vladimir Fabián Rivera Gómez</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
 
 
@@ -598,7 +641,7 @@ h6 {
 
 .bg-subtitulo {
 
-    background-color: #39A900;
+    background-color: #00324D;
 
 
 }
@@ -609,7 +652,7 @@ h6 {
 th,
 th:after,
 th:hover {
-    background-color: #00324D;
+    background-color: #38a900;
     color: #f2f2f2;
 
 }
@@ -651,7 +694,7 @@ button {
 
 /* 14 */
 .btn-14 {
-    background: rgb(105, 199, 116);
+    background: #38a900;
     border: none;
     z-index: 1;
 
@@ -667,7 +710,7 @@ button {
     z-index: -1;
     border-radius: 5px;
     background-color: #000000;
-    background-image: linear-gradient(315deg, #000000 0%, #000000 74%);
+    background-image: linear-gradient(315deg, #00324D 0%, #00324D 74%);
     box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5) 7px 7px 20px 0px rgba(0, 0, 0, .1),
         4px 4px 5px 0px rgba(0, 0, 0, .1);
     transition: all 0.4s ease;
@@ -969,7 +1012,7 @@ h4 {
 </style>
 
 
-
+ 
 
 <script>
 
@@ -978,7 +1021,6 @@ h4 {
 const semilleros = [
 
     {
-
         name: 'CREAD+',
         img: {
             img1: 'https://placeimg.com/1999/500/arch',
@@ -999,7 +1041,7 @@ const semilleros = [
                 semillero: 'CREAD+',
                 email: 'rbenavidesb@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001513764',
-                pic: '@/assets/img/investigador.jpg'
+                pic: 'https://i.imgur.com/Fkt0lPG.jpg'
             },
             {
                 id: 4,
@@ -1013,7 +1055,7 @@ const semilleros = [
                 semillero: 'EREECA',
                 email: 'zleon@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001761643',
-                pic: '@/assets/img/investigador.jpg'
+                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
             },
             {
                 id: 5,
@@ -1027,7 +1069,7 @@ const semilleros = [
                 semillero: 'CREAD+',
                 email: 'plozada@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001685826',
-                pic: '@/assets/img/investigador.jpg'
+                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
             },
             {
                 id: 6,
@@ -1041,8 +1083,9 @@ const semilleros = [
                 semillero: 'CREAD+',
                 email: 'hbastidasp@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001556099',
-                pic: '@/assets/img/investigador.jpg'
+                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
             },
+
             {
                 id: 7,
                 name: 'Yimi Hilario',
@@ -1055,21 +1098,7 @@ const semilleros = [
                 semillero: 'CREAD+',
                 email: 'yhpinzono@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001481839',
-                pic: '@/assets/img/investigador.jpg'
-            },
-            {
-                id: 7,
-                name: 'Yimi Hilario',
-                lastname: 'Pinzon Ortega',
-                formacion: {
-                    pregrado: 'Ingeniero Sistemas',
-                    postgrado: 'Especialista en Seguridad Informatica'
-                },
-                linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-                semillero: 'CREAD+',
-                email: 'yhpinzono@sena.edu.co',
-                cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001481839',
-                pic: '@/assets/img/investigador.jpg'
+                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
             },
         ],
 

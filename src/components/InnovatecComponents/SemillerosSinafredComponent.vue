@@ -4,33 +4,37 @@
         <h1 class="text-center">SINAFRED</h1>
 
         <div class="container table-responsive pt-4 px-2 mb-5">
-            <table class="table table-hover">
+            <table class="table table-bordered table-hover">
 
                 <tbody>
-                    <tr class="">
+                    <tr class="hover-header">
                         <th class="">Nombre del Semillero</th>
-                        <td>SINAFRED: Semillero de Investigación en Actividad Física, Recreación y Deporte
-                        </td>
-                    </tr>
+                        <td>CREAD+:Semillero de Investigación de Creativas y ADSI
 
+                        </td>
+
+                    </tr>
                     <tr>
                         <th>Fecha de Creación</th>
-                        <td>12/04/2019
-                        </td>
-                    </tr>
+                        <td>20/04/2020
 
+                        </td>
+
+                    </tr>
                     <tr>
                         <th>Líder del Semillero</th>
-                        <td>Diana Carolina Cuarán Coral
-                        </td>
-                    </tr>
+                        <td>Rider Geovanny Benavides Bárcenas
 
+                        </td>
+
+                    </tr>
                     <tr>
                         <th>Correo de Contacto</th>
-                        <td>dcuaran@sena.edu.co
-                        </td>
-                    </tr>
+                        <td>rbenavidesb@sena.edu.co
 
+                        </td>
+
+                    </tr>
                     <tr>
                         <th>Grupo de Investigación al que Pertenece</th>
                         <td>INNOVATEC CTPI</td>
@@ -47,9 +51,7 @@
                     </tr>
                     <tr>
                         <th>Línea de Investigación</th>
-                        <td>Actividad Física Recreación y Deportes
-
-                        </td>
+                        <td>Tecnologías de la Energía, Software y las Telecomunicaciones</td>
                     </tr>
                     <tr>
                         <th>Ciudad y Departamento</th>
@@ -67,24 +69,21 @@
         <div class="container">
 
             <div class="container">
+
                 <div class="bg-subtitulo">
                     <div class="align-items-center">
                         <h6 class="text-center pb-3 align-middle ">MISIÓN</h6>
                     </div>
                 </div>
-                <p>El Semillero de investigación SINAFRED (Semillero de Investigación en Actividad Física, Recreación y
-                    Deportes) trabaja de forma cooperativa y permanente, con espíritu crítico, pluralista, científico y
-                    ético, con instructores y personal experto en proyectos de I+D+i, para impulsar la investigación
-                    formativa de los y las aprendices, de tal forma que se pueda facilitar la interacción entre lo académico
-                    y lo práctico, a través de la investigación interdisciplinaria focalizada en los ejes temáticos de:
-                    educación y deporte, deporte, actividad física y salud, entrenamiento deportivo y valoración del
-                    deportista.
 
 
 
 
-
-                </p>
+                <p>El Semillero de investigación CREAD+ trabaja de forma cooperativa y permanente, con instructores y
+                    personal experto en proyectos de I+D+i, para impulsar la investigación formativa de los y las
+                    aprendices, de tal forma que se pueda facilitar la interacción entre lo académico y lo práctico, a
+                    través de la investigación interdisciplinaria focalizada en las tecnologías blandas relacionadas con el
+                    software, las industrias creativas y los servicios.</p>
             </div>
 
             <br>
@@ -96,16 +95,10 @@
                         <h6 class="text-center pb-3 align-middle ">VISIÓN</h6>
                     </div>
                 </div>
-                <p>Para el año 2025, el semillero de investigación SINAFRED (Semillero de Investigación en Actividad Física,
-                    Recreación y Deportes) se habrá fortalecido, a partir de la adquisición de competencias relacionadas con
-                    el proceso de I+D+I, para liderar procesos de investigación aplicada en el área de actividad física,
-                    recreación y deporte.
-
-
-
-
-
-
+                <p>Para el año 2025, el semillero de investigación CREAD+ se habrá fortalecido, a partir de la adquisición
+                    de competencias relacionadas con el proceso de I+D+I, para liderar procesos de investigación aplicada en
+                    las áreas medulares del Centro de Formación, a través de las tecnologías blandas relacionadas con el
+                    software, las industrias creativas y los servicios.
 
                 </p>
 
@@ -115,31 +108,25 @@
             <br>
 
 
-            <div class="">
+            <div class="container">
 
                 <div class="bg-subtitulo">
                     <div class="align-items-center">
                         <h6 class="text-center pb-3 align-middle ">OBJETIVOS</h6>
                     </div>
                 </div>
+
+
                 <p>
                 <ul>
 
                     <li>Objetivo General:
 
                         <p>
-                            Desarrollar competencias investigativas en los instructores y aprendices, como fuente principal
-                            del proceso de formación para el trabajo, promoviendo el diseño, construcción y ejecución de
-                            proyectos de investigación en el área de la actividad física, recreación y deporte, forjando un
-                            carácter crítico, reflexivo y constructivo, para la aprehensión de la educación científica en
-                            actividades investigativas que promuevan el uso del método científico y las metodologías de
-                            investigación.
-
-
-
-
-
-
+                            Desarrollar competencias en investigación en los instructores y aprendices, como fuente
+                            principal del proceso de formación para el trabajo, forjando un carácter crítico, reflexivo y
+                            constructivo para la aprehensión de la educación científica, en actividades investigativas que
+                            promuevan el uso del método científico y las metodologías de investigación.
                         </p>
 
                     </li>
@@ -150,36 +137,16 @@
                         <ul>
 
 
-                            <li>Apoyar la formación de aprendices en la cultura científica, para el desarrollo de
+                            <li>Apoyar la formación de los aprendices en cultura científica, para el desarrollo de
                                 competencias relacionadas con el proceso de investigación, innovación y desarrollo
-                                tecnológico, teniendo en cuenta los ejes temáticos de la línea de investigación actividad
-                                física, recreación y deportes (Educación y Deporte, Deporte, Actividad Física y Salud,
-                                Entrenamiento Deportivo y Valoración del Deportista).
-
-
-
+                                tecnológico.
                             </li>
                             <li>Fortalecer los procesos de transferencia de conocimientos de los resultados de los proyectos
-                                de investigación relacionados con los ejes temáticos de la línea de investigación actividad
-                                física, recreación y deportes (Educación y Deporte, Deporte, Actividad Física y Salud,
-                                Entrenamiento Deportivo y Valoración del Deportista) entre los aprendices del semillero de
-                                investigación.
-
-
-
+                                de investigación entre los aprendices del semillero de investigación.
                             </li>
-                            <li>Promover la participación de los aprendices en los proyectos de investigación y desarrollo
-                                tecnológico relacionados con la línea de investigación actividad física, recreación y
-                                deportes, para el desarrollo de sus competencias.
-
-
-
+                            <li>Promover la participación de los aprendices en proyectos de investigación y desarrollo
+                                tecnológico para el desarrollo de sus competencias.
                             </li>
-
-
-
-
-
 
                         </ul>
 
@@ -196,271 +163,457 @@
 
             </div>
             <br>
-            <div class="bg-subtitulo">
-                <div class="align-items-center">
-                    <h6 class="text-center pb-3 align-middle ">PLANES</h6>
+
+            <div class="container">
+
+                <div class="bg-subtitulo">
+                    <div class="align-items-center">
+                        <h6 class="text-center pb-3 align-middle ">PLANES</h6>
+                    </div>
                 </div>
+
+                <div class="container table-responsive pt-4 px-2 mb-5">
+                    <table class="table table-bordered table-hover">
+
+                        <tbody>
+                            <tr class="hover-header">
+                                <th class="">Plan Estratégico
+
+                                </th>
+                                <td>CREAD+:Semillero de Investigación de Creativas y ADSI
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>Plan Operativo
+
+                                </th>
+                                <td>20/04/2020
+
+                                </td>
+
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+
             </div>
 
-            <div class="container table-responsive pt-4 px-2 mb-5">
-                <table class="table table-bordered table-hover">
-
-                    <tbody>
-                        <tr class="hover-header">
-                            <th class="">Plan Estratégico
-
-                            </th>
-                            <td>CREAD+:Semillero de Investigación de Creativas y ADSI
-
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <th>Plan Operativo
-
-                            </th>
-                            <td>20/04/2020
-
-                            </td>
-
-                        </tr>
-
-
-
-
-                    </tbody>
-                </table>
-            </div>
-
-
-
-        </div>
+            <div class="container">
+                <div class="bg-subtitulo">
+                    <div class="align-items-center">
+                        <h6 class="text-center pb-3 align-middle ">INSTRUCTORES</h6>
+                    </div>
+                </div>
 
 
 
 
 
 
-        <h2 class="text-center text-dark">Instructores</h2>
-
-        <div class="bg-carrusel mt-0 px-3 mb-5 pt-0 d-flex justify-content-center d-inline align-middle"
-            v-for="semillero in semilleros" :key="semillero">
 
 
 
-            <div class="bg-carrusel ">
+                <div class="bg-carrusel mt-0 px-3 mb-5 pt-0 d-flex justify-content-center d-inline align-middle"
+                    v-for="semillero in semilleros" :key="semillero">
 
 
 
-
-
-
-                <div class="container marketing d-inline ">
-
-
-                    <div class="row d-flex justify-content-evenly align-middle">
-
-
-                        <div class="col-lg-4" v-for="investigador in semillero.investigadores" :key="investigador">
-                            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-                                src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
-                                role="svg" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice"
-                                focusable="false"> <!-- TODO -->
-
-                            <!-- <img :src="!null ? img : "@/assets/img/investigador.jpg"" class="bd-placeholder-img rounded-circle"> -->
-                            <!-- src="@/assets/img/investigador.jpg" role="svg" aria-label="Placeholder: 140x140" -->
+                    <div class="bg-carrusel ">
 
 
 
 
-                            <title>Investigador</title>
-                            <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
-                                dy=".3em"></text>
 
 
-                            <h2 class="fw-normal text-dark"> {{ investigador.name }} {{ investigador.lastname }}</h2>
-                            <!-- <p> <i class="bi bi-star-fill"></i> Lider INNOVATEC CTPI</p> -->
+                        <div class="container marketing d-inline ">
+
+
+                            <div class="row d-flex justify-content-evenly align-middle">
+
+
+                                <div class="col-lg-4" v-for="investigador in semillero.investigadores" :key="investigador">
+                                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                                        :src=investigador.pic role="svg" aria-label="Placeholder: 140x140"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false"> <!-- TODO -->
+
+                                    <!-- <img :src="!null ? img : "@/assets/img/investigador.jpg"" class="bd-placeholder-img rounded-circle"> -->
+                                    <!-- src="@/assets/img/investigador.jpg" role="svg" aria-label="Placeholder: 140x140" -->
 
 
 
 
-                            <button type="button" class="custom-btn btn-14" data-bs-toggle="modal"
-                                :data-bs-target="`#${investigador.id}`">Ver mas...</button>
+                                    <title>Investigador</title>
+                                    <rect width="100%" height="100%" fill="#777"/>  <text x="50%" y="50%" fill="#777"
+                                        dy=".3em"></text>
 
 
-                            <!-- MODAL INVESTIGADOR -->
+                                    <h2 class="fw-normal text-dark"> {{ investigador.name }} {{ investigador.lastname }}
+                                    </h2>
+                                    <!-- <p> <i class="bi bi-star-fill"></i> Lider INNOVATEC CTPI</p> -->
 
-                            <!-- MODAL INVESTIGADOR -->
 
-                            <div class="modal fade" :id="`${investigador.id}`" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content p-0 m-0">
-                                        <!-- <div class="modal-header m-0 pt-1 pe-1 border border-0">
+
+
+                                    <button type="button" class="custom-btn btn-14" data-bs-toggle="modal"
+                                        :data-bs-target="`#${investigador.id}`">Ver mas...</button>
+
+
+                                    <!-- MODAL INVESTIGADOR -->
+
+                                    <!-- MODAL INVESTIGADOR -->
+
+                                    <div class="modal fade" :id="`${investigador.id}`" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content p-0 m-0">
+                                                <!-- <div class="modal-header m-0 pt-1 pe-1 border border-0">
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div> -->
-                                        <div class="modal-body m-0 p-0 border border-0">
+                                                <div class="modal-body m-0 p-0 border border-0">
 
-                                            <section class="p-0 border border-0">
-                                                <div class="">
-                                                    <div class="row">
-                                                        <!--Profile Card-->
-                                                        <div class="col-md-4 m-0 w-100">
-                                                            <div class="card profile-card-4 border border-0">
-                                                                <div class="card-img-block">
-                                                                    <div class="info-box">{{ investigador.name }} es
-                                                                        Instructor e investigador #OrgulloSena, que con su
-                                                                        saber contribuye al Conocimiento y Emprendimiento
-                                                                        para todos los colombianos</div>
-                                                                    <img class="img-fluid"
-                                                                        src="https://th.bing.com/th/id/R.e08d687a618f1816305e84096321cbb2?rik=0EWR%2fmoT%2b2YFKg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-PUHQOiv_sik%2fUcCbuOBcOXI%2fAAAAAAAAEwc%2fKHskdyomUWI%2fs1600%2fDescargar%2bPack%2bBellos%2bFondos%2bde%2bpaisajes%2bHD%2b(172).jpg&ehk=VdyLgBLEvb7UK35XMzphlyK4nFExW4O9BEghRwVDVEE%3d&risl=&pid=ImgRaw&r=0"
-                                                                        alt="imagensemillero">
-                                                                </div>
-                                                                <div class="card-body pt-5 pb-0">
-                                                                    <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
-                                                                        alt="profile-image" class="profile" />
-                                                                    <h5 class="card-title text-center">{{ investigador.name
-                                                                    }} {{ investigador.lastname }}</h5>
+                                                    <section class="p-0 border border-0">
+                                                        <div class="">
+                                                            <div class="row">
+                                                                <!--Profile Card-->
+                                                                <div class="col-md-4 m-0 w-100">
+                                                                    <div class="card profile-card-4 border border-0">
+                                                                        <div class="card-img-block">
+                                                                            <div class="info-box">{{ investigador.name }} es
+                                                                                Instructor e investigador #OrgulloSena, que
+                                                                                con su
+                                                                                saber contribuye al Conocimiento y
+                                                                                Emprendimiento
+                                                                                para todos los colombianos</div>
+                                                                            <img class="img-fluid"
+                                                                                src="https://th.bing.com/th/id/R.e08d687a618f1816305e84096321cbb2?rik=0EWR%2fmoT%2b2YFKg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-PUHQOiv_sik%2fUcCbuOBcOXI%2fAAAAAAAAEwc%2fKHskdyomUWI%2fs1600%2fDescargar%2bPack%2bBellos%2bFondos%2bde%2bpaisajes%2bHD%2b(172).jpg&ehk=VdyLgBLEvb7UK35XMzphlyK4nFExW4O9BEghRwVDVEE%3d&risl=&pid=ImgRaw&r=0"
+                                                                                alt="imagensemillero">
+                                                                        </div>
+                                                                        <div class="card-body pt-5 pb-0">
+                                                                            <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                                alt="profile-image" class="profile" />
+                                                                            <h5 class="card-title text-center">{{
+                                                                                investigador.name
+                                                                            }} {{ investigador.lastname }}</h5>
 
-                                                                    <hr class="mt-1 mb-1" />
-                                                                    <h4>Formacion</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            investigador.formacion.pregrado }}</li>
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            investigador.formacion.postgrado }}</li>
-                                                                    </ul>
+                                                                            <hr class="mt-1 mb-1" />
+                                                                            <h4>Formacion</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        investigador.formacion.pregrado }}</li>
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        investigador.formacion.postgrado }}</li>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
-                                                                    <h4>Linea de Investigacion</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            investigador.linea }}</li>
-                                                                    </ul>
+                                                                            <h4>Linea de Investigacion</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        investigador.linea }}</li>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
 
-                                                                    <h4>Semillero de Investigacion</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">{{
-                                                                            semillero.name }}</li>
+                                                                            <h4>Semillero de Investigacion</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{
+                                                                                        semillero.name }}</li>
 
-                                                                    </ul>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
-                                                                    <h4>Correo Electronico</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">
-                                                                            {{ investigador.email }}</li>
+                                                                            <h4>Correo Electronico</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    {{ investigador.email }}</li>
 
-                                                                    </ul>
+                                                                            </ul>
 
-                                                                    <hr class="mt-1 mb-1" />
+                                                                            <hr class="mt-1 mb-1" />
 
-                                                                    <h4>CVLAC</h4>
-                                                                    <ul class="list-group">
-                                                                        <li class="list-group-item border border-0">
-                                                                            <a :href="`${investigador.cvlac}`"
-                                                                                target="_blank" rel="noopener noreferrer">{{
-                                                                                    investigador.name }} {{
+                                                                            <h4>CVLAC</h4>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border border-0">
+                                                                                    <a :href="`${investigador.cvlac}`"
+                                                                                        target="_blank"
+                                                                                        rel="noopener noreferrer">{{
+                                                                                            investigador.name }} {{
         investigador.lastname }} CVLAC</a>
 
 
-                                                                        </li>
+                                                                                </li>
 
-                                                                    </ul>
-
-
-                                                                    <!-- <p class="card-text text-center"></p> -->
+                                                                            </ul>
 
 
-                                                                    <!-- <div class="icon-block text-center"><a href="#"><i
+                                                                            <!-- <p class="card-text text-center"></p> -->
+
+
+                                                                            <!-- <div class="icon-block text-center"><a href="#"><i
                                                                                 class="fa fa-facebook"></i></a><a href="#">
                                                                             <i class="fa fa-twitter"></i></a><a href="#"> <i
                                                                                 class="fa fa-google-plus"></i></a></div> -->
-                                                                </div>
-                                                            </div>
-                                                            <!--                                                             
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--                                                             
                                                             <p class="mt-3 w-100 float-left text-center"><strong>Info block
                                                                     with hover</strong></p> -->
+                                                                </div>
+
+
+
+                                                            </div>
                                                         </div>
-
-
-
-                                                    </div>
+                                                    </section>
                                                 </div>
-                                            </section>
-                                        </div>
-                                        <div class="modal-footer border border-0 pt-1">
+                                                <div class="modal-footer border border-0 pt-1">
 
-                                            <button type="button" class="custom-btn btn-15"
-                                                data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="custom-btn btn-15"
+                                                        data-bs-dismiss="modal">Cerrar</button>
 
 
 
-                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!--FIN  MODAL INVESTIGADOR #1 -->
-                        </div><!-- /.col-lg-4 -->
+                                    <!--FIN  MODAL INVESTIGADOR #1 -->
+                                </div><!-- /.col-lg-4 -->
 
-                    </div><!-- /.row -->
+                            </div><!-- /.row -->
 
-                </div><!-- /.container -->
+                        </div><!-- /.container -->
+                    </div>
+                </div>
+
             </div>
+
+            <div class="container">
+
+
+
+
+
+
+
+
+
+
+                <div class="bg-subtitulo">
+                    <div class="align-items-center">
+                        <h6 class="text-center pb-3 align-middle ">PROYECTOS</h6>
+                    </div>
+                </div>
+
+                <table class="table table-bordered align-middle">
+                    <thead class="bg-subtitulo">
+                        <tr class="text-white text-center">
+                            <td>
+                                Ano
+                            </td>
+                            <td>
+                                Codigo
+                            </td>
+                            <td>
+                                Titulo del Proyecto
+                            </td>
+                            <td>
+                                Linea Programatica SENNOVA </td>
+                            <td>
+                                Responsables </td>
+                        </tr>
+                    </thead>
+
+                    <tbody class="bg-tbody">
+                        <tr>
+                            <td>
+                                2020 </td>
+                            <td>SGPS-6041 </td>
+                            <td>
+                                Implementación de un Sistema "U-Learning" Basado en Metodologías de
+                                Aprendizaje en
+                                Lecto-Escritura para Niños en Inclusión, Utilizando Tecnologías Multimedia E-learning
+                            </td>
+                            <td>
+                                82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas y
+                                Centros
+                                del SENA
+                            </td>
+                            <td>
+                                <ul>
+
+                                    <li>Zulema Yidney León Escobar</li>
+                                    <li>Zulema Yidney León Escobar</li>
+                                    <li>Zulema Yidney León Escobar</li>
+                                    <li>Zulema Yidney León Escobar</li>
+
+
+
+                                </ul>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+
+
+
+                <table width="100%" border="1">
+                    <thead class="bg-thead">
+
+                    </thead>
+                    <tbody class="bg-tbody">
+
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2020</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-6038</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Diseño de un Aplicativo Web, Móvil Turístico y Realidad Aumentada que
+                                    Salvaguarde
+                                    las Rutas Patrimoniales, Culturales y Comerciales de la Ciudad de Popayán</p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Pedro Javier Lozada Villota </p>
+                                <p class="texto-inv2">Rider Geovanny Benavides Bárcenas </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2020</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-6041</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Implementación de un Sistema "U-Learning" Basado en Metodologías de
+                                    Aprendizaje en
+                                    Lecto-Escritura para Niños en Inclusión, Utilizando Tecnologías Multimedia E-learning
+                                </p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2"> Zulema Yidney León Escobar </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2020</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-6054</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Desarrollo de una App de Reciclaje, Orientada a la Educación Ambiental
+                                    y Apoyo
+                                    a
+                                    los Recicladores de la Ciudad de Popayán Reutilizapp</p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Rider Geovanny Benavides Bárcenas </p>
+                                <p class="texto-inv2">Pedro Javier Lozada Villota </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2021</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-8507</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Desarrollo de un Prototipo para la Medición y Alerta Temprana de
+                                    Parámetros
+                                    Fisicoquímicos del Agua por Telemetría para Acueductos Rurales</p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">82 - Fomento de la Innovación y Desarrollo Tecnológico en las Empresas
+                                    y
+                                    Centros
+                                    del SENA</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Henry Eduardo Bastidas Paruma</p>
+                                <p class="texto-inv2">Zulema Yidney León Escobar </p>
+                                <p class="texto-inv2">Edwin Velasco </p>
+                                <p class="texto-inv2">Victoria Eugenia Pizo</p>
+                                <p class="texto-inv2">Peter Pinchao Solis</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" height="20">
+                                <p class="texto-inv2">2022</p>
+                            </td>
+                            <td width="40" height="20">
+                                <p class="texto-inv2">SGPS-9706</p>
+                            </td>
+                            <td width="220" height="20">
+                                <p class="texto-inv2">Desarrollo de un Portal Multimedia como Estrategia de Marketing
+                                    Digital que
+                                    Permita Potencializar a los Emprendedores del Programa Ser del Departamento del Cauca
+                                </p>
+                            </td>
+                            <td width="150" height="20">
+                                <p class="texto-inv2">66-Investigación Aplicada, Grupos y Semilleros de Investigación</p>
+                            </td>
+                            <td width="130" height="20">
+                                <p class="texto-inv2">Daniel Fernando Lázaro Melendez</p>
+                                <p class="texto-inv2">Yimi Hilario Pinzón Ortega</p>
+                                <p class="texto-inv2">Jesús Alejandro Yepes Cadenas</p>
+                                <p class="texto-inv2">Vladimir Fabián Rivera Gómez</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
         </div>
 
 
 
-        <h2 class="text-center">PROYECTOS </h2>
 
-
-
-        <table width="100%" border="1" style="margin:auto">
-            <tr class="text-center text-white">
-                <td width="30" height="20" bgcolor="#00324D">
-                    <p class="textocentrado"><b>AÑO</b></p>
-                </td>
-                <td width="40" height="20" bgcolor="#00324D">
-                    <p class="textocentrado"><b>CÓDIGO</b></p>
-                </td>
-                <td width="220" height="20" bgcolor="#00324D">
-                    <p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
-                </td>
-                <td width="150" height="20" bgcolor="#00324D">
-                    <p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
-                </td>
-                <td width="130" height="20" bgcolor="#00324D">
-                    <p class="textocentrado"><b>RESPONSABLES</b></p>
-                </td>
-            </tr>
-            <tr>
-                <td width="30" height="20" bgcolor="#D8D6B2">
-                    <p class="texto-inv2">2019</p>
-                </td>
-                <td width="40" height="20" bgcolor="#D8D6B2">
-                    <p class="texto-inv2">SGPS-4045</p>
-                </td>
-                <td width="220" height="20" bgcolor="#D8D6B2">
-                    <p class="texto-inv2">Caracterización de la Condición Física y Biotipo de los Patinadores de los
-                        Municipios de Popayán y Timbio</p>
-                </td>
-                <td width="150" height="20" bgcolor="#D8D6B2">
-                    <p class="texto-inv2">66-Investigación Aplicada, Grupos y Semilleros de Investigación</p>
-                </td>
-                <td width="130" height="20" bgcolor="#D8D6B2">
-                    <p class="texto-inv2">Martin Alirio Dorado Tobar</p>
-                    <p class="texto-inv2">Gerardo Andrés Certuche Guzmán</p>
-                    <p class="texto-inv2">Diana Carolina Cuarán Coral</p>
-                </td>
-            </tr>
-        </table>
 
 
 
@@ -470,94 +623,43 @@
 </template>
 
 
-<script>
-
-
-
-const semilleros = [
-    {
-        name: 'SINAFRED',
-        img: {
-            img1: 'https://placeimg.com/2002/500/arch',
-            img2: 'https://placeimg.com/2002/500/animals',
-            img3: 'https://placeimg.com/2002/500/nature',
-        },
-
-        investigadores: [{
-            id: 13,
-            name: 'Martin Alirio',
-            lastname: 'Dorado Tobar',
-            formacion: {
-                pregrado: 'Licenciado en Educación Física y Salud',
-                postgrado: ''
-            },
-            linea: 'Actividad Física, Recreación y Deportes',
-            semillero: 'SINAFRED',
-            email: 'mdoradot@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
-            pic: '@/assets/img/investigador.jpg'
-        },
-        {
-            id: 14,
-            name: 'Gerardo Andrés',
-            lastname: 'Certuche Guzmán',
-            formacion: {
-                pregrado: 'Licenciatura en Educación Básica con Énfasis en Educación Física Recreación y Deporte',
-                postgrado: 'Magister en Gestion de la Informática Educativa'
-            },
-            linea: 'Actividad Física, Recreación y Deportes',
-            semillero: 'SINAFRED',
-            email: 'gacertuche@misena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000148915',
-            pic: '@/assets/img/investigador.jpg'
-        }, {
-            id: 15,
-            name: 'Diana Carolina',
-            lastname: 'Cuarán Coral',
-            formacion: {
-                pregrado: 'Licenciatura en Educación Básica con Énfasis en Educación Física Recreación y Deporte',
-                postgrado: 'Maestría en Educación Estudios del Cuerpo y Motricidad'
-            },
-            linea: 'Actividad Física, Recreación y Deportes',
-            semillero: 'SINAFRED',
-            email: 'dcuaran@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001237209',
-            pic: '@/assets/img/investigador.jpg'
-        },]
-    },
-
-]
-
-
-
-export default {
-
-    data() {
-        return {
-            semilleros
-        }
-    },
-
-}
-
-
-</script>
-
 
 
 
 <style scoped>
-.bg-subtitulo {
+.bg-tbody {
 
-    background-color: #39A900;
+    background-color: #82def046;
+
+}
+
+h6 {
     color: white;
 
 }
 
-th {
+
+.bg-subtitulo {
+
     background-color: #00324D;
-    color: white
+
+
 }
+
+
+
+
+th,
+th:after,
+th:hover {
+    background-color: #38a900;
+    color: #f2f2f2;
+
+}
+
+
+
+
 
 .bg-carrusel {
     background-color: #e7e7e7;
@@ -592,7 +694,7 @@ button {
 
 /* 14 */
 .btn-14 {
-    background: rgb(105, 199, 116);
+    background: #38a900;
     border: none;
     z-index: 1;
 
@@ -608,7 +710,7 @@ button {
     z-index: -1;
     border-radius: 5px;
     background-color: #000000;
-    background-image: linear-gradient(315deg, #000000 0%, #000000 74%);
+    background-image: linear-gradient(315deg, #00324D 0%, #00324D 74%);
     box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.5) 7px 7px 20px 0px rgba(0, 0, 0, .1),
         4px 4px 5px 0px rgba(0, 0, 0, .1);
     transition: all 0.4s ease;
@@ -906,7 +1008,81 @@ h4 {
     color: #fff;
 }
 
-/*Profile Card 5*/</style>
+/*Profile Card 5*/
+</style>
 
+
+<script>
+
+
+
+const semilleros = [
+    {
+        name: 'SINAFRED',
+        img: {
+            img1: 'https://placeimg.com/2002/500/arch',
+            img2: 'https://placeimg.com/2002/500/animals',
+            img3: 'https://placeimg.com/2002/500/nature',
+        },
+
+        investigadores: [{
+            id: 13,
+            name: 'Martin Alirio',
+            lastname: 'Dorado Tobar',
+            formacion: {
+                pregrado: 'Licenciado en Educación Física y Salud',
+                postgrado: ''
+            },
+            linea: 'Actividad Física, Recreación y Deportes',
+            semillero: 'SINAFRED',
+            email: 'mdoradot@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
+            pic: '@/assets/img/investigador.jpg'
+        },
+        {
+            id: 14,
+            name: 'Gerardo Andrés',
+            lastname: 'Certuche Guzmán',
+            formacion: {
+                pregrado: 'Licenciatura en Educación Básica con Énfasis en Educación Física Recreación y Deporte',
+                postgrado: 'Magister en Gestion de la Informática Educativa'
+            },
+            linea: 'Actividad Física, Recreación y Deportes',
+            semillero: 'SINAFRED',
+            email: 'gacertuche@misena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000148915',
+            pic: '@/assets/img/investigador.jpg'
+        }, {
+            id: 15,
+            name: 'Diana Carolina',
+            lastname: 'Cuarán Coral',
+            formacion: {
+                pregrado: 'Licenciatura en Educación Básica con Énfasis en Educación Física Recreación y Deporte',
+                postgrado: 'Maestría en Educación Estudios del Cuerpo y Motricidad'
+            },
+            linea: 'Actividad Física, Recreación y Deportes',
+            semillero: 'SINAFRED',
+            email: 'dcuaran@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001237209',
+            pic: '@/assets/img/investigador.jpg'
+        },]
+    },
+
+]
+
+
+
+export default {
+
+    data() {
+        return {
+            semilleros
+        }
+    },
+
+}
+
+
+</script>
 
 
