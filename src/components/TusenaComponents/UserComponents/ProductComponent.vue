@@ -1,11 +1,9 @@
 <template>
+    <div class="container" v-if="productos.length == 0">
 
+        <h1>No se encontraron productos</h1>
 
-<div class="container" v-if="productos.length == 0">
-
-<h1>No se encontraron productos</h1>
-
-</div>
+    </div>
 
 
 
@@ -17,7 +15,8 @@
                         <div class="col-xl-4 col-md-4 d-flex justify-content-center">
                             <div
                                 class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0 d-flex justify-content-center">
-                                <img src="https://picsum.photos/300/300" class="my-auto" style="width: 150px; height: 150px;" />
+                                <img src="https://1.bp.blogspot.com/-ImfAdP03PKI/WYz03SIQHCI/AAAAAAAAMws/wplt43gBUI8Dv4aNadp4pEJS7iByMo0HACLcBGAs/s1600/IMG_3794.JPG" class="my-auto"
+                                    style="width: 150px; height: 150px;" />
                                 <a href="#!">
                                     <div class="hover-overlay">
                                         <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
@@ -27,8 +26,8 @@
                         </div>
 
                         <div class="col-xl-6 col-md-5 col-sm-7 ">
-                            <h5>{{ producto.productos_titulo }}</h5>
-                            <div class="d-flex flex-row">
+                            <h5 class="mb-3 ">{{ producto.productos_titulo }}</h5>
+                            <!-- <div class="d-flex flex-row">
                                 <div class="text-warning mb-1 me-2">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -40,7 +39,7 @@
                                     </span>
                                 </div>
                                 <span class="text-muted">{{ producto.producto_id }} vistas</span>
-                            </div>
+                            </div> -->
 
                             <!-- <p class="text mb-4 mb-md-0">
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti saepe
@@ -54,7 +53,7 @@
                                 <div class="row">
 
                                     <div class="col-3">
-                                        <h6>Tipo: </h6>
+                                        <h6 class="fw-bold">Tipo:</h6>
                                     </div>
                                     <div class="col-9">
                                         <h6> {{ producto.productos_tipo }}</h6>
@@ -66,7 +65,7 @@
                             <div class="row w-100">
                                 <div class="row">
                                     <div class="col-3">
-                                        <h6>Subtipo: </h6>
+                                        <h6 class="fw-bold">Subtipo: </h6>
                                     </div>
                                     <div class="col-9">
                                         <h6> {{ producto.productos_subtipo }}</h6>
@@ -79,10 +78,10 @@
                                 <div class="row">
 
                                     <div class="col-3">
-                                        <h6>Detalle: </h6>
+                                        <h6 class="fw-bold">Semillero: </h6>
                                     </div>
                                     <div class="col-9">
-                                        <h6> {{ producto.productos_detalle }}</h6>
+                                        <h6>N/A</h6>
                                     </div>
                                 </div>
                             </div>
@@ -92,10 +91,10 @@
                                 <div class="row">
 
                                     <div class="col-3">
-                                        <h6>Codigo Proyecto: </h6>
+                                        <h6 class="fw-bold">Proyecto: </h6>
                                     </div>
                                     <div class="col-9">
-                                        <h6> {{ producto.productos_detalle }}</h6>
+                                        <h6>N/A</h6>
                                     </div>
                                 </div>
                             </div>
@@ -109,11 +108,13 @@
                                             </div> -->
                             <!-- <h6 class="text-success">Free shipping</h6> -->
                             <div class="">
-                                <button class="btn btn-secondary shadow-0 me-2 me-2 product-button" type="button">
-                                    <router-link to="/productos/1" class="text-decoration-none text-light">ver
+                                <button class="btn btn-success shadow-0 me-2 me-2 product-button" type="button">
+                                    <router-link to="/productos/1" type="button"
+                                        @click="buscarProductoId(producto.producto_id)"
+                                        class="text-decoration-none text-light ">ver
                                         mas </router-link> </button>
-                                <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover "><i
-                                        class="fas fa-heart fa-lg px-1"></i></a>
+                                <!-- <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover "><i
+                                        class="fas fa-heart fa-lg px-1"></i></a> -->
                             </div>
                         </div>
                     </div>
@@ -121,13 +122,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 </template>
 
 <script>
@@ -141,6 +135,15 @@ export default {
             productos: 'productos',
         }),
     },
+
+    methods: {
+        ...mapActions({
+            buscarProductoId: 'buscarProductoId',
+        }),
+    },
+
+
+
 
 }
 

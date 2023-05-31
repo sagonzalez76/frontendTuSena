@@ -37,7 +37,6 @@
 
 
 
-
                             <title>Investigador</title>
                             <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
                                 dy=".3em"></text>
@@ -78,11 +77,11 @@
                                                                         Instructor e investigador #OrgulloSena, que con su
                                                                         saber contribuye al Conocimiento y Emprendimiento
                                                                         para todos los colombianos</div>
-                                                                    <img class="img-fluid" src="https://th.bing.com/th/id/R.e08d687a618f1816305e84096321cbb2?rik=0EWR%2fmoT%2b2YFKg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-PUHQOiv_sik%2fUcCbuOBcOXI%2fAAAAAAAAEwc%2fKHskdyomUWI%2fs1600%2fDescargar%2bPack%2bBellos%2bFondos%2bde%2bpaisajes%2bHD%2b(172).jpg&ehk=VdyLgBLEvb7UK35XMzphlyK4nFExW4O9BEghRwVDVEE%3d&risl=&pid=ImgRaw&r=0"
+                                                                    <img class="img-fluid" src="https://th.bing.com/th/id/R.456a7cef2e6a4b0faf1c6a4a8fcd8d5b?rik=Yej8DtLUaUbVqw&pid=ImgRaw&r=0"
                                                                         alt="imagensemillero">
                                                                 </div>
                                                                 <div class="card-body pt-5 pb-0">
-                                                                    <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                    <img   :src="`${investigador.pic}`"
                                                                         alt="profile-image" class="profile" />
                                                                     <h5 class="card-title text-center">{{ investigador.name
                                                                     }} {{ investigador.lastname }}</h5>
@@ -176,6 +175,10 @@
 
                 </div><!-- /.container -->
             </div>
+
+
+
+            <hr class="border border-primary border-3 opacity-75">
         </div>
     </main>
 </template>
@@ -564,6 +567,17 @@ export default {
 
 
 <style scoped>
+
+
+
+
+.profile{
+max-height: 110px;
+
+
+
+
+}
 .bg-carrusel{
     background-color: #e1fae1;
 }

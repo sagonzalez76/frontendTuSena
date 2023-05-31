@@ -8,7 +8,7 @@
 
         </button>
 
-        <h5 class="text-start d-none d-lg-block"><i class="bi bi-funnel"></i> Filtrar</h5> 
+        <h5 class="text-start d-none d-lg-block"><i class="bi bi-funnel"></i> Filtrar</h5>
         <!-- {{ semillerosSeleccionados }} -->
         <!-- {{ $store.state.semillerosSeleccionados }}
         {{ $store.state.subtiposSeleccionados }} -->
@@ -28,8 +28,7 @@
                             Semillero
                         </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
-                        aria-labelledby="headingOne">
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
                         <div class="accordion-body">
 
 
@@ -206,14 +205,14 @@
                                 </div>
                                 <!-- Default checkbox -->
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Estrategias Pedagógicas para el
-                            Fomento a la CTI" id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
+                                    <input value="Estrategias Pedagógicas para el Fomento a la CTI" class="form-check-input"
+                                        type="checkbox" id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
                                     <label class="form-check-label" for="flexCheckDefault">Estrategias Pedagógicas para el
                                         Fomento a la CTI</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Eventos Científicos con
-                            Componente de Apropiación" id="flexCheckDefault"
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Eventos Científicos con Componente de Apropiación" id="flexCheckDefault"
                                         @change="actualizarSubtiposSeleccionados" />
                                     <label class="form-check-label" for="flexCheckDefault">Eventos Científicos con
                                         Componente de Apropiación</label>
@@ -243,8 +242,9 @@
 
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Participación en Comités de
-                                    Evaluación" id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Participación en Comités de Evaluación" id="flexCheckDefault"
+                                        @change="actualizarSubtiposSeleccionados" />
                                     <label class="form-check-label" for="flexCheckDefault">Participación en Comités de
                                         Evaluación</label>
 
@@ -256,10 +256,9 @@
 
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Procesos de Apropiación Social del Conocimiento para el Fortalecimiento o Solución de
-                                    Asuntos
-                                    de Interés Social" id="flexCheckDefault"
-                                        @change="actualizarSubtiposSeleccionados" />
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Procesos de Apropiación Social del Conocimiento para el Fortalecimiento o Solución de Asuntos de Interés Social"
+                                        id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
                                     <label class="form-check-label" for="flexCheckDefault">Procesos de Apropiación Social
                                         del Conocimiento para el Fortalecimiento o Solución de
                                         Asuntos
@@ -274,20 +273,23 @@
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Proyectos de Investigacion y
-                                    Desarrollo" id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Proyectos de Investigacion y Desarrollo" id="flexCheckDefault"
+                                        @change="actualizarSubtiposSeleccionados" />
                                     <label class="form-check-label" for="flexCheckDefault">Proyectos de Investigacion y
                                         Desarrollo</label>
 
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Proyectos de
-                                    Investigación, Desarrollo e Innovación (ID+I)" id="flexCheckDefault"
-                                        @change="actualizarSubtiposSeleccionados" />
+                                    <input class="form-check-input" type="checkbox"
+                                        value="Proyectos de Investigación, Desarrollo e Innovación (ID+I)"
+                                        id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
                                     <label class="form-check-label" for="flexCheckDefault">Proyectos de
                                         Investigación, Desarrollo e Innovación (ID+I)</label>
 
                                 </div>
+
+                                {{ $store.state.subtiposSeleccionados }}
 
 
                             </div>

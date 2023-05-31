@@ -110,16 +110,16 @@
           <tr v-for="(semillero, index) in semilleros" :key="index" class="align-middle">
 
 
-            <td>{{ semillero.id }}</td>
+            <td>{{ semillero.semillero_id }}</td>
             <td>{{ semillero.semillero_nombre }}</td>
 
             <td class="d-flex text-start">
               <div class="row text-start">
                 <div class="col text-start">
                   <button class="btn btn-warning  me-2" data-bs-toggle="modal" data-bs-target="#actualizarSemilleroModal"
-                    @:click="buscarSemillero(semillero.id)"> <i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarSemilleroModal"  @:click="buscarSemillero(semillero.id)"> <i
-                      class="bi bi-trash3-fill"></i></button>
+                    @:click="buscarSemillero(semillero.semillero_id)"> <i class="bi bi-pencil-square"></i></button>
+                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarSemilleroModal"
+                    @:click="buscarSemillero(semillero.semillero_id)"> <i class="bi bi-trash3-fill"></i></button>
 
 
 
@@ -224,7 +224,7 @@
                     <h3>Actualiza un Semillero</h3>
                     <p>Llena los campos que veras a continuacion:</p>
 
-                    <form class="" method="POST" v-on:submit.prevent="actualizarSemillero(semillero.id)">
+                    <form class="" method="POST" v-on:submit.prevent="actualizarSemillero(semillero.semillero_id)">
 
                       <div class="col-md-12 ">
                         <input v-model="semillero.semillero_nombre" class="form-control text-dark" type="text" required>
@@ -273,7 +273,7 @@
 
 
 
-  
+
   <div class="modal fade" id="eliminarSemilleroModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
@@ -293,8 +293,7 @@
                     <h3>Seguro deseas eliminar el semillero: {{ semillero.semillero_nombre }}?</h3>
 
 
-                    <form class="" method="POST" v-on:submit.prevent="eliminarSemillero(semillero.id)">
-
+                    <form class="" method="POST" v-on:submit.prevent="eliminarSemillero(semillero.semillero_id)">
 
 
                       <div class="form-button mt-5 align-items-center d-flex justify-content-between">
@@ -343,7 +342,7 @@ export default {
     return {
       semilleros: [],
       semillero: [],
-      id: null,
+      semillero_id: null,
       nombre: ""
     }
   },
@@ -365,8 +364,15 @@ export default {
 
       await this.axios.post('http://localhost:3000/semilleros', json)
         .then(data => {
-          alert('Semillero creado')
-          this.buscarSemilleros();
+
+          setTimeout(() => {
+            alert('Semillero Creado')
+          }, 1000);
+
+          setTimeout(() => {
+            this.buscarSemilleros();
+          }, 1200);
+
         })
     },
 
@@ -374,7 +380,7 @@ export default {
     async buscarSemilleros() {
       await this.axios.get('http://localhost:3000/semilleros')
         .then(response => {
-          this.semilleros = response.data.new_semillero
+          this.semilleros = response.data.nuevo_semillero
           // console.log(response.data.new_producto);
           // console.log(this.semilleros);
           // console.log(this.state.productos);
@@ -386,16 +392,15 @@ export default {
 
 
 
-    async buscarSemillero(id) {
-      // console.log(funcionario_id);
-      await this.axios.get('http://localhost:3000/semilleros/' + id)
+    async buscarSemillero(semillero_id) {
+
+      await this.axios.get('http://localhost:3000/semilleros/' + semillero_id)
         .then(response => {
 
 
-          // console.log(response);
+          console.log(response.data);
 
-          this.semillero = response.data.new_semillero;
-
+          this.semillero = response.data.nuevo_semillero;
           // console.log(this.semillero);
 
         }) //Mostrar por consola el error
@@ -404,13 +409,13 @@ export default {
         });
     },
 
-    async actualizarSemillero(id) {
+    async actualizarSemillero(semillero_id) {
       // console.log(id);
       let json = {
         "semillero_nombre": this.semillero.semillero_nombre,
       };
 
-      await this.axios.patch('http://localhost:3000/semilleros/' + id, json)
+      await this.axios.patch('http://localhost:3000/semilleros/' + semillero_id, json)
         .then(response => {
           alert(response.data.message);
           // console.log(response.data.new_producto);
@@ -424,10 +429,8 @@ export default {
 
     },
 
-    async eliminarSemillero(id) {
-      // console.log(id);
-   
-      await this.axios.delete('http://localhost:3000/semilleros/' + id)
+    async eliminarSemillero(semillero_id) {
+      await this.axios.delete('http://localhost:3000/semilleros/' + semillero_id)
         .then(response => {
           console.log(response.data.message);
           alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);

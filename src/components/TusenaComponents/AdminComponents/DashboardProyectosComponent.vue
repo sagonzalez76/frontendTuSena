@@ -56,10 +56,10 @@
               <div class="row text-start">
                 <div class="col text-start">
                   <button class="btn btn-warning  me-2" data-bs-toggle="modal" data-bs-target="#actualizarProyectoModal"
-                    @:click="buscarProyecto(proyecto.id)">
+                    @:click="buscarProyecto(proyecto.proyecto_id)">
                     <i class="bi bi-pencil-square"></i></button>
                   <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarProyectoModal"
-                    @:click="buscarProyecto(proyecto.id)"> <i class="bi bi-trash3-fill"></i></button>
+                    @:click="buscarProyecto(proyecto.proyecto_id)"> <i class="bi bi-trash3-fill"></i></button>
 
 
 
@@ -184,12 +184,15 @@
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
                     <h3>Actualiza un Proyecto</h3>
+
+
+
                     <p>Llena los campos que veras a continuacion:</p>
 
                     <form class="" method="POST" v-on:submit.prevent="actualizarProyecto(proyecto.id)">
 
                       <div class="col-md-12">
-                        <input v-model="proyecto.proyecto_codigo" class="form-control text-dark" type="number" name="name"
+                        <input v-model="proyecto.proyecto_codigo" class="form-control text-dark" type="text" name="name"
                           placeholder="Codigo" required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
@@ -210,8 +213,8 @@
 
 
                       <div class="col-md-12">
-                        <input v-model="proyecto.proyecto_presupuesto" class="form-control" type="number" name="email"
-                           required>
+                        <input v-model="proyecto.proyecto_presupuesto" class="form-control" type="text" name="apellido"
+                          required>
                         <!-- <div class="valid-feedback">Email field is valid!</div>
                         <div class="invalid-feedback">Email field cannot be blank!</div> -->
                       </div>
@@ -274,7 +277,7 @@
                     <h3>Seguro deseas eliminar el proyecto: {{ proyecto.proyecto_nombre }}?</h3>
 
 
-                    <form class="" method="POST" v-on:submit.prevent="eliminarProyecto(proyecto.id)">
+                    <form class="" method="POST" v-on:submit.prevent="eliminarProyecto(proyecto.proyecto_id)">
 
 
 
@@ -298,7 +301,6 @@
                           aria-label="Close">Cancelar</button>
 
 
-                          <button type="button" @:click="consola"> Consola </button>
 
                       </div>
 
@@ -326,7 +328,7 @@ export default {
   data() {
     return {
 
-      
+
       proyecto: [],
       proyectos: [],
 
@@ -341,7 +343,6 @@ export default {
     }
   },
 
-
   async mounted() {
     await this.buscarProyectos();
 
@@ -350,22 +351,12 @@ export default {
 
   methods: {
 
-consola(){
-
-const sory = document.querySelector("#sory")
-console.log(sory);
-
-
-
-},
-
-
     async buscarProyectos() {
 
       await this.axios.get('http://localhost:3000/proyecto')
         .then(response => {
           console.log(response);
-          this.proyectos = response.data.new_proyecto
+          this.proyectos = response.data.nuevo_proyecto
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -375,6 +366,24 @@ console.log(sory);
           console.log(e)
         });
     },
+
+    async buscarProyecto(proyecto_id) {
+      await this.axios.get('http://localhost:3000/proyecto/' + proyecto_id)
+        .then(response => {
+          this.proyecto = response.data.nuevo_proyecto;
+          console.log(this.proyecto);
+
+          // console.log(response.data.new_funcionario[0].funcionario_id);
+          // console.log(response.data.new_producto);
+          // console.log(this.funcionarios);
+          // console.log(this.state.productos);
+        }) //Mostrar por consola el error
+        .catch((e) => {
+          console.log(e)
+        });
+    },
+
+
 
     async registrarProyecto() {
 
@@ -398,7 +407,27 @@ console.log(sory);
       await this.axios.post('http://localhost:3000/proyecto', json)
         .then(data => {
           console.log(data);
-          alert(data.data.message)
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Proyecto Creado',
+
+          })
+
+
+
           this.buscarProyectos();
 
 
@@ -406,27 +435,8 @@ console.log(sory);
     },
 
 
-    async buscarProyecto(id) {
-
-
-      await this.axios.get('http://localhost:3000/proyecto/' + id)
-        .then(response => {
-          this.proyecto = response.data.new_proyecto;
-          console.log(this.proyecto);
-
-          // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
-          // console.log(this.state.productos);
-        }) //Mostrar por consola el error
-        .catch((e) => {
-          console.log(e)
-        });
-    },
-
 
     async actualizarProyecto(id) {
-
 
       let json = {
         "proyecto_codigo": this.proyecto.proyecto_codigo,
@@ -449,7 +459,26 @@ console.log(sory);
 
       await this.axios.patch('http://localhost:3000/proyecto/' + id, json)
         .then(response => {
-          alert(response.data.message);
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Proyecto Actualizado',
+
+          })
+
+
           console.log(response);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
@@ -464,14 +493,34 @@ console.log(sory);
     },
 
 
-
-
     async eliminarProyecto(id) {
 
       await this.axios.delete('http://localhost:3000/proyecto/' + id)
         .then(response => {
           console.log(response.data.message);
-          alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);
+
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Proyecto Eliminado',
+
+          }) 
+          
+          
+          
+          // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);

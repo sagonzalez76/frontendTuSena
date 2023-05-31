@@ -168,7 +168,7 @@
 
                 <div class="bg-subtitulo">
                     <div class="align-items-center">
-                        <h6 class="text-center pb-3 align-middle ">PLANES</h6>
+                        <h4 class="text-center pb-3 align-middle ">PLANES</h4>
                     </div>
                 </div>
 

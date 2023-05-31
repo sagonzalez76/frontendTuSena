@@ -3,11 +3,11 @@
     <!-- <div class="container"> -->
     <header class="row py-2 mb-0 px-4">
       <a href="" class="col-3 d-flex justify-content-center align-items-center mb-0 py-0 mb-md-0 text-decoration-none fw-bolder tusena fs-4">
-        <img class="ms-4" width="80" height="70" role="img" aria-label="Bootstrap"
-          src="@/assets/img/logooscuro.png">TUSENA</a>
+        <img class="ms-4" width="150" height="70" role="img" aria-label="Bootstrap"
+          src="@/assets/logonuevo.png"></a>
 
       <!-- <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                                                    <li><a href="#" class="nav-link px-2 link-secondary">Home11</a></li>
+                                                        <li><a href="#" class="nav-link px-2 link-secondary">Home11</a></li>
                                                     <li><a href="#" class="nav-link px-2 link-dark">Features11</a></li>
                                                     <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
                                                     <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
@@ -16,13 +16,13 @@
       <!-- BOTON INICIO SESION -->
       <div class="col-9 text-end py-0"> <!--TODO -->
 
-        <button type="button" class="custom-btn btn-3" data-bs-toggle="modal" data-bs-target="#loginmodal"> <span>Iniciar
+        <button type="button" class="custom-btn btn-3 w-25" data-bs-toggle="modal" data-bs-target="#loginmodal"> <span>Iniciar
             Sesion</span></button>
 
 
         <!-- BOTON REGISTRO -->
-        <button type="button" class=" custom-btn btn-3" data-bs-toggle="modal" data-bs-target="#exampleModalR">
-          <span>Registrarse</span></button>
+        <!-- <button type="button" class=" custom-btn btn-3" data-bs-toggle="modal" data-bs-target="#exampleModalR">
+          <span>Registrarse</span></button> -->
 
         <!-- MODALES -->
         <LoginRegisterComponent></LoginRegisterComponent>

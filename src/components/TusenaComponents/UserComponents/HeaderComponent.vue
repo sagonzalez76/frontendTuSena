@@ -1,36 +1,47 @@
 <template>
-    <header>
+    <header class="sticky-top">
         <!-- Jumbotron -->
         <div class="p-3 text-center bg-white border-bottom">
             <div class="container">
                 <div class="row gy-3">
                     <!-- Left elements -->
-                    <div class="col-lg-2 col-sm-4 col-4">
-                        <router-link to="/productosmain" class="float-start">
-                            <img src="@/assets/img/TUSENALOGO.png" height="40" />
+                    <div class="col-lg-2 col-sm-4 col-4 d-flex justify-content-center">
+                        <router-link to="/buscador" class="float-end">
+                            <img src="@/assets/logonuevo2.svg" class="" />
                         </router-link>
                     </div>
                     <!-- Left elements -->
 
                     <!-- Center elements -->
                     <div class="order-lg-last col-lg-5 col-sm-8 col-8">
-                        <div class="d-flex float-end">
 
-                            <router-link to="/userprofile/1"
+
+                        <div class="d-flex float-end"  v-if="!$store.state.token">
+                            <router-link to="/productos"
                                 class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i
                                     class="fas fa-user-alt m-1 me-md-2"></i>
-                                <p class="d-none d-md-block mb-0">Iniciar Sesion</p>
+                                <p class="d-none d-md-block mb-0">Inicio Sesion Administrador</p>
                             </router-link>
-                            <router-link to="/userfavorite/1"
+                            <!-- <router-link to="/userfavorite/1"
                                 class="me-1 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75">
                                 <i class="fas fa-heart m-1 me-md-2"></i>
                                 <p class="d-none d-md-block mb-0">Favoritos</p>
-                            </router-link>
+                            </router-link> -->
                             <!-- <a href="">My cart</p> </a> -->
                             <!-- <h4>{{ productos }}</h4> -->
-
-
                         </div>
+
+
+                        <div class="d-flex float-end" v-if="$store.state.token">
+                            <router-link to="/admin/dashboard/funcionarios"
+                                class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i class="bi bi-person-gear"></i> 
+                                <p class="d-none d-md-block mb-0">   Administrador</p>
+                            </router-link>
+                        </div>
+
+
+
+
                     </div>
                     <!-- Center elements -->
 
@@ -40,8 +51,8 @@
 
 
                         <div class="d-flex" role="">
-                            <input v-model="titulo" @keydown.enter="buscarProductoName(titulo)" class="form-control me-2" type=""
-                                placeholder="Busca un producto" aria-label="Search">
+                            <input v-model="titulo" @keydown.enter="buscarProductoName(titulo)" class="form-control me-2"
+                                type="" placeholder="Busca un producto" aria-label="Search">
                             <button v-on:click="buscarProductoName(titulo)" class="btn btn-outline-success" type="button"><i
                                     class="fas fa-search"></i></button>
                         </div>
@@ -62,11 +73,11 @@
 
                 <nav class="d-flex mb-2">
                     <h6 class="mb-0">
-                        <a href="" class="text-white-50">TUSENA</a>
+                        <router-link to="/" class="text-white-50">Innovatec</router-link>
                         <span class="text-white-50 mx-2"> > </span>
-                        <a href="" class="text-white-50">Productos</a>
-                        <span class="text-white-50 mx-2"> > </span>
-                        <a href="" class="text-white"><u>Producto 1</u></a>
+                        <router-link to="/buscador" href="" class="text-white-50">Buscador TuSena</router-link>
+                        <span v-if="producto.productos_titulo" class="text-white-50 mx-2"> > </span>
+                        <router-link to="/productos/1" class="text-white"><u>{{ producto.productos_titulo }}</u></router-link>
 
 
                     </h6>
@@ -92,22 +103,22 @@ export default {
 
     data() {
         return {
-      
+
         }
     },
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    computed: {  
-        
-      
-        ...mapState({
+    computed: {
 
+
+        ...mapState({
+            producto: 'producto',
             productos: 'productos',
         }),
 
-     
+
 
     },
 
@@ -144,6 +155,15 @@ export default {
 
 
 <style scoped>
+img {
+
+    height: 5vh;
+    width: 100%;
+
+}
+
+
+
 .barra {
     background-color: #00A500;
 

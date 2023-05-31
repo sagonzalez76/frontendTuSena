@@ -107,11 +107,9 @@
             <th scope="col">Nombres</th>
             <th scope="col">Apellidos</th>
             <th scope="col">Correo Electronico</th>
-
-            <th scope="col">Contrase&ntilde;a</th>
             <th scope="col">Telefono</th>
+            <th scope="col">Contrase&ntilde;a</th>
 
-            <th scope="col">Administrador</th>
             <th scope="col">Acciones</th>
 
           </tr>
@@ -125,9 +123,9 @@
             <td>{{ funcionario.funcionario_nombre }}</td>
             <td>{{ funcionario.funcionario_apellido }}</td>
             <td>{{ funcionario.funcionario_correo }}</td>
-            <td>{{ funcionario.funcionario_contraseña }}</td>
             <td>{{ funcionario.funcionario_telefono }}</td>
-            <td>{{ funcionario.funcionario_administrador }}</td>
+            <td>{{ funcionario.funcionario_contrasena }}</td>
+
             <td class="d-flex text-start">
               <div class="row text-start">
                 <div class="col text-start">
@@ -159,7 +157,7 @@
   <div class="modal fade" id="registrarFuncionarioModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -219,12 +217,6 @@
                           placeholder="Celular/Telefono" required>
                         <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
-                      </div>
-
-                      <div class="form-check mt-2">
-                        <input class="form-check-input" type="checkbox" value='' id="invalidCheck">
-                        <label class="form-check-label">El usuario sera Administrador?</label>
-                        <!-- <div class="invalid-feedback">Tenga en cuenta que el administrador podra ver, modificar o eliminar los datos contenidos en la base de datos de la aplicacion</div> -->
                       </div>
 
 
@@ -316,7 +308,7 @@
 
 
                       <div class="col-md-12">
-                        <input v-model="funcionario.funcionario_contraseña" class="form-control" type="password"
+                        <input v-model="funcionario.funcionario_contrasena" class="form-control" type="password"
                           name="password" placeholder="Contraseña" required>
                         <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
@@ -452,7 +444,6 @@ export default {
       correo: "",
       contrasena: "",
       telefono: null,
-      admin: true
     }
   },
 
@@ -469,7 +460,7 @@ export default {
 
       await this.axios.get('http://localhost:3000/funcionario')
         .then(response => {
-          this.funcionarios = response.data.new_funcionario
+          this.funcionarios = response.data.nuevo_funcionario
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -482,35 +473,12 @@ export default {
 
     },
 
-    async registrarFuncionario() {
-
-      let json = {
-
-        "funcionario_iden": this.identificacion,
-        "funcionario_nombre": this.nombres,
-        "funcionario_apellido": this.apellidos,
-        "funcionario_correo": this.correo,
-        "funcionario_contraseña": this.contrasena,
-        "funcionario_telefono": this.telefono,
-        "funcionario_administrador": this.admin,
-
-      };
-      await this.axios.post('http://localhost:3000/funcionario', json)
-        .then(data => {
-          console.log(data);
-
-          this.buscarFuncionarios();
-
-        })
-    },
-
-
     async buscarFuncionario(funcionario_id) {
       // console.log(funcionario_id);
 
       await this.axios.get('http://localhost:3000/funcionario/' + funcionario_id)
         .then(response => {
-          this.funcionario = response.data.new_funcionario;
+          this.funcionario = response.data.nuevo_funcionario;
 
           console.log(this.funcionario);
           // console.log(response.data.new_funcionario[0].funcionario_id);
@@ -524,6 +492,42 @@ export default {
     },
 
 
+    async registrarFuncionario() {
+
+      let json = {
+
+        "funcionario_iden": this.identificacion,
+        "funcionario_nombre": this.nombres,
+        "funcionario_apellido": this.apellidos,
+        "funcionario_correo": this.correo,
+        "funcionario_contrasena": this.contrasena,
+        "funcionario_telefono": this.telefono,
+      };
+      await this.axios.post('http://localhost:3000/funcionario', json)
+        .then(data => {
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Funcionario Creado',
+
+          })
+          this.buscarFuncionarios();
+
+        })
+    },
+
     async actualizarFuncionario(funcionario_id) {
 
       let json = {
@@ -532,7 +536,7 @@ export default {
         "funcionario_nombre": this.funcionario.funcionario_nombre,
         "funcionario_apellido": this.funcionario.funcionario_apellido,
         "funcionario_correo": this.funcionario.funcionario_correo,
-        "funcionario_contraseña": this.funcionario.funcionario_contraseña,
+        "funcionario_contrasena": this.funcionario.funcionario_contrasena,
         "funcionario_telefono": this.funcionario.funcionario_telefono,
         "funcionario_administrador": this.funcionario.funcionario_administrador,
 
@@ -541,7 +545,26 @@ export default {
       console.log(funcionario_id);
       await this.axios.patch('http://localhost:3000/funcionario/' + funcionario_id, json)
         .then(response => {
-          alert(response.data.message);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Funcionario Actualizado',
+
+          })
+
+
+
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -562,8 +585,26 @@ export default {
       console.log(funcionario_id);
       await this.axios.delete('http://localhost:3000/funcionario/' + funcionario_id)
         .then(response => {
-          console.log(response.data.message);
-          alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Funcionario Eliminado',
+
+          })
+
+          // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -607,8 +648,8 @@ export default {
   position: relative;
   display: inline-block;
   box-shadow: inset 2px 2px 2px 0px rgb(24, 183, 61),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+    7px 7px 20px 0px rgba(230, 20, 20, 0.1),
+    4px 4px 5px 0px rgba(171, 10, 10, 0.1);
   outline: none;
 }
 
@@ -927,7 +968,7 @@ body {
 }
 
 .form-content h3 {
-  color: #fff;
+  color: #030000;
   text-align: left;
   font-size: 28px;
   font-weight: 600;
@@ -939,7 +980,7 @@ body {
 }
 
 .form-content p {
-  color: #fff;
+  color: #000000;
   text-align: left;
   font-size: 17px;
   font-weight: 300;
@@ -951,7 +992,7 @@ body {
 .form-content label,
 .was-validated .form-check-input:invalid~.form-check-label,
 .was-validated .form-check-input:valid~.form-check-label {
-  color: #fff;
+  color: #000000;
 
 }
 
@@ -967,7 +1008,7 @@ body {
   border: 0;
   outline: 0;
   border-radius: 6px;
-  background-color: #fff;
+  background-color: #e4e4e4;
   font-size: 15px;
   font-weight: 300;
   color: #8D8D8D;

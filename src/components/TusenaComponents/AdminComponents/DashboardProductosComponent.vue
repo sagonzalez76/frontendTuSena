@@ -103,15 +103,14 @@
             <th scope="col">Titulo</th>
             <!-- <th scope="col">Autor(es)</th> -->
             <th scope="col">Autor</th>
+            <th scope="col">Autor</th>
+
             <th scope="col">A&ntilde;o</th>
-            <th scope="col">Linea Programatica</th>
-            <th scope="col">Detalle</th>
 
             <th scope="col">Tipo</th>
             <th scope="col">Subtipo</th>
             <th scope="col">URL</th>
 
-            <th scope="col">Idioma</th>
             <th scope="col">Imagen</th>
             <th scope="col">Acciones</th>
 
@@ -126,12 +125,9 @@
             <td>{{ producto.productos_autor }}</td>
 
             <td>{{ producto.productos_ano }}</td>
-            <td>{{ producto.productos_linea }}</td>
-            <td>{{ producto.productos_detalle }}</td>
             <td>{{ producto.productos_tipo }}</td>
             <td>{{ producto.productos_subtipo }}</td>
             <td>{{ producto.productos_url }}</td>
-            <td>{{ producto.productos_idioma }}</td>
             <td>{{ producto.productos_imagen }}</td>
 
 
@@ -186,46 +182,62 @@
 
                     <form class="" method="POST" v-on:submit.prevent="registrarProducto">
 
-                      <div class="col-md-12">
+                      <div class="col-md-12 ">
                         <input class="form-control text-dark" type="text" required placeholder="Titulo" v-model="titulo">
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
-                      <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="name" placeholder="Autor" v-model="autor"
-                          required>
+
+
+
+
+                      <div class="col-md-12" v-for="(autor, index) in autores" :key="index">
+                        <div class="row">
+                          <div class="col-lg-10 text-center"> <input class="form-control text-dark" type="text"
+                              name="name" :placeholder="`Autor ${index + 1}`" v-model="autores[index]" required></div>
+
+                          <div class="col-lg-2 mx-auto mt-3 text-center">
+
+                            <button class="btn btn-success mt-1" type="button" @click="agregarAutor">+</button> <button
+                              class="btn btn-danger mt-1" v-if="index !== 0" type="button" @click="eliminarAutor(index)">
+                              -
+                            </button>
+                          </div>
+                        </div>
+
+
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
+
+
+
+
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="date" name="apellido" placeholder="Año" v-model="ano"
-                          required>
+                        <!-- <input class="form-control text-dark" type="number" name="apellido" min="1900" :max="maxYear"
+                          placeholder="Año" v-model="ano" required> -->
+                          
+                        <select v-model="ano" class="text-dark">
+                          <option value="value1" selected disabled>Elija el A&ntilde;o</option>
+                          <option v-for="year in availableYears" :value="year" :key="year">{{ year }}</option>
+                        </select>
+
+
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" placeholder="Linea Programatica"
-                          v-model="linea" required>
-                        <!-- <div class="valid-feedback">Email field is valid!</div>
-                        <div class="invalid-feedback">Email field cannot be blank!</div> -->
+                        <input class="form-control text-dark" type="text" name="autor" placeholder="Autor" v-model="autor"
+                          required>
+
+                        <!-- <div class="valid-feedback">Username field is valid!</div>
+                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
 
-                      <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" placeholder="Detalle" v-model="detalle"
-                          required>
-                        <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
-                        <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
-                      </div>
-
-
-                      <!-- <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" placeholder="Tipo" v-model="tipo"
-                          required>
-                      </div> -->
 
                       <div class="col-md-12 text-dark">
                         <select name="subtipo" class="text-dark" v-model="tipo">
@@ -277,7 +289,7 @@
                           <option value="Prototipos Industriales">Prototipos Industriales</option>
                           <option value="Proyectos de Investigacion y Desarrollo">Proyectos de Investigacion y Desarrollo
                           </option>
-                          <option value="Proyectos de Investigación, Desarrollo e Innovación (ID+I)">Proyectos de
+                          <option value="Proyectos deInvestigación, Desarrollo e Innovación (ID+I)">Proyectos de
                             Investigación, Desarrollo e Innovación (ID+I)</option>
 
                         </select>
@@ -286,14 +298,12 @@
 
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" placeholder="URL/Documentacion"
+                        <input class="form-control text-dark" type="text" name="" placeholder="URL/Soporte"
                           v-model="url" required>
                       </div>
+
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" placeholder="Idioma" v-model="idioma"
-                          required>
-                      </div>
-                      <div class="col-md-12">
+
                         <input class="form-control text-dark" type="text" name="" placeholder="Imagen" v-model="imagen"
                           required>
                       </div>
@@ -370,19 +380,12 @@
                       </div>
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="apellido"
-                          v-model="producto.productos_linea" required>
+                        <input class="form-control text-dark" type="text" name="name" v-model="producto.productos_ano"
+                          required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
-
-                      <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_detalle"
-                          required>
-                        <!-- <div class="valid-feedback">Email field is valid!</div>
-                        <div class="invalid-feedback">Email field cannot be blank!</div> -->
-                      </div>
 
 
                       <div class="col-md-12">
@@ -397,16 +400,23 @@
                         <input class="form-control text-dark" type="text" name="" v-model="producto.productos_subtipo"
                           required>
                       </div>
+
+
+
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_idioma"
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_imagen"
                           required>
                       </div>
 
-                      <div class="form-check mt-2">
-                        <input class="form-check-input" type="checkbox" value='' id="invalidCheck">
-                        <label class="form-check-label">El usuario sera Administrador?</label>
-                        <!-- <div class="invalid-feedback">Tenga en cuenta que el administrador podra ver, modificar o eliminar los datos contenidos en la base de datos de la aplicacion</div> -->
+                      <div class="col-md-12">
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_url"
+                          required>
                       </div>
+
+
+
+
+
 
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">
@@ -517,21 +527,24 @@ export default {
     return {
       producto: [],
       productos: [],
-
       id: null,
       titulo: '',
       autor: "",
-      ano: "",
-      linea: "",
-      detalle: "",
+      ano: null,
       tipo: "",
-      subtipo: "Elija un Subtipo de Producto",
+      subtipo: "",
       url: "",
-      idioma: "",
       imagen: "",
+      availableYears: []
+
 
 
     }
+  },
+
+  async created() {
+    const currentYear = new Date().getFullYear();
+    this.availableYears = Array.from({ length: currentYear - 2012 + 1 }, (_, index) => currentYear - index);
   },
 
 
@@ -541,14 +554,35 @@ export default {
   },
 
 
+  computed: {
+    obtenerAno() {
+      if (this.ano) {
+        const fechaObj = new Date(this.ano);
+        return fechaObj.getFullYear();
+      } else {
+        return '';
+      }
+    }
+  },
+
+
   methods: {
+
+    agregarAutor() {
+      this.autores.push(''); // Agregar un nuevo campo vacío de autor al arreglo
+    },
+    eliminarAutor(index) {
+      if (this.autores.length > 1) {
+        this.autores.splice(index, 1); // Eliminar el campo de autor en el índice especificado
+      }
+    },
 
     async buscarProductos() {
 
       await this.axios.get('http://localhost:3000/producto')
         .then(response => {
           console.log(response);
-          this.productos = response.data.new_producto
+          this.productos = response.data.nuevo_producto
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -576,19 +610,36 @@ export default {
         "productos_titulo": this.titulo,
         "productos_ano": this.ano,
         "productos_url": this.url,
-        "productos_detalle": this.detalle,
         "productos_autor": this.autor,
         "productos_tipo": this.tipo,
         "productos_subtipo": this.subtipo,
-        "productos_idioma": this.idioma,
-        "productos_linea": this.linea,
-        "producto_imagen": this.imagen,
+        "productos_imagen": this.imagen,
 
       };
       await this.axios.post('http://localhost:3000/producto', json)
         .then(data => {
           console.log(data);
-          alert(data.data.message)
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Producto Creado',
+
+          })
+
+
+
+
           this.buscarProductos();
 
 
@@ -601,7 +652,7 @@ export default {
 
       await this.axios.get('http://localhost:3000/producto/' + producto_id)
         .then(response => {
-          this.producto = response.data.new_producto;
+          this.producto = response.data.nuevo_producto;
 
           console.log(this.producto);
           // console.log(response.data.new_funcionario[0].funcionario_id);
@@ -626,8 +677,6 @@ export default {
         // "productos_autor": this.producto.productos_autor,
         "productos_tipo": this.producto.productos_tipo,
         "productos_subtipo": this.producto.productos_subtipo,
-        "productos_idioma": this.producto.productos_idioma,
-        "productos_linea": this.producto.productos_linea,
         "producto_imagen": this.producto.productos_imagen,
 
 
@@ -637,7 +686,6 @@ export default {
         // PRODUCTO.productos_detalle = productos_detalle
         // PRODUCTO.productos_tipo = productos_tipo
         // PRODUCTO.productos_subtipo = productos_subtipo
-        // PRODUCTO.productos_idioma = productos_idioma
         // PRODUCTO.productos_linea = productos_linea
         // PRODUCTO.producto_imagen = producto_imagen
 
@@ -648,7 +696,23 @@ export default {
       console.log(this.producto);
       await this.axios.patch('http://localhost:3000/producto/' + producto_id, json)
         .then(response => {
-          alert(response.data.message);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Producto Actualizado',
+
+          })
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -670,7 +734,23 @@ export default {
       await this.axios.delete('http://localhost:3000/producto/' + producto_id)
         .then(response => {
           console.log(response.data.message);
-          alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Producto Eliminado',
+
+          })  // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -690,6 +770,8 @@ export default {
 
 
   },
+
+
 
 
 }

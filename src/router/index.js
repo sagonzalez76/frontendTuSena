@@ -5,6 +5,11 @@ import DashboardAdmin from '../views/tusena/admin/DashboardAdmin.vue'
 
 import SemillerosView from "../views/innovatec/SemillerosView.vue"
 
+import store from '../store'; // Importa tu archivo de Vuex store
+
+
+
+
 
 const routes = [
   {
@@ -89,14 +94,6 @@ const routes = [
 
     ]
   },
-
-
-
-
-
-
-
-
   {
     path: '/productos',
     name: 'productos',
@@ -147,8 +144,8 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/innovatec/InvestigadoresView.vue')
   },
   {
-    path: '/productosmain',
-    name: 'productosmain',
+    path: '/buscador',
+    name: 'buscador',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -179,20 +176,15 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/tusena/user/UserFavorite.vue')
   },
 
-  {
-    path: '/admin/dashboard',
-    name: 'admin/dashboard',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/tusena/admin/DashboardAdmin.vue')
-  },
-
 
   {
     path: '/admin/dashboard/',
     name: 'admin/dashboard/',
-    component: DashboardAdmin,
+    component: DashboardAdmin, 
+    meta: {
+      requiresAuth: true // Esta ruta requiere autenticación
+    },
+ 
     children: [
 
       {
@@ -219,17 +211,35 @@ const routes = [
 
     ]
   }
-
-
-
-
-
-
 ]
+
+
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+},)
+
+
+
+
+
+router.beforeEach((to, from, next) => {
+  const isLoggedIn = localStorage.getItem('token');
+
+  // Verifica si el usuario está autenticado antes de cada navegación
+  if (to.meta.requiresAuth && !isLoggedIn) {
+    // Si la ruta requiere autenticación y el usuario no está autenticado,
+    // redirige a la página de inicio de sesión o a la ruta que desees
+    next('/productos');
+  } else {
+    // Si el usuario está autenticado o la ruta no requiere autenticación,
+    // permite la navegación
+    next();
+  }
+});
+
+
+
 
 export default router

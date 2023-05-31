@@ -70,17 +70,19 @@
     </div> -->
 
 
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow ">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 border border-2 border-success" href="#">TuSena</a>
+    <header class="navbar navbar-dark sticky-top bg-light flex-md-nowrap p-0 shadow ">
+      <router-link to="/buscador"
+        class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 border border-0 border-success">TuSena</router-link>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input class="form-control form-control bg-dark text-light w-100 rounded-0 border-0 " type="text"
+      <input class="form-control form-control bg-light text-dark w-100 rounded-0 border-0 " type="text"
         placeholder="Buscar" aria-label="Search">
-      <div class="navbar-nav border border-danger">
-        <div class="nav-item text-nowrap">
-          <router-link to="/productosmain" class="nav-link px-3 text-danger" href="#">Salir</router-link>
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap mx-4 my-2 ">
+          <router-link to="/buscador" class="nav-link px-3 bg-danger text-dark fw-bold rounded-4" type="button" @click="logout()"
+            href="#">Cerrar Sesion</router-link>
         </div>
       </div>
     </header>
@@ -91,7 +93,8 @@
           <div class="position-sticky pt-3 sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <router-link to="/admin/dashboard/funcionarios" class="nav-link" aria-pressed="true" aria-current="page" href="#">
+                <router-link to="/admin/dashboard/funcionarios" class="nav-link" aria-pressed="true" aria-current="page"
+                  href="#">
 
                   <!-- <span data-feather="home" class="align-text-bottom"> </span> -->
 
@@ -110,7 +113,7 @@
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/admin/dashboard/productos" class="nav-link"  aria-pressed="true" href="#">
+                <router-link to="/admin/dashboard/productos" class="nav-link" aria-pressed="true" href="#">
                   <!-- <span data-feather="shopping-cart" class="align-text-bottom"></span> -->
 
                   <i class="bi bi-file-bar-graph"></i> Productos
@@ -119,13 +122,13 @@
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/admin/dashboard/proyectos" class="nav-link"  aria-pressed="true" href="#">
+                <router-link to="/admin/dashboard/proyectos" class="nav-link" aria-pressed="true" href="#">
                   <!-- <span data-feather="users" class="align-text-bottom"></span> -->
                   <i class="bi bi-folder-check"></i> Proyectos
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/admin/dashboard/programas" class="nav-link"  aria-pressed="true" href="#">
+                <router-link to="/admin/dashboard/programas" type="button" class="nav-link" aria-pressed="true" href="#">
                   <!-- <span data-feather="bar-chart-2" class="align-text-bottom"></span> -->
                   <i class="bi bi-inboxes-fill"></i> Programas
                 </router-link>
@@ -167,7 +170,7 @@
           </div>
         </nav>
 
-       <router-view></router-view>
+        <router-view></router-view>
       </div>
     </div>
 
@@ -182,11 +185,51 @@
 <script>
 import DashboardFuncionarioComponent from './DashboardFuncionarioComponent.vue'
 
+import { mapState, mapActions } from 'vuex';
 
 
 export default {
   components: {
     DashboardFuncionarioComponent
+  },
+
+  methods: {
+
+    // ...mapActions({
+    //   buscarProductos: 'buscarProductos',
+
+    // }),
+
+
+
+    logout() {
+      // Elimina el token del localStorage al cerrar sesión
+      localStorage.removeItem('token');
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'bottom-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Sesion Cerrada',
+
+      })
+
+
+
+
+
+    }
+
   },
 
 
@@ -197,9 +240,8 @@ export default {
 
 
 <style scoped>
-
-.nav-link:active{
-background-color: aqua;
+.nav-link:active {
+  background-color: aqua;
 
 }
 
@@ -279,7 +321,7 @@ body {
 .navbar-brand {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  background-color: rgba(0, 0, 0, .25);
+  background-color: #21b300;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
 }
 
@@ -290,7 +332,7 @@ body {
 
 
 .form-control::placeholder {
-  color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0) !important;
   opacity: 1;
 }
 

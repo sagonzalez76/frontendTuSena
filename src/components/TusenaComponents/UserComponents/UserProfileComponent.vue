@@ -143,6 +143,8 @@
       </div><!--/row-->
     </div>
   </section>
+
+  {{ $store.state.isAuthenticated }}
 </template>
 
 <script>

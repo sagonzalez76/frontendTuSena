@@ -197,7 +197,7 @@
 
 
                         <li class="nav-item dropdown mx-2">
-                            <router-link to="/productos" class="nav-link dropdown text-dark" href="#" role="button"
+                            <router-link to="/buscador" class="nav-link dropdown text-dark" href="#" role="button"
                                 aria-expanded="false">
                                     Productos
                             </router-link>

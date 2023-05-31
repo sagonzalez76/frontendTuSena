@@ -5,7 +5,7 @@
       <encabezado-logos-component></encabezado-logos-component>
       <encabezado-menu-component></encabezado-menu-component>
      
-      <AboutUsComponent></AboutUsComponent>
+      <InicioComponent></InicioComponent>
 
     </div>
     <FooterComponent></FooterComponent>
@@ -19,7 +19,7 @@ import CarouselComponentVue from '@/components/InnovatecComponents/CarouselCompo
 import EncabezadoMenuComponent from '@/components/InnovatecComponents/EncabezadoMenuComponent.vue';
 import EncabezadoLogosComponent from '@/components/InnovatecComponents/EncabezadoLogosComponent.vue';
 import FooterComponent from '@/components/InnovatecComponents/FooterComponent.vue';
-import AboutUsComponent from '@/components/InnovatecComponents/AboutUsComponent.vue';
+import InicioComponent from '@/components/InnovatecComponents/InicioComponent.vue';
 
 export default {
   name: 'HomeView',
@@ -29,7 +29,7 @@ export default {
     EncabezadoMenuComponent,
     EncabezadoLogosComponent,
     FooterComponent,
-    AboutUsComponent
+    InicioComponent
 }
 }
 </script>
