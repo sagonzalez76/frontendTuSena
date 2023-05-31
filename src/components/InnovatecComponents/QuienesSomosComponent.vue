@@ -5,7 +5,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
           <div center class="card">
-            <img src="@/assets/logos/mision.png" class="card-img-top" alt="..." />
+            <img src="@/assets/img/mision.jpg" class="card-img-top" alt="..." />
             <div class="card-icon">
               <i class="bi bi-building-check"></i>
             </div>
@@ -31,7 +31,7 @@
         </div>
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
           <div class="card">
-            <img src="@/assets/logos/vision.png" class="card-img-top" alt="..." />
+            <img src="@/assets/img/vision.jpg" class="card-img-top" alt="..." />
             <div class="card-icon">
               <i class="bi bi-eye"></i>
             </div>
@@ -55,7 +55,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
           <div class="card">
-            <img src="@/assets/logos/mision.png" class="card-img-top" alt="principios" />
+            <img src="@/assets/img/principios.jpg" class="card-img-top" alt="principios" />
             <div class="card-icon">
               <i class="bi bi-award"></i>
             </div>
@@ -77,7 +77,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
           <div class="card">
-            <img src="@/assets/img/about.jpg" class="card-img-top" alt="..." />
+            <img src="@/assets/img/objetivo.jpg" class="card-img-top" alt="..." />
             <div class="card-icon">
               <i class="bi bi-arrow-right-square"></i>
             </div>
@@ -132,7 +132,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
           <div class="card">
-            <img src="@/assets/img/about.jpg" class="card-img-top" alt="..." />
+            <img src="@/assets/img/valores.jpg" class="card-img-top" alt="..." />
             <div class="card-icon">
               <i class="bi bi-person"></i>
             </div>
@@ -179,7 +179,7 @@
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
           <div class="card">
-            <img src="@/assets/img/about.jpg" class="card-img-top" alt="..." />
+            <img src="@/assets/img/plan.jpg" class="card-img-top" alt="..." />
             <div class="card-icon">
               <i class="bi bi-calendar-check-fill"></i>
             </div>
@@ -192,9 +192,9 @@
                 <div class="col d-flex justify-content-center">
                   <li class="text-center">Plan Estratégico</li>
                 </div>
-                <div class="col d-flex justify-content-center"><a
-                    href="@/assets/files/PlanEstratégico-INNOVATECCTPI.pdf"><img src="@/assets/logos/pdf.png" alt=""
-                      width="40"></a></div>
+                <div class="col d-flex justify-content-center">
+                  <a href="@/assets/files/PlanEstratégico-INNOVATECCTPI.pdf" download><img src="@/assets/logos/pdf.png" alt=""
+                      width="40" ></a></div>
               </div>
 
               <div class="row mt-3">
@@ -203,7 +203,7 @@
                   <li class="text-center">Plan Operativo</li>
                 </div>
                 <div class="col d-flex justify-content-center"><a
-                    href="../../assets/files/PlanEstratégico-INNOVATECCTPI.pdf" alt="" width="40"><img
+                    href="@/assets/files/PlanOperativo2022-INNOVATECCTPI.pdf" alt="" width="40" download><img
                       src="@/assets/logos/pdf.png" alt="" width="40"></a></div>
               </div>
 
@@ -228,7 +228,21 @@ export default {
 </script>
 
 <style scoped>
-img {
+
+
+
+ul {
+text-align: justify;
+
+}
+
+p {
+text-align: justify;
+
+
+
+}
+.card-img-top {
   height: 35vh;
 
 }

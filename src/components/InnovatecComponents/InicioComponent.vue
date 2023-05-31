@@ -511,7 +511,7 @@ export default {
 <style scoped>
 .accordion-body {
 
-    background-color: rgba(180, 224, 180, 0.778);
+    background-color: rgba(226, 226, 226, 0.577);
 }
 
 
@@ -546,7 +546,7 @@ th:hover {
 
 .parrafo-inicial {
     text-align: justify;
-    background-color: #82DEF0;
+    background-color: #a9e7f4;
 }
 
 

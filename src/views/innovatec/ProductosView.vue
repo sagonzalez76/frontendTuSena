@@ -1,236 +1,268 @@
 <template>
-  <body class="mb-0">
-    <!-- <div class="container"> -->
-    <header class="row py-2 mb-0 px-4">
-      <a href="" class="col-3 d-flex justify-content-center align-items-center mb-0 py-0 mb-md-0 text-decoration-none fw-bolder tusena fs-4">
-        <img class="ms-4" width="150" height="70" role="img" aria-label="Bootstrap"
-          src="@/assets/logonuevo.png"></a>
-
-      <!-- <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                                                        <li><a href="#" class="nav-link px-2 link-secondary">Home11</a></li>
-                                                    <li><a href="#" class="nav-link px-2 link-dark">Features11</a></li>
-                                                    <li><a href="#" class="nav-link px-2 link-dark">Pricing</a></li>
-                                                    <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
-                                                    <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
-                                                </ul> -->
-      <!-- BOTON INICIO SESION -->
-      <div class="col-9 text-end py-0"> <!--TODO -->
-
-        <button type="button" class="custom-btn btn-3 w-25" data-bs-toggle="modal" data-bs-target="#loginmodal"> <span>Iniciar
-            Sesion</span></button>
+    <body class="vh-100">
 
 
-        <!-- BOTON REGISTRO -->
-        <!-- <button type="button" class=" custom-btn btn-3" data-bs-toggle="modal" data-bs-target="#exampleModalR">
-          <span>Registrarse</span></button> -->
+        <div class="">
+            <div class="row">
+                <div class="col-lg-3 col-md-2"></div>
+                <div class="col-lg-6 col-md-8 login-box">
+                    <div class="col-lg-12 login-key">
+                        <i class="fa fa-key" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-lg-12 login-title">
+                        PANEL ADMINISTRADOR
+                    </div>
 
-        <!-- MODALES -->
-        <LoginRegisterComponent></LoginRegisterComponent>
+                    <div class="col-lg-12 login-form">
+                        <div class="col-lg-12 login-form">
+                            <form @submit.prevent="checkAuthentication()" autocomplete="off">
+                                <div class="form-group">
+                                    <label class="form-control-label">NUMERO DE DOCUMENTO</label>
+                                    <input type="number" class="form-control border-success"
+                                        style="--bs-border-opacity: .5;" id="floatingInput" placeholder=""
+                                        v-model="funcionario_iden" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">CONTRASENA</label>
+                                    <input type="password" class="form-control border-success"
+                                        style="--bs-border-opacity: .5;" id="floatingInput" placeholder=""
+                                        v-model="funcionario_contraseña" required>
+                                </div>
 
-      </div>
-    </header>
+                                <div class="col-lg-12 loginbttm">
+                                    <div class="col-lg-6 login-btm login-text">
+                                        <!-- Error Message -->
+                                    </div>
+                                    <div class="col-lg-6 login-btm login-button">
 
-    <div class="container col-xxl-8 px-4 py-0" mb-0>
-      <div class="row flex-lg-row-reverse align-items-center g-5 py-5 me-0">
-        <div class="col-10 col-sm-8 col-lg-6">
 
-          <img src="@/assets/img/ASTRONAUTA.png" class="d-block mx-lg-auto img-fluid mb-0" alt="TusenaTheme" width="700"
-            height="500" loading="lazy">
-        </div>
-        <div class="col-lg-6">
-          <h1 class="display-1 fw-bold lh-1 mb-3">Bienvenido a TUSENA</h1>
-          <p class="lead">Si no conozco una cosa la investigaré
-            -Louis Pasteur</p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <!-- <i class="bi bi-google-play"></i> -->
-            <div class="d-flex flex-column flex-lg-row align-items-center">
-              <a class="me-lg-3 mb-0 mb-lg-0" href="#"><img class="app-badge"
-                  src="https://www.designpieces.com/wp-content/uploads/2016/02/google-play-badge.png" alt="..."
-                  width="150" /></a>
 
+                                        <button v-show="!loading" type="submit" class="btn btn-outline-primary">Iniciar
+                                            Sesion
+                                            <!-- <router-link to="/admin/dashboard/" type="submit"
+                                                            class="nav-link dropdown text-dark" role="button"
+                                                            aria-expanded="false"> </router-link> -->
+
+                                        </button>
+
+                                        <button v-show="loading" class="btn btn-outline-primary" type="button" disabled>
+                                            <span class="spinner-border spinner-border-sm " role="status"
+                                                aria-hidden="true"></span>
+                                            Verificando...
+                                        </button>
+
+
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-center mt-3">
+
+
+                                        <div class="alert alert-danger w-100 d-flex justify-content-center" role="alert"
+                                            v-if="$store.state.errorAutenticated">
+                                            {{ error_msg }}</div>
+
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-2"></div>
+                </div>
             </div>
 
-            <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
-          </div>
-
         </div>
 
-      </div>
-    </div>
-    <!-- <div class="p-2 p-md-5 mb-0 rounded text-bg-success">
-                                            <div class="col-md-12 px-0">
-                                                <p class="lead">TUSENA es una herramienta hecha por y para la investigación, en donde podrás
-                                                    encontrar
-                                                    los productos resultado de proyectos de investigación del Centro de Teleinformática y Producción
-                                                    Industrial - Sena Popayán</p>
-                                            </div>
-                                        </div> -->
-
-    <!-- </div> -->
-  </body>
-  <FooterComponent></FooterComponent>
+    </body>
 </template>
 
 <script>
-import FooterComponent from '@/components/InnovatecComponents/FooterComponent.vue';
+import store from '../../store'; // Importa tu archivo de Vuex store
+
 import LoginRegisterComponent from '@/components/LoginRegisterComponent.vue';
 
 
 export default {
-  components: {
-    FooterComponent,
-    LoginRegisterComponent
-  }
+    components: {
+
+        LoginRegisterComponent
+    },
+
+    data() {
+        return {
+            funcionario_iden: '',
+            funcionario_contraseña: '',
+            error: false,
+            error_msg: "Numero de Identificacion y/o Contrasena Incorrectos",
+            loading: false
+        }
+    },
+
+    methods: {
+
+        checkAuthentication() {
+            this.loading = true
+
+            this.$store.dispatch('checkAuthentication', {
+                identificacion: this.funcionario_iden,
+                contrasena: this.funcionario_contraseña
+            });
+
+            setTimeout(this.navigateToPage, 1000);
+            setTimeout(this.loadingSpinner, 1000);
+
+        },
+
+        navigateToPage() {
+
+            if (store.state.token) {
+                $(this.$refs.loginModal).modal('hide');
+                this.$router.push('/admin/dashboard/funcionarios');
+
+                console.log("Funciona");
+            }
+            // Realiza la navegación a la página deseada usando $router de Vue Router
+        },
+
+        loadingSpinner() {
+            this.loading = false
+        },
+
+    },
+
+
+
 }
 </script>
 
 
 <style scoped>
-button {
-  margin: 20px;
+body {
+    background: #12b001;
+    font-family: 'Roboto', sans-serif;
+    max-height: 100vh;
+    max-width: 100vw;
 }
 
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  box-shadow: inset 2px 2px 2px 2px rgba(255, 255, 255, 0),
-    0px 0px 10px 5px rgba(77, 255, 0, 0.364),
-    4px 4px 5px 2px rgba(26, 255, 0, 0.231);
-  outline: none;
+.login-box {
+    margin-top: 75px;
+    height: auto;
+    background: #12b001;
+    text-align: center;
 }
 
-/* 3 */
-.btn-3 {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(1, 1, 1) 100%);
-  width: 130px;
-  height: 40px;
-  line-height: 42px;
-  padding: 0;
-  border: none;
-
+.login-key {
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    background: -webkit-linear-gradient(#27EF9F, #f1f3f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.btn-3 span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
+.login-title {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ECF0F5;
 }
 
-.btn-3:before,
-.btn-3:after {
-  position: absolute;
-  content: "";
-  right: 0;
-  top: 0;
-  background: rgb(0, 0, 0);
-  transition: all 0.3s ease;
+.login-form {
+    margin-top: 25px;
+    text-align: left;
 }
 
-.btn-3:before {
-  height: 0%;
-  width: 2px;
+input[type=text] {
+    background-color: #ffffff;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #208712;
 }
 
-.btn-3:after {
-  width: 0%;
-  height: 2px;
+input[type=password] {
+    background-color: #fdfdfd;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #208712;
 }
 
-.btn-3:hover {
-  background: transparent;
-  box-shadow: none;
+.form-group {
+    margin-bottom: 40px;
+    outline: 0px;
 }
 
-.btn-3:hover:before {
-  height: 100%;
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #000000;
+    outline: 0;
+    background-color: #1A2226;
+    color: #ECF0F5;
 }
 
-.btn-3:hover:after {
-  width: 100%;
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
 }
 
-.btn-3 span:hover {
-  color: rgb(0, 0, 0);
-  background: rgb(255, 255, 255);
-  font-weight: bold;
+label {
+    margin-bottom: 0px;
 }
 
-.btn-3 span:before,
-.btn-3 span:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  transition: all 0.9s ease;
+.form-control-label {
+    font-size: 10px;
+    color: #fdfcfc;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.btn-3 span:before {
-  width: 2px;
-  height: 0%;
+.btn-outline-primary {
+    background-color: #007706;
+    border-color: #ffffff;
+    color: #f9fafa;
+    border-radius: 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.btn-3 span:after {
-  width: 0%;
-  height: 2px;
+.btn-outline-primary:hover {
+    background-color: #000000;
+    right: 0px;
 }
 
-.btn-3 span:hover:before {
-  height: 100%;
+.login-btm {
+    float: left;
 }
 
-.btn-3 span:hover:after {
-  width: 100%;
+.login-button {
+    padding-right: 0px;
+    text-align: right;
+    margin-bottom: 25px;
 }
 
-
-header {
-  background: rgb(12,194,16);
-background: linear-gradient(90deg, rgba(12,194,16,0) 35%, rgba(0,189,42,1) 100%);
+.login-text {
+    text-align: left;
+    padding-left: 0px;
+    color: #A2A4A4;
 }
 
-.tusena {
-  color: #006205;
-  font-family: 'Work Sans'
+.loginbttm {
+    padding: 0px;
 }
-
-@media (max-width: 768px) {
-  .tusena {
-    color: #ffffff;
-    font-family: Alkatra;
-  }
-
-  #iniciarSesion,
-  #registro {
-    color: #000000;
-  }
-}
-
-
-@media (min-width: 550px) {
-
-  #iniciarSesion {
-    margin-left: 100px;
-  }
-
-}
-
-@media (min-width: 200px) {
-
-  #iniciarSesion {
-    margin-left: 20px;
-  }
-
-}</style>
+</style>
