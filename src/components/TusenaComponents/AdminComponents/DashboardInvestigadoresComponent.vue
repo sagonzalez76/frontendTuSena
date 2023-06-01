@@ -79,7 +79,7 @@
 
       <button type="button" class="custom-btn btn-register my-2 mx-2 px-auto" data-bs-toggle="modal"
         data-bs-target="#registrarFuncionarioModal"> <i class="bi bi-plus-lg"></i> Agregar
-        Funcionario</button>
+        Investigador</button>
 
 
       <div class="btn-toolbar mb-2 mb-md-0">
@@ -96,37 +96,41 @@
 
     <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
 
-    <h3>Funcionarios</h3>
+    <h3>Investigadores</h3>
     <div class="table-responsive">
       <table class="table table-striped table-hover table-sm">
         <thead class="table-success text-start">
           <tr class="">
-            <th scope="col">#</th>
+            <th scope="col">ID</th>
             <th scope="col">Identificacion</th>
             <!-- <th scope="col">Autor(es)</th> -->
             <th scope="col">Nombres</th>
             <th scope="col">Apellidos</th>
             <th scope="col">Correo Electronico</th>
             <th scope="col">Telefono</th>
-            <th scope="col">Contrase&ntilde;a</th>
+            <!-- <th scope="col">Contrase&ntilde;a</th> -->
 
             <th scope="col">Acciones</th>
 
           </tr>
         </thead>
         <tbody class="table-group-divider text-start">
+
+
+
           <tr v-for="(funcionario, index) in funcionarios" :key="index" class="align-middle">
 
 
-            <td>{{ funcionario.funcionario_id }}</td>
-            <td>{{ funcionario.funcionario_iden }}</td>
-            <td>{{ funcionario.funcionario_nombre }}</td>
-            <td>{{ funcionario.funcionario_apellido }}</td>
-            <td>{{ funcionario.funcionario_correo }}</td>
-            <td>{{ funcionario.funcionario_telefono }}</td>
-            <td>{{ funcionario.funcionario_contrasena }}</td>
+            <td v-if="!funcionario.funcionario_admin">{{ funcionario.funcionario_id }}</td>
+            <td v-if="!funcionario.funcionario_admin">{{ funcionario.funcionario_iden }}</td>
+            <td v-if="!funcionario.funcionario_admin">{{ funcionario.funcionario_nombre }}</td>
+            <td v-if="!funcionario.funcionario_admin">{{ funcionario.funcionario_apellido }}</td>
+            <td v-if="!funcionario.funcionario_admin">{{ funcionario.funcionario_correo }}</td>
+            <td v-if="!funcionario.funcionario_admin">{{ funcionario.funcionario_telefono }}</td>
+            <!-- <td v-if="!funcionario.funcionario_admin">{{ funcionario.funcionario_contrasena }}</td> -->
 
-            <td class="d-flex text-start">
+
+            <td  v-if="!funcionario.funcionario_admin" class="d-flex text-start">
               <div class="row text-start">
                 <div class="col text-start">
                   <button class="btn btn-warning  me-2" data-bs-toggle="modal"
@@ -170,7 +174,7 @@
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Registra un Funcionario</h3>
+                    <h3>Registra un Investigador</h3>
                     <p>Llena los campos que veras a continuacion:</p>
 
                     <form class="" method="POST" v-on:submit.prevent="registrarFuncionario">
@@ -201,14 +205,6 @@
                           placeholder="Correo Electronico" required>
                         <!-- <div class="valid-feedback">Email field is valid!</div>
                         <div class="invalid-feedback">Email field cannot be blank!</div> -->
-                      </div>
-
-
-                      <div class="col-md-12">
-                        <input v-model="contrasena" class="form-control" type="password" name="password"
-                          placeholder="Contraseña" required>
-                        <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
-                        <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
                       </div>
 
 
@@ -273,7 +269,7 @@
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Actualiza un Funcionario</h3>
+                    <h3>Actualiza un Investigador</h3>
                     <p>Llena los campos que veras a continuacion:</p>
 
                     <form class="" method="POST" v-on:submit.prevent="actualizarFuncionario(funcionario.funcionario_id)">
@@ -322,11 +318,7 @@
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
                       </div>
 
-                      <div class="form-check mt-2">
-                        <input class="form-check-input" type="checkbox" value='' id="invalidCheck">
-                        <label class="form-check-label">El usuario sera Administrador?</label>
-                        <!-- <div class="invalid-feedback">Tenga en cuenta que el administrador podra ver, modificar o eliminar los datos contenidos en la base de datos de la aplicacion</div> -->
-                      </div>
+                     
 
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">
@@ -384,7 +376,7 @@
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Seguro deseas eliminar el usuario con identificacion: {{ funcionario.funcionario_iden }}?</h3>
+                    <h3>Seguro deseas eliminar el Investigador {{ funcionario.funcionario_nombre }} {{ funcionario.funcionario_apellido }}?</h3>
 
 
                     <form class="" method="POST" v-on:submit.prevent="eliminarFuncionario(funcionario.funcionario_id)">
@@ -431,7 +423,7 @@
 
 export default {
 
-  name: "DashboardFuncionarioComponent",
+  name: "DashboardFuncionarioComponentUsers",
 
   data() {
     return {
@@ -442,8 +434,9 @@ export default {
       nombres: "",
       apellidos: "",
       correo: "",
-      contrasena: "",
+      contrasena: "N/A",
       telefono: null,
+      admin:false
     }
   },
 
@@ -502,6 +495,10 @@ export default {
         "funcionario_correo": this.correo,
         "funcionario_contrasena": this.contrasena,
         "funcionario_telefono": this.telefono,
+        "funcionario_telefono": this.telefono,
+        "funcionario_admin": this.admin
+
+
       };
       await this.axios.post('http://localhost:3000/funcionario', json)
         .then(data => {
@@ -520,7 +517,7 @@ export default {
 
           Toast.fire({
             icon: 'success',
-            title: 'Funcionario Creado',
+            title: 'Investigador Creado',
 
           })
           this.buscarFuncionarios();
@@ -559,7 +556,7 @@ export default {
 
           Toast.fire({
             icon: 'success',
-            title: 'Funcionario Actualizado',
+            title: 'Investigador Actualizado',
 
           })
 
@@ -600,7 +597,7 @@ export default {
 
           Toast.fire({
             icon: 'success',
-            title: 'Funcionario Eliminado',
+            title: 'Investigador Eliminado',
 
           })
 
@@ -633,7 +630,19 @@ export default {
 }
 </script>
 
+
 <style scoped>
+
+
+th{
+font-weight:600;
+
+}
+
+td{
+font-style: italic;
+
+}
 .custom-btn {
 
   width: auto;

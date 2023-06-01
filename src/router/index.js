@@ -188,8 +188,12 @@ const routes = [
     children: [
 
       {
-        path: 'funcionarios',
-        component:() => import('../components/TusenaComponents/AdminComponents/DashboardFuncionarioComponent.vue')
+        path: 'administradores',
+        component:() => import('../components/TusenaComponents/AdminComponents/DashboardAdministradoresComponent.vue')
+      },
+      {
+        path: 'investigadores',
+        component:() => import('../components/TusenaComponents/AdminComponents/DashboardInvestigadoresComponent.vue')
       },
       {
         path: 'semilleros',

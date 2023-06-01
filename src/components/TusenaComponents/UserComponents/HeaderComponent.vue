@@ -20,7 +20,7 @@
                             <router-link to="/productos"
                                 class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i
                                     class="fas fa-user-alt m-1 me-md-2"></i>
-                                <p class="d-none d-md-block mb-0">Inicio Sesion Administrador</p>
+                                <p class="d-none d-md-block mb-0">Inicio Sesi&oacute;n Administrador</p>
                             </router-link>
                             <!-- <router-link to="/userfavorite/1"
                                 class="me-1 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75">
@@ -33,9 +33,9 @@
 
 
                         <div class="d-flex float-end" v-if="$store.state.token">
-                            <router-link to="/admin/dashboard/funcionarios"
-                                class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i class="bi bi-person-gear"></i> 
-                                <p class="d-none d-md-block mb-0">   Administrador</p>
+                            <router-link to="/admin/dashboard/administradores"
+                                class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i class="bi bi-person-gear">_</i> 
+                                <p class="d-none d-md-block mb-0">Administrador</p>
                             </router-link>
                         </div>
 
@@ -179,7 +179,7 @@ img {
 /* <!--TODO--> */
 .btn-success {
 
-    background-color: #9dffa583;
+    background-color: #e0e0e0;
 
 }
 </style>

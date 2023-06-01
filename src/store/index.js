@@ -243,7 +243,7 @@ export default createStore({
 
 
 
-  
+
 
 
 
@@ -289,20 +289,18 @@ export default createStore({
         })
 
         .catch(response => {
-          console.log(response);
+          const errormsg = response.response.data.error;
+
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Algo salio mal!',
+            text: errormsg,
           })
 
           const errorAutenticated = true
           // console.log(this.state.productos); 
-
           commit('setAuthenticationError', errorAutenticated);
         })
-
-
 
     },
 

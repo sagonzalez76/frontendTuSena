@@ -81,8 +81,8 @@
         placeholder="Buscar" aria-label="Search">
       <div class="navbar-nav">
         <div class="nav-item text-nowrap mx-4 my-2 ">
-          <router-link to="/buscador" class="nav-link px-3 bg-danger text-dark fw-bold rounded-4" type="button" @click="logout()"
-            href="#">Cerrar Sesion</router-link>
+          <router-link to="/buscador" class="nav-link px-3 bg-danger text-dark fw-bold rounded-4" type="button"
+            @click="logout()" href="#">Cerrar Sesion</router-link>
         </div>
       </div>
     </header>
@@ -93,15 +93,29 @@
           <div class="position-sticky pt-3 sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <router-link to="/admin/dashboard/funcionarios" class="nav-link" aria-pressed="true" aria-current="page"
+                <router-link to="/admin/dashboard/administradores" class="nav-link" aria-pressed="true" aria-current="page"
                   href="#">
 
                   <!-- <span data-feather="home" class="align-text-bottom"> </span> -->
 
-                  <i class="bi bi-person"></i> Funcionarios
+                  <i class="bi bi-person-gear"></i> Administradores
 
                 </router-link>
               </li>
+
+
+              <li class="nav-item">
+                <router-link to="/admin/dashboard/investigadores" class="nav-link" aria-pressed="true"
+                  aria-current="page" href="#">
+
+                  <!-- <span data-feather="home" class="align-text-bottom"> </span> -->
+
+                  <i class="bi bi-person"></i> Investigadores
+
+                </router-link>
+              </li>
+
+
               <li class="nav-item">
                 <router-link to="/admin/dashboard/semilleros" class="nav-link" aria-pressed="true" href="#">
                   <i class="bi bi-flower2"></i> Semilleros
@@ -183,7 +197,7 @@
 
 
 <script>
-import DashboardFuncionarioComponent from './DashboardFuncionarioComponent.vue'
+import DashboardFuncionarioComponent from './DashboardAdministradoresComponent.vue'
 
 import { mapState, mapActions } from 'vuex';
 
@@ -240,10 +254,20 @@ export default {
 
 
 <style scoped>
-.nav-link:active {
-  background-color: aqua;
+.router-link-active {
+  background-color: #21b300;
+  color: #f1f1f1 !important;
+ font-size:large;
+ transition: font-size 0.4s ease;
+ transform: scale(1); /* Duración y función de transición suave */
 
+  /* Color de fondo deseado */
 }
+
+/* .nav-link:active {
+  background-color: #21b300;
+
+} */
 
 
 
@@ -291,8 +315,9 @@ body {
 
 .sidebar .nav-link {
   font-weight: 650;
-  color: #146c00;
+  color: #000000;
 }
+
 
 .sidebar .nav-link .feather {
   margin-right: 4px;
@@ -300,7 +325,6 @@ body {
 }
 
 .sidebar .nav-link.active {
-  color: #000000;
   font-size: larger;
   background-color: #21b300;
 }

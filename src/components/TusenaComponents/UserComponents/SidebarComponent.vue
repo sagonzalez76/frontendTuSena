@@ -300,6 +300,7 @@
                                     {{ $store.state.subtiposSeleccionados }}
 
 
+
                                 </div>
                             </div>
                         </div>
