@@ -77,7 +77,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h2 class="">Panel de Administracion</h2>
 
-      <button type="button" class="custom-btn btn-register my-2 mx-2 px-auto" data-bs-toggle="modal"
+      <button type="button" class="custom-btn btn-register my-2 mx-2 px-auto text-light" data-bs-toggle="modal"
         data-bs-target="#registrarFuncionarioModal"> <i class="bi bi-plus-lg"></i> Agregar
         Investigador</button>
 
@@ -535,7 +535,8 @@ export default {
         "funcionario_correo": this.funcionario.funcionario_correo,
         "funcionario_contrasena": this.funcionario.funcionario_contrasena,
         "funcionario_telefono": this.funcionario.funcionario_telefono,
-        "funcionario_administrador": this.funcionario.funcionario_administrador,
+        "funcionario_admin": this.admin
+
 
       };
 

@@ -8,6 +8,7 @@ export default createStore({
     producto: [],
     productos: [],
     semillero: [""],
+
     /////////////////////////////////////////////////////////////////////////////////////
     // FILTROS FILTROS FILTROS
     semillerosSeleccionados: [],
@@ -18,23 +19,13 @@ export default createStore({
     token: localStorage.getItem('token') || null,
     // isAuthenticated: false,
     errorAutenticated: false
-
   },
-
-
-
 
 
 
   getters: {
     isLoggedIn: state => !!state.token
-
-
   },
-
-
-
-
 
 
 
@@ -46,10 +37,10 @@ export default createStore({
 
     },
 
-
     setAuthenticationError(state, errorAutenticated) {
       state.errorAutenticated = errorAutenticated;
     },
+
 
 
     async ['buscarProductoId'](state, id) {
@@ -72,8 +63,6 @@ export default createStore({
         });
     },
 
-
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // BUSCADOR BUSCADOR BUSCADOR
 
@@ -81,9 +70,8 @@ export default createStore({
     async  ['buscarProductos'](state) {
       await axios.get('http://localhost:3000/producto')
         .then(response => {
-          state.productos = response.data.nuevo_producto
-          // console.log(response.data.new_producto);
-          // console.log(this.state.productos);
+          state.productos = response.data.nuevo_producto[0]
+          console.log(response.data.nuevo_producto[0]);
         }) //Mostrar por consola el error
         .catch((e) => {
           state.productos = []
@@ -91,7 +79,6 @@ export default createStore({
           console.log(e)
         });
     },
-
 
     // REALIZA LA BUSQUEDA DE LOS PRODUCTOS QUE CONTENGAN EL PARAMETRO QUE LLEGA DESDE LA BARRA DE BUSQUEDA 
 
@@ -160,21 +147,19 @@ export default createStore({
 
 
 
-    filtrarProductos(state) {
+    filtrarProductosSemillero(state) {
       const productosSemilleros = state.semillerosSeleccionados;
-      // console.log(state.semillerosSeleccionados)
-
       const params = {
-        productos_autores: productosSemilleros
-
-
+        semillero_nombre: productosSemilleros
       }
+      console.log(params)
 
       // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
       // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/filtroProducto", { params })
+      axios.get("http://localhost:3000/filtrosemillero", { params })
         .then((response) => {
           state.productos = response.data;
+          console.log(response.data);
         })
         .catch((error) => {
           state.productos = []
@@ -184,38 +169,32 @@ export default createStore({
     },
 
 
+    // filtrarProductosTipo(state) {
+
+    //   const productosTipos = state.tiposSeleccionados;
+    //   // console.log(state.semillerosSeleccionados)
+
+    //   const params = {
+    //     productos_tipo: productosTipos
 
 
-    filtrarProductosTipo(state) {
+    //   }
 
-      const productosTipos = state.tiposSeleccionados;
-      // console.log(state.semillerosSeleccionados)
+    //   // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
+    //   // con los autores seleccionados como parámetro de consulta
+    //   axios.get("http://localhost:3000/filtroProductoTipo", { params })
+    //     .then((response) => {
 
-      const params = {
-        productos_tipo: productosTipos
-
-
-      }
-
-      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
-      // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/filtroProductoTipo", { params })
-        .then((response) => {
-
-
-
-
-
-          state.productos = response.data;
+    //       state.productos = response.data;
 
 
 
-        })
-        .catch((error) => {
-          state.productos = []
-          console.error(error);
-        });
-    },
+    //     })
+    //     .catch((error) => {
+    //       state.productos = []
+    //       console.error(error);
+    //     });
+    // },
 
 
     filtrarProductosSubtipo(state) {
@@ -223,12 +202,12 @@ export default createStore({
       // console.log(state.semillerosSeleccionados)
 
       const params = {
-        productos_subtipo: productosSubtipos
+        producto_subtipo: productosSubtipos
       }
-
+      console.log(params);
       // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
       // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/filtroProductoSubtipo", { params })
+      axios.get("http://localhost:3000/filtroproducto", { params })
         .then((response) => {
           state.productos = response.data;
         })
@@ -324,7 +303,7 @@ export default createStore({
 
     actualizarSemillerosSeleccionados({ commit }, valorSeleccionado) {
       commit('setSemillerosSeleccionados', valorSeleccionado),
-        commit('filtrarProductos')
+        commit('filtrarProductosSemillero')
 
     },
 

@@ -26,7 +26,7 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Semillero </button>
+                                Semillero </button> {{ $store.state.semillerosSeleccionados }}
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
@@ -34,57 +34,52 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="TODOS" id="TODOS"
                                             @change="actualizarSemillerosSeleccionados" />
-
-
                                         <label class="form-check-label" for="TODOS">TODOS </label>
                                     </div>
+
+
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="CREAD+" id="CREAD+"
                                             @change="actualizarSemillerosSeleccionados" />
-
-
                                         <label class="form-check-label" for="CREAD+">CREAD+ </label>
                                     </div>
-                                    <!-- Checked checkbox -->
+
+
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="EREECA" id="EREECA"
-                                            v-model="autoresSeleccionados" checked @change="filtrarProductos" />
+                                            @change="actualizarSemillerosSeleccionados" />
                                         <label class="form-check-label" for="flexCheckChecked2">EREECA</label>
 
                                     </div>
                                     <!-- Checked checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="INNOVATELCOS"
-                                            id="INNOVATELCOS" v-model="semillerosSeleccionados" checked
-                                            @change="filtrarProductos" />
+                                            id="INNOVATELCOS" 
+                                            @change="actualizarSemillerosSeleccionados" />
                                         <label class="form-check-label" for="flexCheckChecked3">INNOVATELCOS</label>
-                                        <span class="badge badge-secondary float-end">35</span>
                                     </div>
                                     <!-- Checked checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="SENAUTRONIC" id="SENAUTRONIC"
-                                            v-model="semillerosSeleccionados" checked />
+                                        @change="actualizarSemillerosSeleccionados"  />
                                         <label class="form-check-label" for="flexCheckChecked4">SENAUTRONIC</label>
-                                        <span class="badge badge-secondary float-end">89</span>
                                     </div>
                                     <!-- Default checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="SIITIS" id="SIITIS"
-                                            v-model="semillerosSeleccionados" checked />
+                                        @change="actualizarSemillerosSeleccionados"  />
                                         <label class="form-check-label" for="flexCheckDefault">SIITIS</label>
                                     </div>
                                     <!-- Default checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="SINAFRED" id="SINAFRED"
-                                            v-model="semillerosSeleccionados" checked />
+                                        @change="actualizarSemillerosSeleccionados"  />
                                         <label class="form-check-label" for="flexCheckDefault">SINAFRED</label>
                                     </div>
 
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="N/A" id="NINGUNO"
                                             @change="actualizarSemillerosSeleccionados" />
-
-
                                         <label class="form-check-label" for="NINGUNO">NINGUNO </label>
                                     </div>
                                 </div>
@@ -95,7 +90,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+
+
+                    <!-- <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -106,7 +103,6 @@
                             <div class="accordion-body">
                                 <div>
 
-                                    <!-- Checked checkbox -->
                                     <div class="form-check align-middle">
                                         <input class="form-check-input border bordered-3" type="checkbox"
                                             id="flexCheckChecked3" value="Actividades como Evaluador"
@@ -115,7 +111,6 @@
                                             Evaluador</label>
 
                                     </div>
-                                    <!-- Checked checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input border bordered-3" type="checkbox"
                                             id="flexCheckChecked3"
@@ -124,7 +119,6 @@
                                         <label class="form-check-label" for="flexCheckChecked3">Apropiación Social del
                                             Conocimiento y Divulgación Pública de la Ciencia</label>
                                     </div>
-                                    <!-- Checked checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="flexCheckChecked4"
                                             value="Desarrollo Tecnológico e Innovación"
@@ -147,12 +141,11 @@
                                         <label class="form-check-label" for="flexCheckChecked4">Generación de Nuevo
                                             Conocimiento</label>
                                     </div>
-                                    <!-- Default checkbox -->
 
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
 
@@ -167,9 +160,6 @@
                             <div class="accordion-body">
                                 <div>
 
-
-
-                                    <!-- Checked checkbox -->
                                     <div class="form-check align-middle">
                                         <input class="form-check-input" type="checkbox"
                                             value="Artículos de Investigación A1, A2, B y C" id="flexCheckChecked1"
@@ -179,7 +169,7 @@
                                             A2, B y C</label>
 
                                     </div>
-                                    <!-- Checked checkbox -->
+                                    
                                     <div class="form-check">
                                         <input class="form-check-input border bordered-3" type="checkbox"
                                             value="Consultorías Científico-Tecnológicas" id="flexCheckChecked3"
@@ -464,7 +454,6 @@ export default {
             actualizarSemillerosSeleccionados: 'actualizarSemillerosSeleccionados',
             actualizarTiposSeleccionados: 'actualizarTiposSeleccionados',
             actualizarSubtiposSeleccionados: 'actualizarSubtiposSeleccionados'
-
         }),
 
         // PARA CONVERTIR A JSON

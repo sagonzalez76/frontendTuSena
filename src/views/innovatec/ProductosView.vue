@@ -55,13 +55,108 @@
                 </div>
 
 
-                <div class="w-100 text-end ">
+                <div class="w-100 d-flex justify-content-around">
                     <router-link to="/buscador" class="btn btn-success volver"> Volver al
                         Buscador</router-link>
+
+
+                    <!-- <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#recuperarModal">
+                        Recuperar Contrase&ntilde;a </button> -->
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Recuperar Contrase&ntilde;a
+                    </button>
+
                 </div>
+
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    ref="staticBackdrop">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content mb-4">
+                            <div class="modal-header h5 text-white bg-primary justify-content-center">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Recuperar Contrase&ntilde;a</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body px-4">
+                                <p class="py-2">
+                                    Introduce tu correo electronico y te enviaremos un codigo con el cual podras cambiar tu
+                                    contrase&ntilde;a:
+                                </p>
+                                <form class="form-floating mb-3 was-validated" autocomplete="off"
+                                    @submit.prevent="enviarCorreo()">
+                                    <input type="email" class="form-control" id="floating-input"
+                                        v-model="funcionario_correo" required>
+                                    <label for="floatingInput">Correo Electronico</label>
+                                    <div class="w-100 text-center mt-4">
+
+                                        <button type="submit" class="btn btn-primary mx-5" data-bs-target="#staticBackdrop2"
+                                            data-bs-toggle="modal">Enviar Codigo</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="modal fade" id="staticBackdrop2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+                    tabindex="-1" ref="staticBackdrop2">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content mb-4">
+                            <div class="modal-header h5 text-white bg-primary justify-content-center">
+                                <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Codigo de Verificacion</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body px-4">
+                                <p class="py-2">
+                                    Introduce el codigo que enviamos a tu correo electronico:
+                                </p>
+                                <form class="form-floating mb-3 " autocomplete="off"
+                                    @submit.prevent="actualizarContrasena()">
+                                    <div class="mb-2"> <label for="floatingInput">Codigo</label>
+                                        <input type="text" v-model="funcionario_recuperar" class="form-control"
+                                            id="floatingInput" required>
+                                    </div>
+
+                                    <div> <label for="floatingInput">Nueva Contrase&ntilde;a</label>
+                                        <input type="password" v-model="funcionario_contrasena" class="form-control"
+                                            id="floating-input" required>
+
+                                    </div>
+
+
+                                    <div class="w-100 text-center mt-4">
+
+                                        <button type="submit" class="btn btn-primary mx-5">Cambiar
+                                            Contrase&ntilde;a</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
             </div>
 
         </div>
+
+
+
+
+
     </body>
 </template>
 
@@ -69,7 +164,6 @@
 import store from '../../store'; // Importa tu archivo de Vuex store
 
 import LoginRegisterComponent from '@/components/LoginRegisterComponent.vue';
-
 
 export default {
     components: {
@@ -80,8 +174,11 @@ export default {
 
     data() {
         return {
-            funcionario_iden: '',
-            funcionario_contraseña: '',
+
+            funcionario_correo: '',
+            funcionario_recuperar: '',
+            funcionario_iden: null,
+            funcionario_contrasena: '',
             error: false,
             error_msg: store.errorMessage,
             loading: false
@@ -89,6 +186,58 @@ export default {
     },
 
     methods: {
+
+        async enviarCorreo() {
+
+            let json = {
+                "funcionario_correo": this.funcionario_correo,
+            };
+            await this.axios.post('http://localhost:3000/recuperar', json)
+                .then(data => {
+                    console.log(data);
+                    $(this.$refs.staticBackdrop).modal('hide');
+                })
+
+
+
+
+        },
+
+        async actualizarContrasena() {
+
+            let json = {
+                "funcionario_recuperar": this.funcionario_recuperar,
+                "funcionario_contrasena": this.funcionario_contrasena
+            };
+
+            await this.axios.patch(`http://localhost:3000/funcionario/cambiar/${this.funcionario_correo}`, json)
+                .then(data => {
+                    console.log(data);
+
+                    $(this.$refs.staticBackdrop2).modal('hide');
+
+                    
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Yeyyy...',
+                        text: 'Cambio de Contraseña realizado con Exito!!!',
+                    })
+                })
+                .catch(error => {
+                    console.log(error);
+                    $(this.$refs.staticBackdrop2).modal('hide');
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Opsss...',
+                        text: 'Algo salio mal, intenta nuevamente!!',
+                    })
+
+                })
+
+        },
+
+
 
         checkAuthentication() {
             this.loading = true
@@ -130,7 +279,9 @@ export default {
 body,
 html {
     background-image: url('https://3.bp.blogspot.com/-EuWCKXCTapw/XOhzCO5AraI/AAAAAAAAPzI/3tw4VqQOFWMP-XBN-yDZUzYmMRKgr_P-gCK4BGAYYCw/s1600/IMG_0051.JPG');
-    height: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 100%; 
+    background-size: cover;
 }
 
 #profile-img {

@@ -70,18 +70,22 @@
     </div> -->
 
 
-    <header class="navbar navbar-dark sticky-top bg-light flex-md-nowrap p-0 shadow ">
+    <header class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0 shadow ">
       <router-link to="/buscador"
-        class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 border border-0 border-success">TuSena</router-link>
+        class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 border border-success text-light fw-bold">TuSena</router-link>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+   
+
+
+
       <input class="form-control form-control bg-light text-dark w-100 rounded-0 border-0 " type="text"
         placeholder="Buscar" aria-label="Search">
       <div class="navbar-nav">
-        <div class="nav-item text-nowrap mx-4 my-2 ">
-          <router-link to="/buscador" class="nav-link px-3 bg-danger text-dark fw-bold rounded-4" type="button"
+        <div class="nav-item text-nowrap mx-4 my-2">
+          <router-link to="/buscador" class="nav-link px-3 bg-danger fw-bold rounded-4 text-light" type="button"
             @click="logout()" href="#">Cerrar Sesion</router-link>
         </div>
       </div>
@@ -93,8 +97,8 @@
           <div class="position-sticky pt-3 sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <router-link to="/admin/dashboard/administradores" class="nav-link" aria-pressed="true" aria-current="page"
-                  href="#">
+                <router-link to="/admin/dashboard/administradores" class="nav-link" aria-pressed="true"
+                  aria-current="page" href="#">
 
                   <!-- <span data-feather="home" class="align-text-bottom"> </span> -->
 
@@ -105,8 +109,8 @@
 
 
               <li class="nav-item">
-                <router-link to="/admin/dashboard/investigadores" class="nav-link" aria-pressed="true"
-                  aria-current="page" href="#">
+                <router-link to="/admin/dashboard/investigadores" class="nav-link" aria-pressed="true" aria-current="page"
+                  href="#">
 
                   <!-- <span data-feather="home" class="align-text-bottom"> </span> -->
 
@@ -126,15 +130,7 @@
 
                 </router-link>
               </li>
-              <li class="nav-item">
-                <router-link to="/admin/dashboard/productos" class="nav-link" aria-pressed="true" href="#">
-                  <!-- <span data-feather="shopping-cart" class="align-text-bottom"></span> -->
 
-                  <i class="bi bi-file-bar-graph"></i> Productos
-
-
-                </router-link>
-              </li>
               <li class="nav-item">
                 <router-link to="/admin/dashboard/proyectos" class="nav-link" aria-pressed="true" href="#">
                   <!-- <span data-feather="users" class="align-text-bottom"></span> -->
@@ -147,6 +143,27 @@
                   <i class="bi bi-inboxes-fill"></i> Programas
                 </router-link>
               </li>
+
+              <li class="nav-item">
+                <router-link to="/admin/dashboard/productos" class="nav-link" aria-pressed="true" href="#">
+                  <!-- <span data-feather="shopping-cart" class="align-text-bottom"></span> -->
+
+                  <i class="bi bi-file-bar-graph"></i> Productos
+
+
+                </router-link>
+              </li>
+
+
+              <!-- <li class="nav-item">
+                <router-link to="/admin/dashboard/administradores/administradores2" class="nav-link" aria-pressed="true" href="#">
+          
+
+                  <i class="bi bi-file-bar-graph"></i> admin2
+
+
+                </router-link>
+              </li> -->
             </ul>
 
             <h6
@@ -184,7 +201,12 @@
           </div>
         </nav>
 
-        <router-view></router-view>
+        <router-view>
+
+      
+
+
+        </router-view>
       </div>
     </div>
 
@@ -257,9 +279,10 @@ export default {
 .router-link-active {
   background-color: #21b300;
   color: #f1f1f1 !important;
- font-size:large;
- transition: font-size 0.4s ease;
- transform: scale(1); /* Duración y función de transición suave */
+  font-size: large;
+  transition: font-size 0.4s ease;
+  transform: scale(1);
+  /* Duración y función de transición suave */
 
   /* Color de fondo deseado */
 }
@@ -352,6 +375,7 @@ body {
 .navbar .navbar-toggler {
   top: .25rem;
   right: 1rem;
+  color: #000000;
 }
 
 
@@ -373,5 +397,9 @@ body {
 .form-control-dark:focus {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+.bg-danger{
+  background-color: #404040 !important;
 }
 </style>

@@ -75,7 +75,7 @@
 
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h2 class="">Panel de Administracion</h2> <button type="button" class="custom-btn btn-register my-2"
+      <h2 class="">Panel de Administracion</h2> <button type="button" class="custom-btn btn-register my-2 text-light text-light" 
         data-bs-toggle="modal" data-bs-target="#registrarSemilleroModal"> <i class="bi bi-plus-lg"></i> Agregar
         Semillero</button>
 
@@ -343,6 +343,7 @@ export default {
       semilleros: [],
       semillero: [],
       semillero_id: null,
+      semillero_nombre: '',
       nombre: ""
     }
   },
@@ -362,7 +363,7 @@ export default {
         "semillero_nombre": this.nombre,
       };
 
-      await this.axios.post('http://localhost:3000/semilleros', json)
+      await this.axios.post('http://localhost:3000/semillero', json)
         .then(data => {
 
           setTimeout(() => {
@@ -378,7 +379,7 @@ export default {
 
 
     async buscarSemilleros() {
-      await this.axios.get('http://localhost:3000/semilleros')
+      await this.axios.get('http://localhost:3000/semillero')
         .then(response => {
           this.semilleros = response.data.nuevo_semillero
           // console.log(response.data.new_producto);
@@ -394,7 +395,7 @@ export default {
 
     async buscarSemillero(semillero_id) {
 
-      await this.axios.get('http://localhost:3000/semilleros/' + semillero_id)
+      await this.axios.get('http://localhost:3000/semillero/' + semillero_id)
         .then(response => {
 
 
@@ -415,7 +416,7 @@ export default {
         "semillero_nombre": this.semillero.semillero_nombre,
       };
 
-      await this.axios.patch('http://localhost:3000/semilleros/' + semillero_id, json)
+      await this.axios.patch('http://localhost:3000/semillero/' + semillero_id, json)
         .then(response => {
           alert(response.data.message);
           // console.log(response.data.new_producto);
@@ -430,7 +431,7 @@ export default {
     },
 
     async eliminarSemillero(semillero_id) {
-      await this.axios.delete('http://localhost:3000/semilleros/' + semillero_id)
+      await this.axios.delete('http://localhost:3000/semillero/' + semillero_id)
         .then(response => {
           console.log(response.data.message);
           alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);

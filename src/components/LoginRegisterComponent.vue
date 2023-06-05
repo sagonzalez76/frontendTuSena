@@ -349,13 +349,13 @@ export default {
     name: 'LoginRegisterComponent',
 
 
-    // computed: {
+    computed: {
 
-    //     ...mapState({
+        ...mapState({
 
-    //         productos: 'productos',
-    //     }),
-    // },
+            productos: 'productos',
+        }),
+    },
 
 
     data() {

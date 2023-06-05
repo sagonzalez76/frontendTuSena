@@ -75,7 +75,7 @@
 
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h2 class="">Panel de Administracion</h2> <button type="button" class="custom-btn btn-register my-2"
+      <h2 class="">Panel de Administracion</h2> <button type="button" class="custom-btn btn-register my-2 text-light"
         data-bs-toggle="modal" data-bs-target="#registrarProductoModal"> <i class="bi bi-plus-lg"></i> Agregar
         Producto</button>
 
@@ -102,8 +102,7 @@
             <th scope="col ">#</th>
             <th scope="col">Titulo</th>
             <!-- <th scope="col">Autor(es)</th> -->
-            <th scope="col">Autor</th>
-            <th scope="col">Autor</th>
+
 
             <th scope="col">A&ntilde;o</th>
 
@@ -112,6 +111,8 @@
             <th scope="col">URL</th>
 
             <th scope="col">Imagen</th>
+            <th scope="col">Autor</th>
+
             <th scope="col">Acciones</th>
 
           </tr>
@@ -121,14 +122,16 @@
 
 
             <td>{{ producto.producto_id }}</td>
-            <td>{{ producto.productos_titulo }}</td>
-            <td>{{ producto.productos_autor }}</td>
+            <td>{{ producto.producto_titulo }}</td>
 
-            <td>{{ producto.productos_ano }}</td>
-            <td>{{ producto.productos_tipo }}</td>
-            <td>{{ producto.productos_subtipo }}</td>
-            <td>{{ producto.productos_url }}</td>
-            <td>{{ producto.productos_imagen }}</td>
+
+            <td>{{ producto.producto_ano }}</td>
+            <td>{{ producto.producto_tipo }}</td>
+            <td>{{ producto.producto_subtipo }}</td>
+            <td>{{ producto.producto_url }}</td>
+            <td>{{ producto.producto_imagen }}</td>
+            <td>{{ producto.producto_autor }}</td>
+
 
 
 
@@ -139,7 +142,7 @@
               <div class="row text-start">
                 <div class="col text-start">
                   <button class="btn btn-warning  me-2" data-bs-toggle="modal" data-bs-target="#actualizarProductoModal"
-                    @:click="buscarProducto(producto.producto_id)">
+                    @:click="buscarProducto(producto.producto_id, producto.proyecto_fk)">
                     <i class="bi bi-pencil-square"></i></button>
                   <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarProductoModal"
                     @:click="buscarProducto(producto.producto_id)"> <i class="bi bi-trash3-fill"></i></button>
@@ -188,36 +191,10 @@
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
-
-
-
-                      <div class="col-md-12" v-for="(autor, index) in autores" :key="index">
-                        <div class="row">
-                          <div class="col-lg-10 text-center"> <input class="form-control text-dark" type="text"
-                              name="name" :placeholder="`Autor ${index + 1}`" v-model="autores[index]" required></div>
-
-                          <div class="col-lg-2 mx-auto mt-3 text-center">
-
-                            <button class="btn btn-success mt-1" type="button" @click="agregarAutor">+</button> <button
-                              class="btn btn-danger mt-1" v-if="index !== 0" type="button" @click="eliminarAutor(index)">
-                              -
-                            </button>
-                          </div>
-                        </div>
-
-
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
-                      </div>
-
-
-
-
-
                       <div class="col-md-12">
                         <!-- <input class="form-control text-dark" type="number" name="apellido" min="1900" :max="maxYear"
                           placeholder="Año" v-model="ano" required> -->
-                          
+                        <!-- <label for="ano">A&ntilde;o de Desarrollo</label> -->
                         <select v-model="ano" class="text-dark">
                           <option value="value1" selected disabled>Elija el A&ntilde;o</option>
                           <option v-for="year in availableYears" :value="year" :key="year">{{ year }}</option>
@@ -229,13 +206,6 @@
                       </div>
 
 
-                      <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="autor" placeholder="Autor" v-model="autor"
-                          required>
-
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
-                      </div>
 
 
 
@@ -298,8 +268,8 @@
 
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" placeholder="URL/Soporte"
-                          v-model="url" required>
+                        <input class="form-control text-dark" type="text" name="" placeholder="URL/Soporte" v-model="url"
+                          required>
                       </div>
 
                       <div class="col-md-12">
@@ -307,6 +277,43 @@
                         <input class="form-control text-dark" type="text" name="" placeholder="Imagen" v-model="imagen"
                           required>
                       </div>
+
+
+                      <div class="col-md-12">
+                        <select v-model="proyecto_fk" class="text-dark">
+                          <option value="value1" selected disabled>Elija un Proyecto</option>
+                          <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">{{
+                            proyecto.proyecto_nombre }}</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-12">
+                        <select v-model="semillero_fk" class="text-dark">
+                          <option value="value1" selected disabled>Elija un Semillero</option>
+                          <option v-for="semillero in semilleros" :value="semillero.semillero_id" :key="semillero">{{
+                            semillero.semillero_nombre }}</option>
+                        </select>
+                      </div>
+
+
+                      <div class="col-md-12">
+                        <select v-model="funcionario_fk" class="text-dark">
+                          <option value="value1" selected disabled>Elija un Autor</option>
+                          <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id"
+                            :key="funcionario">{{ funcionario.funcionario_nombre }}</option>
+                        </select>
+                      </div>
+
+
+                      <div class="col-md-12">
+                        <select v-model="programa_fk" class="text-dark">
+                          <option value="value1" selected disabled>Elija un Programa</option>
+                          <option v-for="programa in programas" :value="programa.programa_id" :key="programa">{{
+                            programa.programa_nombre }}</option>
+                        </select>
+                      </div>
+
+
 
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">
@@ -349,7 +356,7 @@
   <div class="modal fade" id="actualizarProductoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -368,19 +375,13 @@
                     <form class="" method="POST" v-on:submit.prevent="actualizarProducto(producto.producto_id)">
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" required v-model="producto.productos_titulo">
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
-                      </div>
-                      <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="name" v-model="producto.productos_autor"
-                          required>
+                        <input class="form-control text-dark" type="text" required v-model="producto.producto_titulo">
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="name" v-model="producto.productos_ano"
+                        <input class="form-control text-dark" type="text" name="name" v-model="producto.producto_ano"
                           required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
@@ -389,7 +390,7 @@
 
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_tipo"
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.producto_tipo"
                           required>
                         <!-- <div class="valid-feedback">Contrase&ntilde;a Valida!</div>
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
@@ -397,21 +398,90 @@
 
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_subtipo"
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.producto_subtipo"
                           required>
                       </div>
 
 
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_imagen"
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.producto_imagen"
                           required>
                       </div>
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" v-model="producto.productos_url"
+                        <input class="form-control text-dark" type="text" name="" v-model="producto.producto_url"
                           required>
                       </div>
+
+
+                  
+                      <div class="col-md-12">
+                        <label for="proyecto">Elija un Proyecto. Actualmente tiene seleccionado el Proyecto {{ proyecto.proyecto_nombre }}</label>
+
+                        <select v-model="proyecto_fk" class="text-dark" id="semillero">
+                          <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
+                          <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">{{
+                            proyecto.proyecto_nombre }}</option>
+                        </select>     {{proyecto_fk}}
+                      </div>
+
+
+                      <div class="col-md-12">
+                        <label for="proyecto">Elija un Semillero. Actualmente tiene seleccionado el semillero {{ semillero.semillero_nombre }}</label>
+
+                        <select v-model="semillero_fk" class="text-dark" id="semillero">
+                          <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
+                          <option v-for="semillero in semilleros" :value="semillero.semillero_id" :key="semillero">{{
+                            semillero.semillero_nombre }}</option>
+                        </select>     {{semillero_fk}}
+                      </div>
+
+ 
+                      <div class="col-md-12">
+                        <label for="proyecto">Elija un Autor. Actualmente tiene seleccionado el Autor {{ proyecto.proyecto_nombre }}</label>
+
+                        <select v-model="proyecto_fk" class="text-dark" id="semillero">
+                          <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
+                          <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">{{
+                            proyecto.proyecto_nombre }}</option>
+                        </select>     {{proyecto_fk}}
+                      </div>
+
+
+
+
+                      <div class="col-md-12">
+                        <label for="proyecto">Elija un Autor. Actualmente tiene seleccionado el Autor {{ proyecto.proyecto_nombre }}</label>
+
+                        <select v-model="funcionario_fk" class="text-dark" id="semillero">
+                          <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
+                          <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id" :key="funcionario">{{
+                            proyecto.proyecto_nombre }}</option>
+                        </select>     {{funcionario_fk}}  {{funcionario_nombre}}
+                      </div>
+              
+
+
+                      <div class="col-md-12">
+                        <select v-model="funcionario_fk" class="text-dark">
+                          <option value="value1" selected disabled>Elija un Autor</option>
+                          <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id"
+                            :key="funcionario">{{ funcionario.funcionario_nombre }}</option>
+                        </select>
+                      </div>
+
+
+                      <div class="col-md-12">
+                        <select v-model="programa_fk" class="text-dark">
+                          <option value="value1" selected disabled>Elija un Programa</option>
+                          <option v-for="programa in programas" :value="programa.programa_id" :key="programa">{{
+                            programa.programa_nombre }}</option>
+                        </select>
+                      </div>
+
+
+
 
 
 
@@ -535,7 +605,25 @@ export default {
       subtipo: "",
       url: "",
       imagen: "",
-      availableYears: []
+      availableYears: [],
+
+
+      proyecto_fk: null,
+      semillero_fk: null,
+      funcionario_fk: null,
+      programa_fk: null,
+
+
+
+      proyecto: [],
+      semillero: [],
+      funcionario: [],
+      programa: [],
+
+      proyectos: [],
+      semilleros: [],
+      funcionarios: [],
+      programas: []
 
 
 
@@ -581,13 +669,46 @@ export default {
 
       await this.axios.get('http://localhost:3000/producto')
         .then(response => {
-          console.log(response);
           this.productos = response.data.nuevo_producto
-          // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_producto);
+        })
+        .catch((e) => {
+          console.log(e)
+        });
+
+      await this.axios.get('http://localhost:3000/proyecto')
+        .then(response => {
+          this.proyectos = response.data.nuevo_proyecto
+          // console.log(this.proyectos);
+        })
+        .catch((e) => {
+          console.log(e)
+        });
+
+
+      await this.axios.get('http://localhost:3000/semillero')
+        .then(response => {
+          this.semilleros = response.data.nuevo_semillero
+          // console.log(this.semilleros);
+        })
+        .catch((e) => {
+          console.log(e)
+        });
+
+      await this.axios.get('http://localhost:3000/funcionario')
+        .then(response => {
+          this.funcionarios = response.data.nuevo_funcionario
           // console.log(this.funcionarios);
-          // console.log(this.state.productos);
-        }) //Mostrar por consola el error
+        })
+        .catch((e) => {
+          console.log(e)
+        });
+
+
+      await this.axios.get('http://localhost:3000/programa')
+        .then(response => {
+          this.programas = response.data.nuevo_programa
+          // console.log(this.programas);
+        })
         .catch((e) => {
           console.log(e)
         });
@@ -596,24 +717,17 @@ export default {
     async registrarProducto() {
 
       let json = {
+        "producto_titulo": this.titulo,
+        "producto_ano": this.ano,
+        "producto_url": this.url,
+        "producto_tipo": this.tipo,
+        "producto_subtipo": this.subtipo,
+        "producto_imagen": this.imagen,
 
-        // "funcionario_iden": this.identificacion,
-        // "funcionario_nombre": this.nombres,
-        // "funcionario_apellido": this.apellidos,
-        // "funcionario_correo": this.correo,
-        // "funcionario_contraseña": this.contrasena,
-        // "funcionario_telefono": this.telefono,
-        // "funcionario_administrador": this.admin,
-
-
-
-        "productos_titulo": this.titulo,
-        "productos_ano": this.ano,
-        "productos_url": this.url,
-        "productos_autor": this.autor,
-        "productos_tipo": this.tipo,
-        "productos_subtipo": this.subtipo,
-        "productos_imagen": this.imagen,
+        "proyecto_fk": this.proyecto_fk,
+        "semillero_fk": this.semillero_fk,
+        "funcionario_fk": this.funcionario_fk,
+        "programa_fk": this.programa_fk,
 
       };
       await this.axios.post('http://localhost:3000/producto', json)
@@ -648,21 +762,53 @@ export default {
 
 
     async buscarProducto(producto_id) {
-      console.log(producto_id);
-
       await this.axios.get('http://localhost:3000/producto/' + producto_id)
         .then(response => {
           this.producto = response.data.nuevo_producto;
-
           console.log(this.producto);
-          // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
-          // console.log(this.state.productos);
-        }) //Mostrar por consola el error
+        })
         .catch((e) => {
           console.log(e)
         });
+
+      await this.axios.get('http://localhost:3000/proyecto/' + this.producto.proyecto_fk)
+        .then(response => {
+          this.proyecto = response.data.nuevo_proyecto;
+          console.log(this.proyecto);
+        })
+        .catch((e) => {
+          console.log(e)
+        });
+
+
+        await this.axios.get('http://localhost:3000/semillero/' + this.producto.semillero_fk)
+        .then(response => {
+          this.semillero = response.data.nuevo_semillero;
+          console.log(this.semillero);
+        })
+        .catch((e) => {
+          console.log(e)
+        });
+
+
+
+
+        await this.axios.get('http://localhost:3000/funcionario/'+ this.producto)
+        .then(response => {
+          this.funcionario = response.data.nuevo_semillero;
+          console.log(this.semillero);
+        })
+        .catch((e) => {
+          console.log(e)
+        });
+
+
+
+
+
+
+
+
     },
 
 
@@ -670,24 +816,19 @@ export default {
 
       let json = {
 
-        "productos_titulo": this.producto.productos_titulo,
-        "productos_ano": this.producto.productos_ano,
-        "productos_url": this.producto.productos_url,
-        "productos_detalle": this.producto.productos_detalle,
+        "producto_titulo": this.producto.productos_titulo,
+        "producto_ano": this.producto.productos_ano,
+        "producto_url": this.producto.productos_url,
+        "producto_detalle": this.producto.productos_detalle,
         // "productos_autor": this.producto.productos_autor,
-        "productos_tipo": this.producto.productos_tipo,
-        "productos_subtipo": this.producto.productos_subtipo,
+        "producto_tipo": this.producto.productos_tipo,
+        "producto_subtipo": this.producto.productos_subtipo,
         "producto_imagen": this.producto.productos_imagen,
 
-
-        // PRODUCTO.productos_titulo = productos_titulo
-        // PRODUCTO.productos_ano = productos_ano
-        // PRODUCTO.productos_url = productos_url
-        // PRODUCTO.productos_detalle = productos_detalle
-        // PRODUCTO.productos_tipo = productos_tipo
-        // PRODUCTO.productos_subtipo = productos_subtipo
-        // PRODUCTO.productos_linea = productos_linea
-        // PRODUCTO.producto_imagen = producto_imagen
+        "proyecto_fk": this.producto.proyecto_fk,
+        "semillero_fk": this.producto.semillero_fk,
+        "funcionario_fk": this.producto.funcionario_fk,
+        "programa_fk": this.producto.programa_fk,
 
       };
       console.log(json);
@@ -763,12 +904,6 @@ export default {
       this.buscarProductos();
     },
 
-
-
-
-
-
-
   },
 
 
@@ -778,6 +913,16 @@ export default {
 </script>
 
 <style scoped>
+th {
+  font-weight: 600;
+
+}
+
+td {
+  font-style: italic;
+
+}
+
 .custom-btn {
 
   width: auto;
@@ -792,8 +937,8 @@ export default {
   position: relative;
   display: inline-block;
   box-shadow: inset 2px 2px 2px 0px rgb(24, 183, 61),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+    7px 7px 20px 0px rgba(230, 20, 20, 0.1),
+    4px 4px 5px 0px rgba(171, 10, 10, 0.1);
   outline: none;
 }
 
@@ -803,13 +948,6 @@ export default {
   z-index: 1;
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -1119,7 +1257,7 @@ body {
 }
 
 .form-content h3 {
-  color: #fff;
+  color: #030000;
   text-align: left;
   font-size: 28px;
   font-weight: 600;
@@ -1131,7 +1269,7 @@ body {
 }
 
 .form-content p {
-  color: #fff;
+  color: #000000;
   text-align: left;
   font-size: 17px;
   font-weight: 300;
@@ -1143,7 +1281,7 @@ body {
 .form-content label,
 .was-validated .form-check-input:invalid~.form-check-label,
 .was-validated .form-check-input:valid~.form-check-label {
-  color: #fff;
+  color: #000000;
 
 }
 
@@ -1152,8 +1290,6 @@ body {
 .form-content input[type=email],
 .form-content input[type=phone],
 .form-content input[type=number],
-.form-content input[type=date],
-
 .form-content select {
   width: 100%;
   padding: 9px 20px;
@@ -1161,7 +1297,7 @@ body {
   border: 0;
   outline: 0;
   border-radius: 6px;
-  background-color: #fff;
+  background-color: #e4e4e4;
   font-size: 15px;
   font-weight: 300;
   color: #8D8D8D;

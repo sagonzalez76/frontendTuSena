@@ -67,30 +67,30 @@ const routes = [
 
       {
         path: 'cread+',
-        component:() => import('../components/InnovatecComponents/SemillerosCread+Component.vue')
+        component: () => import('../components/InnovatecComponents/SemillerosCread+Component.vue')
       },
 
       {
         path: 'ereeca',
-        component:() => import('../components/InnovatecComponents/SemillerosEreecaComponent.vue')
+        component: () => import('../components/InnovatecComponents/SemillerosEreecaComponent.vue')
       },
       {
         path: 'siitis',
-        component:() => import('../components/InnovatecComponents/SemillerosSiitisComponent.vue')
+        component: () => import('../components/InnovatecComponents/SemillerosSiitisComponent.vue')
       },
       {
         path: 'senautronic',
-        component:() => import('../components/InnovatecComponents/SemillerosSenautronicComponent.vue')
+        component: () => import('../components/InnovatecComponents/SemillerosSenautronicComponent.vue')
       },
       {
         path: 'innovatelcos',
-        component:() => import('../components/InnovatecComponents/SemillerosInnovatelcosComponent.vue')
-      },   {
+        component: () => import('../components/InnovatecComponents/SemillerosInnovatelcosComponent.vue')
+      }, {
         path: 'sinafred',
-        component:() => import('../components/InnovatecComponents/SemillerosSinafredComponent.vue')
+        component: () => import('../components/InnovatecComponents/SemillerosSinafredComponent.vue')
       },
-      
-      
+
+
 
     ]
   },
@@ -180,38 +180,47 @@ const routes = [
   {
     path: '/admin/dashboard/',
     name: 'admin/dashboard/',
-    component: DashboardAdmin, 
+    component: DashboardAdmin,
     meta: {
       requiresAuth: true // Esta ruta requiere autenticación
     },
- 
+
     children: [
 
       {
         path: 'administradores',
-        component:() => import('../components/TusenaComponents/AdminComponents/DashboardAdministradoresComponent.vue')
+        component: () => import('../components/TusenaComponents/AdminComponents/DashboardAdministradoresComponent.vue'),
+
+        // children: [
+
+        //   {
+        //     path: 'administradores2',
+        //     component: () => import('../components/TusenaComponents/UserComponents/nieto.vue'),
+        //   }
+        // ]
+
       },
       {
         path: 'investigadores',
-        component:() => import('../components/TusenaComponents/AdminComponents/DashboardInvestigadoresComponent.vue')
+        component: () => import('../components/TusenaComponents/AdminComponents/DashboardInvestigadoresComponent.vue')
       },
       {
         path: 'semilleros',
-        component:() => import('../components/TusenaComponents/AdminComponents/DashboardSemillerosComponent.vue')
+        component: () => import('../components/TusenaComponents/AdminComponents/DashboardSemillerosComponent.vue')
       },
       {
         path: 'productos',
-        component:() => import('../components/TusenaComponents/AdminComponents/DashboardProductosComponent.vue')
+        component: () => import('../components/TusenaComponents/AdminComponents/DashboardProductosComponent.vue')
       },
       {
         path: 'proyectos',
-        component:() => import('../components/TusenaComponents/AdminComponents/DashboardProyectosComponent.vue')
+        component: () => import('../components/TusenaComponents/AdminComponents/DashboardProyectosComponent.vue')
       },
       {
         path: 'programas',
-        component:() => import('../components/TusenaComponents/AdminComponents/DashboardProgramasComponent.vue')
+        component: () => import('../components/TusenaComponents/AdminComponents/DashboardProgramasComponent.vue')
       }
-      
+
 
     ]
   }

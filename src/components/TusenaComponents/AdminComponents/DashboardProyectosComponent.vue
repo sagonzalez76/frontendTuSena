@@ -1,7 +1,7 @@
 <template>
   <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h2 class="">Panel de Administracion</h2> <button type="button" class="custom-btn btn-register my-2"
+      <h2 class="">Panel de Administracion</h2> <button type="button" class="custom-btn btn-register my-2 text-light"
         data-bs-toggle="modal" data-bs-target="#registrarproductomodal"> <i class="bi bi-plus-lg"></i> Agregar
         Proyectos</button>
 
@@ -40,7 +40,7 @@
           <tr v-for="(proyecto, index) in proyectos" :key="index" class="align-middle">
 
 
-            <td>{{ proyecto.id }}</td>
+            <td>{{ proyecto.proyecto_id }}</td>
             <td>{{ proyecto.proyecto_codigo }}</td>
             <td>{{ proyecto.proyecto_nombre }}</td>
             <td>{{ proyecto.proyecto_linea }}</td>
@@ -82,7 +82,7 @@
   <div class="modal fade" id="registrarproductomodal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -170,7 +170,7 @@
   <div class="modal fade" id="actualizarProyectoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -189,7 +189,7 @@
 
                     <p>Llena los campos que veras a continuacion:</p>
 
-                    <form class="" method="POST" v-on:submit.prevent="actualizarProyecto(proyecto.id)">
+                    <form class="" method="POST" v-on:submit.prevent="actualizarProyecto(proyecto.proyecto_id)">
 
                       <div class="col-md-12">
                         <input v-model="proyecto.proyecto_codigo" class="form-control text-dark" type="text" name="name"
@@ -261,7 +261,7 @@
   <div class="modal fade" id="eliminarProyectoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -388,20 +388,10 @@ export default {
     async registrarProyecto() {
 
       let json = {
-
-        // "funcionario_iden": this.identificacion,
-        // "funcionario_nombre": this.nombres,
-        // "funcionario_apellido": this.apellidos,
-        // "funcionario_correo": this.correo,
-        // "funcionario_contraseña": this.contrasena,
-        // "funcionario_telefono": this.telefono,
-        // "funcionario_administrador": this.admin,
         "proyecto_codigo": this.codigo,
         "proyecto_linea": this.linea,
         "proyecto_nombre": this.nombre,
         "proyecto_presupuesto": this.presupuesto
-
-
 
       };
       await this.axios.post('http://localhost:3000/proyecto', json)
@@ -436,28 +426,17 @@ export default {
 
 
 
-    async actualizarProyecto(id) {
+    async actualizarProyecto(proyecto_id) {
 
       let json = {
         "proyecto_codigo": this.proyecto.proyecto_codigo,
         "proyecto_linea": this.proyecto.proyecto_linea,
         "proyecto_nombre": this.proyecto.proyecto_nombre,
         "proyecto_presupuesto": this.proyecto.proyecto_presupuesto
-
-        // PRODUCTO.productos_titulo = productos_titulo
-        // PRODUCTO.productos_ano = productos_ano
-        // PRODUCTO.productos_url = productos_url
-        // PRODUCTO.productos_detalle = productos_detalle
-        // PRODUCTO.productos_tipo = productos_tipo
-        // PRODUCTO.productos_subtipo = productos_subtipo
-        // PRODUCTO.productos_idioma = productos_idioma
-        // PRODUCTO.productos_linea = productos_linea
-        // PRODUCTO.producto_imagen = producto_imagen
-
       };
       console.log(json);
 
-      await this.axios.patch('http://localhost:3000/proyecto/' + id, json)
+      await this.axios.patch('http://localhost:3000/proyecto/' + proyecto_id, json)
         .then(response => {
 
           const Toast = Swal.mixin({
@@ -493,9 +472,9 @@ export default {
     },
 
 
-    async eliminarProyecto(id) {
+    async eliminarProyecto(proyecto_id) {
 
-      await this.axios.delete('http://localhost:3000/proyecto/' + id)
+      await this.axios.delete('http://localhost:3000/proyecto/' + proyecto_id)
         .then(response => {
           console.log(response.data.message);
 
@@ -546,6 +525,17 @@ export default {
 </script>
 
 <style scoped>
+
+
+th{
+font-weight:600;
+
+}
+
+td{
+font-style: italic;
+
+}
 .custom-btn {
 
   width: auto;
@@ -560,8 +550,8 @@ export default {
   position: relative;
   display: inline-block;
   box-shadow: inset 2px 2px 2px 0px rgb(24, 183, 61),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+    7px 7px 20px 0px rgba(230, 20, 20, 0.1),
+    4px 4px 5px 0px rgba(171, 10, 10, 0.1);
   outline: none;
 }
 
@@ -571,13 +561,6 @@ export default {
   z-index: 1;
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -887,7 +870,7 @@ body {
 }
 
 .form-content h3 {
-  color: #fff;
+  color: #030000;
   text-align: left;
   font-size: 28px;
   font-weight: 600;
@@ -899,7 +882,7 @@ body {
 }
 
 .form-content p {
-  color: #fff;
+  color: #000000;
   text-align: left;
   font-size: 17px;
   font-weight: 300;
@@ -911,7 +894,7 @@ body {
 .form-content label,
 .was-validated .form-check-input:invalid~.form-check-label,
 .was-validated .form-check-input:valid~.form-check-label {
-  color: #fff;
+  color: #000000;
 
 }
 
@@ -927,7 +910,7 @@ body {
   border: 0;
   outline: 0;
   border-radius: 6px;
-  background-color: #fff;
+  background-color: #e4e4e4;
   font-size: 15px;
   font-weight: 300;
   color: #8D8D8D;

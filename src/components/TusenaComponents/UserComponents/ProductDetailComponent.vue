@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row gx-5">
                 <h2 class=" text-dark text-center mb-4">
-                    {{ producto.productos_titulo }}
+                    {{ producto.producto_titulo }}
                 </h2>
                 <aside class="col-lg-6 ">
                     <div class="border rounded-4 mb-3 d-flex justify-content-center vh-75 align-items-center">
@@ -62,28 +62,30 @@
 
                         <div class="row align-items-center">
                             <dt class="col-3">Autor(es) del Producto:</dt>
-                            <dd class="col-9"> {{ producto.productos_autor }}</dd>
+                            <dd class="col-9"> {{ producto.producto_autor }}</dd>
                             <hr>
                             <dt class="col-3">Tipo de Producto:</dt>
-                            <dd class="col-9"> {{ producto.productos_tipo }}</dd>
+                            <dd class="col-9"> {{ producto.producto_tipo }}</dd>
                             <hr>
                             <dt class="col-3">Subtipo de Producto:</dt>
-                            <dd class="col-9"> {{ producto.productos_subtipo }}</dd>
+                            <dd class="col-9"> {{ producto.producto_subtipo }}</dd>
                             <hr>
                             <dt class="col-3">Proyecto al que pertenece:</dt>
-                            <dd class="col-9">N/A</dd>
+                            <dd class="col-9"> {{ producto.proyecto_nombre }}</dd>
                             <hr>
                             <dt class="col-3">Codigo Proyecto:</dt>
-                            <dd class="col-9">N/A</dd>
+                            <dd class="col-9"> {{ producto.proyecto_codigo}}</dd>
                             <hr>
 
                             <dt class="col-3">Linea Programatica Proyecto:</dt>
-                            <dd class="col-9">N/A</dd>
+                            <dd class="col-9"> {{ producto.proyecto_linea }}</dd>
                             <hr>
 
                             <dt class="col-3">Semillero al que pertenece:</dt>
-                            <dd class="col-9">Proyecto</dd>
+                            <dd class="col-9"> {{ producto.semillero_nombre }}</dd>
                         </div>
+
+                        {{ producto }}
 
                         <hr />
 
