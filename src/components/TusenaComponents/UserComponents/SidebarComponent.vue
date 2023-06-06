@@ -26,7 +26,8 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Semillero </button> {{ $store.state.semillerosSeleccionados }}
+                                Semillero </button>
+                            <!-- {{ $store.state.semillerosSeleccionados }} -->
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
@@ -54,26 +55,25 @@
                                     <!-- Checked checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="INNOVATELCOS"
-                                            id="INNOVATELCOS" 
-                                            @change="actualizarSemillerosSeleccionados" />
+                                            id="INNOVATELCOS" @change="actualizarSemillerosSeleccionados" />
                                         <label class="form-check-label" for="flexCheckChecked3">INNOVATELCOS</label>
                                     </div>
                                     <!-- Checked checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="SENAUTRONIC" id="SENAUTRONIC"
-                                        @change="actualizarSemillerosSeleccionados"  />
+                                            @change="actualizarSemillerosSeleccionados" />
                                         <label class="form-check-label" for="flexCheckChecked4">SENAUTRONIC</label>
                                     </div>
                                     <!-- Default checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="SIITIS" id="SIITIS"
-                                        @change="actualizarSemillerosSeleccionados"  />
+                                            @change="actualizarSemillerosSeleccionados" />
                                         <label class="form-check-label" for="flexCheckDefault">SIITIS</label>
                                     </div>
                                     <!-- Default checkbox -->
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="SINAFRED" id="SINAFRED"
-                                        @change="actualizarSemillerosSeleccionados"  />
+                                            @change="actualizarSemillerosSeleccionados" />
                                         <label class="form-check-label" for="flexCheckDefault">SINAFRED</label>
                                     </div>
 
@@ -169,7 +169,7 @@
                                             A2, B y C</label>
 
                                     </div>
-                                    
+
                                     <div class="form-check">
                                         <input class="form-check-input border bordered-3" type="checkbox"
                                             value="Consultorías Científico-Tecnológicas" id="flexCheckChecked3"
@@ -287,7 +287,7 @@
 
                                     </div>
 
-                                    {{ $store.state.subtiposSeleccionados }}
+                                    <!-- {{ $store.state.subtiposSeleccionados }} -->
 
 
 
@@ -305,56 +305,12 @@
                         <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
-                                    <!-- Checked checkbox -->
-
-                                    <!-- Checked checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input border bordered-3" type="checkbox" value=""
-                                            id="flexCheckChecked3" />
-                                        <label class="form-check-label" for="flexCheckChecked3">2014</label>
+                                    <div class="form-check" v-for="year in availableYears" :key="year">
+                                        <input class="form-check-input" type="checkbox" :value="year" id="flexCheckDefault"
+                                            @change="actualizarAnosSeleccionados" />
+                                        <label class="form-check-label" for="flexCheckDefault">{{ year }}</label>
                                     </div>
-                                    <!-- Checked checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked4" />
-                                        <label class="form-check-label" for="flexCheckChecked4">2015</label>
-                                    </div>
-                                    <!-- Default checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label class="form-check-label" for="flexCheckDefault">2016</label>
-                                    </div>
-                                    <!-- Default checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label class="form-check-label" for="flexCheckDefault">2017</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label class="form-check-label" for="flexCheckDefault">2018</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label class="form-check-label" for="flexCheckDefault">2019</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label class="form-check-label" for="flexCheckDefault">2020</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label class="form-check-label" for="flexCheckDefault">2021</label>
-
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label class="form-check-label" for="flexCheckDefault">2022</label>
-
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                        <label class="form-check-label" for="flexCheckDefault">2023</label>
-
-                                    </div>
+                                    <!-- {{ $store.state.anosSeleccionados }} -->
                                 </div>
                             </div>
                         </div>
@@ -366,16 +322,17 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Codigo Proyecto </button>
+                            Proyecto </button>
                         </h2>
                         <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
-                                    <div class="form-check" v v-for="proyecto in proyectos" :key="proyecto">
-                                        <input class="form-check-input border bordered-3" type="checkbox" value=""
-                                            id="flexCheckChecked3" />
-                                        <label class="form-check-label" for="flexCheckChecked3">{{ proyecto.name }}</label>
+                                    <div class="form-check" v-for="proyecto in proyectos" :key="proyecto">
+                                        <input class="form-check-input" type="checkbox" :value="proyecto.proyecto_nombre" id="flexCheckDefault"
+                                            @change="actualizarProyectosSeleccionados" />
+                                        <label class="form-check-label" for="flexCheckDefault">{{ proyecto.proyecto_nombre}}</label>
                                     </div>
+                                    <!-- {{ $store.state.proyectosSeleccionados }} -->
 
 
                                 </div>
@@ -394,11 +351,12 @@
                         <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
-                                    <div class="form-check" v v-for="programa in programas" :key="programa">
-                                        <input class="form-check-input border bordered-3" type="checkbox" value=""
-                                            id="flexCheckChecked3" />
-                                        <label class="form-check-label" for="flexCheckChecked3">{{ programa.name }}</label>
+                                    <div class="form-check" v-for="programa in programas" :key="programa">
+                                        <input class="form-check-input" type="checkbox" :value="programa.programa_nombre" id="flexCheckDefault"
+                                            @change="actualizarProgramasSeleccionados" />
+                                        <label class="form-check-label" for="flexCheckDefault">{{ programa.programa_nombre}}</label>
                                     </div>
+                                    <!-- {{ $store.state.programasSeleccionados }} -->
 
 
                                 </div>
@@ -428,15 +386,12 @@ export default {
     name: 'SidebarComponent',
     data() {
         return {
-            proyectos: [
-                { name: "Codigo1", },
-                { name: "Codigo2" }
-            ],
 
-            programas: [
-                { name: "Programa1", },
-                { name: "Programa2" }
-            ],
+
+            availableYears: [],
+
+            proyectos: [],
+            programas: [],
 
 
 
@@ -448,12 +403,67 @@ export default {
         }
     },
 
+
+    async created() {
+        //para que me arroje los anos a hoy
+        const currentYear = new Date().getFullYear();
+        this.availableYears = Array.from({ length: currentYear - 2012 + 1 }, (_, index) => currentYear - index);
+
+//para buscar los proyectos
+        await this.axios.get('http://localhost:3000/proyecto')
+            .then(response => {
+                this.proyectos = response.data.nuevo_proyecto
+            })
+            .catch((e) => {
+                console.log(e)
+            });
+
+
+            await this.axios.get('http://localhost:3000/programa')
+            .then(response => {
+                this.programas = response.data.nuevo_programa
+            })
+            .catch((e) => {
+                console.log(e)
+            });
+
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    computed: {
+        obtenerAno() {
+            if (this.ano) {
+                const fechaObj = new Date(this.ano);
+                return fechaObj.getFullYear();
+            } else {
+                return '';
+            }
+        }
+    },
     methods: {
 
         ...mapActions({
             actualizarSemillerosSeleccionados: 'actualizarSemillerosSeleccionados',
             actualizarTiposSeleccionados: 'actualizarTiposSeleccionados',
-            actualizarSubtiposSeleccionados: 'actualizarSubtiposSeleccionados'
+            actualizarSubtiposSeleccionados: 'actualizarSubtiposSeleccionados',
+            actualizarAnosSeleccionados: 'actualizarAnosSeleccionados',
+            actualizarProyectosSeleccionados: 'actualizarProyectosSeleccionados',
+            actualizarProgramasSeleccionados: 'actualizarProgramasSeleccionados'
+
+
+
         }),
 
         // PARA CONVERTIR A JSON

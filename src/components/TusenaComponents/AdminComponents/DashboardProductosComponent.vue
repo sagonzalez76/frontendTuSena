@@ -101,19 +101,23 @@
           <tr class="me-4">
             <th scope="col ">#</th>
             <th scope="col">Titulo</th>
-            <!-- <th scope="col">Autor(es)</th> -->
-
-
             <th scope="col">A&ntilde;o</th>
-
             <th scope="col">Tipo</th>
             <th scope="col">Subtipo</th>
             <th scope="col">URL</th>
-
             <th scope="col">Imagen</th>
-            <th scope="col">Autor</th>
 
-            <th scope="col">Acciones</th>
+            <th scope="col">Autor(es)</th>
+
+            <th scope="col">Semillero</th>
+            <th scope="col">Proyecto</th>
+            <th scope="col">Programa</th>
+
+
+
+
+              <th scope="col">Acciones</th>
+
 
           </tr>
         </thead>
@@ -130,7 +134,13 @@
             <td>{{ producto.producto_subtipo }}</td>
             <td>{{ producto.producto_url }}</td>
             <td>{{ producto.producto_imagen }}</td>
-            <td>{{ producto.producto_autor }}</td>
+
+
+            <td>{{ producto.funcionario_nombre }}</td>
+            <td>{{ producto.semillero_nombre }}</td>
+            <td>{{ producto.proyecto_nombre }}</td>
+            <td>{{ producto.programa_nombre }}</td>
+
 
 
 
@@ -669,7 +679,7 @@ export default {
 
       await this.axios.get('http://localhost:3000/producto')
         .then(response => {
-          this.productos = response.data.nuevo_producto
+          this.productos = response.data.nuevo_producto[0]
         })
         .catch((e) => {
           console.log(e)

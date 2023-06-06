@@ -546,7 +546,7 @@ th:hover {
 
 .parrafo-inicial {
     text-align: justify;
-    background-color: #a9e7f4;
+    background-color: #82def0;
 }
 
 

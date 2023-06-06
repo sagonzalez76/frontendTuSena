@@ -94,7 +94,7 @@
     <div class="container-fluid">
       <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
-          <div class="position-sticky pt-3 sidebar-sticky">
+          <div class="position-sticky pt-3 sidebar-sticky bg-nav">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <router-link to="/admin/dashboard/administradores" class="nav-link" aria-pressed="true"
@@ -225,9 +225,14 @@ import { mapState, mapActions } from 'vuex';
 
 
 export default {
+
+
+  
   components: {
     DashboardFuncionarioComponent
   },
+
+
 
   methods: {
 
@@ -276,6 +281,13 @@ export default {
 
 
 <style scoped>
+
+
+.bg-nav{
+
+
+  background-color: #d9d9d9;
+}
 .router-link-active {
   background-color: #21b300;
   color: #f1f1f1 !important;

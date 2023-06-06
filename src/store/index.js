@@ -12,8 +12,18 @@ export default createStore({
     /////////////////////////////////////////////////////////////////////////////////////
     // FILTROS FILTROS FILTROS
     semillerosSeleccionados: [],
-    tiposSeleccionados: [],
+    // tiposSeleccionados: [],
     subtiposSeleccionados: [],
+    anosSeleccionados: [],
+    subtiposSeleccionados: [],
+    anosSeleccionados: [],
+    proyectosSeleccionados: [],
+
+    programasSeleccionados: [],
+
+
+
+
     /////////////////////////////////////////////////////////////////////////////////////
     // AUTENTICACION USUARIO
     token: localStorage.getItem('token') || null,
@@ -44,14 +54,13 @@ export default createStore({
 
 
     async ['buscarProductoId'](state, id) {
-      console.log(id);
-
-      await axios.get('http://localhost:3000/producto/' + id)
+      const producto_id = id
+      await axios.get('http://localhost:3000/producto/' + producto_id)
         .then(response => {
 
 
           console.log(response.data);
-          state.producto = response.data.nuevo_producto;
+          state.producto = response.data.producto[0];
           console.log(state.producto);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
@@ -84,18 +93,15 @@ export default createStore({
 
     async ['buscarProductoName'](state, titulo) {
 
-      const params = {
-        titulo: titulo,
-        semillero: state.semillero
-      }
+    const params = {
+      titulo:titulo}
 
       console.log(params);
-      await axios.get('http://localhost:3000/producto/buscar', { params })
-        .then(response => {
-
-          console.log(response);
+      await axios.get('http://localhost:3000/producto/buscar', {params} )
+        .then(response => { 
+          console.log(response.data);
           state.productos = response.data.productos
-          console.log(this.state.productos);
+         
 
           // LIMPIA LA BUSQUEDA
           const params = {
@@ -125,15 +131,15 @@ export default createStore({
       }
 
     },
-    setTiposSeleccionados(state, tipoSeleccionado) {
-      const index = state.tiposSeleccionados.indexOf(tipoSeleccionado.target.value)
-      if (index === -1) {
-        state.tiposSeleccionados.push(tipoSeleccionado.target.value)
-      } else {
-        state.tiposSeleccionados.splice(index, 1)
-      }
+    // setTiposSeleccionados(state, tipoSeleccionado) {
+    //   const index = state.tiposSeleccionados.indexOf(tipoSeleccionado.target.value)
+    //   if (index === -1) {
+    //     state.tiposSeleccionados.push(tipoSeleccionado.target.value)
+    //   } else {
+    //     state.tiposSeleccionados.splice(index, 1)
+    //   }
 
-    },
+    // },
 
     setSubtiposSeleccionados(state, subtipoSeleccionado) {
       const index = state.subtiposSeleccionados.indexOf(subtipoSeleccionado.target.value)
@@ -141,6 +147,38 @@ export default createStore({
         state.subtiposSeleccionados.push(subtipoSeleccionado.target.value)
       } else {
         state.subtiposSeleccionados.splice(index, 1)
+      }
+
+    },
+
+
+    setAnosSeleccionados(state, anoSeleccionado) {
+      const index = state.anosSeleccionados.indexOf(anoSeleccionado.target.value)
+      if (index === -1) {
+        state.anosSeleccionados.push(anoSeleccionado.target.value)
+      } else {
+        state.anosSeleccionados.splice(index, 1)
+      }
+
+    },
+
+
+    setProyectosSeleccionados(state, proyectoSeleccionado) {
+      const index = state.proyectosSeleccionados.indexOf(proyectoSeleccionado.target.value)
+      if (index === -1) {
+        state.proyectosSeleccionados.push(proyectoSeleccionado.target.value)
+      } else {
+        state.proyectosSeleccionados.splice(index, 1)
+      }
+
+    },
+
+    setProgramasSeleccionados(state, programaSeleccionado) {
+      const index = state.programasSeleccionados.indexOf(programaSeleccionado.target.value)
+      if (index === -1) {
+        state.programasSeleccionados.push(programaSeleccionado.target.value)
+      } else {
+        state.programasSeleccionados.splice(index, 1)
       }
 
     },
@@ -217,21 +255,85 @@ export default createStore({
           console.error(error);
         });
     },
+
+
+
+    filtrarProductosAno(state) {
+      const productosAnos = state.anosSeleccionados;
+      // console.log(state.semillerosSeleccionados)
+
+      const params = {
+        productos_ano: productosAnos
+      }
+      console.log(params);
+      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
+      // con los autores seleccionados como parámetro de consulta
+      axios.get("http://localhost:3000/filtroano", { params })
+        .then((response) => {
+          state.productos = response.data;
+        })
+        .catch((error) => {
+          state.productos = []
+
+          console.error(error);
+        });
+    },
+
+
+
+
+
+    filtrarProductosProyecto(state) {
+      const productosProyectos = state.proyectosSeleccionados;
+      // console.log(state.semillerosSeleccionados)
+
+      const params = {
+        proyectos_nombre: productosProyectos
+      }
+      console.log(params);
+      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
+      // con los autores seleccionados como parámetro de consulta
+      axios.get("http://localhost:3000/filtroproyecto", { params })
+        .then((response) => {
+          state.productos = response.data;
+        })
+        .catch((error) => {
+          state.productos = []
+
+          console.error(error);
+        });
+    },
+
+
+
+    filtrarProductosPrograma(state) {
+      const productosProgramas = state.programasSeleccionados;
+      // console.log(state.semillerosSeleccionados)
+
+      const params = {
+        programas_nombre: productosProgramas
+      }
+      console.log(params);
+      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
+      // con los autores seleccionados como parámetro de consulta
+      axios.get("http://localhost:3000/filtroprograma", { params })
+        .then((response) => {
+          state.productos = response.data;
+        })
+        .catch((error) => {
+          state.productos = []
+
+          console.error(error);
+        });
+    },
+
+
+
+
+
+
+
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -318,14 +420,25 @@ export default createStore({
       commit('setSubtiposSeleccionados', subtipoSeleccionado),
         commit('filtrarProductosSubtipo')
 
+    },
+
+    actualizarAnosSeleccionados({ commit }, anoSeleccionado) {
+      commit('setAnosSeleccionados', anoSeleccionado),
+        commit('filtrarProductosAno')
+    },
+
+    actualizarProyectosSeleccionados({ commit }, proyectoSeleccionado) {
+      commit('setProyectosSeleccionados', proyectoSeleccionado),
+        commit('filtrarProductosProyecto')
+
+    },
+    actualizarProgramasSeleccionados({ commit }, programaSeleccionado) {
+      commit('setProgramasSeleccionados', programaSeleccionado),
+        commit('filtrarProductosPrograma')
+
     }
 
   },
-
-
-
-
-
 
 
 

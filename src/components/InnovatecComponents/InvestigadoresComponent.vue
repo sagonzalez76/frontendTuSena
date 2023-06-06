@@ -1,12 +1,12 @@
 <template>
-    <main class="container mt-4 pt-0 bg-carrusel">
+    <main class="container mt-4 pt-0 ">
 
         <h3 class="fw-bold text-center text-dark">Investigadores</h3>
 
         <h6 class="fw-bold text-center text-dark">Estos son los integrantes del grupo de investigación INNOVATEC CTPI:</h6>
 
 
-        <div class="bg-carrusel mt-0 px-3 mb-1 pt-0 d-flex justify-content-center d-inline align-middle" v-for="semillero in semilleros" :key="semillero">
+        <div class="mt-0 px-3 mb-1 pt-0 d-flex justify-content-center d-inline align-middle" v-for="semillero in semilleros" :key="semillero">
             
             <div class="">
 
@@ -173,12 +173,12 @@
 
                     </div><!-- /.row -->
 
-                </div><!-- /.container -->
+                </div><!-- /.container --> <hr class="mt-1 mb-1" />
             </div>
 
 
 
-            <hr class="border border-primary border-3 opacity-75">
+           
         </div>
     </main>
 </template>

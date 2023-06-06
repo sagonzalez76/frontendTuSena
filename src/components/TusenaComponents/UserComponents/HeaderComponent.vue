@@ -76,8 +76,8 @@
                         <router-link to="/" class="text-white-50">Innovatec</router-link>
                         <span class="text-white-50 mx-2"> > </span>
                         <router-link to="/buscador" href="" class="text-white-50">Buscador TuSena</router-link>
-                        <span v-if="producto.productos_titulo" class="text-white-50 mx-2"> > </span>
-                        <router-link to="/productos/1" class="text-white"><u>{{ producto.productos_titulo }}</u></router-link>
+                        <span v-if="producto.producto_titulo" class="text-white-50 mx-2"> > </span>
+                        <router-link to="/productos/1" class="text-white"><u>{{ producto.producto_titulo }}</u></router-link>
 
 
                     </h6>

@@ -1,6 +1,6 @@
 <template>
     <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-3">
-        <ul class="pagination">
+        <!-- <ul class="pagination">
             <li class="page-item disabled">
                 <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
@@ -16,7 +16,7 @@
                     <span aria-hidden="true"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
             </li>
-        </ul>
+        </ul> -->
     </nav>
 </template>
 
