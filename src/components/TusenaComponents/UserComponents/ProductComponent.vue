@@ -1,32 +1,43 @@
 <template>
-    <div class="container" v-if="productos.length == 0">
+    <div class="container" v-if="!productos.length">
 
         <h1>No se encontraron productos</h1>
-
+        <!-- {{ semillerosSeleccionados }}
+{{ subtiposSeleccionados }}
+{{ proyectosSeleccionados }}
+{{ programasSeleccionados }}
+{{ anosSeleccionados }} -->
     </div>
-
 
 
     <div class="row justify-content-center mb-3" v-else v-for="(producto, index) in productos" :key="index">
         <div class="col-md-12">
+
+
             <div class="card shadow-0 border border-dark rounded-3" style="--bs-border-opacity: .5;">
                 <div class="card-body">
                     <div class="row g-0">
                         <div class="col-xl-4 col-md-3 d-flex justify-content-center">
-                            <div
-                                class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0 d-flex justify-content-center">
-                                <img src="https://1.bp.blogspot.com/-ImfAdP03PKI/WYz03SIQHCI/AAAAAAAAMws/wplt43gBUI8Dv4aNadp4pEJS7iByMo0HACLcBGAs/s1600/IMG_3794.JPG" class="my-auto"
-                                    style="width: 150px; height: 150px;" />
-                                <a href="#!">
+                            <div class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0 d-flex justify-content-center"
+                                id="imagen-container">
+
+                                <div v-for="imagen in imageSrc" :key="imagen">
+                                    <img :src="imagen" alt="Imagen del producto" class="my-auto"
+                                        style="width: 150px; height: 150px;">
+                                </div>
+
+                                <!-- <img :src=imageSrc class="my-auto" style="width: 150px; height: 150px;" /> -->
+                                <!-- <a href="#!">
                                     <div class="hover-overlay">
                                         <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
                                     </div>
-                                </a>
+                                </a> -->
                             </div>
                         </div>
 
                         <div class="col-xl-6 col-md-7 col-sm-7 ">
                             <h5 class="mb-3 ">{{ producto.producto_titulo }}</h5>
+                            <!-- {{producto.producto_imagen }} -->
                             <!-- <div class="d-flex flex-row">
                                 <div class="text-warning mb-1 me-2">
                                     <i class="fa fa-star"></i>
@@ -34,7 +45,7 @@
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
-                                    <span class="ms-1">
+                                    <span class="ms-1"
                                         3.7
                                     </span>
                                 </div>
@@ -100,6 +111,22 @@
                             </div>
 
 
+                            <div class="row w-100">
+                                <div class="row">
+
+                                    <div class="col-4">
+                                        <h6 class="fw-bold">A&ntilde;o:</h6>
+                                    </div>
+                                    <div class="col-8">
+                                        <h6>{{ producto.producto_ano }}</h6>
+
+                                        <!-- {{ producto.producto_imagen.data }} -->
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
                         <div class="col-xl-2 col-md-2 col-sm-5 my-auto text-end">
                             <!-- <div class="d-flex flex-row align-items-center mb-1">
@@ -111,8 +138,7 @@
                                 <button class="btn btn-success shadow-0 me-2 me-2 product-button" type="button">
                                     <router-link to="/productos/1" type="button"
                                         @click="buscarProductoId(producto.producto_id)"
-                                        class="text-decoration-none text-light ">ver
-                                        mas </router-link> </button>
+                                        class="text-decoration-none text-light ">ver mas </router-link> </button>
                                 <!-- <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover "><i
                                         class="fas fa-heart fa-lg px-1"></i></a> -->
                             </div>
@@ -124,23 +150,60 @@
     </div>
 </template>
 
+
 <script>
 import { mapState, mapActions } from 'vuex';
+
+// Supongamos que tienes el valor de la columna "producto_imagen" almacenado en la variable 'imagenBuffer'
+import { Buffer } from 'buffer';
 
 
 
 export default {
+
+
     computed: {
         ...mapState({
             productos: 'productos',
+            semillerosSeleccionados: 'semillerosSeleccionados',
+            subtiposSeleccionados: 'subtiposSeleccionados',
+            proyectosSeleccionados: 'proyectosSeleccionados',
+            programasSeleccionados: 'programasSeleccionados',
+            anosSeleccionados: 'anosSeleccionados'
+
         }),
+
+        //    imageSrc() {
+        //    this.productos.map((producto) => {
+        //     const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
+        //     return `data:image/png;base64,${base64}`;
+        //   });
+        // },
+       imageSrc() {
+
+            return this.productos.map((producto) => {
+                const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
+
+                return `data:image/png;base64,${base64}`;
+
+            });
+        },
+
+
+
+
+
+
     },
 
     methods: {
         ...mapActions({
             buscarProductoId: 'buscarProductoId',
         }),
+
+
     },
+
 
 
 

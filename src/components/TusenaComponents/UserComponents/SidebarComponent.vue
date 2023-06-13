@@ -322,15 +322,16 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Proyecto </button>
+                                Proyecto </button>
                         </h2>
                         <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
                                     <div class="form-check" v-for="proyecto in proyectos" :key="proyecto">
-                                        <input class="form-check-input" type="checkbox" :value="proyecto.proyecto_nombre" id="flexCheckDefault"
-                                            @change="actualizarProyectosSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">{{ proyecto.proyecto_nombre}}</label>
+                                        <input class="form-check-input" type="checkbox" :value="proyecto.proyecto_nombre"
+                                            id="flexCheckDefault" @change="actualizarProyectosSeleccionados" />
+                                        <label class="form-check-label" for="flexCheckDefault">{{
+                                            proyecto.proyecto_nombre }}</label>
                                     </div>
                                     <!-- {{ $store.state.proyectosSeleccionados }} -->
 
@@ -352,9 +353,10 @@
                             <div class="accordion-body">
                                 <div>
                                     <div class="form-check" v-for="programa in programas" :key="programa">
-                                        <input class="form-check-input" type="checkbox" :value="programa.programa_nombre" id="flexCheckDefault"
-                                            @change="actualizarProgramasSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">{{ programa.programa_nombre}}</label>
+                                        <input class="form-check-input" type="checkbox" :value="programa.programa_nombre"
+                                            id="flexCheckDefault" @change="actualizarProgramasSeleccionados" />
+                                        <label class="form-check-label" for="flexCheckDefault">{{
+                                            programa.programa_nombre }}</label>
                                     </div>
                                     <!-- {{ $store.state.programasSeleccionados }} -->
 
@@ -368,9 +370,11 @@
 
 
                 </div>
-            </div>
 
+            </div>
         </div>
+
+        <router-link to="graficas" class="btn btn-primary">Graficas</router-link>
     </div>
 </template>
 
@@ -409,7 +413,7 @@ export default {
         const currentYear = new Date().getFullYear();
         this.availableYears = Array.from({ length: currentYear - 2012 + 1 }, (_, index) => currentYear - index);
 
-//para buscar los proyectos
+        //para buscar los proyectos
         await this.axios.get('http://localhost:3000/proyecto')
             .then(response => {
                 this.proyectos = response.data.nuevo_proyecto
@@ -419,7 +423,7 @@ export default {
             });
 
 
-            await this.axios.get('http://localhost:3000/programa')
+        await this.axios.get('http://localhost:3000/programa')
             .then(response => {
                 this.programas = response.data.nuevo_programa
             })

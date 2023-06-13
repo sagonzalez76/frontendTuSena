@@ -23,11 +23,7 @@
 
 
                         <div class="col-lg-4" v-for="investigador in semillero.investigadores" :key="investigador">
-                            <img class="bd-placeholder-img rounded-circle" width="140" height="140"
-
-                            
-                            
-                            :src="`${investigador.pic}`"
+                            <img class="bd-placeholder-img rounded-circle" width="140" height="140" :src="`${investigador.pic} ||  ${investigador.pic2}`"
 
                                 aria-label="Placeholder: 140x140"
                                 preserveAspectRatio="xMidYMid slice" focusable="false"> <!-- TODO -->
@@ -189,43 +185,7 @@
 import foto1 from '../../assets/fotos/WilsonOrtiztrim.jpg'
 
 const semilleros = [
-{
-        name: 'INNOVATELCOS',
-        img: {
-            img1: 'https://placeimg.com/1995/500/arch',
-            img2: 'https://placeimg.com/1995/500/animals',
-            img3: 'https://placeimg.com/1995/500/nature',
-        },
 
-        investigadores: [{
-            id: 16,
-            name: 'Wilson Yecit',
-            lastname: 'Ortiz Sánchez',
-            formacion: {
-                pregrado: 'Ingeniero en Electrónica y Telecomunicaciones',
-                postgrado: 'Magister en Diseño y Gestión de Proyectos Tecnológicos'
-            },
-            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-            semillero: 'INNOVATELCOS',
-            email: 'wortiz@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001554606',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
-        },
-        {
-            id: 17,
-            name: 'David Guillermo ',
-            lastname: 'Rivera Fierro',
-            formacion: {
-                pregrado: 'Ingeniero en Electrónica y Telecomunicaciones',
-                postgrado: 'Especialista en Redes y Servicios Telemáticos'
-            },
-            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-            semillero: 'INNOVATELCOS',
-            email: 'dgriveraf@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000011881',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
-        },]
-    },
 
     {
         name: 'EREECA',
@@ -247,7 +207,7 @@ const semilleros = [
             semillero: 'EREECA',
             email: 'rmontano@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://i.imgur.com/2rkRqCY.jpg'
 
         },
         {
@@ -351,20 +311,7 @@ const semilleros = [
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001481839',
                 pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
             },
-            {
-                id: 7,
-                name: 'Yimi Hilario',
-                lastname: 'Pinzon Ortega',
-                formacion: {
-                    pregrado: 'Ingeniero Sistemas',
-                    postgrado: 'Especialista en Seguridad Informatica'
-                },
-                linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-                semillero: 'CREAD+',
-                email: 'yhpinzono@sena.edu.co',
-                cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001481839',
-                pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
-            },
+           
         ],
 
     },
@@ -391,7 +338,7 @@ const semilleros = [
             semillero: 'SIITIS',
             email: 'vpizo@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://i.imgur.com/OTeluU0.jpg'
         },
         {
             id: 9,
@@ -480,7 +427,7 @@ const semilleros = [
             semillero: 'SINAFRED',
             email: 'mdoradot@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://i.imgur.com/BPrS8MC.jpg'
         },
         {
             id: 14,
@@ -494,7 +441,7 @@ const semilleros = [
             semillero: 'SINAFRED',
             email: 'gacertuche@misena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000148915',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://i.imgur.com/Ms5KuVH.jpg'
         }, {
             id: 15,
             name: 'Diana Carolina',
@@ -507,7 +454,7 @@ const semilleros = [
             semillero: 'SINAFRED',
             email: 'dcuaran@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001237209',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://i.imgur.com/WK8vp4I.jpg'
         },]
     },
     {
@@ -530,7 +477,7 @@ const semilleros = [
             semillero: 'INNOVATELCOS',
             email: 'wortiz@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001554606',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://i.imgur.com/mkkbCVI.jpg'
         },
         {
             id: 17,
@@ -544,7 +491,11 @@ const semilleros = [
             semillero: 'INNOVATELCOS',
             email: 'dgriveraf@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000011881',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view',
+            pic2: "https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+
+        
+        
         },]
     },
 ]

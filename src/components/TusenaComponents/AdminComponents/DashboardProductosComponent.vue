@@ -116,7 +116,7 @@
 
 
 
-              <th scope="col">Acciones</th>
+            <th scope="col">Acciones</th>
 
 
           </tr>
@@ -133,7 +133,13 @@
             <td>{{ producto.producto_tipo }}</td>
             <td>{{ producto.producto_subtipo }}</td>
             <td>{{ producto.producto_url }}</td>
-            <td>{{ producto.producto_imagen }}</td>
+
+            <td>
+              <div v-for="imagen in imageSrc" :key="imagen">
+                <img :src="imagen" alt="Imagen del producto" class="my-auto" style="width: 30px; height: 30px;">
+              </div>
+
+            </td>
 
 
             <td>{{ producto.funcionario_nombre }}</td>
@@ -193,7 +199,7 @@
                     <h3>Agrega un Producto</h3>
                     <p>Llena los campos que veras a continuacion:</p>
 
-                    <form class="" method="POST" v-on:submit.prevent="registrarProducto">
+                    <form class="" method="POST" enctype="multipart/form-data" v-on:submit.prevent="registrarProducto">
 
                       <div class="col-md-12 ">
                         <input class="form-control text-dark" type="text" required placeholder="Titulo" v-model="titulo">
@@ -283,9 +289,9 @@
                       </div>
 
                       <div class="col-md-12">
+                        <input class="form-control text-dark" type="file" name="producto_imagen" accept="image/*"
+                          ref="imagenInput" required>
 
-                        <input class="form-control text-dark" type="text" name="" placeholder="Imagen" v-model="imagen"
-                          required>
                       </div>
 
 
@@ -302,6 +308,15 @@
                           <option value="value1" selected disabled>Elija un Semillero</option>
                           <option v-for="semillero in semilleros" :value="semillero.semillero_id" :key="semillero">{{
                             semillero.semillero_nombre }}</option>
+                        </select>
+                      </div>
+
+
+                      <div class="col-md-12">
+                        <select v-model="funcionario_fk" class="text-dark">
+                          <option value="value1" selected disabled>Elija un Autor</option>
+                          <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id"
+                            :key="funcionario">{{ funcionario.funcionario_nombre }}</option>
                         </select>
                       </div>
 
@@ -425,52 +440,51 @@
                       </div>
 
 
-                  
+
                       <div class="col-md-12">
-                        <label for="proyecto">Elija un Proyecto. Actualmente tiene seleccionado el Proyecto {{ proyecto.proyecto_nombre }}</label>
+                        <label for="proyecto">Elija un Proyecto. Actualmente tiene seleccionado el Proyecto {{
+                          proyecto.proyecto_nombre }}</label>
 
                         <select v-model="proyecto_fk" class="text-dark" id="semillero">
                           <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
                           <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">{{
                             proyecto.proyecto_nombre }}</option>
-                        </select>     {{proyecto_fk}}
+                        </select> {{ proyecto_fk }}
                       </div>
 
 
                       <div class="col-md-12">
-                        <label for="proyecto">Elija un Semillero. Actualmente tiene seleccionado el semillero {{ semillero.semillero_nombre }}</label>
+                        <label for="proyecto">Elija un Semillero. Actualmente tiene seleccionado el semillero {{
+                          semillero.semillero_nombre }}</label>
 
                         <select v-model="semillero_fk" class="text-dark" id="semillero">
                           <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
                           <option v-for="semillero in semilleros" :value="semillero.semillero_id" :key="semillero">{{
                             semillero.semillero_nombre }}</option>
-                        </select>     {{semillero_fk}}
+                        </select> {{ semillero_fk }}
                       </div>
 
- 
+
                       <div class="col-md-12">
-                        <label for="proyecto">Elija un Autor. Actualmente tiene seleccionado el Autor {{ proyecto.proyecto_nombre }}</label>
+                        <label for="proyecto">Elija un Autor. Actualmente tiene seleccionado el Autor {{
+                          proyecto.proyecto_nombre }}</label>
 
                         <select v-model="proyecto_fk" class="text-dark" id="semillero">
                           <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
                           <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">{{
                             proyecto.proyecto_nombre }}</option>
-                        </select>     {{proyecto_fk}}
+                        </select> {{ proyecto_fk }}
                       </div>
 
 
 
 
                       <div class="col-md-12">
-                        <label for="proyecto">Elija un Autor. Actualmente tiene seleccionado el Autor {{ proyecto.proyecto_nombre }}</label>
+                        <label for="proyecto">Elija un Autor. Actualmente tiene seleccionado el Autor {{
+                          proyecto.proyecto_nombre }}</label>
 
-                        <select v-model="funcionario_fk" class="text-dark" id="semillero">
-                          <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
-                          <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id" :key="funcionario">{{
-                            proyecto.proyecto_nombre }}</option>
-                        </select>     {{funcionario_fk}}  {{funcionario_nombre}}
                       </div>
-              
+
 
 
                       <div class="col-md-12">
@@ -480,6 +494,8 @@
                             :key="funcionario">{{ funcionario.funcionario_nombre }}</option>
                         </select>
                       </div>
+
+
 
 
                       <div class="col-md-12">
@@ -599,6 +615,11 @@
 
 <script>
 
+import { mapState, mapActions } from 'vuex';
+
+// Supongamos que tienes el valor de la columna "producto_imagen" almacenado en la variable 'imagenBuffer'
+import { Buffer } from 'buffer';
+
 export default {
 
   name: "DashboardProductosComponent",
@@ -614,7 +635,7 @@ export default {
       tipo: "",
       subtipo: "",
       url: "",
-      imagen: "",
+      imagen: null,
       availableYears: [],
 
 
@@ -652,7 +673,28 @@ export default {
   },
 
 
+
+
+
+  //    imageSrc() {
+  //    this.productos.map((producto) => {
+  //     const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
+  //     return `data:image/png;base64,${base64}`;
+  //   });
+  // },
+
+
+
+
+
+
   computed: {
+
+    ...mapState({
+      productos: 'productos',
+
+
+    }),
     obtenerAno() {
       if (this.ano) {
         const fechaObj = new Date(this.ano);
@@ -660,7 +702,17 @@ export default {
       } else {
         return '';
       }
-    }
+    },
+
+    imageSrc() {
+
+      return this.productos.map((producto) => {
+        const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
+
+        return `data:image/png;base64,${base64}`;
+
+      });
+    },
   },
 
 
@@ -677,7 +729,7 @@ export default {
 
     async buscarProductos() {
 
-      await this.axios.get('http://localhost:3000/producto')
+      await this.axios.get('http://localhost:3000/')
         .then(response => {
           this.productos = response.data.nuevo_producto[0]
         })
@@ -725,49 +777,53 @@ export default {
     },
 
     async registrarProducto() {
+      try {
+        const formData = new FormData();
+        const imagenInput = this.$refs.imagenInput;
 
-      let json = {
-        "producto_titulo": this.titulo,
-        "producto_ano": this.ano,
-        "producto_url": this.url,
-        "producto_tipo": this.tipo,
-        "producto_subtipo": this.subtipo,
-        "producto_imagen": this.imagen,
+        if (imagenInput.files.length > 0) {
+          const imagen = imagenInput.files[0];
+          formData.append('producto_imagen', imagen);
+        }
 
-        "proyecto_fk": this.proyecto_fk,
-        "semillero_fk": this.semillero_fk,
-        "funcionario_fk": this.funcionario_fk,
-        "programa_fk": this.programa_fk,
+        formData.append('producto_titulo', this.titulo);
+        formData.append('producto_ano', this.ano);
+        formData.append('producto_url', this.url);
+        formData.append('producto_tipo', this.tipo);
+        formData.append('producto_subtipo', this.subtipo);
+        formData.append('proyecto_fk', this.proyecto_fk);
+        formData.append('semillero_fk', this.semillero_fk);
+        formData.append('funcionario_fk', this.funcionario_fk);
+        formData.append('programa_fk', this.programa_fk);
 
-      };
-      await this.axios.post('http://localhost:3000/producto', json)
-        .then(data => {
-          console.log(data);
-          const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.addEventListener('mouseenter', Swal.stopTimer)
-              toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-          })
+        await this.axios.post('http://localhost:3000/producto', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
 
-          Toast.fire({
-            icon: 'success',
-            title: 'Producto Creado',
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          },
+        });
 
-          })
+        Toast.fire({
+          icon: 'success',
+          title: 'Producto Creado',
+        });
 
-
-
-
-          this.buscarProductos();
-
-
-        })
+        this.buscarProductos();
+      } catch (error) {
+        console.error(error);
+        // Manejo del error
+      }
     },
 
 
@@ -791,7 +847,7 @@ export default {
         });
 
 
-        await this.axios.get('http://localhost:3000/semillero/' + this.producto.semillero_fk)
+      await this.axios.get('http://localhost:3000/semillero/' + this.producto.semillero_fk)
         .then(response => {
           this.semillero = response.data.nuevo_semillero;
           console.log(this.semillero);
@@ -803,7 +859,7 @@ export default {
 
 
 
-        await this.axios.get('http://localhost:3000/funcionario/'+ this.producto)
+      await this.axios.get('http://localhost:3000/funcionario/' + this.producto)
         .then(response => {
           this.funcionario = response.data.nuevo_semillero;
           console.log(this.semillero);
@@ -1297,6 +1353,7 @@ body {
 
 .form-content input[type=text],
 .form-content input[type=password],
+.form-content input[type=file],
 .form-content input[type=email],
 .form-content input[type=phone],
 .form-content input[type=number],

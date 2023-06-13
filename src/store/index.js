@@ -11,15 +11,21 @@ export default createStore({
 
     /////////////////////////////////////////////////////////////////////////////////////
     // FILTROS FILTROS FILTROS
+
     semillerosSeleccionados: [],
-    // tiposSeleccionados: [],
-    subtiposSeleccionados: [],
-    anosSeleccionados: [],
     subtiposSeleccionados: [],
     anosSeleccionados: [],
     proyectosSeleccionados: [],
-
     programasSeleccionados: [],
+
+
+
+    // semillerosSeleccionados: [],
+    // subtiposSeleccionados: ['Informes Finales de Investigación'],
+    // anosSeleccionados: ['2022'],
+    // proyectosSeleccionados: ["Proyecto Estandar"],
+
+    // programasSeleccionados: ["Tecnico en Sistemas"],
 
 
 
@@ -72,15 +78,24 @@ export default createStore({
         });
     },
 
+
+    
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // BUSCADOR BUSCADOR BUSCADOR
 
     // REALIZA LA BUSQUEDA DE TODOS LOS PRODUCTOS EN DB
     async  ['buscarProductos'](state) {
-      await axios.get('http://localhost:3000/producto')
+      await axios.get('http://localhost:3000/')
         .then(response => {
           state.productos = response.data.nuevo_producto[0]
           console.log(response.data.nuevo_producto[0]);
+
+
+
+
+
+          
         }) //Mostrar por consola el error
         .catch((e) => {
           state.productos = []
@@ -91,21 +106,28 @@ export default createStore({
 
     // REALIZA LA BUSQUEDA DE LOS PRODUCTOS QUE CONTENGAN EL PARAMETRO QUE LLEGA DESDE LA BARRA DE BUSQUEDA 
 
-    async ['buscarProductoName'](state, titulo) {
+    async ['buscarProductoName'](state, payload) {
 
-    const params = {
-      titulo:titulo}
+      const params = {
+        titulo: payload.titulo
+      }
+
+      const body = {
+        categoria: payload.categoria
+      }
 
       console.log(params);
-      await axios.get('http://localhost:3000/producto/buscar', {params} )
-        .then(response => { 
+      console.log(body);
+
+      await axios.get('http://localhost:3000/producto/buscar/', { params }, { body })
+        .then(response => {
           console.log(response.data);
           state.productos = response.data.productos
-         
+
 
           // LIMPIA LA BUSQUEDA
           const params = {
-            titulo: ""
+            titulo: undefined
           }
 
           console.log(params);
@@ -328,7 +350,36 @@ export default createStore({
     },
 
 
+    aplicarFiltros(state) {
+      const productosProyectos = state.proyectosSeleccionados;
+      const productosSemilleros = state.semillerosSeleccionados;
+      const productosSubtipos = state.subtiposSeleccionados;
+      const productosAno = state.anosSeleccionados;
+      const productosProgramas = state.programasSeleccionados;
 
+      // console.log(state.semillerosSeleccionados)
+
+      const params = {
+        proyectos_nombre: productosProyectos,
+        semillero_nombre: productosSemilleros,
+        producto_subtipo: productosSubtipos,
+        productos_ano: productosAno,
+        programas_nombre: productosProgramas
+
+      }
+      console.log(params);
+      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
+      // con los autores seleccionados como parámetro de consulta
+      axios.get("http://localhost:3000/aplicarfiltros", { params })
+        .then((response) => {
+          state.productos = response.data;
+        })
+        .catch((error) => {
+          state.productos = []
+
+          console.error(error);
+        });
+    },
 
 
 
@@ -391,10 +442,13 @@ export default createStore({
     },
 
 
-    async buscarProductoName({ commit }, titulo) {
+    async buscarProductoName({ commit }, payload) {
+
       commit('buscarProductos')
-      commit('buscarProductoName', titulo)
+      commit('buscarProductoName', payload)
     },
+
+
 
     async buscarProductoId({ commit }, id) {
       commit('buscarProductoId', id)
@@ -405,36 +459,36 @@ export default createStore({
 
     actualizarSemillerosSeleccionados({ commit }, valorSeleccionado) {
       commit('setSemillerosSeleccionados', valorSeleccionado),
-        commit('filtrarProductosSemillero')
+        commit('aplicarFiltros')
 
     },
 
 
     actualizarTiposSeleccionados({ commit }, tipoSeleccionado) {
       commit('setTiposSeleccionados', tipoSeleccionado),
-        commit('filtrarProductosTipo')
+        commit('aplicarFiltros')
 
     },
 
     actualizarSubtiposSeleccionados({ commit }, subtipoSeleccionado) {
       commit('setSubtiposSeleccionados', subtipoSeleccionado),
-        commit('filtrarProductosSubtipo')
+        commit('aplicarFiltros')
 
     },
 
     actualizarAnosSeleccionados({ commit }, anoSeleccionado) {
       commit('setAnosSeleccionados', anoSeleccionado),
-        commit('filtrarProductosAno')
+        commit('aplicarFiltros')
     },
 
     actualizarProyectosSeleccionados({ commit }, proyectoSeleccionado) {
       commit('setProyectosSeleccionados', proyectoSeleccionado),
-        commit('filtrarProductosProyecto')
+        commit('aplicarFiltros')
 
     },
     actualizarProgramasSeleccionados({ commit }, programaSeleccionado) {
       commit('setProgramasSeleccionados', programaSeleccionado),
-        commit('filtrarProductosPrograma')
+        commit('aplicarFiltros')
 
     }
 

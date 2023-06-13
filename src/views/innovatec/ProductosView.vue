@@ -25,7 +25,7 @@
 
                             <div class="my-2">
                                 <input type="password" name="password" id="inputPassword" class="form-control form-group"
-                                    placeholder="Contrasena" v-model="funcionario_contraseña" required autofocus>
+                                    placeholder="Contrasena" v-model="funcionario_contrasena" required autofocus>
 
                             </div>
 
@@ -244,7 +244,7 @@ export default {
 
             this.$store.dispatch('checkAuthentication', {
                 identificacion: this.funcionario_iden,
-                contrasena: this.funcionario_contraseña
+                contrasena: this.funcionario_contrasena
             });
 
             setTimeout(this.navigateToPage, 1000);

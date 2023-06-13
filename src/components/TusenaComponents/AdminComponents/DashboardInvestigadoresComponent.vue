@@ -454,10 +454,6 @@ export default {
       await this.axios.get('http://localhost:3000/funcionario')
         .then(response => {
           this.funcionarios = response.data.nuevo_funcionario
-          // console.log(response.data.new_funcionario[0].funcionario_id);
-          // console.log(response.data.new_producto);
-          // console.log(this.funcionarios);
-          // console.log(this.state.productos);
         }) //Mostrar por consola el error
         .catch((e) => {
           console.log(e)

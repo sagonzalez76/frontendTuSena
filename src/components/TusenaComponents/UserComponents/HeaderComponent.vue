@@ -13,10 +13,10 @@
                     <!-- Left elements -->
 
                     <!-- Center elements -->
-                    <div class="order-lg-last col-lg-5 col-sm-8 col-8">
+                    <div class="order-lg-last col-lg-3 col-sm-8 col-8">
 
 
-                        <div class="d-flex float-end"  v-if="!$store.state.token">
+                        <div class="d-flex float-end" v-if="!$store.state.token">
                             <router-link to="/productos"
                                 class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i
                                     class="fas fa-user-alt m-1 me-md-2"></i>
@@ -34,7 +34,8 @@
 
                         <div class="d-flex float-end" v-if="$store.state.token">
                             <router-link to="/admin/dashboard/administradores"
-                                class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i class="bi bi-person-gear">_</i> 
+                                class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i
+                                    class="bi bi-person-gear">_</i>
                                 <p class="d-none d-md-block mb-0">Administrador</p>
                             </router-link>
                         </div>
@@ -47,18 +48,25 @@
 
                     <!-- Right elements -->
                     <div class="col-lg-5 col-md-12 col-12">
-
-
-
-                        <div class="d-flex" role="">
-                            <input v-model="titulo" @keydown.enter="buscarProductoName(titulo)" class="form-control me-2"
-                                type="" placeholder="Busca un producto" aria-label="Search">
-                            <button v-on:click="buscarProductoName(titulo)" class="btn btn-outline-success" type="button"><i
+                        <div class="input-group"> 
+                            <!-- {{ categoria }} -->
+                            <input v-model="titulo" @keydown.enter="buscarProductoName(titulo, categoria)" class="form-control"
+                                type="text" placeholder="Busca un producto" aria-label="Search">
+                            <button v-on:click="buscarProductoName(titulo, categoria)" class="btn btn-outline-success" type="button"><i
                                     class="fas fa-search"></i></button>
                         </div>
+                    </div>
 
 
+                    <div class="col-lg-2 col-md-12 col-12 w-auto">
+                        <div class="input-group">
+                            <select class="form-control text-center bg-secondary text-light" v-model="categoria" name="" id="">
 
+                                <option value="nombre">por Nombre</option>
+                                <option value="autor">por Autor</option>
+                            </select>
+
+                        </div>
                     </div>
                     <!-- Right elements -->
                 </div>
@@ -77,7 +85,8 @@
                         <span class="text-white-50 mx-2"> > </span>
                         <router-link to="/buscador" href="" class="text-white-50">Buscador TuSena</router-link>
                         <span v-if="producto.producto_titulo" class="text-white-50 mx-2"> > </span>
-                        <router-link to="/productos/1" class="text-white"><u>{{ producto.producto_titulo }}</u></router-link>
+                        <router-link to="/productos/1" class="text-white"><u>{{ producto.producto_titulo
+                        }}</u></router-link>
 
 
                     </h6>
@@ -103,7 +112,7 @@ export default {
 
     data() {
         return {
-
+            categoria: "nombre"
         }
     },
 
@@ -134,9 +143,21 @@ export default {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     methods: {
 
+
+        buscarProductoName() {
+
+            this.$store.dispatch('buscarProductoName', {
+                titulo: this.titulo,
+                categoria: this.categoria
+            });
+        
+        },
+
+
+
+
         ...mapActions({
             buscarProductos: 'buscarProductos',
-            buscarProductoName: 'buscarProductoName',
 
         }),
 

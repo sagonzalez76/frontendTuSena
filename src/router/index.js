@@ -151,6 +151,20 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/tusena/user/LandingPage.vue')
   },
+
+
+  {
+    path: '/graficas',
+    name: 'graficas',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/tusena/user/LandingPageGraficas.vue')
+  },
+
+
+
+
   {
     path: '/productos/1',
     name: 'productos/1',
@@ -182,7 +196,7 @@ const routes = [
     name: 'admin/dashboard/',
     component: DashboardAdmin,
     meta: {
-      requiresAuth: true // Esta ruta requiere autenticación
+      requiresAuth: false // Esta ruta requiere autenticación
     },
 
     children: [
