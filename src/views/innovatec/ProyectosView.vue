@@ -22,22 +22,22 @@
 
 								<table class="table table-bordered border-dark align-middle">
 							<tr class="table-primary">
-								<td>
-									<p class=""><b>CÓDIGO</b></p>
+								<td class="bg-cabecera">
+									<p class="textocentrado"><b>CÓDIGO</b></p>
 								</td>
-								<td>
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
 								</td>
-								<td>
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
 								</td>
-								<td>
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>SEMILLERO DE INVESTIGACIÓN</b></p>
 								</td>
-								<td>
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>RESPONSABLES</b></p>
 								</td>
-								<td>
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>ESTADO</b></p>
 								</td>
 							</tr>
@@ -181,22 +181,22 @@
                             
 								<table class="table table-bordered border-dark">
 							<tr class="table-primary">
-								<td width="40" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>CÓDIGO</b></p>
 								</td>
-								<td width="220" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>SEMILLERO DE INVESTIGACIÓN</b></p>
 								</td>
-								<td width="130" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>RESPONSABLES</b></p>
 								</td>
-								<td width="30" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>ESTADO</b></p>
 								</td>
 							</tr>
@@ -270,22 +270,22 @@
 
 								<table class="table table-bordered border-dark">
 							<tr class="table-primary">
-								<td width="40" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>CÓDIGO</b></p>
 								</td>
-								<td width="220" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>SEMILLERO DE INVESTIGACIÓN</b></p>
 								</td>
-								<td width="130" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>RESPONSABLES</b></p>
 								</td>
-								<td width="30" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>ESTADO</b></p>
 								</td>
 							</tr>
@@ -426,22 +426,22 @@
 
 								<table class="table table-bordered border-dark">
 							<tr class="table-primary">
-								<td width="40" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>CÓDIGO</b></p>
 								</td>
-								<td width="220" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>SEMILLERO DE INVESTIGACIÓN</b></p>
 								</td>
-								<td width="130" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>RESPONSABLES</b></p>
 								</td>
-								<td width="30" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>ESTADO</b></p>
 								</td>
 							</tr>
@@ -585,22 +585,22 @@
                             <div class="accordion-body p-0 pt-4">
 								<table class="table table-bordered border-dark">
 							<tr class="table-primary">
-								<td width="40" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>CÓDIGO</b></p>
 								</td>
-								<td width="220" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>SEMILLERO DE INVESTIGACIÓN</b></p>
 								</td>
-								<td width="130" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>RESPONSABLES</b></p>
 								</td>
-								<td width="30" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>ESTADO</b></p>
 								</td>
 							</tr>
@@ -785,22 +785,22 @@
                             <div class="accordion-body p-0 pt-4">
 								<table class="table table-bordered border-dark">
 							<tr class="table-primary">
-								<td width="40" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>CÓDIGO</b></p>
 								</td>
-								<td width="220" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>SEMILLERO DE INVESTIGACIÓN</b></p>
 								</td>
-								<td width="130" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>RESPONSABLES</b></p>
 								</td>
-								<td width="30" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>ESTADO</b></p>
 								</td>
 							</tr>
@@ -1086,22 +1086,22 @@
                             <div class="accordion-body p-0 pt-4">
 								<table class="table table-bordered border-dark">
 							<tr class="table-primary">
-								<td width="40" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>CÓDIGO</b></p>
 								</td>
-								<td width="220" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>SEMILLERO DE INVESTIGACIÓN</b></p>
 								</td>
-								<td width="130" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>RESPONSABLES</b></p>
 								</td>
-								<td width="30" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>ESTADO</b></p>
 								</td>
 							</tr>
@@ -1282,22 +1282,22 @@
                             <div class="accordion-body p-0 pt-4">
 								<table class="table table-bordered border-dark">
 							<tr class="table-primary">
-								<td width="40" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>CÓDIGO</b></p>
 								</td>
-								<td width="220" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>SEMILLERO DE INVESTIGACIÓN</b></p>
 								</td>
-								<td width="130" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>RESPONSABLES</b></p>
 								</td>
-								<td width="30" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>ESTADO</b></p>
 								</td>
 							</tr>
@@ -1463,22 +1463,22 @@
                             <div class="accordion-body p-0 pt-4">
 								<table class="table table-bordered border-dark">
 							<tr class="table-primary">
-								<td width="40" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>CÓDIGO</b></p>
 								</td>
-								<td width="220" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>TÍTULO DEL PROYECTO</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>LÍNEA PROGRAMÁTICA SENNOVA</b></p>
 								</td>
-								<td width="150" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>SEMILLERO DE INVESTIGACIÓN</b></p>
 								</td>
-								<td width="130" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>RESPONSABLES</b></p>
 								</td>
-								<td width="30" height="20" bgcolor="#00324D">
+								<td class="bg-cabecera">
 									<p class="textocentrado"><b>ESTADO</b></p>
 								</td>
 							</tr>
@@ -1722,6 +1722,11 @@ export default {
 
 
 <style scoped>
+
+p{
+text-align: justify;
+
+}
 .anclas {
 	position: fixed;
 	left: 1.1rem;
@@ -1764,6 +1769,11 @@ a:hover {
 .bg-ano{
 
 background-color: #39ca3e;
+
+}
+
+.table-primary, .bg-cabecera{
+background-color: #82def0 !important;
 
 }
 

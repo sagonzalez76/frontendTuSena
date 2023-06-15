@@ -298,11 +298,12 @@
                                                                                 alt="imagensemillero">
                                                                         </div>
                                                                         <div class="card-body pt-5 pb-0">
-                                                                            <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                           <img :src=investigador.pic
                                                                                 alt="profile-image" class="profile" />
                                                                             <h5 class="card-title text-center">{{
                                                                                 investigador.name
-                                                                            }} {{ investigador.lastname }}</h5>
+                                                                            }} {{ investigador.lastname }}</h5> 
+                                                                             <h5 class="text-warning" v-if="investigador.lider">Lider Semillero</h5>
 
                                                                             <hr class="mt-1 mb-1" />
                                                                             <h4>Formacion</h4>
@@ -1018,7 +1019,7 @@ h4 {
 
 const semilleros = [
    
-    {
+{
         name: 'SIITIS',
         img: {
             img1: 'https://placeimg.com/1998/500/arch',
@@ -1026,7 +1027,21 @@ const semilleros = [
             img3: 'https://placeimg.com/1998/500/nature',
         },
 
-        investigadores: [{
+        investigadores: [   {
+            id: 10,
+            name: 'Ana Isabel',
+            lastname: 'Bravo Ospina',
+            formacion: {
+                pregrado: 'Ingeniera Ambiental',
+                postgrado: 'Especialización Gerencia de la Salud Ocupacional'
+            },
+            linea: 'Innovación Tecnológica y Sostenibilidad para la Industria',
+            semillero: 'SIITIS',
+            email: 'aibravoo@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001844627',
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png',
+            lider:true
+        },{
             id: 8,
             name: 'Victoria Eugenia ',
             lastname: 'Pizo Perafán',
@@ -1038,7 +1053,7 @@ const semilleros = [
             semillero: 'SIITIS',
             email: 'vpizo@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
-            pic: '@/assets/img/investigador.jpg'
+            pic: 'https://i.imgur.com/OTeluU0.jpg'
         },
         {
             id: 9,
@@ -1052,24 +1067,11 @@ const semilleros = [
             semillero: 'SIITIS',
             email: 'jorivera@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001844629',
-            pic: '@/assets/img/investigador.jpg'
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
         },
-        {
-            id: 10,
-            name: 'Ana Isabel',
-            lastname: 'Bravo Ospina',
-            formacion: {
-                pregrado: 'Ingeniera Ambiental',
-                postgrado: 'Especialización Gerencia de la Salud Ocupacional'
-            },
-            linea: 'Innovación Tecnológica y Sostenibilidad para la Industria',
-            semillero: 'SIITIS',
-            email: 'aibravoo@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001844627',
-            pic: '@/assets/img/investigador.jpg'
-        }
-            ,]
-    }
+     
+            ]
+    },
   
 ]
 

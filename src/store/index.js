@@ -88,14 +88,12 @@ export default createStore({
     async  ['buscarProductos'](state) {
       await axios.get('http://localhost:3000/')
         .then(response => {
+
+          console.log(response);
           state.productos = response.data.nuevo_producto[0]
           console.log(response.data.nuevo_producto[0]);
 
 
-
-
-
-          
         }) //Mostrar por consola el error
         .catch((e) => {
           state.productos = []

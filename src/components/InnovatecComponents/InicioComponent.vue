@@ -8,7 +8,7 @@
 
             </div>
 
-            <div class="col parrafo-inicial">
+            <div class="col parrafo-inicial rounded-3">
 
                 <div class="row p-4 pb-2">
                     <h4 class="fw-bold p-0">DESCRIPCIÓN</h4>
@@ -36,7 +36,7 @@
 
 
         <div class="container table-responsive pt-4 px-2">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover border rounded-2">
 
                 <tbody>
                     <tr class="hover-header">

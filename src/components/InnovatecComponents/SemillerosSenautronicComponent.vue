@@ -298,11 +298,12 @@
                                                                                 alt="imagensemillero">
                                                                         </div>
                                                                         <div class="card-body pt-5 pb-0">
-                                                                            <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                           <img :src=investigador.pic
                                                                                 alt="profile-image" class="profile" />
                                                                             <h5 class="card-title text-center">{{
                                                                                 investigador.name
-                                                                            }} {{ investigador.lastname }}</h5>
+                                                                            }} {{ investigador.lastname }}</h5> 
+                                                                             <h5 class="text-warning" v-if="investigador.lider">Lider Semillero</h5>
 
                                                                             <hr class="mt-1 mb-1" />
                                                                             <h4>Formacion</h4>
@@ -1018,7 +1019,7 @@ h4 {
 
 const semilleros = [
    
-    {
+{
         name: 'SENAUTRONIC',
         img: {
             img1: 'https://placeimg.com/2001/500/arch',
@@ -1027,20 +1028,6 @@ const semilleros = [
         },
 
         investigadores: [{
-            id: 11,
-            name: 'Eduar',
-            lastname: 'Benavides Villamarín',
-            formacion: {
-                pregrado: 'Ingeniero Fisico',
-                postgrado: 'Magister en Ciencias Mecánicas'
-            },
-            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-            semillero: 'SENAUTRONIC',
-            email: 'ebenavidesv@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000042199',
-            pic: '@/assets/img/investigador.jpg'
-        },
-        {
             id: 12,
             name: 'Jean Alejandro',
             lastname: 'Cubillos Rojas',
@@ -1052,8 +1039,24 @@ const semilleros = [
             semillero: 'SENAUTRONIC',
             email: 'jacubillosr@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000003893',
-            pic: '@/assets/img/investigador.jpg'
-        },]
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png',
+            lider: true
+
+        },{
+            id: 11,
+            name: 'Eduar',
+            lastname: 'Benavides Villamarín',
+            formacion: {
+                pregrado: 'Ingeniero Fisico',
+                postgrado: 'Magister en Ciencias Mecánicas'
+            },
+            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
+            semillero: 'SENAUTRONIC',
+            email: 'ebenavidesv@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000042199',
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
+        },
+        ]
     },
     
 ]

@@ -1,7 +1,7 @@
 <script>
 
 const semilleros = [
-    {
+{
         name: 'EREECA',
         img: {
             img1: 'https://placeimg.com/2000/500/arch',
@@ -9,22 +9,7 @@ const semilleros = [
             img3: 'https://placeimg.com/2000/500/nature',
         },
 
-        investigadores: [{
-            id: 1,
-            name: 'Rodrigo Alberto',
-            lastname: 'Montano Fuentes',
-            formacion: {
-                pregrado: 'Ingeniero Fisico',
-                postgrado: 'Magíster en Física y Tecnología de los Láseres'
-            },
-            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-            semillero: 'EREECA',
-            email: 'rmontano@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
-            pic: '@/assets/img/investigador.jpg'
-
-        },
-        {
+        investigadores: [  {
             id: 2,
             name: 'Olga Liliana',
             lastname: 'Sánchez Medina',
@@ -36,8 +21,26 @@ const semilleros = [
             semillero: 'EREECA',
             email: 'osanchezm@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000347515',
-            pic: '@/assets/img/investigador.jpg'
-        }
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png',
+            lider: true
+
+        },
+        {
+            id: 1,
+            name: 'Rodrigo Alberto',
+            lastname: 'Montano Fuentes',
+            formacion: {
+                pregrado: 'Ingeniero Fisico',
+                postgrado: 'Magíster en Física y Tecnología de los Láseres'
+            },
+            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
+            semillero: 'EREECA',
+            email: 'rmontano@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
+            pic: 'https://i.imgur.com/2rkRqCY.jpg'
+
+        },
+      
         ]
     },
 
@@ -359,11 +362,12 @@ export default {
                                                                                 alt="imagensemillero">
                                                                         </div>
                                                                         <div class="card-body pt-5 pb-0">
-                                                                            <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                            <img :src=investigador.pic
                                                                                 alt="profile-image" class="profile" />
                                                                             <h5 class="card-title text-center">{{
                                                                                 investigador.name
-                                                                            }} {{ investigador.lastname }}</h5>
+                                                                            }} {{ investigador.lastname }}</h5> 
+                                                                             <h5 class="text-warning" v-if="investigador.lider">Lider Semillero</h5>
 
                                                                             <hr class="mt-1 mb-1" />
                                                                             <h4>Formacion</h4>
@@ -1006,6 +1010,7 @@ h4 {
     width: 100px;
     border: 3px solid rgba(255, 255, 255, 1);
     margin-left: -50px;
+    max-height: 100px;
 }
 
 .profile-card-4 .card-img-block {

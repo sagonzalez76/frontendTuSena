@@ -286,10 +286,10 @@ export default {
 .bg-nav{
 
 
-  background-color: #d9d9d9;
+  background-color: #cbcbcb;
 }
 .router-link-active {
-  background-color: #21b300;
+  background-color: #45b548;
   color: #f1f1f1 !important;
   font-size: large;
   transition: font-size 0.4s ease;

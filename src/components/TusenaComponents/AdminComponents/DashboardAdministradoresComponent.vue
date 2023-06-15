@@ -323,11 +323,7 @@
                         <div class="invalid-feedback">Contrase&ntilde;a sin llenar!</div> -->
                       </div>
 
-                      <div class="form-check mt-2">
-                        <input class="form-check-input" type="checkbox" value='' id="invalidCheck">
-                        <label class="form-check-label">El usuario sera Administrador?</label>
-                        <!-- <div class="invalid-feedback">Tenga en cuenta que el administrador podra ver, modificar o eliminar los datos contenidos en la base de datos de la aplicacion</div> -->
-                      </div>
+                      
 
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">

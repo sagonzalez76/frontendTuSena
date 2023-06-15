@@ -72,7 +72,7 @@
   <div class="modal fade" id="registrarproductomodal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
 
         <div class="modal-body py-0 mt-0 col-12 px-2">
           <div class="form-body p-0">
@@ -132,7 +132,7 @@
   <div class="modal fade" id="actualizarproductomodal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
 
         <div class="modal-body py-0 mt-0 col-12 px-2">
           <div class="form-body p-0">
@@ -195,7 +195,7 @@
   <div class="modal fade" id="actualizarProgramaModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -264,7 +264,7 @@
   <div class="modal fade" id="eliminarProgramaModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -813,6 +813,7 @@ body {
 .form-content input[type=email],
 .form-content input[type=phone],
 .form-content input[type=number],
+.form-content input[type=file],
 .form-content select {
   width: 100%;
   padding: 9px 20px;

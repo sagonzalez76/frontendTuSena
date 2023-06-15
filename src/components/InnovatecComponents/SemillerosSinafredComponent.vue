@@ -298,11 +298,12 @@
                                                                                 alt="imagensemillero">
                                                                         </div>
                                                                         <div class="card-body pt-5 pb-0">
-                                                                            <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                           <img :src=investigador.pic
                                                                                 alt="profile-image" class="profile" />
                                                                             <h5 class="card-title text-center">{{
                                                                                 investigador.name
-                                                                            }} {{ investigador.lastname }}</h5>
+                                                                            }} {{ investigador.lastname }}</h5> 
+                                                                             <h5 class="text-warning" v-if="investigador.lider">Lider Semillero</h5>
 
                                                                             <hr class="mt-1 mb-1" />
                                                                             <h4>Formacion</h4>
@@ -945,6 +946,7 @@ h4 {
     width: 100px;
     border: 3px solid rgba(255, 255, 255, 1);
     margin-left: -50px;
+    max-height: 100px;
 }
 
 .profile-card-4 .card-img-block {
@@ -1017,7 +1019,7 @@ h4 {
 
 
 const semilleros = [
-    {
+{
         name: 'SINAFRED',
         img: {
             img1: 'https://placeimg.com/2002/500/arch',
@@ -1026,6 +1028,20 @@ const semilleros = [
         },
 
         investigadores: [{
+            id: 15,
+            name: 'Diana Carolina',
+            lastname: 'Cuarán Coral',
+            formacion: {
+                pregrado: 'Licenciatura en Educación Básica con Énfasis en Educación Física Recreación y Deporte',
+                postgrado: 'Maestría en Educación Estudios del Cuerpo y Motricidad'
+            },
+            linea: 'Actividad Física, Recreación y Deportes',
+            semillero: 'SINAFRED',
+            email: 'dcuaran@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001237209',
+            pic: 'https://i.imgur.com/WK8vp4I.jpg',
+            lider:true
+        },{
             id: 13,
             name: 'Martin Alirio',
             lastname: 'Dorado Tobar',
@@ -1037,7 +1053,7 @@ const semilleros = [
             semillero: 'SINAFRED',
             email: 'mdoradot@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000411892',
-            pic: '@/assets/img/investigador.jpg'
+            pic: 'https://i.imgur.com/BPrS8MC.jpg'
         },
         {
             id: 14,
@@ -1051,21 +1067,8 @@ const semilleros = [
             semillero: 'SINAFRED',
             email: 'gacertuche@misena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000148915',
-            pic: '@/assets/img/investigador.jpg'
-        }, {
-            id: 15,
-            name: 'Diana Carolina',
-            lastname: 'Cuarán Coral',
-            formacion: {
-                pregrado: 'Licenciatura en Educación Básica con Énfasis en Educación Física Recreación y Deporte',
-                postgrado: 'Maestría en Educación Estudios del Cuerpo y Motricidad'
-            },
-            linea: 'Actividad Física, Recreación y Deportes',
-            semillero: 'SINAFRED',
-            email: 'dcuaran@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001237209',
-            pic: '@/assets/img/investigador.jpg'
-        },]
+            pic: 'https://i.imgur.com/Ms5KuVH.jpg'
+        }, ]
     },
 
 ]

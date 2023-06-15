@@ -1,13 +1,17 @@
 <template>
-    <div class="container" v-if="!productos.length">
+    <div class="container text-center" v-if="!productos.length">
 
-        <h1>No se encontraron productos</h1>
+
+        <h2>No se encontraron productos con los filtros seleccionados</h2>
+
+        <img src="https://th.bing.com/th/id/OIP.9LZt6qqG4o9g-chAgV82xgAAAA?pid=ImgDet&rs=1" alt="">
         <!-- {{ semillerosSeleccionados }}
 {{ subtiposSeleccionados }}
 {{ proyectosSeleccionados }}
 {{ programasSeleccionados }}
 {{ anosSeleccionados }} -->
     </div>
+
 
 
     <div class="row justify-content-center mb-3" v-else v-for="(producto, index) in productos" :key="index">
@@ -20,11 +24,13 @@
                         <div class="col-xl-4 col-md-3 d-flex justify-content-center">
                             <div class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0 d-flex justify-content-center"
                                 id="imagen-container">
+                                <!-- <img :src="imageSrc3" alt="Imagen del producto" class="my-auto" style="width: 30px; height: 30px;"> -->
 
-                                <div v-for="imagen in imageSrc" :key="imagen">
-                                    <img :src="imagen" alt="Imagen del producto" class="my-auto"
-                                        style="width: 150px; height: 150px;">
-                                </div>
+                                <!-- <div v-for="imagen in imageSrc" :key="imagen"> -->
+                                    <img :src="`data:image/png;base64,${producto.producto_imagen}`" alt="Imagen del producto" class="my-auto"
+                                    style="width: 150px; height: 150px;">
+                                <!-- </div> -->
+
 
                                 <!-- <img :src=imageSrc class="my-auto" style="width: 150px; height: 150px;" /> -->
                                 <!-- <a href="#!">
@@ -37,6 +43,7 @@
 
                         <div class="col-xl-6 col-md-7 col-sm-7 ">
                             <h5 class="mb-3 ">{{ producto.producto_titulo }}</h5>
+                            <!-- {{ imageSrc3 }} -->
                             <!-- {{producto.producto_imagen }} -->
                             <!-- <div class="d-flex flex-row">
                                 <div class="text-warning mb-1 me-2">
@@ -119,7 +126,7 @@
                                     </div>
                                     <div class="col-8">
                                         <h6>{{ producto.producto_ano }}</h6>
-
+                                        <!-- {{ imageSrc3 }} -->
                                         <!-- {{ producto.producto_imagen.data }} -->
                                     </div>
                                 </div>
@@ -160,9 +167,15 @@ import { Buffer } from 'buffer';
 
 
 export default {
+    data() {
+        return {
+            imagenes: []
+        }
+    },
 
 
     computed: {
+
         ...mapState({
             productos: 'productos',
             semillerosSeleccionados: 'semillerosSeleccionados',
@@ -173,21 +186,26 @@ export default {
 
         }),
 
-        //    imageSrc() {
-        //    this.productos.map((producto) => {
-        //     const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
-        //     return `data:image/png;base64,${base64}`;
-        //   });
+       
+
+        // imageSrc() {
+        //   // Obtener la imagen del producto actual
+        //   const base64 = Buffer.from(this.producto.producto_imagen.data).toString('base64');
+        //   return `data:image/png;base64,${base64}`;
         // },
-       imageSrc() {
 
-            return this.productos.map((producto) => {
-                const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
 
-                return `data:image/png;base64,${base64}`;
 
-            });
-        },
+
+        //    imageSrc() {
+
+        //         return this.productos.map((producto) => {
+        //             const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
+
+        //             return `data:image/png;base64,${base64}`;
+
+        //         });
+        //     },
 
 
 
@@ -196,11 +214,13 @@ export default {
 
     },
 
+
     methods: {
         ...mapActions({
             buscarProductoId: 'buscarProductoId',
         }),
 
+       
 
     },
 

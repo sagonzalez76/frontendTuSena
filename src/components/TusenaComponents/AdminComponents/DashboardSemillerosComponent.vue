@@ -142,7 +142,7 @@
   <div class="modal fade" id="registrarSemilleroModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -208,7 +208,7 @@
   <div class="modal fade" id="actualizarSemilleroModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -277,7 +277,7 @@
   <div class="modal fade" id="eliminarSemilleroModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
-      <div class="modal-content row mx-2 me-2 bg-dark">
+      <div class="modal-content row mx-2 me-2 bg-light">
         <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div> -->
@@ -456,6 +456,17 @@ export default {
 </script>
 
 <style scoped>
+
+
+th{
+font-weight:600;
+
+}
+
+td{
+font-style: italic;
+
+}
 .custom-btn {
 
   width: auto;
@@ -470,8 +481,8 @@ export default {
   position: relative;
   display: inline-block;
   box-shadow: inset 2px 2px 2px 0px rgb(24, 183, 61),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+    7px 7px 20px 0px rgba(230, 20, 20, 0.1),
+    4px 4px 5px 0px rgba(171, 10, 10, 0.1);
   outline: none;
 }
 
@@ -481,13 +492,6 @@ export default {
   z-index: 1;
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -797,7 +801,7 @@ body {
 }
 
 .form-content h3 {
-  color: #fff;
+  color: #030000;
   text-align: left;
   font-size: 28px;
   font-weight: 600;
@@ -809,7 +813,7 @@ body {
 }
 
 .form-content p {
-  color: #fff;
+  color: #000000;
   text-align: left;
   font-size: 17px;
   font-weight: 300;
@@ -821,7 +825,7 @@ body {
 .form-content label,
 .was-validated .form-check-input:invalid~.form-check-label,
 .was-validated .form-check-input:valid~.form-check-label {
-  color: #fff;
+  color: #000000;
 
 }
 
@@ -830,6 +834,7 @@ body {
 .form-content input[type=email],
 .form-content input[type=phone],
 .form-content input[type=number],
+.form-content input[type=file],
 .form-content select {
   width: 100%;
   padding: 9px 20px;
@@ -837,7 +842,7 @@ body {
   border: 0;
   outline: 0;
   border-radius: 6px;
-  background-color: #fff;
+  background-color: #e4e4e4;
   font-size: 15px;
   font-weight: 300;
   color: #8D8D8D;

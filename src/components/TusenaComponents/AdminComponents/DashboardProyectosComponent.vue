@@ -115,7 +115,7 @@
 
                       <div class="col-md-12">
                         <input v-model="linea" class="form-control text-dark" type="text" name="apellido"
-                          placeholder="Linea de Investigacion del Proyecto" required>
+                          placeholder="Linea Programatica del Proyecto" required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
@@ -206,7 +206,7 @@
 
                       <div class="col-md-12">
                         <input v-model="proyecto.proyecto_linea" class="form-control text-dark" type="text"
-                          name="apellido" placeholder="Linea de Investigacion del Proyecto" required>
+                          name="apellido" placeholder="Linea Programatica del Proyecto" required>
                         <!-- <div class="valid-feedback">Username field is valid!</div>
                         <div class="invalid-feedback">Username field cannot be blank!</div> -->
                       </div>
@@ -903,6 +903,7 @@ body {
 .form-content input[type=email],
 .form-content input[type=phone],
 .form-content input[type=number],
+.form-content input[type=file],
 .form-content select {
   width: 100%;
   padding: 9px 20px;

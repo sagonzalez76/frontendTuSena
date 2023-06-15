@@ -18,7 +18,7 @@
                     <div class="ps-lg-3">
                         <div class="row align-items-center">
                             <dt class="col-3">Autor(es) del Producto:</dt>
-                            <dd class="col-9"> {{ producto.funcionario_nombre }}</dd>
+                            <dd class="col-9"> {{ producto.funcionario_nombre }} {{ producto.funcionario_apellido }}</dd>
                             <hr>
                             <dt class="col-3">Tipo de Producto:</dt>
                             <dd class="col-9"> {{ producto.producto_tipo }}</dd>

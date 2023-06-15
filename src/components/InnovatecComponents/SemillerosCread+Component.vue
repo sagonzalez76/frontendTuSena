@@ -298,11 +298,12 @@
                                                                                 alt="imagensemillero">
                                                                         </div>
                                                                         <div class="card-body pt-5 pb-0">
-                                                                            <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                           <img :src=investigador.pic
                                                                                 alt="profile-image" class="profile" />
                                                                             <h5 class="card-title text-center">{{
                                                                                 investigador.name
-                                                                            }} {{ investigador.lastname }}</h5>
+                                                                            }} {{ investigador.lastname }}</h5> 
+                                                                             <h5 class="text-warning" v-if="investigador.lider">Lider Semillero</h5>
 
                                                                             <hr class="mt-1 mb-1" />
                                                                             <h4>Formacion</h4>
@@ -1020,89 +1021,92 @@ h4 {
 
 const semilleros = [
 
+{
+
+name: 'CREAD+',
+img: {
+    img1: 'https://placeimg.com/1999/500/arch',
+    img2: 'https://placeimg.com/1999/500/animals',
+    img3: 'https://placeimg.com/1999/500/nature',
+},
+
+investigadores: [
     {
-        name: 'CREAD+',
-        img: {
-            img1: 'https://placeimg.com/1999/500/arch',
-            img2: 'https://placeimg.com/1999/500/animals',
-            img3: 'https://placeimg.com/1999/500/nature',
+        id: 3,
+        name: 'Rider Geovanny',
+        lastname: 'Benavides Barcenas',
+        formacion: {
+            pregrado: 'Ingeniero Sistemas',
+            postgrado: 'Magister en Gestion de la Informática Educativa'
         },
-
-        investigadores: [
-            {
-                id: 3,
-                name: 'Rider Geovanny',
-                lastname: 'Benavides Barcenas',
-                formacion: {
-                    pregrado: 'Ingeniero Sistemas',
-                    postgrado: 'Magister en Gestion de la Informática Educativa'
-                },
-                linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-                semillero: 'CREAD+',
-                email: 'rbenavidesb@sena.edu.co',
-                cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001513764',
-                pic: 'https://i.imgur.com/Fkt0lPG.jpg'
-            },
-            {
-                id: 4,
-                name: 'Zulema Yidney',
-                lastname: 'León Escobar',
-                formacion: {
-                    pregrado: 'Ingeniera Sistemas',
-                    postgrado: 'Especialista en Administración de la Información y Bases de Datos'
-                },
-                linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-                semillero: 'EREECA',
-                email: 'zleon@sena.edu.co',
-                cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001761643',
-                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
-            },
-            {
-                id: 5,
-                name: 'Pedro Javier',
-                lastname: 'Lozada Villota',
-                formacion: {
-                    pregrado: 'Ingeniero Sistemas',
-                    postgrado: 'Especialista en Diseño Gráfico Multimedial'
-                },
-                linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-                semillero: 'CREAD+',
-                email: 'plozada@sena.edu.co',
-                cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001685826',
-                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
-            },
-            {
-                id: 6,
-                name: 'Henry Eduardo',
-                lastname: 'Bastidas Paruma',
-                formacion: {
-                    pregrado: 'Ingeniero Sistemas',
-                    postgrado: 'Especialista en Seguridad Informatica'
-                },
-                linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-                semillero: 'CREAD+',
-                email: 'hbastidasp@sena.edu.co',
-                cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001556099',
-                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
-            },
-
-            {
-                id: 7,
-                name: 'Yimi Hilario',
-                lastname: 'Pinzon Ortega',
-                formacion: {
-                    pregrado: 'Ingeniero Sistemas',
-                    postgrado: 'Especialista en Seguridad Informatica'
-                },
-                linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-                semillero: 'CREAD+',
-                email: 'yhpinzono@sena.edu.co',
-                cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001481839',
-                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
-            },
-        ],
-
+        linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
+        semillero: 'CREAD+',
+        email: 'rbenavidesb@sena.edu.co',
+        cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001513764',
+        pic: 'https://i.imgur.com/Fkt0lPG.jpg',
+        lider: true
+         
+     },
+    {
+        id: 4,
+        name: 'Zulema Yidney',
+        lastname: 'León Escobar',
+        formacion: {
+            pregrado: 'Ingeniera Sistemas',
+            postgrado: 'Especialista en Administración de la Información y Bases de Datos'
+        },
+        linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
+        semillero: 'EREECA',
+        email: 'zleon@sena.edu.co',
+        cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001761643',
+        pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
     },
+    {
+        id: 5,
+        name: 'Pedro Javier',
+        lastname: 'Lozada Villota',
+        formacion: {
+            pregrado: 'Ingeniero Sistemas',
+            postgrado: 'Especialista en Diseño Gráfico Multimedial'
+        },
+        linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
+        semillero: 'CREAD+',
+        email: 'plozada@sena.edu.co',
+        cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001685826',
+        pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
+    },
+    {
+        id: 6,
+        name: 'Henry Eduardo',
+        lastname: 'Bastidas Paruma',
+        formacion: {
+            pregrado: 'Ingeniero Sistemas',
+            postgrado: 'Especialista en Seguridad Informatica'
+        },
+        linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
+        semillero: 'CREAD+',
+        email: 'hbastidasp@sena.edu.co',
+        cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001556099',
+        pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
+    },
+    {
+        id: 7,
+        name: 'Yimi Hilario',
+        lastname: 'Pinzon Ortega',
+        formacion: {
+            pregrado: 'Ingeniero Sistemas',
+            postgrado: 'Especialista en Seguridad Informatica'
+        },
+        linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
+        semillero: 'CREAD+',
+        email: 'yhpinzono@sena.edu.co',
+        cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001481839',
+        pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
+    },
+   
+],
+
+},
 
 
 ]

@@ -298,11 +298,12 @@
                                                                                 alt="imagensemillero">
                                                                         </div>
                                                                         <div class="card-body pt-5 pb-0">
-                                                                            <img src="https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
+                                                                           <img :src=investigador.pic
                                                                                 alt="profile-image" class="profile" />
                                                                             <h5 class="card-title text-center">{{
                                                                                 investigador.name
-                                                                            }} {{ investigador.lastname }}</h5>
+                                                                            }} {{ investigador.lastname }}</h5> 
+                                                                             <h5 class="text-warning" v-if="investigador.lider">Lider Semillero</h5>
 
                                                                             <hr class="mt-1 mb-1" />
                                                                             <h4>Formacion</h4>
@@ -945,6 +946,7 @@ h4 {
     width: 100px;
     border: 3px solid rgba(255, 255, 255, 1);
     margin-left: -50px;
+    max-height: 100px;
 }
 
 .profile-card-4 .card-img-block {
@@ -1017,7 +1019,7 @@ h4 {
 
 
 const semilleros = [
-    {
+{
         name: 'INNOVATELCOS',
         img: {
             img1: 'https://placeimg.com/1995/500/arch',
@@ -1037,7 +1039,8 @@ const semilleros = [
             semillero: 'INNOVATELCOS',
             email: 'wortiz@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001554606',
-            pic: '@/assets/img/investigador.jpg'
+            pic: 'https://i.imgur.com/mkkbCVI.jpg',
+            lider: true
         },
         {
             id: 17,
@@ -1051,7 +1054,9 @@ const semilleros = [
             semillero: 'INNOVATELCOS',
             email: 'dgriveraf@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000011881',
-            pic: '@/assets/img/investigador.jpg'
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
+        
+        
         },]
     },
 ]
