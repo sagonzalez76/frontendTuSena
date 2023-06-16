@@ -55,10 +55,10 @@
             <td class="d-flex text-start">
               <div class="row text-start">
                 <div class="col text-start">
-                  <button class="btn btn-warning  me-2" data-bs-toggle="modal" data-bs-target="#actualizarProyectoModal"
+                  <button class="btn btn-warning  me-2 rounded-circle" data-bs-toggle="modal" data-bs-target="#actualizarProyectoModal"
                     @:click="buscarProyecto(proyecto.proyecto_id)">
                     <i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarProyectoModal"
+                  <button class="btn btn-danger rounded-circle" data-bs-toggle="modal" data-bs-target="#eliminarProyectoModal"
                     @:click="buscarProyecto(proyecto.proyecto_id)"> <i class="bi bi-trash3-fill"></i></button>
 
 

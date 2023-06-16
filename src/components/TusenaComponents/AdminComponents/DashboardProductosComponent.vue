@@ -133,45 +133,33 @@
             <td>{{ producto.producto_tipo }}</td>
             <td>{{ producto.producto_subtipo }}</td>
             <td>{{ producto.producto_url }}</td>
-
             <td>
-              <!-- {{ imageSrc3 }} -->
               <img :src="`data:image/png;base64,${producto.producto_imagen}`" alt="Imagen del producto" class="my-auto"
                 style="width: 30px; height: 30px;">
-              <!-- {{ imageSrc3 }} -->
-              <!-- {{ imageSrc3 }} -->
-
-
-
             </td>
-
-
             <td>{{ producto.funcionario_nombre }}</td>
             <td>{{ producto.semillero_nombre }}</td>
             <td>{{ producto.proyecto_nombre }}</td>
             <td>{{ producto.programa_nombre }}</td>
-
-
-
-
-
-
-
-
             <td class="d-flex text-start">
               <div class="row text-start">
+
+
                 <div class="col text-start">
-                  <button class="btn btn-warning me-2 mb-2" data-bs-toggle="modal"
-                    data-bs-target="#actualizarProductoModal" @:click="buscarProducto(producto.producto_id)">
-                    <i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarProductoModal"
-                    @:click="buscarProducto(producto.producto_id)"> <i class="bi bi-trash3-fill"></i></button>
+                
+                <button class="btn btn-warning  me-2 rounded-circle" data-bs-toggle="modal" data-bs-target="#actualizarProductoModal"
+                @:click="buscarProducto(producto.producto_id)">
+              <i class="bi bi-pencil-square"></i></button>
+            <button class="btn btn-danger rounded-circle" data-bs-toggle="modal" data-bs-target="#eliminarProductoModal"
+            @:click="buscarProducto(producto.producto_id)"> <i class="bi bi-trash3-fill"></i></button>
 
-                </div>
 
+
+          </div>
+
+
+              
               </div>
-
-
             </td>
 
           </tr>
@@ -180,18 +168,10 @@
       </table>
     </div>
   </main>
-
-
   <div class="modal fade" id="registrarProductoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-light">
-        <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div> -->
-        <!-- <div class="modal-header p-0 m-0 border border-0">
-                    <img src="https://placeimg.com/600/200/animals" class="img-fluid  mx-auto d-block" alt="...">
-                </div> -->
         <div class="modal-body py-0 mt-0 col-12 px-2">
           <div class="form-body p-0">
             <div class="row">
@@ -199,14 +179,14 @@
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
                     <h3>Agrega un Producto</h3>
-                    <p>Llena los campos que veras a continuacion:</p>
-
+                    <div class="row d-flex justify-content-around">
+                      <p class="col-6">Llena los campos que veras a continuacion:</p>
+                      <p class="col-6 text-danger text-end">*Obligatorio</p>
+                    </div>
                     <form class="" method="POST" enctype="multipart/form-data" v-on:submit.prevent="registrarProducto">
-
                       <div class="col-md-12 ">
-                        <input class="form-control text-dark" type="text" required placeholder="Titulo" v-model="titulo">
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
+                        <input class="form-control text-dark" type="text" required placeholder="Dale un Nombre o Titulo *" v-model="titulo">
+
                       </div>
 
                       <div class="col-md-12">
@@ -214,17 +194,17 @@
                           placeholder="Año" v-model="ano" required> -->
                         <!-- <label for="ano">A&ntilde;o de Desarrollo</label> -->
                         <select v-model="ano" class="text-dark">
-                          <option value="" disabled v-if="!isAnoSelected">Elija un A&ntilde;o</option>
-                          <option value="" disabled v-if="isAnoSelected">Elija un A&ntilde;o</option>
-                          <option v-for="year in availableYears" :value="year" :key="year">{{ year }}</option>
+                          <option value="" disabled v-if="!isAnoSelected">A&ntilde;o en el que se inscribio *</option>
+                          <option value="" disabled v-if="isAnoSelected">A&ntilde;o en el que se inscribio *</option>
+                          <option v-for="ano in anosDisponibles" :value="ano" :key="ano">{{ ano }}</option>
                         </select>
                       </div>
 
 
                       <div class="col-md-12 text-dark">
                         <select name="subtipo" class="text-dark" v-model="tipo">
-                          <option value="" disabled v-if="!isTipoSelected">Elija un Tipo de Producto</option>
-                          <option value="" disabled v-if="isTipoSelected">Elija un Tipo de Producto</option>
+                          <option value="" disabled v-if="!isTipoSelected">Que Tipo de Producto es? *</option>
+                          <option value="" disabled v-if="isTipoSelected">Que Tipo de Producto es? *</option>
                           <option value="Actividades como Evaluador">Actividades como Evaluador</option>
                           <option value="Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia">
                             Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia</option>
@@ -241,8 +221,8 @@
                       <div class="col-md-12 text-dark">
 
                         <select name="subtipo" class="text-dark" v-model="subtipo">
-                          <option value="" disabled v-if="!isSubtipoSelected">Elija un Subtipo de Producto</option>
-                          <option value="" disabled v-if="isSubtipoSelected">Elija un Subtipo de Producto</option>
+                          <option value="" disabled v-if="!isSubtipoSelected">Que Tipo de Subproducto es? **</option>
+                          <option value="" disabled v-if="isSubtipoSelected">Que Tipo de Subproducto es? *</option>
                           <option value="Artículos de Investigación A1, A2, B y C">Artículos de Investigación A1, A2, B y
                             C</option>
                           <option value="Consultorías Científico-Tecnológicas">Consultorías Científico-Tecnológicas
@@ -277,12 +257,12 @@
 
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" placeholder="URL/Soporte" v-model="url"
+                        <input class="form-control text-dark" type="text" name="" placeholder="URL/Soporte/Documentacion" v-model="url"
                           required>
                       </div>
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="file" name="producto_imagen" accept="image/*"
+                        <input class="form-control text-dark" type="file" placeholder="hola" name="producto_imagen" accept="image/*"
                           ref="imagenInput" required>
 
                       </div>
@@ -290,7 +270,7 @@
 
                       <div class="col-md-12">
                         <select v-model="proyecto_fk" class="text-dark">
-                          <option value="" disabled selected>Elija un Proyecto</option>
+                          <option value="" disabled selected>Asocialo a un Proyecto</option>
                           <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">
                             {{ proyecto.proyecto_nombre }}</option>
                         </select>
@@ -298,7 +278,7 @@
 
                       <div class="col-md-12">
                         <select v-model="semillero_fk" class="text-dark">
-                          <option value="" selected disabled>Elija un Semillero</option>
+                          <option value="" selected disabled>Asocialo a un Semillero *</option>
                           <option v-for="semillero in semilleros" :value="semillero.semillero_id" :key="semillero">{{
                             semillero.semillero_nombre }}</option>
                         </select>
@@ -308,23 +288,23 @@
                       <div>
                         <div v-for="(funcionario, index) in funcionario_fk" :key="index" class="col-md-12">
                           <select v-model="funcionario_fk[index]" class="text-dark">
-                            <option value="value1" selected disabled>Elija un Autor</option>
+                            <option value="value1" selected disabled>Elija un Autor *</option>
                             <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id"
                               :key="funcionario">
                               {{ funcionario.funcionario_nombre }} {{ funcionario.funcionario_apellido }}
                             </option>
                           </select>
-                          <button @click="eliminarFuncionario(index)">-</button>
+                          <button class="btn btn-danger rounded-circle" @click="eliminarFuncionario(index)">−</button>
                           <!-- Agregamos un botón para eliminar el select -->
                         </div>
-                        <button @click="agregarFuncionario">+</button>
+                        <button class="btn btn-success" @click="agregarFuncionario">+</button>
                         <!-- Agregamos el botón para agregar más selects -->
                       </div>
 
 
                       <div class="col-md-12">
                         <select v-model="programa_fk" class="text-dark">
-                          <option value="" selected disabled>Elija un Programa</option>
+                          <option value="" selected disabled>Programa que impacta*</option>
                           <option v-for="programa in programas" :value="programa.programa_id" :key="programa">{{
                             programa.programa_nombre }}</option>
                         </select> {{ programa_fk }}
@@ -403,7 +383,7 @@
                         <!-- <label for="ano">A&ntilde;o de Desarrollo</label> -->
                         <select v-model="producto.producto_ano" class="text-dark">
                           <option value="" selected disabled>Elija un A&ntilde;o</option>
-                          <option v-for="year in availableYears" :value="year" :key="year">{{ year }}</option>
+                          <option v-for="ano in anosDisponibles" :value="ano" :key="ano">{{ ano }}</option>
                         </select>
                       </div>
 
@@ -672,7 +652,7 @@ export default {
       subtipo: "",
       url: "",
       imagen: null,
-      availableYears: [],
+      anosDisponibles: [],
 
 
       proyecto_fk: '',
@@ -698,7 +678,7 @@ export default {
 
   async created() {
     const currentYear = new Date().getFullYear();
-    this.availableYears = Array.from({ length: currentYear - 2012 + 1 }, (_, index) => currentYear - index);
+    this.anosDisponibles = Array.from({ length: currentYear - 2012 + 1 }, (_, index) => currentYear - index);
   },
 
 
@@ -848,7 +828,12 @@ export default {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
-        });
+        })
+          .then(response => {
+
+            console.log(response);
+          });
+
         const Toast = Swal.mixin({
           toast: true,
           position: 'top-end',
@@ -869,7 +854,6 @@ export default {
         this.buscarProductos();
       } catch (error) {
         console.error(error);
-        // Manejo del error
       }
     },
 
@@ -883,11 +867,9 @@ export default {
         "producto_ano": this.producto.productos_ano,
         "producto_url": this.producto.productos_url,
         "producto_detalle": this.producto.productos_detalle,
-        // "productos_autor": this.producto.productos_autor,
         "producto_tipo": this.producto.productos_tipo,
         "producto_subtipo": this.producto.productos_subtipo,
         "producto_imagen": this.producto.productos_imagen,
-
         "proyecto_fk": this.producto.proyecto_fk,
         "semillero_fk": this.producto.semillero_fk,
         "funcionario_fk": this.producto.funcionario_fk,
@@ -933,7 +915,6 @@ export default {
 
 
     async eliminarProducto(producto_id) {
-
       console.log(producto_id);
       await this.axios.delete('http://localhost:3000/producto/' + producto_id)
         .then(response => {
@@ -955,7 +936,8 @@ export default {
             icon: 'success',
             title: 'Producto Eliminado',
 
-          })  // console.log(response.data.new_funcionario[0].funcionario_id);
+          })  
+          // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
@@ -987,50 +969,7 @@ export default {
 
 
     }),
-    // obtenerAno() {
-    //   if (this.ano) {
-    //     const fechaObj = new Date(this.ano);
-    //     return fechaObj.getFullYear();
-    //   } else {
-    //     return '';
-    //   }
-    // },
-
-    imageSrc() {
-
-      return this.productos.map((producto) => {
-        const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
-        return `data:image/png;base64,${base64}`;
-
-      });
-    },
-
-    // imageSrc() {
-    //   // Obtener la imagen del producto actual
-    //   const base64 = Buffer.from(this.producto.producto_imagen.data).toString('base64');
-    //   return `data:image/png;base64,${base64}`;
-    // },
-
-
-
-    imageSrc3() {
-
-      let elements = []
-
-      for (let i = 0; i < this.imageSrc.length; i++) {
-        let element = this.imageSrc[i];
-        console.log(element);
-        elements.push(element);
-
-      }
-      return elements
-
-    }
   },
-
-
-
-
 
 }
 </script>
@@ -1100,6 +1039,12 @@ a:hover {
     1 0 25px #09ff00,
     1 0 50px #09ff00,
     1 0 100px #09ff00;
+}
+
+input[type=file]::before {
+    content: "Selecciona una imagen para el producto :  ";
+    color: black;
+    margin-right: 10px; 
 }
 
 a span {
@@ -1489,4 +1434,5 @@ body {
 .bg-encabezado {
 
   background-color: #031507 !important;
-}</style>
+}
+</style>

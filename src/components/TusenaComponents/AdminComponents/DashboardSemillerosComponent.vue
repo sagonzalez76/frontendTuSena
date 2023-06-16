@@ -116,9 +116,9 @@
             <td class="d-flex text-start">
               <div class="row text-start">
                 <div class="col text-start">
-                  <button class="btn btn-warning  me-2" data-bs-toggle="modal" data-bs-target="#actualizarSemilleroModal"
+                  <button class="btn btn-warning  me-2 rounded-circle" data-bs-toggle="modal" data-bs-target="#actualizarSemilleroModal"
                     @:click="buscarSemillero(semillero.semillero_id)"> <i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarSemilleroModal"
+                  <button class="btn btn-danger rounded-circle" data-bs-toggle="modal" data-bs-target="#eliminarSemilleroModal"
                     @:click="buscarSemillero(semillero.semillero_id)"> <i class="bi bi-trash3-fill"></i></button>
 
 

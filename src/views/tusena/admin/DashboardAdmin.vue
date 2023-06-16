@@ -20,6 +20,7 @@ export default {
 
 <style scoped>
 
+
 .custom-btn {
 
 width: auto;

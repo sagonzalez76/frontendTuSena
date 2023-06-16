@@ -130,10 +130,10 @@
             <td  v-if="funcionario.funcionario_admin" class="d-flex text-start">
               <div class="row text-start">
                 <div class="col text-start">
-                  <button class="btn btn-warning  me-2" data-bs-toggle="modal"
+                  <button class="btn btn-warning  me-2 rounded-circle" data-bs-toggle="modal"
                     data-bs-target="#actualizarFuncionarioModal" @:click="buscarFuncionario(funcionario.funcionario_id)">
                     <i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminarFuncionarioModal"
+                  <button class="btn btn-danger rounded-circle" data-bs-toggle="modal" data-bs-target="#eliminarFuncionarioModal"
                     @:click="buscarFuncionario(funcionario.funcionario_id)"> <i class="bi bi-trash3-fill"></i></button>
 
 

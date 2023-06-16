@@ -14,21 +14,21 @@
 
 
 
-    <div class="row justify-content-center mb-3" v-else v-for="(producto, index) in productos" :key="index">
+    <div class="row justify-content-center mb-3 fs-6" id="contenido" v-else v-for="(producto, index) in productos" :key="index">
         <div class="col-md-12">
 
 
             <div class="card shadow-0 border border-dark rounded-3" style="--bs-border-opacity: .5;">
                 <div class="card-body">
                     <div class="row g-0">
-                        <div class="col-xl-4 col-md-3 d-flex justify-content-center">
+                        <div class="col-xl-3 col-md-3 d-flex justify-content-center">
                             <div class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0 d-flex justify-content-center"
                                 id="imagen-container">
                                 <!-- <img :src="imageSrc3" alt="Imagen del producto" class="my-auto" style="width: 30px; height: 30px;"> -->
 
                                 <!-- <div v-for="imagen in imageSrc" :key="imagen"> -->
                                     <img :src="`data:image/png;base64,${producto.producto_imagen}`" alt="Imagen del producto" class="my-auto"
-                                    style="width: 150px; height: 150px;">
+                                    style="width: 120px; height: 120px;">
                                 <!-- </div> -->
 
 
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="col-xl-6 col-md-7 col-sm-7 ">
-                            <h5 class="mb-3 ">{{ producto.producto_titulo }}</h5>
+                            <h5 class="mb-3 " id="titulo">{{ producto.producto_titulo }}</h5>
                             <!-- {{ imageSrc3 }} -->
                             <!-- {{producto.producto_imagen }} -->
                             <!-- <div class="d-flex flex-row">
@@ -70,23 +70,11 @@
                             <div class="row w-100">
                                 <div class="row">
 
-                                    <div class="col-4">
-                                        <h6 class="fw-bold">Tipo:</h6>
+                                    <div class="col-3">
+                                       <h6 class="fw-bold" style="font-size: .8rem;">Tipo:</h6>
                                     </div>
-                                    <div class="col-8">
-                                        <h6> {{ producto.producto_tipo }}</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="row w-100">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <h6 class="fw-bold">Subtipo: </h6>
-                                    </div>
-                                    <div class="col-8">
-                                        <h6> {{ producto.producto_subtipo }}</h6>
+                                    <div class="col-9">
+                                        <h6 style="font-size: .9rem"> {{ producto.producto_tipo }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -94,12 +82,11 @@
 
                             <div class="row w-100">
                                 <div class="row">
-
-                                    <div class="col-4">
-                                        <h6 class="fw-bold">Semillero:</h6>
+                                    <div class="col-3">
+                                        <h6 class="fw-bold" style="font-size: .8rem;">Subtipo: </h6>
                                     </div>
-                                    <div class="col-8">
-                                        <h6>{{ producto.semillero_nombre }}</h6>
+                                    <div class="col-9">
+                                        <h6 style="font-size: .9rem"> {{ producto.producto_subtipo }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -108,11 +95,11 @@
                             <div class="row w-100">
                                 <div class="row">
 
-                                    <div class="col-4">
-                                        <h6 class="fw-bold">Proyecto: </h6>
+                                    <div class="col-3">
+                                       <h6 class="fw-bold" style="font-size: .8rem;">Semillero:</h6>
                                     </div>
-                                    <div class="col-8">
-                                        <h6>{{ producto.proyecto_nombre || 'NADA' }}</h6>
+                                    <div class="col-9">
+                                        <h6 style="font-size: .9rem"> {{ producto.semillero_nombre }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -121,11 +108,24 @@
                             <div class="row w-100">
                                 <div class="row">
 
-                                    <div class="col-4">
-                                        <h6 class="fw-bold">A&ntilde;o:</h6>
+                                    <div class="col-3">
+                                       <h6 class="fw-bold" style="font-size: .8rem;">Proyecto: </h6>
                                     </div>
-                                    <div class="col-8">
-                                        <h6>{{ producto.producto_ano }}</h6>
+                                    <div class="col-9">
+                                        <h6 style="font-size: .9rem"> {{ producto.proyecto_nombre}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row w-100">
+                                <div class="row">
+
+                                    <div class="col-3">
+                                       <h6 class="fw-bold" style="font-size: .8rem;">A&ntilde;o:</h6>
+                                    </div>
+                                    <div class="col-9">
+                                        <h6 style="font-size: .9rem"> {{ producto.producto_ano }}</h6>
                                         <!-- {{ imageSrc3 }} -->
                                         <!-- {{ producto.producto_imagen.data }} -->
                                     </div>
@@ -135,7 +135,7 @@
 
 
                         </div>
-                        <div class="col-xl-2 col-md-2 col-sm-5 my-auto text-end">
+                        <div class="col-xl-3 col-md-2 col-sm-5 my-auto text-end">
                             <!-- <div class="d-flex flex-row align-items-center mb-1">
                                                 <h4 class="mb-1 me-1">$34,50</h4>
                                                 <span class="text-danger"><s>$49.99</s></span>
@@ -169,7 +169,6 @@ import { Buffer } from 'buffer';
 export default {
     data() {
         return {
-            imagenes: []
         }
     },
 
@@ -233,4 +232,17 @@ export default {
 
 </script>
 
-<style></style>
+<style>
+
+#titulo{
+    font-size: 1.4rem;
+    font-style: italic;
+
+};
+
+h6{
+    font-size: 1.8rem !important;
+
+}
+
+</style>

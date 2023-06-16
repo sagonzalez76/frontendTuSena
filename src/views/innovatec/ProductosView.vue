@@ -282,6 +282,8 @@ html {
     background-color: rgb(255, 255, 255);
     height: 100%; 
     background-size: cover;
+    font-size: 0.7rem !important;
+
 }
 
 #profile-img {
@@ -317,4 +319,8 @@ html {
 
 
 }
+
+body {
+}
+
 </style>

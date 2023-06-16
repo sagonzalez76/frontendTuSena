@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body class="">
     <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -77,7 +77,7 @@
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-   
+
 
 
 
@@ -85,8 +85,9 @@
         placeholder="Buscar" aria-label="Search">
       <div class="navbar-nav">
         <div class="nav-item text-nowrap mx-4 my-2">
-          <router-link to="/buscador" class="nav-link px-3 bg-danger fw-bold rounded-4 text-light" type="button"
-            @click="logout()" href="#">Cerrar Sesion</router-link>
+          <router-link to="/buscador" class="nav-link px-3 bg-light fw-bold border border-danger border-2 rounded-4 text-danger fs-6 rounded-semicircle" type="button"
+            @click="logout()" href="#"><i class="bi bi-box-arrow-right"></i>
+          </router-link>
         </div>
       </div>
     </header>
@@ -203,7 +204,7 @@
 
         <router-view>
 
-      
+
 
 
         </router-view>
@@ -227,7 +228,7 @@ import { mapState, mapActions } from 'vuex';
 export default {
 
 
-  
+
   components: {
     DashboardFuncionarioComponent
   },
@@ -281,17 +282,16 @@ export default {
 
 
 <style scoped>
-
-
-.bg-nav{
+.bg-nav {
 
 
   background-color: #cbcbcb;
 }
+
 .router-link-active {
   background-color: #45b548;
   color: #f1f1f1 !important;
-  font-size: large;
+  font-size: larger;
   transition: font-size 0.4s ease;
   transform: scale(1);
   /* Duración y función de transición suave */
@@ -307,7 +307,7 @@ export default {
 
 
 body {
-  font-size: .875rem;
+  font-size: 0.7rem !important;
 }
 
 .feather {
@@ -411,7 +411,7 @@ body {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
 
-.bg-danger{
+.bg-danger {
   background-color: #404040 !important;
 }
 </style>

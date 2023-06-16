@@ -48,26 +48,22 @@
 
                     <!-- Right elements -->
                     <div class="col-lg-5 col-md-12 col-12">
-                        <div class="input-group"> 
+                        <div class="input-group w-100"> 
                             <!-- {{ categoria }} -->
                             <input v-model="titulo" @keydown.enter="buscarProductoName(titulo, categoria)" class="form-control"
                                 type="text" placeholder="Busca un producto" aria-label="Search">
+                            <select class="form-select text-start text-dark " v-model="categoria" name="" id="">
+
+                                <option value="nombre">Nombre</option>
+                                <option value="autor">Autor</option>
+                            </select>
+                            
                             <button v-on:click="buscarProductoName(titulo, categoria)" class="btn btn-outline-success" type="button"><i
                                     class="fas fa-search"></i></button>
                         </div>
                     </div>
 
 
-                    <div class="col-lg-2 col-md-12 col-12 w-auto">
-                        <div class="input-group">
-                            <select class="form-control text-center bg-secondary text-light" v-model="categoria" name="" id="">
-
-                                <option value="nombre">por Nombre</option>
-                                <option value="autor">por Autor</option>
-                            </select>
-
-                        </div>
-                    </div>
                     <!-- Right elements -->
                 </div>
             </div>
@@ -176,6 +172,12 @@ export default {
 
 
 <style scoped>
+
+.form-select{
+    font-size: .8rem;
+    max-width: 25% !important;
+}
+
 img {
 
     height: 5vh;

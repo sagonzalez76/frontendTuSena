@@ -1,5 +1,5 @@
 <template>
-    <div class="col-lg-3">
+    <div class="col-lg-3 body">
         <!-- Toggle button -->
         <button class="btn btn-outline-secondary mb-3 w-100 d-lg-none" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -32,122 +32,15 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="TODOS" id="TODOS"
-                                            @change="actualizarSemillerosSeleccionados" />
-                                        <label class="form-check-label" for="TODOS">TODOS </label>
-                                    </div>
-
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="CREAD+" id="CREAD+"
-                                            @change="actualizarSemillerosSeleccionados" />
-                                        <label class="form-check-label" for="CREAD+">CREAD+ </label>
-                                    </div>
-
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="EREECA" id="EREECA"
-                                            @change="actualizarSemillerosSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckChecked2">EREECA</label>
-
-                                    </div>
-                                    <!-- Checked checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="INNOVATELCOS"
-                                            id="INNOVATELCOS" @change="actualizarSemillerosSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckChecked3">INNOVATELCOS</label>
-                                    </div>
-                                    <!-- Checked checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="SENAUTRONIC" id="SENAUTRONIC"
-                                            @change="actualizarSemillerosSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckChecked4">SENAUTRONIC</label>
-                                    </div>
-                                    <!-- Default checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="SIITIS" id="SIITIS"
-                                            @change="actualizarSemillerosSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">SIITIS</label>
-                                    </div>
-                                    <!-- Default checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="SINAFRED" id="SINAFRED"
-                                            @change="actualizarSemillerosSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">SINAFRED</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="N/A" id="NINGUNO"
-                                            @change="actualizarSemillerosSeleccionados" />
-                                        <label class="form-check-label" for="NINGUNO">NINGUNO </label>
+                                    <div class="form-check" v-for="semillero in semilleros" :key="semillero">
+                                        <input class="form-check-input" type="checkbox" :value="semillero.semillero_nombre"
+                                            id="TODOS" @change="actualizarSemillerosSeleccionados" />
+                                        <label class="form-check-label" for="TODOS">{{ semillero.semillero_nombre }} </label>
                                     </div>
                                 </div>
-
-
-
-
                             </div>
                         </div>
                     </div>
-
-
-                    <!-- <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Tipos de Producto
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div>
-
-                                    <div class="form-check align-middle">
-                                        <input class="form-check-input border bordered-3" type="checkbox"
-                                            id="flexCheckChecked3" value="Actividades como Evaluador"
-                                            @change="actualizarTiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckChecked3">Actividades como
-                                            Evaluador</label>
-
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input border bordered-3" type="checkbox"
-                                            id="flexCheckChecked3"
-                                            value="Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia"
-                                            @change="actualizarTiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckChecked3">Apropiación Social del
-                                            Conocimiento y Divulgación Pública de la Ciencia</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="flexCheckChecked4"
-                                            value="Desarrollo Tecnológico e Innovación"
-                                            @change="actualizarTiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckChecked4">Desarrollo Tecnológico e
-                                            Innovación</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="flexCheckChecked4"
-                                            value="Formación de Recurso Humano para la CTEI"
-                                            @change="actualizarTiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckChecked4">Formación de Recurso Humano
-                                            para
-                                            la CTEI</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="flexCheckChecked4"
-                                            value="Generación de Nuevo Conocimiento"
-                                            @change="actualizarTiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckChecked4">Generación de Nuevo
-                                            Conocimiento</label>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-
 
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -284,11 +177,7 @@
                                             id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
                                         <label class="form-check-label" for="flexCheckDefault">Proyectos de
                                             Investigación, Desarrollo e Innovación (ID+I)</label>
-
                                     </div>
-
-                                    <!-- {{ $store.state.subtiposSeleccionados }} -->
-
 
 
                                 </div>
@@ -305,12 +194,11 @@
                         <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div>
-                                    <div class="form-check" v-for="year in availableYears" :key="year">
-                                        <input class="form-check-input" type="checkbox" :value="year" id="flexCheckDefault"
+                                    <div class="form-check" v-for="ano in anosDisponibles" :key="ano">
+                                        <input class="form-check-input" type="checkbox" :value="ano" id="flexCheckDefault"
                                             @change="actualizarAnosSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">{{ year }}</label>
+                                        <label class="form-check-label" for="flexCheckDefault">{{ ano }}</label>
                                     </div>
-                                    <!-- {{ $store.state.anosSeleccionados }} -->
                                 </div>
                             </div>
                         </div>
@@ -333,7 +221,6 @@
                                         <label class="form-check-label" for="flexCheckDefault">{{
                                             proyecto.proyecto_nombre }}</label>
                                     </div>
-                                    <!-- {{ $store.state.proyectosSeleccionados }} -->
 
 
                                 </div>
@@ -358,14 +245,11 @@
                                         <label class="form-check-label" for="flexCheckDefault">{{
                                             programa.programa_nombre }}</label>
                                     </div>
-                                    <!-- {{ $store.state.programasSeleccionados }} -->
-
 
                                 </div>
                             </div>
                         </div>
                     </div>
-
 
 
 
@@ -391,16 +275,10 @@ export default {
     data() {
         return {
 
-
-            availableYears: [],
-
+            anosDisponibles: [],
             proyectos: [],
             programas: [],
-
-
-
-
-
+            semilleros: [],
             semillerosSeleccionados: [],
             semillerosSeleccionadosJson: "",
             autoresSeleccionados: ["defaultValue"]
@@ -411,12 +289,20 @@ export default {
     async created() {
         //para que me arroje los anos a hoy
         const currentYear = new Date().getFullYear();
-        this.availableYears = Array.from({ length: currentYear - 2012 + 1 }, (_, index) => currentYear - index);
+        this.anosDisponibles = Array.from({ length: currentYear - 2012 + 1 }, (_, index) => currentYear - index);
 
         //para buscar los proyectos
         await this.axios.get('http://localhost:3000/proyecto')
             .then(response => {
                 this.proyectos = response.data.nuevo_proyecto
+            })
+            .catch((e) => {
+                console.log(e)
+            });
+
+        await this.axios.get('http://localhost:3000/semillero')
+            .then(response => {
+                this.semilleros = response.data.nuevo_semillero
             })
             .catch((e) => {
                 console.log(e)
@@ -496,6 +382,11 @@ export default {
 </script>
 
 <style scoped>
+
+.accordion-button{
+    font-size: 0.9rem;
+
+}
 .form-check-input {
     border-radius: 2em;
     /* background-color: rgb(0, 208, 14); */

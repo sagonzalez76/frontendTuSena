@@ -8,8 +8,8 @@
                 <aside class="col-lg-6 ">
                     <div class="border rounded-4 mb-3 d-flex justify-content-center vh-75 align-items-center">
                         <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="">
-                            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
-                                src="https://1.bp.blogspot.com/-ImfAdP03PKI/WYz03SIQHCI/AAAAAAAAMws/wplt43gBUI8Dv4aNadp4pEJS7iByMo0HACLcBGAs/s1600/IMG_3794.JPG" />
+                            <img :src="`data:image/png;base64,${producto.producto_imagen}`" style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
+                              />
                         </a>
                     </div>
              
