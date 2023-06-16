@@ -3,6 +3,7 @@
         <!-- Jumbotron -->
         <div class="p-3 text-center bg-white border-bottom">
             <div class="container">
+                
                 <div class="row gy-3">
                     <!-- Left elements -->
                     <div class="col-lg-2 col-sm-4 col-4 d-flex justify-content-center">
@@ -36,7 +37,7 @@
                             <router-link to="/admin/dashboard/administradores"
                                 class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i
                                     class="bi bi-person-gear">_</i>
-                                <p class="d-none d-md-block mb-0">Administrador</p>
+                                <p class="d-none d-md-block mb-0" id="admintext">Administrador</p>
                             </router-link>
                         </div>
 
@@ -173,6 +174,12 @@ export default {
 
 <style scoped>
 
+
+.form-control{
+    font-size: .9rem;
+
+}
+
 .form-select{
     font-size: .8rem;
     max-width: 25% !important;
@@ -203,6 +210,12 @@ img {
 .btn-success {
 
     background-color: #e0e0e0;
+
+}
+
+#admintext{
+
+    font-size: 1rem;
 
 }
 </style>
