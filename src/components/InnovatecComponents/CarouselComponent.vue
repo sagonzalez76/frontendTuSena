@@ -51,8 +51,10 @@ export default {
 
 <style scoped>
 img {
-    max-height: 35vh;
-    max-width: 60vw;
+height: 30vh;
+max-height: 30vh;
+
+    max-width: 45vw;
 
 }
 

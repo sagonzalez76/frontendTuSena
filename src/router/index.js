@@ -196,7 +196,7 @@ const routes = [
     name: 'admin/dashboard/',
     component: DashboardAdmin,
     meta: {
-      requiresAuth: true // Esta ruta requiere autenticación
+      requiresAuth: false // Esta ruta requiere autenticación
     },
 
     children: [

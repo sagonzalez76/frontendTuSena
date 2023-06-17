@@ -137,28 +137,40 @@
               <img :src="`data:image/png;base64,${producto.producto_imagen}`" alt="Imagen del producto" class="my-auto"
                 style="width: 30px; height: 30px;">
             </td>
-            <td>{{ producto.funcionario_nombre }}</td>
-            <td>{{ producto.semillero_nombre }}</td>
-            <td>{{ producto.proyecto_nombre }}</td>
-            <td>{{ producto.programa_nombre }}</td>
+            <td class>
+              <div v-for="funcionario in producto.funcionarios" :key="funcionario.funcionario_id" class="">
+                {{ funcionario.funcionario_nombre }} {{ funcionario.funcionario_apellido }} <br>
+              </div>
+
+            </td>
+
+            <td>{{ producto.semillero.semillero_nombre }}</td>
+            <td>{{ producto.proyecto.proyecto_nombre }}</td>
+            <td class>
+              <div v-for="programa in producto.programas" :key="programa.programa_id" class="">
+                {{ programa.programa_nombre }} <br>
+              </div>
+
+            </td>
             <td class="d-flex text-start">
               <div class="row text-start">
 
 
                 <div class="col text-start">
-                
-                <button class="btn btn-warning  me-2 rounded-circle" data-bs-toggle="modal" data-bs-target="#actualizarProductoModal"
-                @:click="buscarProducto(producto.producto_id)">
-              <i class="bi bi-pencil-square"></i></button>
-            <button class="btn btn-danger rounded-circle" data-bs-toggle="modal" data-bs-target="#eliminarProductoModal"
-            @:click="buscarProducto(producto.producto_id)"> <i class="bi bi-trash3-fill"></i></button>
+
+                  <button class="btn btn-warning  me-2 rounded-circle" data-bs-toggle="modal"
+                    data-bs-target="#actualizarProductoModal" @:click="buscarProducto(producto.producto_id)">
+                    <i class="bi bi-pencil-square"></i></button>
+                  <button class="btn btn-danger rounded-circle" data-bs-toggle="modal"
+                    data-bs-target="#eliminarProductoModal" @:click="buscarProducto(producto.producto_id)"> <i
+                      class="bi bi-trash3-fill"></i>{{ producto.producto_id }}</button>
 
 
 
-          </div>
+                </div>
 
 
-              
+
               </div>
             </td>
 
@@ -185,7 +197,8 @@
                     </div>
                     <form class="" method="POST" enctype="multipart/form-data" v-on:submit.prevent="registrarProducto">
                       <div class="col-md-12 ">
-                        <input class="form-control text-dark" type="text" required placeholder="Dale un Nombre o Titulo *" v-model="titulo">
+                        <input class="form-control text-dark" type="text" required placeholder="Dale un Nombre o Titulo *"
+                          v-model="titulo">
 
                       </div>
 
@@ -257,13 +270,13 @@
 
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" placeholder="URL/Soporte/Documentacion" v-model="url"
-                          required>
+                        <input class="form-control text-dark" type="text" name="" placeholder="URL/Soporte/Documentacion"
+                          v-model="url" required>
                       </div>
 
                       <div class="col-md-12">
-                        <input class="form-control text-dark" type="file" placeholder="hola" name="producto_imagen" accept="image/*"
-                          ref="imagenInput" required>
+                        <input class="form-control text-dark" type="file" placeholder="hola" name="producto_imagen"
+                          accept="image/*" ref="imagenInput" required>
 
                       </div>
 
@@ -587,7 +600,7 @@
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
                     <h3>Seguro deseas eliminar el producto: {{ producto.producto_titulo }}?</h3>
-
+{{ producto[0] }}
 
                     <form class="" method="POST" v-on:submit.prevent="eliminarProducto(producto.producto_id)">
 
@@ -710,7 +723,8 @@ export default {
 
       await this.axios.get('http://localhost:3000/')
         .then(response => {
-          this.productos = response.data.nuevo_producto[0]
+          this.productos = response.data.productos
+          console.log(this.productos);
         })
         .catch((e) => {
           console.log(e)
@@ -763,6 +777,7 @@ export default {
       await this.axios.get('http://localhost:3000/producto/' + producto_id)
         .then(response => {
           this.producto = response.data.producto[0];
+      
         })
         .catch((e) => {
           console.log(e)
@@ -823,8 +838,10 @@ export default {
         formData.append('programa_fk', this.programa_fk);
 
 
-        console.log(this.funcionario_fk);
-        await this.axios.post('http://localhost:3000/producto/', formData, {
+        for (let [key, value] of formData.entries()) {
+          console.log(key, value);
+
+        } await this.axios.post('http://localhost:3000/producto/', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -853,7 +870,7 @@ export default {
 
         this.buscarProductos();
       } catch (error) {
-        console.error(error);
+        console.error(error.response.data);
       }
     },
 
@@ -936,7 +953,7 @@ export default {
             icon: 'success',
             title: 'Producto Eliminado',
 
-          })  
+          })
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
@@ -1042,9 +1059,9 @@ a:hover {
 }
 
 input[type=file]::before {
-    content: "Selecciona una imagen para el producto :  ";
-    color: black;
-    margin-right: 10px; 
+  content: "Selecciona una imagen para el producto :  ";
+  color: black;
+  margin-right: 10px;
 }
 
 a span {

@@ -90,14 +90,13 @@ export default createStore({
         .then(response => {
 
           console.log(response);
-          state.productos = response.data.nuevo_producto[0]
-          console.log(response.data.nuevo_producto[0]);
+          state.productos = response.data.productos
+          console.log(response.data.productos);
 
 
         }) //Mostrar por consola el error
         .catch((e) => {
           state.productos = []
-
           console.log(e)
         });
     },
@@ -356,6 +355,7 @@ export default createStore({
       const productosProgramas = state.programasSeleccionados;
 
       // console.log(state.semillerosSeleccionados)
+console.log(productosSemilleros);
 
       const params = {
         proyectos_nombre: productosProyectos,
@@ -371,6 +371,7 @@ export default createStore({
       axios.get("http://localhost:3000/aplicarfiltros", { params })
         .then((response) => {
           state.productos = response.data;
+          console.log(response.data);
         })
         .catch((error) => {
           state.productos = []

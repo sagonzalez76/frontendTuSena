@@ -17,7 +17,7 @@
     <div class="row justify-content-center mb-3 fs-6" id="contenido" v-else v-for="(producto, index) in productos" :key="index">
         <div class="col-md-12">
 
-
+<!-- {{ productos[0] }} -->
             <div class="card shadow-0 border border-dark rounded-3" style="--bs-border-opacity: .5;">
                 <div class="card-body">
                     <div class="row g-0">
@@ -99,7 +99,7 @@
                                        <h6 class="fw-bold" style="font-size: .8rem;">Semillero:</h6>
                                     </div>
                                     <div class="col-9">
-                                        <h6 style="font-size: .9rem"> {{ producto.semillero_nombre }}</h6>
+                                        <h6 style="font-size: .9rem"> {{ producto.semillero.semillero_nombre }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                                        <h6 class="fw-bold" style="font-size: .8rem;">Proyecto: </h6>
                                     </div>
                                     <div class="col-9">
-                                        <h6 style="font-size: .9rem"> {{ producto.proyecto_nombre}}</h6>
+                                        <h6 style="font-size: .9rem"> {{ producto.proyecto.proyecto_nombre}}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -184,32 +184,6 @@ export default {
             anosSeleccionados: 'anosSeleccionados'
 
         }),
-
-       
-
-        // imageSrc() {
-        //   // Obtener la imagen del producto actual
-        //   const base64 = Buffer.from(this.producto.producto_imagen.data).toString('base64');
-        //   return `data:image/png;base64,${base64}`;
-        // },
-
-
-
-
-        //    imageSrc() {
-
-        //         return this.productos.map((producto) => {
-        //             const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
-
-        //             return `data:image/png;base64,${base64}`;
-
-        //         });
-        //     },
-
-
-
-
-
 
     },
 
