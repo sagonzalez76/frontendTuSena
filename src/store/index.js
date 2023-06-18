@@ -89,7 +89,6 @@ export default createStore({
       await axios.get('http://localhost:3000/')
         .then(response => {
 
-          console.log(response);
           state.productos = response.data.productos
           console.log(response.data.productos);
 
@@ -204,26 +203,26 @@ export default createStore({
 
 
 
-    filtrarProductosSemillero(state) {
-      const productosSemilleros = state.semillerosSeleccionados;
-      const params = {
-        semillero_nombre: productosSemilleros
-      }
-      console.log(params)
+    // filtrarProductosSemillero(state) {
+    //   const productosSemilleros = state.semillerosSeleccionados;
+    //   const params = {
+    //     semillero_nombre: productosSemilleros
+    //   }
+    //   console.log(params)
 
-      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
-      // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/filtrosemillero", { params })
-        .then((response) => {
-          state.productos = response.data;
-          console.log(response.data);
-        })
-        .catch((error) => {
-          state.productos = []
+    //   // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
+    //   // con los autores seleccionados como parámetro de consulta
+    //   axios.get("http://localhost:3000/filtrosemillero", { params })
+    //     .then((response) => {
+    //       state.productos = response.data;
+    //       console.log(response.data);
+    //     })
+    //     .catch((error) => {
+    //       state.productos = []
 
-          console.error(error);
-        });
-    },
+    //       console.error(error);
+    //     });
+    // },
 
 
     // filtrarProductosTipo(state) {
@@ -254,97 +253,89 @@ export default createStore({
     // },
 
 
-    filtrarProductosSubtipo(state) {
-      const productosSubtipos = state.subtiposSeleccionados;
-      // console.log(state.semillerosSeleccionados)
+    // filtrarProductosSubtipo(state) {
+    //   const productosSubtipos = state.subtiposSeleccionados;
+    //   // console.log(state.semillerosSeleccionados)
 
-      const params = {
-        producto_subtipo: productosSubtipos
-      }
-      console.log(params);
-      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
-      // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/filtroproducto", { params })
-        .then((response) => {
-          state.productos = response.data;
-        })
-        .catch((error) => {
-          state.productos = []
+    //   const params = {
+    //     producto_subtipo: productosSubtipos
+    //   }
+    //   console.log(params);
 
-          console.error(error);
-        });
-    },
+    //   axios.get("http://localhost:3000/filtroproducto", { params })
+    //     .then((response) => {
+    //       state.productos = response.data;
+    //     })
+    //     .catch((error) => {
+    //       state.productos = []
 
+    //       console.error(error);
+    //     });
+    // },
 
 
-    filtrarProductosAno(state) {
-      const productosAnos = state.anosSeleccionados;
-      // console.log(state.semillerosSeleccionados)
 
-      const params = {
-        productos_ano: productosAnos
-      }
-      console.log(params);
-      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
-      // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/filtroano", { params })
-        .then((response) => {
-          state.productos = response.data;
-        })
-        .catch((error) => {
-          state.productos = []
+    // filtrarProductosAno(state) {
+    //   const productosAnos = state.anosSeleccionados;
 
-          console.error(error);
-        });
-    },
+    //   const params = {
+    //     productos_ano: productosAnos
+    //   }
+    //   console.log(params);
+    //   axios.get("http://localhost:3000/filtroano", { params })
+    //     .then((response) => {
+    //       state.productos = response.data;
+    //     })
+    //     .catch((error) => {
+    //       state.productos = []
+
+    //       console.error(error);
+    //     });
+    // },
 
 
 
 
 
-    filtrarProductosProyecto(state) {
-      const productosProyectos = state.proyectosSeleccionados;
-      // console.log(state.semillerosSeleccionados)
+    // filtrarProductosProyecto(state) {
+    //   const productosProyectos = state.proyectosSeleccionados;
+    //   // console.log(state.semillerosSeleccionados)
 
-      const params = {
-        proyectos_nombre: productosProyectos
-      }
-      console.log(params);
-      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
-      // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/filtroproyecto", { params })
-        .then((response) => {
-          state.productos = response.data;
-        })
-        .catch((error) => {
-          state.productos = []
+    //   const params = {
+    //     proyectos_nombre: productosProyectos
+    //   }
+    //   console.log(params);
+    //   axios.get("http://localhost:3000/filtroproyecto", { params })
+    //     .then((response) => {
+    //       state.productos = response.data;
+    //     })
+    //     .catch((error) => {
+    //       state.productos = []
 
-          console.error(error);
-        });
-    },
+    //       console.error(error);
+    //     });
+    // },
 
 
 
-    filtrarProductosPrograma(state) {
-      const productosProgramas = state.programasSeleccionados;
-      // console.log(state.semillerosSeleccionados)
+    // filtrarProductosPrograma(state) {
+    //   const productosProgramas = state.programasSeleccionados;
 
-      const params = {
-        programas_nombre: productosProgramas
-      }
-      console.log(params);
-      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
-      // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/filtroprograma", { params })
-        .then((response) => {
-          state.productos = response.data;
-        })
-        .catch((error) => {
-          state.productos = []
+    //   const params = {
+    //     programas_nombre: productosProgramas
+    //   }
+    //   console.log(params);
 
-          console.error(error);
-        });
-    },
+    //   axios.get("http://localhost:3000/filtroprograma", { params })
+    //     .then((response) => {
+    //       state.productos = response.data;
+    //     })
+    //     .catch((error) => {
+    //       state.productos = []
+
+    //       console.error(error);
+    //     });
+    // },
 
 
     aplicarFiltros(state) {
@@ -355,7 +346,6 @@ export default createStore({
       const productosProgramas = state.programasSeleccionados;
 
       // console.log(state.semillerosSeleccionados)
-console.log(productosSemilleros);
 
       const params = {
         proyectos_nombre: productosProyectos,
@@ -368,10 +358,12 @@ console.log(productosSemilleros);
       console.log(params);
       // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
       // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/aplicarfiltros", { params })
+      axios.get("http://localhost:3000/aplicarfiltros/", { params })
         .then((response) => {
-          state.productos = response.data;
-          console.log(response.data);
+
+          state.productos = response.data.productos;
+
+          console.log(response.data.productos);
         })
         .catch((error) => {
           state.productos = []

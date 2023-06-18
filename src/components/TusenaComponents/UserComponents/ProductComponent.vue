@@ -17,7 +17,7 @@
     <div class="row justify-content-center mb-3 fs-6" id="contenido" v-else v-for="(producto, index) in productos" :key="index">
         <div class="col-md-12">
 
-<!-- {{ productos[0] }} -->
+<!-- {{ productos }} -->
             <div class="card shadow-0 border border-dark rounded-3" style="--bs-border-opacity: .5;">
                 <div class="card-body">
                     <div class="row g-0">
@@ -91,7 +91,6 @@
                                 </div>
                             </div>
 
-
                             <div class="row w-100">
                                 <div class="row">
 
@@ -99,7 +98,8 @@
                                        <h6 class="fw-bold" style="font-size: .8rem;">Semillero:</h6>
                                     </div>
                                     <div class="col-9">
-                                        <h6 style="font-size: .9rem"> {{ producto.semillero.semillero_nombre }}</h6>
+                                        <h6 style="font-size: .9rem">   {{ producto.semillero ? producto.semillero.semillero_nombre : producto.semillero_nombre }}
+</h6>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,8 @@
                                        <h6 class="fw-bold" style="font-size: .8rem;">Proyecto: </h6>
                                     </div>
                                     <div class="col-9">
-                                        <h6 style="font-size: .9rem"> {{ producto.proyecto.proyecto_nombre}}</h6>
+                                        <h6 style="font-size: .9rem">   {{ producto.proyecto ? producto.proyecto.proyecto_nombre : producto.proyecto_nombre }}
+</h6>
                                     </div>
                                 </div>
                             </div>
@@ -167,8 +168,12 @@ import { Buffer } from 'buffer';
 
 
 export default {
+
+
+  
     data() {
         return {
+
         }
     },
 
