@@ -21,7 +21,7 @@
                             <router-link to="/productos"
                                 class="me-4 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75"><i
                                     class="fas fa-user-alt m-1 me-md-2"></i>
-                                <p class="d-none d-md-block mb-0">Inicio Sesi&oacute;n Administrador</p>
+                                <p class="d-none d-md-block mb-0" id="admintext">Inicio Sesi&oacute;n Administrador</p>
                             </router-link>
                             <!-- <router-link to="/userfavorite/1"
                                 class="me-1 border btn btn-success rounded py-1 px-3 nav-link d-flex align-items-center border-success border-1  border-opacity-75">

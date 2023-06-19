@@ -85,7 +85,7 @@
         placeholder="Buscar" aria-label="Search">
       <div class="navbar-nav">
         <div class="nav-item text-nowrap mx-4 my-2">
-          <router-link to="/buscador" class="nav-link px-3 bg-light fw-bold border border-danger border-2 rounded-4 text-danger fs-6 rounded-semicircle" type="button"
+          <router-link to="/buscador" class="logout-button nav-link px-3 bg-light fw-bold border border-danger border-2 rounded-4 text-danger fs-6 rounded-semicircle" type="button"
             @click="logout()" href="#"><i class="bi bi-box-arrow-right"></i>
           </router-link>
         </div>
@@ -351,6 +351,13 @@ body {
 .sidebar .nav-link {
   font-weight: 650;
   color: #000000;
+  
+}
+
+.logout-button:hover{
+background-color: rgb(217, 13, 13) !important;
+color: white !important;
+
 }
 
 

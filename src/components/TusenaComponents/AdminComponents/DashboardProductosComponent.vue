@@ -163,7 +163,7 @@
                     <i class="bi bi-pencil-square"></i></button>
                   <button class="btn btn-danger rounded-circle" data-bs-toggle="modal"
                     data-bs-target="#eliminarProductoModal" @:click="buscarProducto(producto.producto_id)"> <i
-                      class="bi bi-trash3-fill"></i>{{ producto.producto_id }}</button>
+                      class="bi bi-trash3-fill"></i></button>
 
 
 
