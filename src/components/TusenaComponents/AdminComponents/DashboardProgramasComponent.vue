@@ -377,8 +377,23 @@ export default {
 
       await this.axios.patch('http://localhost:3000/programa/' + programa_id, json)
         .then(response => {
-          alert(response.data.message);
-          // console.log(response.data.new_producto);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Programa Actualizado',
+
+          })          // console.log(response.data.new_producto);
           console.log(this.programas);
           // console.log(this.state.productos);
         }) //Mostrar por consola el error
@@ -393,7 +408,23 @@ export default {
       await this.axios.delete('http://localhost:3000/programa/' + programa_id)
         .then(response => {
           console.log(response.data.message);
-          alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Programa Eliminado',
+
+          })  // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);

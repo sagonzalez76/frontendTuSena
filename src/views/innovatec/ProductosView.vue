@@ -29,7 +29,7 @@
 
                             </div>
 
-                            <button v-show="!loading" class="btn btn-lg btn-primary btn-block btn-signin mt-3"
+                            <button v-show="!loading" class="btn btn-lg btn-primary btn-block btn-signin mt-3 w-100"
                                 type="submit">Iniciar
                                 Sesion</button>
                             <button v-show="loading" class="btn btn-lg btn-success btn-block btn-signin" type="button"><span
@@ -89,7 +89,7 @@
                                     <label for="floatingInput">Correo Electronico</label>
                                     <div class="w-100 text-center mt-4">
 
-                                        <button type="submit" class="btn btn-primary mx-5" data-bs-target="#staticBackdrop2"
+                                        <button type="submit" class="btn btn-primary mx-5 w-50" data-bs-target="#staticBackdrop2"
                                             data-bs-toggle="modal">Enviar Codigo</button>
                                     </div>
                                 </form>
@@ -129,7 +129,7 @@
 
                                     <div class="w-100 text-center mt-4">
 
-                                        <button type="submit" class="btn btn-primary mx-5">Cambiar
+                                        <button type="submit" class="btn btn-primary mx-5 w-50">Cambiar
                                             Contrase&ntilde;a</button>
                                     </div>
                                 </form>

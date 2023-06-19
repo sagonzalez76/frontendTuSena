@@ -1,65 +1,81 @@
 <template>
   <div>
-    <select v-model="selectedOption" @change="fetchChartData">
-      <option value="semilleros">Semilleros</option>
-      <option value="proyectos">Proyectos</option>
-      <option style="text-transform: uppercase;" value="programas">Programas</option>
-    </select>
-    <canvas ref="chartCanvas"></canvas>
+    <Bar v-if="loaded" id="my-chart-id" :options="chartOptions" :data="chartData" />
+    <!-- {{ chartData }} <br><br>
+    {{ chartData.labels }} <br><br>
+    {{ chartData.datasets[0].data }} -->
+
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { Bar } from 'vue-chartjs'
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  CategoryScale,
+  LinearScale
+} from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+
+import axios from 'axios'
 
 export default {
+  name: 'BarChart',
+  components: { Bar },
   data() {
     return {
-      selectedOption: 'semilleros',
-      chart: null,
-    };
-  },
-  mounted() {
-    this.fetchChartData();
-  },
-  methods: {
-    fetchChartData() {
-      axios.get(`http://localhost:3000/grafica/${this.selectedOption}`).then((response) => {
-        const data = response.data;
 
-        // Transformar los datos de respuesta en el formato necesario para la gráfica
-        const labels = data.map((item) => item.label);
-        const values = data.map((item) => item.value);
+      loaded: false,
 
-        this.renderChart(labels, values);
+      chartData: {
+        labels: ['January', 'February', 'March'],
+        datasets: [{ data: [40, 20, 12],
+          backgroundColor: ['#FF6384'],// '#36A2EB', '#FFCE56'
+          label: "Productos por Subtipo"
+        }]
+      },
+      chartOptions: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Numero de Productos'
+            }, ticks: {
+              precision: 0,
+              stepSize: 1
+            }
+          }
 
-      });
-    },
-    renderChart(labels, values) {
-      const ctx = this.$refs.chartCanvas.getContext('2d');
 
-      if (this.chart) {
-        this.chart.destroy(); // Destruir la instancia del gráfico anterior si existe
+        }
       }
-
-      this.chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels,
-          datasets: [
-            {
-              label: 'Número de productos',
-              data: values,
-              backgroundColor: 'rgba(0, 123, 255, 0.5)',
-            },
-          ],
-        },
-        options: {
-          // Opciones de configuración del gráfico
-        },
-      });
-    },
+    }
   },
-};
+
+  async mounted() {
+
+    this.loaded = false
+    await axios.get('http://localhost:3000/grafica/')
+      .then(response => {
+        console.log(response.data);
+        // Actualizar los datos del gráfico con la respuesta de la API
+        this.chartData.labels = response.data.resultados.map(item => item.producto_subtipo);
+        console.log(response.data);
+        this.chartData.datasets[0].data = response.data.resultados.map(item => parseInt(item.cantidad));
+        this.loaded = true
+
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
+
+}
 </script>

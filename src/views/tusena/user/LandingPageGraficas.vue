@@ -1,15 +1,12 @@
 <template>
     <HeaderComponent></HeaderComponent>
     <section class="bg-white mb-3">
-        <div class="container">
-            <div class="row">
-                <SidebarComponent></SidebarComponent>
-                <div class="col-lg-9">
-                    <FilterComponent></FilterComponent>
+        <div class="mx-2 d-flex justify-content-center">
+            <div class="row d-flex justify-content-center w-75">
+                <div class="col-lg-10">
                     <GraficasComponent></GraficasComponent>
                     <hr />
                 </div>
-                <PaginationComponent></PaginationComponent>
             </div>
         </div>
     </section>

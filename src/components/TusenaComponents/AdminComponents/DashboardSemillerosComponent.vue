@@ -366,9 +366,23 @@ export default {
       await this.axios.post('http://localhost:3000/semillero', json)
         .then(data => {
 
-          setTimeout(() => {
-            alert('Semillero Creado')
-          }, 1000);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Semillero Creado',
+
+          })
 
           setTimeout(() => {
             this.buscarSemilleros();
@@ -418,9 +432,23 @@ export default {
 
       await this.axios.patch('http://localhost:3000/semillero/' + semillero_id, json)
         .then(response => {
-          alert(response.data.message);
-          // console.log(response.data.new_producto);
-          console.log(this.semilleros);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Semillero Actualizado',
+
+          })
           // console.log(this.state.productos);
         }) //Mostrar por consola el error
         .catch((e) => {
@@ -434,7 +462,23 @@ export default {
       await this.axios.delete('http://localhost:3000/semillero/' + semillero_id)
         .then(response => {
           console.log(response.data.message);
-          alert(response.data.message);    // console.log(response.data.new_funcionario[0].funcionario_id);
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Producto Eliminado',
+
+          })  // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
           // console.log(this.funcionarios);
