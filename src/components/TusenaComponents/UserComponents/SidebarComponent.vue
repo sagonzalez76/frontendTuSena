@@ -197,8 +197,8 @@
                             <div class="accordion-body">
                                 <div>
                                     <div class="form-check my-0" v-for="ano in anosDisponibles" :key="ano">
-                                        <input class="form-check-input" type="checkbox" :value="ano"
-                                            id="flexCheckDefault" @change="actualizarAnosSeleccionados" />
+                                        <input class="form-check-input" type="checkbox" :value="ano" id="flexCheckDefault"
+                                            @change="actualizarAnosSeleccionados" />
                                         <label class="form-check-label" for="flexCheckDefault">{{ ano }}</label>
                                     </div>
                                 </div>
@@ -218,9 +218,8 @@
                             <div class="accordion-body">
                                 <div>
                                     <div class="form-check my-0" v-for="proyecto in proyectos" :key="proyecto">
-                                        <input class="form-check-input" type="checkbox"
-                                            :value="proyecto.proyecto_nombre" id="flexCheckDefault"
-                                            @change="actualizarProyectosSeleccionados" />
+                                        <input class="form-check-input" type="checkbox" :value="proyecto.proyecto_nombre"
+                                            id="flexCheckDefault" @change="actualizarProyectosSeleccionados" />
                                         <label class="form-check-label" for="flexCheckDefault">{{
                                             proyecto.proyecto_nombre }}</label>
                                     </div>
@@ -261,7 +260,14 @@
             </div>
         </div>
 
-        <router-link to="graficas" class="btn btn-primary">Graficas</router-link>
+
+    
+
+            <router-link v-if="!isEstadisticaRoute" to="estadistica" class="btn btn-primary w-100"><i class="bi bi-bar-chart-line-fill"></i> Conoce las graficas INNOVATEC </router-link>
+            <router-link v-if="isEstadisticaRoute" to="buscador" class="btn btn-primary w-100"><i class="bi bi-search"></i> volver al Buscador </router-link>
+
+
+
     </div>
 </template>
 
@@ -343,7 +349,10 @@ export default {
             } else {
                 return '';
             }
-        }
+        },
+        isEstadisticaRoute() {
+      return this.$route.path === '/estadistica';
+    },
     },
     methods: {
 
@@ -400,4 +409,5 @@ export default {
     background-color: rgb(0, 208, 14);
 
 
-}</style>
+}
+</style>

@@ -7,7 +7,9 @@ export default createStore({
     // BUSCADOR BUSCADOR BUSCADOR
     producto: [],
     productos: [],
+    productosgraficas: [],
     semillero: [""],
+    
 
     /////////////////////////////////////////////////////////////////////////////////////
     // FILTROS FILTROS FILTROS
@@ -17,6 +19,7 @@ export default createStore({
     anosSeleccionados: [],
     proyectosSeleccionados: [],
     programasSeleccionados: [],
+    //para las graficas, es el filtro
 
 
 
@@ -79,7 +82,7 @@ export default createStore({
     },
 
 
-    
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // BUSCADOR BUSCADOR BUSCADOR
@@ -200,6 +203,8 @@ export default createStore({
       }
 
     },
+
+
 
 
 
@@ -373,6 +378,43 @@ export default createStore({
     },
 
 
+    aplicarFiltrosGraficas(state) {
+
+      const productosProyectos = state.proyectosSeleccionados;
+      const productosSemilleros = state.semillerosSeleccionados;
+      const productosSubtipos = state.subtiposSeleccionados;
+      const productosAno = state.anosSeleccionados;
+      const productosProgramas = state.programasSeleccionados;
+
+      // console.log(state.semillerosSeleccionados)
+
+      const params = {
+        proyectos_nombre: productosProyectos,
+        semillero_nombre: productosSemilleros,
+        producto_subtipo: productosSubtipos,
+        productos_ano: productosAno,
+        programas_nombre: productosProgramas
+
+      }
+      console.log(params);
+      // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
+      // con los autores seleccionados como parámetro de consulta
+      axios.get("http://localhost:3000/aplicarfiltrosgraficas/", { params })
+        .then((response) => {
+
+          state.productosgraficas = response.data.productos;
+          console.log(state.productosgraficas[0].producto_tipo);
+          console.log(response.data.productos);
+
+        })
+        .catch((error) => {
+          state.productos = []
+
+          console.error(error);
+        });
+    },
+
+
 
 
   },
@@ -451,20 +493,18 @@ export default createStore({
     actualizarSemillerosSeleccionados({ commit }, valorSeleccionado) {
       commit('setSemillerosSeleccionados', valorSeleccionado),
         commit('aplicarFiltros')
-
+   
     },
 
 
     actualizarTiposSeleccionados({ commit }, tipoSeleccionado) {
       commit('setTiposSeleccionados', tipoSeleccionado),
         commit('aplicarFiltros')
-
     },
 
     actualizarSubtiposSeleccionados({ commit }, subtipoSeleccionado) {
       commit('setSubtiposSeleccionados', subtipoSeleccionado),
         commit('aplicarFiltros')
-
     },
 
     actualizarAnosSeleccionados({ commit }, anoSeleccionado) {
@@ -481,15 +521,9 @@ export default createStore({
       commit('setProgramasSeleccionados', programaSeleccionado),
         commit('aplicarFiltros')
 
-    }
+    },
 
   },
-
-
-
-
-
-
 
 
 
