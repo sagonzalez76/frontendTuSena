@@ -315,13 +315,30 @@
                       </div>
 
 
-                      <div class="col-md-12">
+                      <!-- <div class="col-md-12">
                         <select v-model="programa_fk" class="text-dark">
                           <option value="" selected disabled>Programa que impacta*</option>
                           <option v-for="programa in programas" :value="programa.programa_id" :key="programa">{{
                             programa.programa_nombre }}</option>
                         </select> {{ programa_fk }}
+                      </div> -->
+
+                       <div>
+                        <div v-for="(programa, index) in programa_fk" :key="index" class="col-md-12">
+                          <select v-model="programa_fk[index]" class="text-dark">
+                            <option value="value1" selected disabled>Elija un Autor *</option>
+                            <option v-for="programa in programas" :value="programa.programa_id"
+                              :key="programa">
+                              {{ programa.programa_nombre }}
+                            </option>
+                          </select>
+                          <button class="btn btn-danger rounded-circle" @click="eliminarPrograma(index)">−</button>
+                          <!-- Agregamos un botón para eliminar el select -->
+                        </div>
+                        <button class="btn btn-success" @click="agregarPrograma">+</button>
+                        <!-- Agregamos el botón para agregar más selects -->
                       </div>
+
 
 
 
@@ -381,9 +398,8 @@
                   <div class="form-items">
                     <h3>Actualiza un Funcionario</h3>
                     <p>Llena los campos que veras a continuacion:</p>
-
                     <form class="" method="POST" v-on:submit.prevent="actualizarProducto(producto.producto_id)">
-
+{{ producto }}
                       <div class="col-md-12">
                         <input class="form-control text-dark" type="text" required v-model="producto.producto_titulo">
                         <!-- <div class="valid-feedback">Username field is valid!</div>
@@ -718,6 +734,13 @@ export default {
       this.funcionario_fk.splice(index, 1); // Eliminamos el select en el índice especificado
     },
 
+    agregarPrograma() {
+      this.programa_fk.push(''); // Agregamos un valor vacío al arreglo
+    },
+    eliminarPrograma(index) {
+      this.programa_fk.splice(index, 1); // Eliminamos el select en el índice especificado
+    },
+
 
     async buscarProductos() {
 
@@ -776,8 +799,8 @@ export default {
       console.log(producto_id);
       await this.axios.get('http://localhost:3000/producto/' + producto_id)
         .then(response => {
-          this.producto = response.data.producto[0];
-      
+          this.producto = response.data.producto;
+      console.log(response.data);
         })
         .catch((e) => {
           console.log(e)
@@ -878,6 +901,7 @@ export default {
 
     async actualizarProducto(producto_id) {
 
+        console.log(producto_id);
       let json = {
 
         "producto_titulo": this.producto.productos_titulo,

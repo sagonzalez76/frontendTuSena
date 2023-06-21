@@ -68,8 +68,8 @@ export default createStore({
         .then(response => {
 
 
-          console.log(response.data);
-          state.producto = response.data.producto[0];
+          // console.log(response.data);
+          state.producto = response.data.productos[0];
           console.log(state.producto);
           // console.log(response.data.new_funcionario[0].funcionario_id);
           // console.log(response.data.new_producto);
@@ -93,7 +93,7 @@ export default createStore({
         .then(response => {
 
           state.productos = response.data.productos
-          console.log(response.data.productos);
+          // console.log(response.data.productos);
 
 
         }) //Mostrar por consola el error
@@ -111,22 +111,20 @@ export default createStore({
         titulo: payload.titulo
       }
 
-      const body = {
-        categoria: payload.categoria
-      }
 
       console.log(params);
-      console.log(body);
 
-      await axios.get('http://localhost:3000/producto/buscar/', { params }, { body })
+
+      await axios.get('http://localhost:3000/producto/buscar/', { params })
         .then(response => {
           console.log(response.data);
           state.productos = response.data.productos
+          console.log(state.productos);
 
 
           // LIMPIA LA BUSQUEDA
           const params = {
-            titulo: undefined
+            titulo: ''
           }
 
           console.log(params);
@@ -477,7 +475,7 @@ export default createStore({
 
     async buscarProductoName({ commit }, payload) {
 
-      commit('buscarProductos')
+      // commit('buscarProductos') LLAMA LA BUSQUEDA GENERAl
       commit('buscarProductoName', payload)
     },
 

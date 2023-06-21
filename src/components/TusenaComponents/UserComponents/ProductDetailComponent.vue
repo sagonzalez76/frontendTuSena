@@ -6,19 +6,26 @@
                     {{ producto.producto_titulo }}
                 </h2>
                 <aside class="col-lg-6 ">
-                    <div class="border rounded-4 mb-3 d-flex justify-content-center vh-75 align-items-center">
+                    <div class=" rounded-4 mb-3 d-flex justify-content-center vh-75 align-items-center">
                         <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="">
-                            <img :src="`data:image/png;base64,${producto.producto_imagen}`" style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
-                              />
+                            <img :src="`data:image/png;base64,${producto.producto_imagen}`"
+                                style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" alt="Imagen Producto"/>
+                              
                         </a>
                     </div>
-             
-                </aside>
+<!-- {{ producto.producto_imagen }} -->
+                </aside>  
                 <main class="col-lg-6">
                     <div class="ps-lg-3">
                         <div class="row align-items-center">
                             <dt class="col-3">Autor(es) del Producto:</dt>
-                            <dd class="col-9"> {{ producto.funcionario_nombre }} {{ producto.funcionario_apellido }}</dd>
+                            <ul class="col-9 list-unstyled">
+                                <li v-for="funcionario in producto.funcionarios" :key="funcionario">
+                                    {{ funcionario.funcionario_nombre }}
+                                </li>
+                            </ul>
+
+
                             <hr>
                             <dt class="col-3">Tipo de Producto:</dt>
                             <dd class="col-9"> {{ producto.producto_tipo }}</dd>
@@ -30,31 +37,36 @@
                             <dd class="col-9"> {{ producto.producto_ano }}</dd>
                             <hr>
                             <dt class="col-3">Proyecto al que pertenece:</dt>
-                            <dd class="col-9"> {{ producto.proyecto_nombre }}</dd>
+                            <dd class="col-9"> {{  producto.proyecto ? producto.proyecto.proyecto_nombre : producto.proyecto_nombre  }}</dd>
                             <hr>
                             <dt class="col-3">Codigo Proyecto:</dt>
-                            <dd class="col-9"> {{ producto.proyecto_codigo}}</dd>
+                            <dd class="col-9">  {{ producto.proyecto ? producto.proyecto.proyecto_codigo : producto.proyecto_codigo }}</dd>
                             <hr>
 
                             <dt class="col-3">Linea Programatica Proyecto:</dt>
-                            <dd class="col-9"> {{ producto.proyecto_linea }}</dd>
+                            <dd class="col-9">  {{ producto.proyecto ? producto.proyecto.proyecto_linea : producto.proyecto_linea }}</dd>
                             <hr>
 
                             <dt class="col-3">Semillero al que pertenece:</dt>
-                            <dd class="col-9"> {{ producto.semillero_nombre }}</dd>
+                            <dd class="col-9">  {{ producto.semillero ? producto.semillero.semillero_nombre : producto.semillero_nombre }}</dd>
                             <hr>
-
+                            
                             <dt class="col-3">Programa(s) que impacta:</dt>
-                            <dd class="col-9"> {{ producto.programa_nombre }}</dd>
+                            <ul class="col-9 list-unstyled">
+                                <li  v-for="programa in producto.programas" :key="programa" >
+                                    {{ programa.programa_nombre }}</li>
+                            </ul>
+
+
                         </div>
 
-                        {{ producto[0] }}
+                        <!-- {{ producto[0] }} -->
 
                         <hr />
-                        <a :href=computedLink target="blank" class="btn btn-primary shadow-0 me-2"> <i class="fa fa-file"
-                                aria-hidden="true"></i>
-                            Soporte </a>
+                        <a :href=computedLink target="_blank" class="btn btn-primary shadow-0 me-2 w-100"> <i class="fa fa-file"
+                                aria-hidden="true"></i>  Soporte del Producto</a>
                     </div>
+                    <!-- {{ producto }} -->
                 </main>
             </div>
         </div>

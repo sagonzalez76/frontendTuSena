@@ -51,15 +51,15 @@
                     <div class="col-lg-5 col-md-12 col-12">
                         <div class="input-group w-100"> 
                             <!-- {{ categoria }} -->
-                            <input v-model="titulo" @keydown.enter="buscarProductoName(titulo, categoria)" class="form-control"
+                            <input v-model="titulo" @keydown.enter="buscarProductoName(titulo)" class="form-control"
                                 type="text" placeholder="Busca un producto" aria-label="Search">
                             <select class="form-select text-start text-dark " v-model="categoria" name="" id="">
 
                                 <option value="nombre">Nombre</option>
-                                <option value="autor">Autor</option>
+                                <option value="autor" disabled>Autor</option>
                             </select>
                             
-                            <button v-on:click="buscarProductoName(titulo, categoria)" class="btn btn-outline-success" type="button"><i
+                            <button v-on:click="buscarProductoName(titulo)" class="btn btn-outline-success" type="button"><i
                                     class="fas fa-search"></i></button>
                         </div>
                     </div>
@@ -82,8 +82,7 @@
                         <span class="text-white-50 mx-2"> > </span>
                         <router-link to="/buscador" href="" class="text-white-50">Buscador TuSena</router-link>
                         <span v-if="producto.producto_titulo" class="text-white-50 mx-2"> > </span>
-                        <router-link to="/productos/1" class="text-white"><u>{{ producto.producto_titulo
-                        }}</u></router-link>
+                        <router-link to="/productos/1" class="text-white"><u>{{ producto.producto_titulo}}</u></router-link>
 
 
                     </h6>
