@@ -25,11 +25,11 @@
 
                             <div class="my-2">
                                 <input type="password" name="password" id="inputPassword" class="form-control form-group"
-                                    placeholder="Contrasena" v-model="funcionario_contrasena" required autofocus>
+                                    placeholder="Contraseña" v-model="funcionario_contrasena" required autofocus>
 
                             </div>
 
-                            <button v-show="!loading" class="btn btn-lg btn-primary btn-block btn-signin mt-3 w-100"
+                            <button v-show="!loading" class="btn btn-lg btn-primary fs-6 btn-block btn-signin mt-3 w-100"
                                 type="submit">Iniciar
                                 Sesion</button>
                             <button v-show="loading" class="btn btn-lg btn-success btn-block btn-signin" type="button"><span
@@ -56,14 +56,14 @@
 
 
                 <div class="w-100 d-flex justify-content-around">
-                    <router-link to="/buscador" class="btn btn-success volver"> Volver al
+                    <router-link to="/buscador" class="btn btn-success volver"><i class="bi bi-arrow-left-circle"></i>  Volver al
                         Buscador</router-link>
 
 
                     <!-- <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#recuperarModal">
                         Recuperar Contrase&ntilde;a </button> -->
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         Recuperar Contrase&ntilde;a
                     </button>
 

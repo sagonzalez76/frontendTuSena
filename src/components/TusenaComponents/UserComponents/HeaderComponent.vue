@@ -56,7 +56,7 @@
                             <select class="form-select text-start text-dark " v-model="categoria" name="" id="">
 
                                 <option value="nombre">Nombre</option>
-                                <option value="autor" disabled>Autor</option>
+                                <option value="autor" disabled>Autor (Deshabilitado)</option>
                             </select>
                             
                             <button v-on:click="buscarProductoName(titulo)" class="btn btn-outline-success" type="button"><i
