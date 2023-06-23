@@ -21,7 +21,7 @@
                             <dt class="col-3">Autor(es) del Producto:</dt>
                             <ul class="col-9 list-unstyled">
                                 <li v-for="funcionario in producto.funcionarios" :key="funcionario">
-                                    {{ funcionario.funcionario_nombre }}
+                                    {{ funcionario.funcionario_nombre }}  {{ funcionario.funcionario_apellido }}
                                 </li>
                             </ul>
 

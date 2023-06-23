@@ -261,8 +261,6 @@
         </div>
 
 
-    
-
             <router-link v-if="!isEstadisticaRoute" to="estadistica" class="btn btn-primary w-100"><i class="bi bi-bar-chart-line-fill"></i> Conoce las graficas INNOVATEC </router-link>
             <router-link v-if="isEstadisticaRoute" to="buscador" class="btn btn-primary w-100"><i class="bi bi-search"></i> volver al Buscador </router-link>
 

@@ -138,8 +138,9 @@
                 style="width: 30px; height: 30px;">
             </td>
             <td class>
+              <!-- {{ producto.funcionarios }} -->
               <div v-for="funcionario in producto.funcionarios" :key="funcionario.funcionario_id" class="">
-                {{ funcionario.funcionario_nombre }} <br>
+                {{ funcionario.funcionario_nombre }} {{ funcionario.funcionario_apellido }}
               </div>
 
             </td>
@@ -152,7 +153,7 @@
               </div>
 
             </td>
-            <td class="d-flex text-start">
+            <td class="">
               <div class="row text-start">
 
 
@@ -163,13 +164,9 @@
                     <i class="bi bi-pencil-square"></i></button>
                   <button class="btn btn-danger rounded-circle" data-bs-toggle="modal"
                     data-bs-target="#eliminarProductoModal" @:click="buscarProducto(producto.producto_id)"> <i
-                      class="bi bi-trash3-fill"></i></button>
-
-
+                      class="bi bi-trash3-fill"></i> </button>
 
                 </div>
-
-
 
               </div>
             </td>
@@ -203,10 +200,8 @@
                       </div>
 
                       <div class="col-md-12">
-                        <!-- <input class="form-control text-dark" type="number" name="apellido" min="1900" :max="maxYear"
-                          placeholder="Año" v-model="ano" required> -->
-                        <!-- <label for="ano">A&ntilde;o de Desarrollo</label> -->
-                        <select v-model="ano" class="text-dark">
+
+                        <select v-model="ano" class="text-dark" required>
                           <option value="" disabled v-if="!isAnoSelected">A&ntilde;o en el que se inscribio *</option>
                           <option value="" disabled v-if="isAnoSelected">A&ntilde;o en el que se inscribio *</option>
                           <option v-for="ano in anosDisponibles" :value="ano" :key="ano">{{ ano }}</option>
@@ -215,7 +210,7 @@
 
 
                       <div class="col-md-12 text-dark">
-                        <select name="subtipo" class="text-dark" v-model="tipo">
+                        <select name="subtipo" class="text-dark" v-model="tipo" required>
                           <option value="" disabled v-if="!isTipoSelected">Que Tipo de Producto es? *</option>
                           <option value="" disabled v-if="isTipoSelected">Que Tipo de Producto es? *</option>
                           <option value="Actividades como Evaluador">Actividades como Evaluador</option>
@@ -233,7 +228,7 @@
 
                       <div class="col-md-12 text-dark">
 
-                        <select name="subtipo" class="text-dark" v-model="subtipo">
+                        <select name="subtipo" class="text-dark" v-model="subtipo" required>
                           <option value="" disabled v-if="!isSubtipoSelected">Que Tipo de Subproducto es? **</option>
                           <option value="" disabled v-if="isSubtipoSelected">Que Tipo de Subproducto es? *</option>
                           <option value="Artículos de Investigación A1, A2, B y C">Artículos de Investigación A1, A2, B y
@@ -299,43 +294,71 @@
 
 
                       <div>
-                        <div v-for="(funcionario, index) in funcionario_fk" :key="index" class="col-md-12">
-                          <select v-model="funcionario_fk[index]" class="text-dark">
-                            <option value="value1" selected disabled>Elija un Autor *</option>
+                        <div class="col-md-12">
+                          <select v-model="funcionario_fk[0]" class="text-dark" required>
+                            <option value="" selected disabled>Elija un Autor *</option>
                             <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id"
                               :key="funcionario">
                               {{ funcionario.funcionario_nombre }} {{ funcionario.funcionario_apellido }}
                             </option>
                           </select>
-                          <button class="btn btn-danger rounded-circle" @click="eliminarFuncionario(index)">−</button>
+                          <button class="btn btn-danger" @click.prevent="eliminarFuncionario(0)">− Eliminar
+                            Funcionario</button>
                           <!-- Agregamos un botón para eliminar el select -->
                         </div>
-                        <button class="btn btn-success" @click="agregarFuncionario">+</button>
+                        
+                        <div v-for="(funcionario, index) in funcionario_fk.slice(1)" :key="index" class="col-md-12">
+                          <select v-model="funcionario_fk[index + 1]" class="text-dark" required>
+                            <option value="" selected disabled>Elija un Autor *</option>
+                            <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id"
+                              :key="funcionario">
+                              {{ funcionario.funcionario_nombre }} {{ funcionario.funcionario_apellido }}
+                            </option>
+                          </select>
+                          <button class="btn btn-danger" @click.prevent="eliminarFuncionario(index + 1)">− Eliminar
+                            Funcionario</button>
+                          <!-- Agregamos un botón para eliminar el select -->
+                        </div>
+
+                        <button class="btn btn-success mt-2" @click.prevent="agregarFuncionario">+ Agregar
+                          Funcionario</button>
                         <!-- Agregamos el botón para agregar más selects -->
                       </div>
 
-
                       <!-- <div class="col-md-12">
-                        <select v-model="programa_fk" class="text-dark">
-                          <option value="" selected disabled>Programa que impacta*</option>
-                          <option v-for="programa in programas" :value="programa.programa_id" :key="programa">{{
-                            programa.programa_nombre }}</option>
-                        </select> {{ programa_fk }}
+                        <label for="proyecto">Elija un Autor. Actualmente tiene seleccionado el Autor {{
+                          proyecto.proyecto_nombre }}</label>
+                        <select v-model="proyecto_fk" class="text-dark" id="semillero">
+                          <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">{{
+                            proyecto.proyecto_nombre }}</option>
+                        </select> {{ proyecto_fk }}
                       </div> -->
 
-                       <div>
-                        <div v-for="(programa, index) in programa_fk" :key="index" class="col-md-12">
-                          <select v-model="programa_fk[index]" class="text-dark">
-                            <option value="value1" selected disabled>Elija un Autor *</option>
-                            <option v-for="programa in programas" :value="programa.programa_id"
-                              :key="programa">
+                      <div>
+                        <div class="col-md-12">
+                          <select v-model="programa_fk[0]" class="text-dark" required>
+                            <option value="" selected disabled>Elija un Programa*</option>
+                            <option v-for="programa in programas" :value="programa.programa_id" :key="programa">
                               {{ programa.programa_nombre }}
                             </option>
                           </select>
-                          <button class="btn btn-danger rounded-circle" @click="eliminarPrograma(index)">−</button>
+                          <button class="btn btn-danger" @click.prevent="eliminarPrograma(0)">− Eliminar Programa</button>
                           <!-- Agregamos un botón para eliminar el select -->
                         </div>
-                        <button class="btn btn-success" @click="agregarPrograma">+</button>
+
+                        <div v-for="(programa, index) in programa_fk.slice(1)" :key="index" class="col-md-12">
+                          <select v-model="programa_fk[index + 1]" class="text-dark" required>
+                            <option value="" selected disabled>Elija un Programa *</option>
+                            <option v-for="programa in programas" :value="programa.programa_id" :key="programa">
+                              {{ programa.programa_nombre }}
+                            </option>
+                          </select>
+                          <button class="btn btn-danger" @click.prevent="eliminarPrograma(index + 1)">− Eliminar
+                            Programa</button>
+                          <!-- Agregamos un botón para eliminar el select -->
+                        </div>
+
+                        <button class="btn btn-success mt-2" @click.prevent="agregarPrograma">+ Agregar Programa</button>
                         <!-- Agregamos el botón para agregar más selects -->
                       </div>
 
@@ -344,9 +367,7 @@
 
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">
-                        <!-- <button id="submit" type="submit" class="btn btn-primary">Register</button> -->
-                        <button type="submit" class="bg-dark p-0 m-0 border border-0" data-bs-dismiss="modal"
-                          aria-label="Close">
+                        <button type="submit" class="bg-dark p-0 m-0 border border-0">
 
                           <a class="border border-light mt-0">
                             <span></span>
@@ -384,184 +405,166 @@
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-light">
-        <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div> -->
-        <!-- <div class="modal-header p-0 m-0 border border-0">
-                    <img src="https://placeimg.com/600/200/animals" class="img-fluid  mx-auto d-block" alt="...">
-                </div> -->
+
         <div class="modal-body py-0 mt-0 col-12 px-2">
           <div class="form-body p-0">
             <div class="row">
               <div class="form-holder p-0">
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
-                    <h3>Actualiza un Funcionario</h3>
-                    <p>Llena los campos que veras a continuacion:</p>
+                    <h3>Actualiza un Producto</h3>
+                    <p>Modifica los campos que veras a continuacion:</p>
                     <form class="" method="POST" v-on:submit.prevent="actualizarProducto(producto.producto_id)">
-{{ producto }}
-                      <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" required v-model="producto.producto_titulo">
-                        <!-- <div class="valid-feedback">Username field is valid!</div>
-                        <div class="invalid-feedback">Username field cannot be blank!</div> -->
-                      </div>
+                      <legend>Titulo
+                        <div class="col-md-12">
+                          <input class="form-control text-dark" type="text" required v-model="producto.producto_titulo">
+                        </div>
+                      </legend>
+                      <hr>
+                      <legend>A&ntilde;o
 
-                      <div class="col-md-12">
-                        <!-- <input class="form-control text-dark" type="number" name="apellido" min="1900" :max="maxYear"
-                          placeholder="Año" v-model="ano" required> -->
-                        <!-- <label for="ano">A&ntilde;o de Desarrollo</label> -->
-                        <select v-model="producto.producto_ano" class="text-dark">
-                          <option value="" selected disabled>Elija un A&ntilde;o</option>
-                          <option v-for="ano in anosDisponibles" :value="ano" :key="ano">{{ ano }}</option>
-                        </select>
-                      </div>
+                        <div class="col-md-12">
+                          <select v-model="producto.producto_ano" class="text-dark">
+                            <option value="" selected disabled>Elija un A&ntilde;o</option>
+                            <option v-for="ano in anosDisponibles" :value="ano" :key="ano">{{ ano }}</option>
+                          </select>
+                        </div>
+                      </legend>
+                      <hr>
+                      <legend>Tipo
 
+                        <div class="col-md-12 text-dark">
+                          <select name="subtipo" class="text-dark" v-model="producto.producto_tipo">
+                            <option value="" selected disabled>Elija un Tipo de Producto</option>
+                            <option value="Actividades como Evaluador">Actividades como Evaluador</option>
+                            <option value="Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia">
+                              Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia</option>
+                            <option value="Desarrollo Tecnologico e Innovacion">Desarrollo Tecnológico e Innovación
+                            </option>
+                            <option value="Formación de Recurso Humano para la CTEI">Formación de Recurso Humano para la
+                              CTEI</option>
+                            <option value="Generación de Nuevo Conocimiento">Generación de Nuevo Conocimiento</option>
 
+                          </select>
+                        </div>
+                      </legend>
+                      <hr>
+                      <legend>Subtipo
+                        <div class="col-md-12 text-dark">
 
-
-                      <div class="col-md-12 text-dark">
-                        <select name="subtipo" class="text-dark" v-model="producto.producto_tipo">
-                          <option value="" selected disabled>Elija un Tipo de Producto</option>
-                          <option value="Actividades como Evaluador">Actividades como Evaluador</option>
-                          <option value="Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia">
-                            Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia</option>
-                          <option value="Desarrollo Tecnologico e Innovacion">Desarrollo Tecnológico e Innovación</option>
-                          <option value="Formación de Recurso Humano para la CTEI">Formación de Recurso Humano para la
-                            CTEI</option>
-                          <option value="Generación de Nuevo Conocimiento">Generación de Nuevo Conocimiento</option>
-
-                        </select>
-                      </div>
-
-
-
-                      <div class="col-md-12 text-dark">
-
-                        <select name="subtipo" class="text-dark" v-model="producto.producto_subtipo">
-                          <!-- <option value="" disabled v-if="!isSubtipoSelected">Elija un Subtipo de Producto</option>
+                          <select name="subtipo" class="text-dark" v-model="producto.producto_subtipo">
+                            <!-- <option value="" disabled v-if="!isSubtipoSelected">Elija un Subtipo de Producto</option>
                           <option value="" disabled v-if="isSubtipoSelected">Elija un Subtipo de Producto</option> -->
-                          <option value="" selected disabled>Elija un Subtipo de Producto</option>
-                          <option value="Artículos de Investigación A1, A2, B y C">Artículos de Investigación A1, A2, B y
-                            C</option>
-                          <option value="Consultorías Científico-Tecnológicas">Consultorías Científico-Tecnológicas
-                          </option>
-                          <option value="Direcciones de Trabajo de Pregrado">Direcciones de Trabajo de Pregrado</option>
-                          <option value="Divulgación Pública de la CTeI">Divulgación Pública de la CTeI</option>
-                          <option value="Estrategias Pedagógicas para el Fomento a la CTI">Estrategias Pedagógicas para el
-                            Fomento a la CTI</option>
-                          <option value="Eventos Científicos con Componente de Apropiación">Eventos Científicos con
-                            Componente de Apropiación</option>
-                          <option value="Informes Finales de Investigación">Informes Finales de Investigación</option>
-                          <option value="Informes Técnicos">Informes Técnicos</option>
-                          <option value="Normas Técnicas">Normas Técnicas</option>
-                          <option value="Otro Programa Académico">Otro Programa Académico</option>
-                          <option value="Participación en Comités de Evaluación">Participación en Comités de Evaluación
-                          </option>
-                          <option value="Plantas Piloto">Plantas Piloto</option>
-                          <option
-                            value="Procesos de Apropiación Social del Conocimiento para el Fortalecimiento o Solución de Asuntos de Interés Social">
-                            Procesos de Apropiación Social del Conocimiento para el Fortalecimiento o Solución de Asuntos
-                            de Interés Social</option>
-                          <option value="Prototipos Industriales">Prototipos Industriales</option>
-                          <option value="Proyectos de Investigacion y Desarrollo">Proyectos de Investigacion y Desarrollo
-                          </option>
-                          <option value="Proyectos de Investigación, Desarrollo e Innovación (ID+I)">Proyectos de
-                            Investigación, Desarrollo e Innovación (ID+I)</option>
+                            <option value="" selected disabled>Elija un Subtipo de Producto</option>
+                            <option value="Artículos de Investigación A1, A2, B y C">Artículos de Investigación A1, A2, B
+                              y
+                              C</option>
+                            <option value="Consultorías Científico-Tecnológicas">Consultorías Científico-Tecnológicas
+                            </option>
+                            <option value="Direcciones de Trabajo de Pregrado">Direcciones de Trabajo de Pregrado</option>
+                            <option value="Divulgación Pública de la CTeI">Divulgación Pública de la CTeI</option>
+                            <option value="Estrategias Pedagógicas para el Fomento a la CTI">Estrategias Pedagógicas para
+                              el
+                              Fomento a la CTI</option>
+                            <option value="Eventos Científicos con Componente de Apropiación">Eventos Científicos con
+                              Componente de Apropiación</option>
+                            <option value="Informes Finales de Investigación">Informes Finales de Investigación</option>
+                            <option value="Informes Técnicos">Informes Técnicos</option>
+                            <option value="Normas Técnicas">Normas Técnicas</option>
+                            <option value="Otro Programa Académico">Otro Programa Académico</option>
+                            <option value="Participación en Comités de Evaluación">Participación en Comités de Evaluación
+                            </option>
+                            <option value="Plantas Piloto">Plantas Piloto</option>
+                            <option
+                              value="Procesos de Apropiación Social del Conocimiento para el Fortalecimiento o Solución de Asuntos de Interés Social">
+                              Procesos de Apropiación Social del Conocimiento para el Fortalecimiento o Solución de
+                              Asuntos
+                              de Interés Social</option>
+                            <option value="Prototipos Industriales">Prototipos Industriales</option>
+                            <option value="Proyectos de Investigacion y Desarrollo">Proyectos de Investigacion y
+                              Desarrollo
+                            </option>
+                            <option value="Proyectos de Investigación, Desarrollo e Innovación (ID+I)">Proyectos de
+                              Investigación, Desarrollo e Innovación (ID+I)</option>
 
-                        </select>
+                          </select>
 
-                      </div>
+                        </div>
+                      </legend>
+                      <hr>
 
+                      <legend>Imagen
+                        <div class="col-md-12">
+                          <input class="form-control text-dark" type="file" placeholder="hola" name="producto_imagen"
+                            accept="image/*" ref="imagenInput">
 
+                        </div>
+                      </legend>
+                      <hr>
+                      <legend>Url/Link
+                        <div class="col-md-12">
+                          <input class="form-control text-dark" type="text" name="" v-model="producto.producto_url"
+                            required>
+                        </div>
+                      </legend>
+                      <hr>
+                      <legend>Proyecto
+                        <!-- -{{ proyecto.proyecto_id }} ESTA ES LA QUE HAY QUE ENVIAR EN EL JSON DE ACTUALIZAR <br> -->
 
+                        <div class="">
+                          <select name="proyecto" class="text-dark" v-model="proyecto.proyecto_id">
+                            <option value="" disabled>Elija un Proyecto</option>
+                            <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">
+                              {{ proyecto.proyecto_nombre }}
+                            </option>
+                          </select>
+                        </div>
+                      </legend>
 
-                      <div class="col-md-12">
-                        <input class="form-control text-dark" type="file" name="producto_imagen1" accept="image/*"
-                          ref="imagenInput1" required>
+                      <hr>
+                      <legend> Semillero
 
-                      </div>
+                        <div class="text-dark">
+                          <select class="text-dark" v-model="semillero.semillero_id">
+                            <option value="" disabled>Elija un Semillero</option>
+                            <option v-for="semillero in semilleros" :value="semillero.semillero_id" :key="semillero">
+                              {{ semillero.semillero_nombre }}</option>
+                          </select>
+                        </div>
+                      </legend>
+                      <hr>
 
-                      <div class="col-md-12">
-                        <input class="form-control text-dark" type="text" name="" v-model="producto.producto_url"
-                          required>
-                      </div>
-
-
-
-                      <div class="col-md-12">
-
-                        <select name="subtipo" class="text-dark" v-model="producto.proyecto_nombre">
-                          <option value="" disabled>Elija un Proyecto</option>
-
-                          <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">{{
-                            proyecto.proyecto_nombre }}</option>
-                        </select> {{ proyecto_fk }}
-                      </div>
-
-
-                      <div class="col-md-12">
-
-
-                        <select v-model="semillero_fk" class="text-dark" id="semillero">
-                          <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
-                          <option v-for="semillero in semilleros" :value="semillero.semillero_id" :key="semillero">{{
-                            semillero.semillero_nombre }}</option>
-                        </select> {{ semillero_fk }}
-                      </div>
-
-
-                      <div class="col-md-12">
-                        <label for="proyecto">Elija un Autor. Actualmente tiene seleccionado el Autor {{
-                          proyecto.proyecto_nombre }}</label>
-
-                        <select v-model="proyecto_fk" class="text-dark" id="semillero">
-                          <!-- <option value="value1" disabled>Elija un Proyecto</option> -->
-                          <option v-for="proyecto in proyectos" :value="proyecto.proyecto_id" :key="proyecto">{{
-                            proyecto.proyecto_nombre }}</option>
-                        </select> {{ proyecto_fk }}
-                      </div>
-
-
-
-                      <div class="col-md-12">
-                        <label for="proyecto">Elija un Autor. Actualmente tiene seleccionado el Autor {{
-                          proyecto.proyecto_nombre }}</label>
-
-                      </div>
+                      <legend>Autor(es)
 
 
+                        <!-- {{ funcionario_ids }} -->
+                        <div class="text-dark" v-for="(func, index) in funcionario" :key="index">
+                          <select name="proyecto" class="text-dark" v-model="func.nuevo_funcionario.funcionario_id"
+                            @change="guardarFuncionarioId(index)">
+                            <option value="" disabled>Elija un Funcionario</option>
+                            <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id"
+                              :key="funcionario">
+                              {{ funcionario.funcionario_nombre }} {{ funcionario.funcionario_apellido }}
+                            </option>
+                          </select>
+                        </div>
+                      </legend>
+                      <hr>
+                      <legend>Programa(s)
+                        <!-- {{ programa_ids }} -->
+                        <div class="text-dark" v-for="(prog, index) in programa" :key="index">
+                          <select name="proyecto" class="text-dark" v-model="prog.nuevo_programa.programa_id"
+                            @change="guardarProgramaId(index)">
+                            <option value="" disabled>Elija un Programa</option>
+                            <option v-for="programa in programas" :value="programa.programa_id" :key="programa">
+                              {{ programa.programa_nombre }}
+                            </option>
+                          </select>
+                        </div>
 
-                      <div class="col-md-12">
-                        <select v-model="funcionario_fk" class="text-dark">
-                          <option value="value1" selected disabled>Elija un Autor</option>
-                          <option v-for="funcionario in funcionarios" :value="funcionario.funcionario_id"
-                            :key="funcionario">{{ funcionario.funcionario_nombre }} DFV{{
-                              funcionario.funcionario_apellido }}</option>
-                        </select>
-                      </div>
-
-
-
-
-                      <div class="col-md-12">
-                        <select v-model="programa_fk" class="text-dark">
-                          <option value="value1" selected disabled>Elija un Programa</option>
-                          <option v-for="programa in programas" :value="programa.programa_id" :key="programa">{{
-                            programa.programa_nombre }}</option>
-                        </select>
-                      </div>
-
-
-
-
-
-
-
-
-
+                      </legend>
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">
-                        <!-- <button id="submit" type="submit" class="btn btn-primary">Register</button> -->
                         <button type="submit" class="bg-dark p-0 m-0 border border-0" data-bs-dismiss="modal"
                           aria-label="Close">
 
@@ -576,8 +579,8 @@
                         </button>
 
 
-                        <button type="button" class="btn btn-cerrar border border-danger" data-bs-dismiss="modal"
-                          aria-label="Close">Cancelar</button>
+                        <button @click="limpiarIds" type="button" class="btn btn-cerrar border border-danger"
+                          data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
 
                       </div>
 
@@ -594,21 +597,11 @@
 
 
 
-
-
-
-
-
   <div class="modal fade" id="eliminarProductoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
     <div class="modal-dialog modal-lg rounded rounded-5">
       <div class="modal-content row mx-2 me-2 bg-light">
-        <!-- <div class="modal-header border border-0 d-flex justify-content-end p-2 pt-2 pe-2 m-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div> -->
-        <!-- <div class="modal-header p-0 m-0 border border-0">
-                    <img src="https://placeimg.com/600/200/animals" class="img-fluid  mx-auto d-block" alt="...">
-                </div> -->
+
         <div class="modal-body py-0 mt-0 col-12 px-2">
           <div class="form-body p-0">
             <div class="row">
@@ -616,11 +609,8 @@
                 <div class="form-content p-0 m-0">
                   <div class="form-items">
                     <h3>Seguro deseas eliminar el producto: {{ producto.producto_titulo }}?</h3>
-{{ producto[0] }}
 
                     <form class="" method="POST" v-on:submit.prevent="eliminarProducto(producto.producto_id)">
-
-
 
                       <div class="form-button mt-5 align-items-center d-flex justify-content-between">
                         <!-- <button id="submit" type="submit" class="btn btn-primary">Register</button> -->
@@ -636,7 +626,6 @@
                           </a>
 
                         </button>
-
 
                         <button type="button" class="btn btn-cerrar border border-danger" data-bs-dismiss="modal"
                           aria-label="Close">Cancelar</button>
@@ -683,7 +672,6 @@ export default {
       imagen: null,
       anosDisponibles: [],
 
-
       proyecto_fk: '',
       semillero_fk: '',
       funcionario_fk: [],
@@ -700,7 +688,8 @@ export default {
       funcionarios: [],
       programas: [],
 
-
+      funcionario_ids: [],
+      programa_ids: []
 
     }
   },
@@ -716,26 +705,24 @@ export default {
 
   },
 
-
-  //    imageSrc() {
-  //    this.productos.map((producto) => {
-  //     const base64 = Buffer.from(producto.producto_imagen.data).toString('base64');
-  //     return `data:image/png;base64,${base64}`;
-  //   });
-  // },
-
-
   methods: {
-
     agregarFuncionario() {
-      this.funcionario_fk.push(''); // Agregamos un valor vacío al arreglo
+      if (this.funcionario_fk.length === 0) {
+        this.funcionario_fk.push(''); // Agregar el primer valor predeterminado
+      } else {
+        this.funcionario_fk.push(''); // Agregar un valor vacío al arreglo
+      }// Agregamos un valor vacío al arreglo
     },
     eliminarFuncionario(index) {
       this.funcionario_fk.splice(index, 1); // Eliminamos el select en el índice especificado
     },
 
     agregarPrograma() {
-      this.programa_fk.push(''); // Agregamos un valor vacío al arreglo
+      if (this.programa_fk.length === 0) {
+        this.programa_fk.push(''); // Agregar el primer valor predeterminado
+      } else {
+        this.programa_fk.push(''); // Agregar un valor vacío al arreglo
+      }// Agregamos un valor vacío al arreglo
     },
     eliminarPrograma(index) {
       this.programa_fk.splice(index, 1); // Eliminamos el select en el índice especificado
@@ -747,7 +734,7 @@ export default {
       await this.axios.get('http://localhost:3000/')
         .then(response => {
           this.productos = response.data.productos
-          console.log(this.productos);
+          // console.log(this.productos);
         })
         .catch((e) => {
           console.log(e)
@@ -796,29 +783,30 @@ export default {
 
 
     async buscarProducto(producto_id) {
-      console.log(producto_id);
+
       await this.axios.get('http://localhost:3000/producto/' + producto_id)
         .then(response => {
-          this.producto = response.data.producto;
-      console.log(response.data);
+          this.producto = response.data.productos[0];
+          console.log(this.producto);
         })
         .catch((e) => {
           console.log(e)
         });
 
-      console.log(this.producto.proyecto_fk);
+      // console.log(this.producto.proyecto.proyecto_id);
 
-      await this.axios.get('http://localhost:3000/proyecto/' + this.producto[0].proyecto_fk)
-
+      await this.axios.get('http://localhost:3000/proyecto/' + this.producto.proyecto.proyecto_id)
         .then(response => {
+          // console.log(response);
           this.proyecto = response.data.nuevo_proyecto;
+          console.log(this.proyecto);
         })
         .catch((e) => {
           console.log(e)
         });
 
 
-      await this.axios.get('http://localhost:3000/semillero/' + this.producto[0].semillero_fk)
+      await this.axios.get('http://localhost:3000/semillero/' + this.producto.semillero.semillero_id)
         .then(response => {
           this.semillero = response.data.nuevo_semillero;
         })
@@ -826,22 +814,70 @@ export default {
           console.log(e)
         });
 
-
-      await this.axios.get('http://localhost:3000/funcionario/' + this.producto[0].funcionario_fk)
-        .then(response => {
-          this.funcionario = response.data.nuevo_funcionario;
-        })
-        .catch((e) => {
-          console.log(e)
-        });
-
+      await this.obtenerDatosFuncionarios()
+      await this.obtenerDatosProgramas()
     },
 
 
 
+    async obtenerDatosFuncionarios() {
+      const resultados = [];
+      console.log(this.producto.funcionarios);
+      for (const funcionario of this.producto.funcionarios) {
+        try {
+          const response = await this.axios.get('http://localhost:3000/funcionario/' + funcionario.funcionario_id);
+          resultados.push(response.data);
+          this.funcionario_ids.push(response.data.nuevo_funcionario.funcionario_id)
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      // resultados contiene los datos de cada funcionario
+      this.funcionario = resultados
+      console.log(this.funcionario);
+    },
+
+
+    async obtenerDatosProgramas() {
+      const resultados = [];
+      console.log(this.producto.programas);
+      for (const programa of this.producto.programas) {
+        try {
+          const response = await this.axios.get('http://localhost:3000/programa/' + programa.programa_id);
+          resultados.push(response.data);
+          this.programa_ids.push(response.data.nuevo_programa.programa_id)
+
+          console.log(response.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      // resultados contiene los datos de cada funcionario
+      this.programa = resultados
+      console.log(this.programa);
+    },
+
+    guardarFuncionarioId(index) {
+      const funcionario_id = this.funcionario[index].nuevo_funcionario.funcionario_id;
+      this.funcionario_ids[index] = funcionario_id;
+    },
+
+    guardarProgramaId(index) {
+      const programa_id = this.programa[index].nuevo_programa.programa_id;
+      this.programa_ids[index] = programa_id;
+    },
+
+
+
+    limpiarIds() {
+      this.funcionario_ids = []
+      this.programa_ids = []
+    },
+
     async registrarProducto() {
 
       try {
+        console.log(this.funcionario_fk);
         const formData = new FormData();
         const imagenInput = this.$refs.imagenInput;
 
@@ -897,24 +933,21 @@ export default {
       }
     },
 
-
-
     async actualizarProducto(producto_id) {
 
-        console.log(producto_id);
+
       let json = {
 
-        "producto_titulo": this.producto.productos_titulo,
-        "producto_ano": this.producto.productos_ano,
-        "producto_url": this.producto.productos_url,
-        "producto_detalle": this.producto.productos_detalle,
-        "producto_tipo": this.producto.productos_tipo,
-        "producto_subtipo": this.producto.productos_subtipo,
-        "producto_imagen": this.producto.productos_imagen,
-        "proyecto_fk": this.producto.proyecto_fk,
-        "semillero_fk": this.producto.semillero_fk,
-        "funcionario_fk": this.producto.funcionario_fk,
-        "programa_fk": this.producto.programa_fk,
+        "producto_titulo": this.producto.producto_titulo,
+        "producto_ano": this.producto.producto_ano,
+        "producto_url": this.producto.producto_url,
+        "producto_tipo": this.producto.producto_tipo,
+        "producto_subtipo": this.producto.producto_subtipo,
+        "producto_imagen": this.producto.productos_imagen, //PENDIENTE // PENDIENTE
+        "proyecto_fk": this.proyecto.proyecto_id,
+        "semillero_fk": this.semillero.semillero_id,
+        "funcionario_fk": this.funcionario_ids,
+        "programa_fk": this.programa_ids,
 
       };
       console.log(json);
