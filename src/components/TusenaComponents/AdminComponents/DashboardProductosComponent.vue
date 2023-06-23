@@ -877,7 +877,7 @@ export default {
     async registrarProducto() {
 
       try {
-        console.log(this.funcionario_fk);
+        // console.log(this.funcionario_fk);
         const formData = new FormData();
         const imagenInput = this.$refs.imagenInput;
 
@@ -929,7 +929,7 @@ export default {
 
         this.buscarProductos();
       } catch (error) {
-        console.error(error.response.data);
+        console.error(error);
       }
     },
 
