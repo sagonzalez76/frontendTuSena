@@ -140,7 +140,7 @@
             <td class>
               <!-- {{ producto.funcionarios }} -->
               <div v-for="funcionario in producto.funcionarios" :key="funcionario.funcionario_id" class="">
-                {{ funcionario.funcionario_nombre }} {{ funcionario.funcionario_apellido }}
+                {{ funcionario.funcionario_nombre }}
               </div>
 
             </td>
