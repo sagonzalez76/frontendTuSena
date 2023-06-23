@@ -496,7 +496,7 @@
                       <legend>Imagen
                         <div class="col-md-12">
                           <input class="form-control text-dark" type="file" placeholder="hola" name="producto_imagen"
-                            accept="image/*" ref="imagenInput">
+                            accept="image/*" ref="image">
 
                         </div>
                       </legend>
