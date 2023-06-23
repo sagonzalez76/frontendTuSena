@@ -496,7 +496,7 @@
                       <legend>Imagen
                         <div class="col-md-12">
                           <input class="form-control text-dark" type="file" placeholder="hola" name="producto_imagen"
-                            accept="image/*" ref="imagenInput">
+                            accept="image/*" ref="image">
 
                         </div>
                       </legend>
@@ -877,7 +877,7 @@ export default {
     async registrarProducto() {
 
       try {
-        console.log(this.funcionario_fk);
+        // console.log(this.funcionario_fk);
         const formData = new FormData();
         const imagenInput = this.$refs.imagenInput;
 
@@ -929,7 +929,7 @@ export default {
 
         this.buscarProductos();
       } catch (error) {
-        console.error(error.response.data);
+        console.error(error);
       }
     },
 
