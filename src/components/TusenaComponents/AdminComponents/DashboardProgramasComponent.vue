@@ -6,7 +6,7 @@
         Programa</button>
 
 
-      <div class="btn-toolbar mb-2 mb-md-0">
+      <!-- <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group me-2">
           <button type="button" class="btn btn-sm btn-outline-secondary"> Compartir</button>
           <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
@@ -15,7 +15,7 @@
           <span data-feather="calendar" class="align-text-bottom"></span>
           Esta Semana
         </button>
-      </div>
+      </div> -->
     </div>
 
     <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
