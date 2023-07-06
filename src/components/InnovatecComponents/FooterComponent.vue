@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <footer class="">
         <div class="row p-5 text-light fw-bold mx-0">
 
@@ -25,7 +25,7 @@ footer {
     background-color: #39A900;
 }
 </style> -->
-
+<!-- 
 
 <template>
     <footer id="footer" class="footer-1">
@@ -383,4 +383,4 @@ ul.social-footer2 li a {
         width: 250px;
     }
 }
-</style>
+</style> -->

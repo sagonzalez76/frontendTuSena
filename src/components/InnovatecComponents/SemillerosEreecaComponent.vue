@@ -73,28 +73,32 @@ export default {
                 <tbody>
                     <tr class="hover-header">
                         <th class="">Nombre del Semillero</th>
-                        <td>CREAD+:Semillero de Investigación de Creativas y ADSI
+                        <td>EREECA: Semillero de Investigación en Energías Renovables, Eficiencia Energética y Calidad de Energía
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Fecha de Creación</th>
-                        <td>20/04/2020
+                        <td>13/02/2015
+
+
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Líder del Semillero</th>
-                        <td>Rider Geovanny Benavides Bárcenas
+                        <td>Olga Liliana Sánchez Medina
+
+
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Correo de Contacto</th>
-                        <td>rbenavidesb@sena.edu.co
+                        <td>osanchezm@sena.edu.co
 
                         </td>
 

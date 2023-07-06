@@ -12,7 +12,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="40000">
-                        <router-link to="/noticias" class="dropdown-item d-flex justify-content-center" href="#"><img src="@/assets/img/banner.svg"
+                        <router-link to="/noticias/sory" class="dropdown-item d-flex justify-content-center" href="#"><img src="@/assets/img/banner.svg"
                                 class="d-block w-100" alt="..."></router-link>
                     </div>
                     <div class="carousel-item" data-bs-interval="40000">
@@ -21,7 +21,7 @@
 
                     </div>
                     <div class="carousel-item" data-bs-interval="40000">
-                        <router-link to="/noticias" class="dropdown-item d-flex justify-content-center" href="#"><img src="@/assets/img/banner3.png"
+                        <router-link to="/noticias/petro" class="dropdown-item d-flex justify-content-center" href="#"><img src="@/assets/img/banner3.png"
                                 class="d-block w-100" alt="..."></router-link>
 
                     </div>
@@ -53,8 +53,7 @@ export default {
 img {
 height: 30vh;
 max-height: 30vh;
-
-    max-width: 45vw;
+max-width: 45vw;
 
 }
 

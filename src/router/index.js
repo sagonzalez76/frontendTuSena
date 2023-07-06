@@ -9,8 +9,6 @@ import store from '../store'; // Importa tu archivo de Vuex store
 
 
 
-
-
 const routes = [
   {
     path: '/:pathName(.*)',
@@ -112,12 +110,20 @@ const routes = [
   },
 
   {
-    path: '/noticias',
-    name: 'noticias',
+    path: '/noticias/',
+    name: 'noticias/',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/innovatec/NoticiasView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/innovatec/NoticiasView.vue'),
+    children: [
+      {
+        path: 'petro',
+        component: () => import('../components/InnovatecComponents/petro.vue'),
+      },
+
+
+    ]
   },
   {
     path: '/infraestructura',

@@ -9,28 +9,36 @@
                 <tbody>
                     <tr class="hover-header">
                         <th class="">Nombre del Semillero</th>
-                        <td>CREAD+:Semillero de Investigación de Creativas y ADSI
+                        <td>INNOVATELCOS: Semillero de Investigación en Innovación Tecnológica de las Telecomunicaciones
+
+
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Fecha de Creación</th>
-                        <td>20/04/2020
+                        <td>14/08/2015
+
+
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Líder del Semillero</th>
-                        <td>Rider Geovanny Benavides Bárcenas
+                        <td>Wilson Yecit Ortiz Sánchez
+
+
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Correo de Contacto</th>
-                        <td>rbenavidesb@sena.edu.co
+                        <td>wortiz@sena.edu.co
+
+
 
                         </td>
 

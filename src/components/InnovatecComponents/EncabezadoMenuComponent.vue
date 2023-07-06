@@ -236,19 +236,11 @@
 
 
                         <li class="nav-item dropdown mx-2">
-                            <router-link to="" class="nav-link dropdown text-dark" href="#" role="button"
+                            <router-link to="/noticias" class="nav-link dropdown text-dark" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Noticias
                             </router-link>
-                            <ul class="dropdown-menu fade-in border-1 border-dark rounded-bottom-2 rounded-top-0">
-                                <li><router-link to="/noticias" class="dropdown-item" href="#">Ver Noticias</router-link>
-                                </li>
-                                <li><a class="dropdown-item" href="#">2</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                         
                         </li>
 
                     </ul>

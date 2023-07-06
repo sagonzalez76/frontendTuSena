@@ -16,6 +16,8 @@ export default createStore({
 
     semillerosSeleccionados: [],
     subtiposSeleccionados: [],
+    tiposSeleccionados: [],
+
     anosSeleccionados: [],
     proyectosSeleccionados: [],
     programasSeleccionados: [],
@@ -188,6 +190,16 @@ export default createStore({
         state.proyectosSeleccionados.push(proyectoSeleccionado.target.value)
       } else {
         state.proyectosSeleccionados.splice(index, 1)
+      }
+
+    },
+
+    setTiposSeleccionados(state, tipoSeleccionado) {
+      const index = state.tiposSeleccionados.indexOf(tipoSeleccionado.target.value)
+      if (index === -1) {
+        state.tiposSeleccionados.push(tipoSeleccionado.target.value)
+      } else {
+        state.tiposSeleccionados.splice(index, 1)
       }
 
     },
@@ -380,7 +392,7 @@ export default createStore({
 
       const productosProyectos = state.proyectosSeleccionados;
       const productosSemilleros = state.semillerosSeleccionados;
-      const productosSubtipos = state.subtiposSeleccionados;
+      const productosTipos = state.tiposSeleccionados;
       const productosAno = state.anosSeleccionados;
       const productosProgramas = state.programasSeleccionados;
 
@@ -389,7 +401,7 @@ export default createStore({
       const params = {
         proyectos_nombre: productosProyectos,
         semillero_nombre: productosSemilleros,
-        producto_subtipo: productosSubtipos,
+        producto_tipo: productosTipos,
         productos_ano: productosAno,
         programas_nombre: productosProgramas
 
@@ -401,12 +413,12 @@ export default createStore({
         .then((response) => {
 
           state.productosgraficas = response.data.productos;
-          console.log(state.productosgraficas[0].producto_tipo);
+      
           console.log(response.data.productos);
 
         })
         .catch((error) => {
-          state.productos = []
+          state.productosgraficas = []
 
           console.error(error);
         });
@@ -491,6 +503,8 @@ export default createStore({
     actualizarSemillerosSeleccionados({ commit }, valorSeleccionado) {
       commit('setSemillerosSeleccionados', valorSeleccionado),
         commit('aplicarFiltros')
+        commit('aplicarFiltrosGraficas')
+
    
     },
 
@@ -498,28 +512,46 @@ export default createStore({
     actualizarTiposSeleccionados({ commit }, tipoSeleccionado) {
       commit('setTiposSeleccionados', tipoSeleccionado),
         commit('aplicarFiltros')
+        commit('aplicarFiltrosGraficas')
+
     },
 
     actualizarSubtiposSeleccionados({ commit }, subtipoSeleccionado) {
       commit('setSubtiposSeleccionados', subtipoSeleccionado),
         commit('aplicarFiltros')
+        commit('aplicarFiltrosGraficas')
+
     },
 
     actualizarAnosSeleccionados({ commit }, anoSeleccionado) {
       commit('setAnosSeleccionados', anoSeleccionado),
         commit('aplicarFiltros')
+        commit('aplicarFiltrosGraficas')
+
     },
 
     actualizarProyectosSeleccionados({ commit }, proyectoSeleccionado) {
       commit('setProyectosSeleccionados', proyectoSeleccionado),
         commit('aplicarFiltros')
+        commit('aplicarFiltrosGraficas')
+
 
     },
     actualizarProgramasSeleccionados({ commit }, programaSeleccionado) {
       commit('setProgramasSeleccionados', programaSeleccionado),
         commit('aplicarFiltros')
+        commit('aplicarFiltrosGraficas')
+
 
     },
+
+    actualizarGraficas({ commit }, ) {
+        commit('aplicarFiltrosGraficas')
+
+
+    },
+
+    
 
   },
 

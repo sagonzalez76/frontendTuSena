@@ -9,28 +9,30 @@
                 <tbody>
                     <tr class="hover-header">
                         <th class="">Nombre del Semillero</th>
-                        <td>CREAD+:Semillero de Investigación de Creativas y ADSI
+                        <td>SENAUTRONIC: Semillero en Electrónica, Automatización y Mecatrónica del SENA
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Fecha de Creación</th>
-                        <td>20/04/2020
+                        <td>15/04/2016
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Líder del Semillero</th>
-                        <td>Rider Geovanny Benavides Bárcenas
+                        <td>Jean Alejandro Cubillos Rojas
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Correo de Contacto</th>
-                        <td>rbenavidesb@sena.edu.co
+                        <td>jacubillosr@sena.edu.co
+
+
 
                         </td>
 

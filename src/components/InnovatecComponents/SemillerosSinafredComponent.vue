@@ -9,28 +9,36 @@
                 <tbody>
                     <tr class="hover-header">
                         <th class="">Nombre del Semillero</th>
-                        <td>CREAD+:Semillero de Investigación de Creativas y ADSI
+                        <td>SINAFRED: Semillero de Investigación en Actividad Física, Recreación y Deporte
+
+
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Fecha de Creación</th>
-                        <td>20/04/2020
+                        <td>12/04/2019
+
+
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Líder del Semillero</th>
-                        <td>Rider Geovanny Benavides Bárcenas
+                        <td>Diana Carolina Cuarán Coral
+
+
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Correo de Contacto</th>
-                        <td>rbenavidesb@sena.edu.co
+                        <td>dcuaran@sena.edu.co
+
+
 
                         </td>
 
@@ -51,7 +59,9 @@
                     </tr>
                     <tr>
                         <th>Línea de Investigación</th>
-                        <td>Tecnologías de la Energía, Software y las Telecomunicaciones</td>
+                        <td>Actividad Física Recreación y Deportes
+
+</td>
                     </tr>
                     <tr>
                         <th>Ciudad y Departamento</th>

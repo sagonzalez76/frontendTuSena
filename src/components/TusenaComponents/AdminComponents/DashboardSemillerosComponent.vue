@@ -169,18 +169,8 @@
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">
                         <!-- <button id="submit" type="submit" class="btn btn-primary">Register</button> -->
-                        <button type="submit" class="bg-dark p-0 m-0 border border-0" data-bs-dismiss="modal"
-                          aria-label="Close">
-
-                          <a class="border border-light mt-0">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Registrar
-                          </a>
-
-                        </button>
+                        <button type="submit" class="btn btn-registrar border border-success" data-bs-dismiss="modal"
+                          aria-label="Close">REGISTRAR</button>
 
 
                         <button type="button" class="btn btn-cerrar border border-danger" data-bs-dismiss="modal"
@@ -236,18 +226,8 @@
 
                       <div class="form-button mt-3 align-items-center d-flex justify-content-between">
                         <!-- <button id="submit" type="submit" class="btn btn-primary">Register</button> -->
-                        <button type="submit" class="bg-dark p-0 m-0 border border-0" data-bs-dismiss="modal"
-                          aria-label="Close">
-
-                          <a class="border border-light mt-0">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Actualizar
-                          </a>
-
-                        </button>
+                        <button type="submit" class="btn btn-registrar border border-success" data-bs-dismiss="modal"
+                          aria-label="Close">ACTUALIZAR</button>
 
 
                         <button type="button" class="btn btn-cerrar border border-danger" data-bs-dismiss="modal"
@@ -298,18 +278,8 @@
 
                       <div class="form-button mt-5 align-items-center d-flex justify-content-between">
                         <!-- <button id="submit" type="submit" class="btn btn-primary">Register</button> -->
-                        <button type="submit" class="bg-dark p-0 m-0 border border-0" data-bs-dismiss="modal"
-                          aria-label="Close">
-
-                          <a class="border border-light mt-0">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Eliminar
-                          </a>
-
-                        </button>
+                        <button type="submit" class="btn btn-registrar border border-success" data-bs-dismiss="modal"
+                          aria-label="Close">ELIMINAR</button>
 
 
                         <button type="button" class="btn btn-cerrar border border-danger" data-bs-dismiss="modal"
@@ -694,7 +664,31 @@ a span:nth-child(4) {
     1 0 50px #09ff00,
     1 0 100px #09ff00;
 }
+.btn-registrar {
 
+position: relative;
+display: inline-block;
+padding: 10px 20px;
+color: #03a300;
+font-size: smaller;
+text-decoration: none;
+text-transform: uppercase;
+overflow: hidden;
+transition: .5s;
+margin-top: 0px;
+letter-spacing: 4px;
+
+}
+
+.btn-registrar:hover {
+background: #11a600;
+color: #000000;
+border-radius: 0px;
+box-shadow: 0 0 1px #09ff00,
+  1 0 25px #09ff00,
+  1 0 50px #09ff00,
+  1 0 100px #09ff00;
+}
 .btn-cerrar span {
   position: absolute;
   display: block;

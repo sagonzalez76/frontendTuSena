@@ -9,28 +9,28 @@
                 <tbody>
                     <tr class="hover-header">
                         <th class="">Nombre del Semillero</th>
-                        <td>CREAD+:Semillero de Investigación de Creativas y ADSI
+                        <td>SIITIS: Semillero de Investigación de Innovación Tecnológica de la Industria y Sostenibilidad
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Fecha de Creación</th>
-                        <td>20/04/2020
+                        <td>20/03/2015
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Líder del Semillero</th>
-                        <td>Rider Geovanny Benavides Bárcenas
+                        <td>Ana Isabel Bravo Ospina
 
                         </td>
 
                     </tr>
                     <tr>
                         <th>Correo de Contacto</th>
-                        <td>rbenavidesb@sena.edu.co
+                        <td>aibravoo@sena.edu.co
 
                         </td>
 
@@ -51,7 +51,9 @@
                     </tr>
                     <tr>
                         <th>Línea de Investigación</th>
-                        <td>Tecnologías de la Energía, Software y las Telecomunicaciones</td>
+                        <td>Innovación Tecnológica y Sostenibilidad para la Industria
+
+</td>
                     </tr>
                     <tr>
                         <th>Ciudad y Departamento</th>

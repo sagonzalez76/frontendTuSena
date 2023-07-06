@@ -13,6 +13,8 @@
     "chart.js": "^4.3.0",
     "core-js": "^3.8.3",
     "get-google-fonts": "^1.2.2",
+    "highcharts": "^11.1.0",
+    "highcharts-vue": "^1.4.2",
     "material-icons": "^1.13.1",
     "vue": "^3.2.13",
     "vue-axios": "^3.5.2",

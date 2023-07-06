@@ -23,7 +23,7 @@
 
 
                         <div class="col-lg-4" v-for="investigador in semillero.investigadores" :key="investigador">
-                            <img class="bd-placeholder-img rounded-circle" width="140" height="140" :src="`${investigador.pic} ||  ${investigador.pic2}`"
+                            <img class="bd-placeholder-img rounded-circle" width="140" height="140" :src="`${investigador.pic}`"
 
                                 aria-label="Placeholder: 140x140"
                                 preserveAspectRatio="xMidYMid slice" focusable="false"> <!-- TODO -->
@@ -137,7 +137,7 @@
 
 
                                                                     <!-- <div class="icon-block text-center"><a href="#"><i
-                                                                                class="fa fa-facebook"></i></a><a href="#">
+                                                                                class="fa fa-facebook"></i></a><a href="#">ulecio joven
                                                                             <i class="fa fa-twitter"></i></a><a href="#"> <i
                                                                                 class="fa fa-google-plus"></i></a></div> -->
                                                                 </div>
@@ -186,6 +186,48 @@ import foto1 from '../../assets/fotos/WilsonOrtiztrim.jpg'
 
 const semilleros = [
 
+{
+        name: 'INNOVATELCOS',
+        img: {
+            img1: 'https://placeimg.com/1995/500/arch',
+            img2: 'https://placeimg.com/1995/500/animals',
+            img3: 'https://placeimg.com/1995/500/nature',
+        },
+
+        investigadores: [{
+            id: 16,
+            name: 'Wilson Yecit',
+            lastname: 'Ortiz Sánchez',
+            formacion: {
+                pregrado: 'Ingeniero en Electrónica y Telecomunicaciones',
+                postgrado: 'Magister en Diseño y Gestión de Proyectos Tecnológicos'
+            },
+            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
+            semillero: 'INNOVATELCOS',
+            email: 'wortiz@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001554606',
+            pic: 'https://i.imgur.com/mkkbCVI.jpg'
+        },
+        {
+            id: 17,
+            name: 'David Guillermo ',
+            lastname: 'Rivera Fierro',
+            formacion: {
+                pregrado: 'Ingeniero en Electrónica y Telecomunicaciones',
+                postgrado: 'Especialista en Redes y Servicios Telemáticos'
+            },
+            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
+            semillero: 'INNOVATELCOS',
+            email: 'dgriveraf@sena.edu.co',
+            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000011881',
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
+           
+
+        
+        
+        },]
+    },
+
 
     {
         name: 'EREECA',
@@ -222,7 +264,7 @@ const semilleros = [
             semillero: 'EREECA',
             email: 'osanchezm@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000347515',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
         }
         ]
     },
@@ -267,7 +309,7 @@ const semilleros = [
                 semillero: 'EREECA',
                 email: 'zleon@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001761643',
-                pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
             },
             {
                 id: 5,
@@ -281,7 +323,7 @@ const semilleros = [
                 semillero: 'CREAD+',
                 email: 'plozada@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001685826',
-                pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
             },
             {
                 id: 6,
@@ -295,7 +337,7 @@ const semilleros = [
                 semillero: 'CREAD+',
                 email: 'hbastidasp@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001556099',
-                pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
             },
             {
                 id: 7,
@@ -309,7 +351,7 @@ const semilleros = [
                 semillero: 'CREAD+',
                 email: 'yhpinzono@sena.edu.co',
                 cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001481839',
-                pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+                pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
             },
            
         ],
@@ -352,7 +394,7 @@ const semilleros = [
             semillero: 'SIITIS',
             email: 'jorivera@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001844629',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
         },
         {
             id: 10,
@@ -366,7 +408,7 @@ const semilleros = [
             semillero: 'SIITIS',
             email: 'aibravoo@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001844627',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
         }
             ,]
     },
@@ -390,7 +432,7 @@ const semilleros = [
             semillero: 'SENAUTRONIC',
             email: 'ebenavidesv@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000042199',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
         },
         {
             id: 12,
@@ -404,7 +446,7 @@ const semilleros = [
             semillero: 'SENAUTRONIC',
             email: 'jacubillosr@sena.edu.co',
             cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000003893',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view'
+            pic: 'https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png'
         },]
     },
     {
@@ -457,47 +499,7 @@ const semilleros = [
             pic: 'https://i.imgur.com/WK8vp4I.jpg'
         },]
     },
-    {
-        name: 'INNOVATELCOS',
-        img: {
-            img1: 'https://placeimg.com/1995/500/arch',
-            img2: 'https://placeimg.com/1995/500/animals',
-            img3: 'https://placeimg.com/1995/500/nature',
-        },
-
-        investigadores: [{
-            id: 16,
-            name: 'Wilson Yecit',
-            lastname: 'Ortiz Sánchez',
-            formacion: {
-                pregrado: 'Ingeniero en Electrónica y Telecomunicaciones',
-                postgrado: 'Magister en Diseño y Gestión de Proyectos Tecnológicos'
-            },
-            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-            semillero: 'INNOVATELCOS',
-            email: 'wortiz@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001554606',
-            pic: 'https://i.imgur.com/mkkbCVI.jpg'
-        },
-        {
-            id: 17,
-            name: 'David Guillermo ',
-            lastname: 'Rivera Fierro',
-            formacion: {
-                pregrado: 'Ingeniero en Electrónica y Telecomunicaciones',
-                postgrado: 'Especialista en Redes y Servicios Telemáticos'
-            },
-            linea: 'Tecnologías de la Energía, Software y las Telecomunicaciones',
-            semillero: 'INNOVATELCOS',
-            email: 'dgriveraf@sena.edu.co',
-            cvlac: 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000011881',
-            pic: 'https://drive.google.com/file/d/1GZAe6cLyZFD0E8v5j021qIP2yt8fEjQo/view',
-            pic2: "https://mlfrr70d8qnk.i.optimole.com/WplFako-W-Nf0iW-/w:auto/h:auto/q:auto/https://vendasbradescosaude.com.br/wp-content/uploads/2020/09/3.png"
-
-        
-        
-        },]
-    },
+    
 ]
 
 

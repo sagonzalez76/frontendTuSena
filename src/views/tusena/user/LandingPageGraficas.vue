@@ -3,7 +3,7 @@
     <section class="bg-white mb-3">
         <div class="container">
             <div class="row">
-                <SidebarComponent></SidebarComponent>
+                <SidebarComponentGraficas></SidebarComponentGraficas>
                 <div class="col-lg-9">
                     <FilterComponent></FilterComponent>
                     <GraficasComponent></GraficasComponent>
@@ -20,7 +20,7 @@
 
 import FooterComponent from '@/components/InnovatecComponents/FooterComponent.vue';
 import HeaderComponent from '@/components/TusenaComponents/UserComponents/HeaderComponent.vue';
-import SidebarComponent from '@/components/TusenaComponents/UserComponents/SidebarComponent.vue';
+import SidebarComponentGraficas from '@/components/TusenaComponents/UserComponents/SidebarComponentGraficas.vue';
 import FilterComponent from '@/components/TusenaComponents/UserComponents/FilterComponent.vue';
 // import ProductComponent from '@/components/TusenaComponents/UserComponents/ProductComponent.vue';
 import GraficasComponent from '@/components/TusenaComponents/UserComponents/GraficasComponent.vue';
@@ -33,7 +33,7 @@ export default {
     components: {
         HeaderComponent,
         FooterComponent,
-        SidebarComponent,
+        SidebarComponentGraficas,
         FilterComponent,
         // ProductComponent,
         PaginationComponent,
@@ -45,32 +45,5 @@ export default {
 
 
 <style scoped>
-.page-item:active {
-    background-color: #00A500;
 
-}
-
-.barra {
-    background-color: #00A500;
-
-}
-
-.icon-hover:hover {
-    border-color: #00A500 !important;
-    background-color: rgb(255, 255, 255) !important;
-}
-
-.icon-hover:hover i {
-    color: #00A500 !important;
-}
-
-.product-button:hover {
-    border-color: #00A500 !important;
-    background-color: #00A500;
-}
-
-.page-item-active {
-
-    background-color: #00A500;
-}
 </style>

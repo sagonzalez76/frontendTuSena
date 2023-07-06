@@ -48,7 +48,7 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Subtipo de Producto
+                                Tipo de Producto
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -57,135 +57,49 @@
 
                                     <div class="form-check m-0">
                                         <input class="form-check-input my-0" type="checkbox"
-                                            value="Artículos de Investigación A1, A2, B y C" id="flexCheckChecked1"
-                                            @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckChecked1">Artículos de Investigación
-                                            A1,
-                                            A2, B y C</label>
+                                            value="Actividades como Evaluador" id="flexCheckChecked1"
+                                            @change="actualizarTiposSeleccionados" />
+                                        <label class="form-check-label" for="flexCheckChecked1">Actividades como Evaluador</label>
 
                                     </div>
 
                                     <div class="form-check m-0">
                                         <input class="form-check-input border bordered-3" type="checkbox"
-                                            value="Consultorías Científico-Tecnológicas" id="flexCheckChecked3"
-                                            @change="actualizarSubtiposSeleccionados" />
+                                            value="Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia" id="flexCheckChecked3"
+                                            @change="actualizarTiposSeleccionados" />
 
-                                        <label class="form-check-label" for="flexCheckChecked3">Consultorías
-                                            Científico-Tecnológicas</label>
+                                        <label class="form-check-label" for="flexCheckChecked3">Apropiación Social del Conocimiento y Divulgación Pública de la Ciencia</label>
                                     </div>
                                     <!-- Checked checkbox -->
                                     <div class="form-check m-0">
                                         <input class="form-check-input my-0" type="checkbox"
-                                            value="Direcciones de Trabajo de Pregrado" id="flexCheckChecked4"
-                                            @change="actualizarSubtiposSeleccionados" />
+                                            value="Desarrollo Tecnologico e Innovacion" id="flexCheckChecked4"
+                                            @change="actualizarTiposSeleccionados" />
 
-                                        <label class="form-check-label" for="flexCheckChecked4">Direcciones de Trabajo de
-                                            Pregrado</label>
+                                        <label class="form-check-label" for="flexCheckChecked4">Desarrollo Tecnológico e Innovación</label>
                                     </div>
                                     <!-- Default checkbox -->
                                     <div class="form-check m-0">
                                         <input class="form-check-input my-0" type="checkbox"
-                                            value="Divulgación Pública de la CTeI" id="flexCheckDefault"
-                                            @change="actualizarSubtiposSeleccionados" />
+                                            value="Formación de Recurso Humano para la CTEI" id="flexCheckDefault"
+                                            @change="actualizarTiposSeleccionados" />
 
-                                        <label class="form-check-label" for="flexCheckDefault">Divulgación Pública de la
-                                            CTeI</label>
+                                        <label class="form-check-label" for="flexCheckDefault">Formación de Recurso Humano para la CTEI</label>
                                     </div>
                                     <!-- Default checkbox -->
                                     <div class="form-check my-0">
-                                        <input value="Estrategias Pedagógicas para el Fomento a la CTI"
+                                        <input value="Generación de Nuevo Conocimiento"
                                             class="form-check-input" type="checkbox" id="flexCheckDefault"
-                                            @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Estrategias Pedagógicas para
-                                            el
-                                            Fomento a la CTI</label>
+                                            @change="actualizarTiposSeleccionados" />
+                                        <label class="form-check-label" for="flexCheckDefault">Generación de Nuevo Conocimiento</label>
                                     </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox"
-                                            value="Eventos Científicos con Componente de Apropiación" id="flexCheckDefault"
-                                            @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Eventos Científicos con
-                                            Componente de Apropiación</label>
-                                    </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox"
-                                            value="Informes Finales de Investigación" id="flexCheckDefault"
-                                            @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Informes Finales de
-                                            Investigación</label>
-                                    </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox" value="Informes Técnicos"
-                                            id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Informes Técnicos</label>
-                                    </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox" value="Normas Técnicas"
-                                            id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Normas Técnicas</label>
-
-                                    </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox" value="Otro Programa Académico"
-                                            id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Otro Programa
-                                            Académico</label>
-
-                                    </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox"
-                                            value="Participación en Comités de Evaluación" id="flexCheckDefault"
-                                            @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Participación en Comités de
-                                            Evaluación</label>
-
-                                    </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox" value="Plantas Piloto"
-                                            id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Plantas Piloto</label>
-
-                                    </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox"
-                                            value="Procesos de Apropiación Social del Conocimiento para el Fortalecimiento o Solución de Asuntos de Interés Social"
-                                            id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Procesos de Apropiación
-                                            Social
-                                            del Conocimiento para el Fortalecimiento o Solución de
-                                            Asuntos
-                                            de Interés Social</label>
-
-                                    </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input" type="checkbox" value="Prototipos Industriales"
-                                            id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Prototipos
-                                            Industriales</label>
-
-                                    </div>
-
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox"
-                                            value="Proyectos de Investigacion y Desarrollo" id="flexCheckDefault"
-                                            @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Proyectos de Investigacion y
-                                            Desarrollo</label>
-
-                                    </div>
-                                    <div class="form-check my-0">
-                                        <input class="form-check-input my-0" type="checkbox"
-                                            value="Proyectos de Investigación, Desarrollo e Innovación (ID+I)"
-                                            id="flexCheckDefault" @change="actualizarSubtiposSeleccionados" />
-                                        <label class="form-check-label" for="flexCheckDefault">Proyectos de
-                                            Investigación, Desarrollo e Innovación (ID+I)</label>
-                                    </div>
-
+                                   
 
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"

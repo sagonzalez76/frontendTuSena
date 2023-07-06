@@ -3,9 +3,10 @@
         <CarouselComponentVue></CarouselComponentVue>
         <encabezado-logos-component></encabezado-logos-component>
         <encabezado-menu-component></encabezado-menu-component>
+        <router-view></router-view>
 
-        <h1>Noticias</h1>
-        <FooterComponent></FooterComponent>
+<!-- <NoticiasComponent></NoticiasComponent>       -->
+ <FooterComponent></FooterComponent>
     </div>
 </template>
 
@@ -14,7 +15,7 @@ import CarouselComponentVue from '@/components/InnovatecComponents/CarouselCompo
 import EncabezadoMenuComponent from '@/components/InnovatecComponents/EncabezadoMenuComponent.vue';
 import EncabezadoLogosComponent from '@/components/InnovatecComponents/EncabezadoLogosComponent.vue';
 import FooterComponent from '@/components/InnovatecComponents/FooterComponent.vue';
-
+import NoticiasComponent from '@/components/InnovatecComponents/NoticiasComponent.vue';
 
 export default {
     name: 'HomeView',
@@ -22,6 +23,7 @@ export default {
     CarouselComponentVue,
     EncabezadoMenuComponent,
     EncabezadoLogosComponent,
+    NoticiasComponent,
     FooterComponent
 }
 }
