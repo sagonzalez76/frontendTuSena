@@ -192,7 +192,7 @@ export default {
             let json = {
                 "funcionario_correo": this.funcionario_correo,
             };
-            await this.axios.post('http://localhost:3000/recuperar', json)
+            await this.axios.post('https://tusena-backend.onrender.com/recuperar', json)
                 .then(data => {
                     console.log(data);
                     $(this.$refs.staticBackdrop).modal('hide');
@@ -210,7 +210,7 @@ export default {
                 "funcionario_contrasena": this.funcionario_contrasena
             };
 
-            await this.axios.patch(`http://localhost:3000/funcionario/cambiar/${this.funcionario_correo}`, json)
+            await this.axios.patch(`https://tusena-backend.onrender.com/funcionario/cambiar/${this.funcionario_correo}`, json)
                 .then(data => {
                     console.log(data);
 

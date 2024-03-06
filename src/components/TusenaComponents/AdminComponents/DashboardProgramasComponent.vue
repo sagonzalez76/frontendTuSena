@@ -304,7 +304,7 @@ export default {
       let json = {
         "programa_nombre": this.nombre
       };
-      await this.axios.post('http://localhost:3000/programa', json)
+      await this.axios.post('https://tusena-backend.onrender.com/programa', json)
         .then(data => {
           this.buscarProgramas();
         })
@@ -314,7 +314,7 @@ export default {
 
     async buscarPrograma(programa_id) {
 
-      await this.axios.get('http://localhost:3000/programa/' + programa_id)
+      await this.axios.get('https://tusena-backend.onrender.com/programa/' + programa_id)
         .then(response => {
 
 
@@ -335,7 +335,7 @@ export default {
         "programa_nombre": this.programa.programa_nombre,
       };
 
-      await this.axios.patch('http://localhost:3000/programa/' + programa_id, json)
+      await this.axios.patch('https://tusena-backend.onrender.com/programa/' + programa_id, json)
         .then(response => {
           const Toast = Swal.mixin({
             toast: true,
@@ -365,7 +365,7 @@ export default {
     },
 
     async eliminarPrograma(programa_id) {
-      await this.axios.delete('http://localhost:3000/programa/' + programa_id)
+      await this.axios.delete('https://tusena-backend.onrender.com/programa/' + programa_id)
         .then(response => {
           console.log(response.data.message);
           const Toast = Swal.mixin({
@@ -399,7 +399,7 @@ export default {
 
 
     async buscarProgramas() {
-      await this.axios.get('http://localhost:3000/programa')
+      await this.axios.get('https://tusena-backend.onrender.com/programa')
         .then(response => {
           this.programas = response.data.nuevo_programa
           // console.log(response.data.new_producto);

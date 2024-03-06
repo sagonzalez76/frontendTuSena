@@ -66,7 +66,7 @@ export default createStore({
 
     async ['buscarProductoId'](state, id) {
       const producto_id = id
-      await axios.get('http://localhost:3000/producto/' + producto_id)
+      await axios.get('https://tusena-backend.onrender.com/producto/' + producto_id)
         .then(response => {
 
 
@@ -91,7 +91,7 @@ export default createStore({
 
     // REALIZA LA BUSQUEDA DE TODOS LOS PRODUCTOS EN DB
     async  ['buscarProductos'](state) {
-      await axios.get('http://localhost:3000/')
+      await axios.get('https://tusena-backend.onrender.com/')
         .then(response => {
 
           state.productos = response.data.productos
@@ -117,7 +117,7 @@ export default createStore({
       console.log(params);
 
 
-      await axios.get('http://localhost:3000/producto/buscar/', { params })
+      await axios.get('https://tusena-backend.onrender.com/producto/buscar/', { params })
         .then(response => {
           console.log(response.data);
           state.productos = response.data.productos
@@ -227,7 +227,7 @@ export default createStore({
 
     //   // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
     //   // con los autores seleccionados como parámetro de consulta
-    //   axios.get("http://localhost:3000/filtrosemillero", { params })
+    //   axios.get("https://tusena-backend.onrender.com/filtrosemillero", { params })
     //     .then((response) => {
     //       state.productos = response.data;
     //       console.log(response.data);
@@ -253,7 +253,7 @@ export default createStore({
 
     //   // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
     //   // con los autores seleccionados como parámetro de consulta
-    //   axios.get("http://localhost:3000/filtroProductoTipo", { params })
+    //   axios.get("https://tusena-backend.onrender.com/filtroProductoTipo", { params })
     //     .then((response) => {
 
     //       state.productos = response.data;
@@ -277,7 +277,7 @@ export default createStore({
     //   }
     //   console.log(params);
 
-    //   axios.get("http://localhost:3000/filtroproducto", { params })
+    //   axios.get("https://tusena-backend.onrender.com/filtroproducto", { params })
     //     .then((response) => {
     //       state.productos = response.data;
     //     })
@@ -297,7 +297,7 @@ export default createStore({
     //     productos_ano: productosAnos
     //   }
     //   console.log(params);
-    //   axios.get("http://localhost:3000/filtroano", { params })
+    //   axios.get("https://tusena-backend.onrender.com/filtroano", { params })
     //     .then((response) => {
     //       state.productos = response.data;
     //     })
@@ -320,7 +320,7 @@ export default createStore({
     //     proyectos_nombre: productosProyectos
     //   }
     //   console.log(params);
-    //   axios.get("http://localhost:3000/filtroproyecto", { params })
+    //   axios.get("https://tusena-backend.onrender.com/filtroproyecto", { params })
     //     .then((response) => {
     //       state.productos = response.data;
     //     })
@@ -341,7 +341,7 @@ export default createStore({
     //   }
     //   console.log(params);
 
-    //   axios.get("http://localhost:3000/filtroprograma", { params })
+    //   axios.get("https://tusena-backend.onrender.com/filtroprograma", { params })
     //     .then((response) => {
     //       state.productos = response.data;
     //     })
@@ -373,7 +373,7 @@ export default createStore({
       console.log(params);
       // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
       // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/aplicarfiltros/", { params })
+      axios.get("https://tusena-backend.onrender.com/aplicarfiltros/", { params })
         .then((response) => {
 
           state.productos = response.data.productos;
@@ -409,7 +409,7 @@ export default createStore({
       console.log(params);
       // Realizar la llamada a la API utilizando Axios u otro cliente HTTP
       // con los autores seleccionados como parámetro de consulta
-      axios.get("http://localhost:3000/aplicarfiltrosgraficas/", { params })
+      axios.get("https://tusena-backend.onrender.com/aplicarfiltrosgraficas/", { params })
         .then((response) => {
 
           state.productosgraficas = response.data.productos;
@@ -446,7 +446,7 @@ export default createStore({
 
 
 
-      axios.post('http://localhost:3000/login', json)
+      axios.post('https://tusena-backend.onrender.com/login', json)
         .then(response => {
           console.log(response);
 

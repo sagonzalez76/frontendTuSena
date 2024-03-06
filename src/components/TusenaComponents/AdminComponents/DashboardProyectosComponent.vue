@@ -323,7 +323,7 @@ export default {
 
     async buscarProyectos() {
 
-      await this.axios.get('http://localhost:3000/proyecto')
+      await this.axios.get('https://tusena-backend.onrender.com/proyecto')
         .then(response => {
           console.log(response);
           this.proyectos = response.data.nuevo_proyecto
@@ -338,7 +338,7 @@ export default {
     },
 
     async buscarProyecto(proyecto_id) {
-      await this.axios.get('http://localhost:3000/proyecto/' + proyecto_id)
+      await this.axios.get('https://tusena-backend.onrender.com/proyecto/' + proyecto_id)
         .then(response => {
           this.proyecto = response.data.nuevo_proyecto;
           console.log(this.proyecto);
@@ -364,7 +364,7 @@ export default {
         "proyecto_presupuesto": this.presupuesto
 
       };
-      await this.axios.post('http://localhost:3000/proyecto', json)
+      await this.axios.post('https://tusena-backend.onrender.com/proyecto', json)
         .then(data => {
           console.log(data);
 
@@ -406,7 +406,7 @@ export default {
       };
       console.log(json);
 
-      await this.axios.patch('http://localhost:3000/proyecto/' + proyecto_id, json)
+      await this.axios.patch('https://tusena-backend.onrender.com/proyecto/' + proyecto_id, json)
         .then(response => {
 
           const Toast = Swal.mixin({
@@ -444,7 +444,7 @@ export default {
 
     async eliminarProyecto(proyecto_id) {
 
-      await this.axios.delete('http://localhost:3000/proyecto/' + proyecto_id)
+      await this.axios.delete('https://tusena-backend.onrender.com/proyecto/' + proyecto_id)
         .then(response => {
           console.log(response.data.message);
 

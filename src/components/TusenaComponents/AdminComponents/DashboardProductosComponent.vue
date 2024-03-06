@@ -702,7 +702,7 @@ export default {
 
     async buscarProductos() {
 
-      await this.axios.get('http://localhost:3000/')
+      await this.axios.get('https://tusena-backend.onrender.com/')
         .then(response => {
           this.productos = response.data.productos
           // console.log(this.productos);
@@ -711,7 +711,7 @@ export default {
           console.log(e)
         });
 
-      await this.axios.get('http://localhost:3000/proyecto')
+      await this.axios.get('https://tusena-backend.onrender.com/proyecto')
         .then(response => {
           this.proyectos = response.data.nuevo_proyecto
           // console.log(this.proyectos);
@@ -721,7 +721,7 @@ export default {
         });
 
 
-      await this.axios.get('http://localhost:3000/semillero')
+      await this.axios.get('https://tusena-backend.onrender.com/semillero')
         .then(response => {
           this.semilleros = response.data.nuevo_semillero
           // console.log(this.semilleros);
@@ -730,7 +730,7 @@ export default {
           console.log(e)
         });
 
-      await this.axios.get('http://localhost:3000/funcionario')
+      await this.axios.get('https://tusena-backend.onrender.com/funcionario')
         .then(response => {
           this.funcionarios = response.data.nuevo_funcionario
           // console.log(this.funcionarios);
@@ -740,7 +740,7 @@ export default {
         });
 
 
-      await this.axios.get('http://localhost:3000/programa')
+      await this.axios.get('https://tusena-backend.onrender.com/programa')
         .then(response => {
           this.programas = response.data.nuevo_programa
           // console.log(this.programas);
@@ -755,7 +755,7 @@ export default {
 
     async buscarProducto(producto_id) {
 
-      await this.axios.get('http://localhost:3000/producto/' + producto_id)
+      await this.axios.get('https://tusena-backend.onrender.com/producto/' + producto_id)
         .then(response => {
           this.producto = response.data.productos[0];
           console.log(this.producto);
@@ -766,7 +766,7 @@ export default {
 
       // console.log(this.producto.proyecto.proyecto_id);
 
-      await this.axios.get('http://localhost:3000/proyecto/' + this.producto.proyecto.proyecto_id)
+      await this.axios.get('https://tusena-backend.onrender.com/proyecto/' + this.producto.proyecto.proyecto_id)
         .then(response => {
           // console.log(response);
           this.proyecto = response.data.nuevo_proyecto;
@@ -777,7 +777,7 @@ export default {
         });
 
 
-      await this.axios.get('http://localhost:3000/semillero/' + this.producto.semillero.semillero_id)
+      await this.axios.get('https://tusena-backend.onrender.com/semillero/' + this.producto.semillero.semillero_id)
         .then(response => {
           this.semillero = response.data.nuevo_semillero;
         })
@@ -796,7 +796,7 @@ export default {
       console.log(this.producto.funcionarios);
       for (const funcionario of this.producto.funcionarios) {
         try {
-          const response = await this.axios.get('http://localhost:3000/funcionario/' + funcionario.funcionario_id);
+          const response = await this.axios.get('https://tusena-backend.onrender.com/funcionario/' + funcionario.funcionario_id);
           resultados.push(response.data);
           this.funcionario_ids.push(response.data.nuevo_funcionario.funcionario_id)
         } catch (error) {
@@ -814,7 +814,7 @@ export default {
       console.log(this.producto.programas);
       for (const programa of this.producto.programas) {
         try {
-          const response = await this.axios.get('http://localhost:3000/programa/' + programa.programa_id);
+          const response = await this.axios.get('https://tusena-backend.onrender.com/programa/' + programa.programa_id);
           resultados.push(response.data);
           this.programa_ids.push(response.data.nuevo_programa.programa_id)
 
@@ -871,7 +871,7 @@ export default {
         for (let [key, value] of formData.entries()) {
           console.log(key, value);
 
-        } await this.axios.post('http://localhost:3000/producto/', formData, {
+        } await this.axios.post('https://tusena-backend.onrender.com/producto/', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -925,7 +925,7 @@ export default {
 
       console.log(producto_id);
       console.log(this.producto);
-      await this.axios.patch('http://localhost:3000/producto/' + producto_id, json)
+      await this.axios.patch('https://tusena-backend.onrender.com/producto/' + producto_id, json)
         .then(response => {
           const Toast = Swal.mixin({
             toast: true,
@@ -961,7 +961,7 @@ export default {
 
     async eliminarProducto(producto_id) {
       console.log(producto_id);
-      await this.axios.delete('http://localhost:3000/producto/' + producto_id)
+      await this.axios.delete('https://tusena-backend.onrender.com/producto/' + producto_id)
         .then(response => {
           console.log(response.data.message);
 

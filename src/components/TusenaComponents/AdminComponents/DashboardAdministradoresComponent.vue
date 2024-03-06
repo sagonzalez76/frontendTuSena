@@ -427,7 +427,7 @@ export default {
 
     async buscarFuncionarios() {
 
-      await this.axios.get('http://localhost:3000/funcionario')
+      await this.axios.get('https://tusena-backend.onrender.com/funcionario')
         .then(response => {
           this.funcionarios = response.data.nuevo_funcionario
           // console.log(response.data.new_funcionario[0].funcionario_id);
@@ -445,7 +445,7 @@ export default {
     async buscarFuncionario(funcionario_id) {
       // console.log(funcionario_id);
 
-      await this.axios.get('http://localhost:3000/funcionario/' + funcionario_id)
+      await this.axios.get('https://tusena-backend.onrender.com/funcionario/' + funcionario_id)
         .then(response => {
           this.funcionario = response.data.nuevo_funcionario;
 
@@ -476,7 +476,7 @@ export default {
 
 
       };
-      await this.axios.post('http://localhost:3000/funcionario', json)
+      await this.axios.post('https://tusena-backend.onrender.com/funcionario', json)
         .then(data => {
 
           const Toast = Swal.mixin({
@@ -516,7 +516,7 @@ export default {
       };
 
       console.log(funcionario_id);
-      await this.axios.patch('http://localhost:3000/funcionario/' + funcionario_id, json)
+      await this.axios.patch('https://tusena-backend.onrender.com/funcionario/' + funcionario_id, json)
         .then(response => {
           const Toast = Swal.mixin({
             toast: true,
@@ -556,7 +556,7 @@ export default {
     async eliminarFuncionario(funcionario_id) {
 
       console.log(funcionario_id);
-      await this.axios.delete('http://localhost:3000/funcionario/' + funcionario_id)
+      await this.axios.delete('https://tusena-backend.onrender.com/funcionario/' + funcionario_id)
         .then(response => {
 
           const Toast = Swal.mixin({

@@ -333,7 +333,7 @@ export default {
         "semillero_nombre": this.nombre,
       };
 
-      await this.axios.post('http://localhost:3000/semillero', json)
+      await this.axios.post('https://tusena-backend.onrender.com/semillero', json)
         .then(data => {
 
           const Toast = Swal.mixin({
@@ -363,7 +363,7 @@ export default {
 
 
     async buscarSemilleros() {
-      await this.axios.get('http://localhost:3000/semillero')
+      await this.axios.get('https://tusena-backend.onrender.com/semillero')
         .then(response => {
           this.semilleros = response.data.nuevo_semillero
           // console.log(response.data.new_producto);
@@ -379,7 +379,7 @@ export default {
 
     async buscarSemillero(semillero_id) {
 
-      await this.axios.get('http://localhost:3000/semillero/' + semillero_id)
+      await this.axios.get('https://tusena-backend.onrender.com/semillero/' + semillero_id)
         .then(response => {
 
 
@@ -400,7 +400,7 @@ export default {
         "semillero_nombre": this.semillero.semillero_nombre,
       };
 
-      await this.axios.patch('http://localhost:3000/semillero/' + semillero_id, json)
+      await this.axios.patch('https://tusena-backend.onrender.com/semillero/' + semillero_id, json)
         .then(response => {
           const Toast = Swal.mixin({
             toast: true,
@@ -429,7 +429,7 @@ export default {
     },
 
     async eliminarSemillero(semillero_id) {
-      await this.axios.delete('http://localhost:3000/semillero/' + semillero_id)
+      await this.axios.delete('https://tusena-backend.onrender.com/semillero/' + semillero_id)
         .then(response => {
           console.log(response.data.message);
           const Toast = Swal.mixin({

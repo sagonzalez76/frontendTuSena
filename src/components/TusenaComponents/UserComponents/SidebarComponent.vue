@@ -299,7 +299,7 @@ export default {
         this.anosDisponibles = Array.from({ length: currentYear - 2012 + 1 }, (_, index) => currentYear - index);
 
         //para buscar los proyectos
-        await this.axios.get('http://localhost:3000/proyecto')
+        await this.axios.get('https://tusena-backend.onrender.com/proyecto')
             .then(response => {
                 this.proyectos = response.data.nuevo_proyecto
             })
@@ -307,7 +307,7 @@ export default {
                 console.log(e)
             });
 
-        await this.axios.get('http://localhost:3000/semillero')
+        await this.axios.get('https://tusena-backend.onrender.com/semillero')
             .then(response => {
                 this.semilleros = response.data.nuevo_semillero
             })
@@ -316,7 +316,7 @@ export default {
             });
 
 
-        await this.axios.get('http://localhost:3000/programa')
+        await this.axios.get('https://tusena-backend.onrender.com/programa')
             .then(response => {
                 this.programas = response.data.nuevo_programa
             })
