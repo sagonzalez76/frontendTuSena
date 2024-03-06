@@ -1,33 +1,4 @@
 <template>
-    <footer class="">
-        <div class="row p-5 text-light fw-bold mx-0">
-
-            <div class="row d-flex justify-content-center">INNOVATEC CTPI</div>
-            <div class="row d-flex justify-content-center">Centro de Teleinformática y Producción Industrial
-
-            </div>
-            <div class="row d-flex justify-content-center">Dirección: Cra. 9 No. 71N-60 (Popayán - Cauca)
-
-            </div>
-            <div class="row d-flex justify-content-center">Email: innovatecctpi@soy.sena.edu.co
-
-            </div>
-
-
-
-        </div>
-    </footer>
-</template>
-
-
-<style scoped>
-footer {
-    background-color: #39A900;
-}
-</style> -->
-<!-- 
-
-<template>
     <footer id="footer" class="footer-1">
         <div class="main-footer widgets-dark typo-light">
             <div class="container">
@@ -98,10 +69,11 @@ footer {
                             <h5 class="widget-title">Contacto</h5>
 
                             <p>
-                                <a href="mailto:info@domain.com" title="" class="email">
-                                    <h6>comunicactpi@sena.edu.co</h6>
-                                </a>
+                            <h6>
+                                <a href="mailto:info@domain.com" title="" class="email">comunicactpi@sena.edu.co</a>
+                            </h6>
                             </p>
+
                             <ul class="social-footer2">
                                 <li class=""><a title="youtube" target="_blank" href="https://www.youtube.com/"><img
                                             alt="youtube" width="30" height="30"
@@ -383,4 +355,4 @@ ul.social-footer2 li a {
         width: 250px;
     }
 }
-</style> -->
+</style>

@@ -1,17 +1,15 @@
 <template>
 
-    <header class="container-fluid d-flex align-items-center py-2">
+    <header class="container-fluid d-flex align-items-center">
         <div class="m-0 p-0">
             <img src="@/assets/logos/logosena.png" alt="" width="" class="img-fluid logo-1 mx-2">
 
             <img src="@/assets/logos/sennovalogo.png" alt="" width="" class="logo-2">
         </div>
         <div class="ms-auto m-3 p-0 ">
-            <img src="@/assets/logos/logoInnovatectrim.jpg" alt="" width="" class="logo-3 me-3 my-2 align-middle">
+            <img src="@/assets/logos/mintrabajo.png" alt="" width="" class="logo-3 m-0 p-0">
         </div>
     </header>
-
-    
 </template>
 
 
@@ -36,7 +34,7 @@ header {
 }
 
 .logo-3 {
-width: 150px;
+    width: 300px;
 }
 
 @media (max-width: 750px) {
@@ -57,7 +55,7 @@ width: 150px;
     }
 
     .logo-3 {
-        width: 145px;
+        width: 195px;
     }
 }
 
@@ -81,7 +79,7 @@ width: 150px;
     }
 
     .logo-3 {
-        width: 120px;
+        width: 170px;
     }
 }
 
@@ -102,7 +100,7 @@ width: 150px;
     }
 
     .logo-3 {
-        width: 120px;
+        width: 150px;
 
     }
 }
@@ -125,7 +123,7 @@ width: 150px;
     }
 
     .logo-3 {
-        width: 80px;
+        width: 130px;
 
     }
 }

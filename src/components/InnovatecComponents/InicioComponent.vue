@@ -3,8 +3,8 @@
 
         <div class="row py-4 px-3">
 
-            <div class="col-lg text-center d-flex justify-content-center">
-                <img src="@/assets/logos/logoInnovatec.jpg" alt="" class="logoinnovatec">
+            <div class="col-lg text-center d-flex justify-content-center ">
+                <img src="@/assets/logos/logoInnovatec.jpg" alt="" class="logoinnovatec rounded-2">
 
             </div>
 
@@ -546,7 +546,7 @@ th:hover {
 
 .parrafo-inicial {
     text-align: justify;
-    background-color: #82def0;
+    background-color: #c5c5c589;
 }
 
 
