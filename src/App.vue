@@ -102,8 +102,7 @@ export default {
   -moz-osx-font-smoothing: grayscale; */
 
   /* color: #000000; */
-  background-color: #39ca3e00;
-  font-size: 0.8rem;
+  background-color: #ebebeb;  font-size: 0.8rem;
   /* margin: 0;
   padding: 0; */
 }
